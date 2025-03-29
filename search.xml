@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo基础使用介绍</title>
+    <url>/2025/03/19/Hexo%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<blockquote>
+<p>参考了很多视频教程终于是把hexo部署成功了，<br>并且绑定了自己的域名，<br>这篇文章主要对部署过程中的用到的一些命令和hexo基础使用做个简单总结，<br>加深下学习印象。</p>
+</blockquote>
+<h3 id="CD-定位文件夹位置"><a href="#CD-定位文件夹位置" class="headerlink" title="CD 定位文件夹位置"></a>CD 定位文件夹位置</h3><p>使用 <code>cd ..</code> 返回上一级目录。<br>使用 <code>cd ../..</code> 返回两级目录。<br>使用 <code>cd ~</code> 返回用户主目录。<br>使用 <code>cd /</code> 返回根目录。</p>
+<h3 id="延伸一下关于文件夹的介绍"><a href="#延伸一下关于文件夹的介绍" class="headerlink" title="延伸一下关于文件夹的介绍"></a>延伸一下关于文件夹的介绍</h3><h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h4><p><font color="#61649f">scaffolds</font>是“脚手架、骨架”的意思，当你新建一篇文章（hexo new ‘title’）的时候，<br>hexo是根据这个目录下的文件进行构建的。基本不用关心。<br>一般而言会有三个不同的选择，分别是draft、post、page三个模板，其中可以自定义需要的项目：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><strong>draft（草稿）</strong><br>    - 这是Hexo中用于存放草稿文章的模板。当你新建一篇文章并将其指定为草稿时，它会被放在特定的草稿目录下。草稿不会直接显示在网站上，你可以随时修改和完善它，直到你准备好将其发布。这为作者提供了一个灵活的写作空间，方便在正式发布前进行多次修订。<br><strong>post（文章）</strong><br>    - 这是Hexo中用于存放正式文章的模板。当你新建一篇文章并将其指定为post时，它会被放在文章目录下，并且会按照你的配置和主题样式显示在网站的博客页面上。文章是网站内容的核心部分，通常包含具体的主题、内容和相关标签等信息。<br><strong>page（页面）</strong><br>    - 这是Hexo中用于存放独立页面的模板。与文章不同，页面通常用于展示一些固定的内容，如“关于我”“联系方式”“项目介绍”等。页面不会按照时间顺序排列，而是独立存在，可以通过菜单栏或其他链接直接访问。页面的内容和样式可以根据需要进行自定义，以满足不同的展示需求。</p>
+<h3 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h3><p>脚本目录，此目录下的JavaScript文件会被自动执行。</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>这个目录很重要，新建的文章都是在保存在这个目录下的，有两个子目录： _drafts ， _posts 。需要新建的博文都放在 _posts 目录下。</p>
+<p>_posts 目录下是一个个 markdown 文件。你应该可以看到一个 hello-world.md 的文件，文章就在这个文件中编辑。</p>
+<p>_posts 目录下的md文件，会被编译成html文件，放到 public （此文件现在应该没有，因为你还没有编译过）文件夹下。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>网站主题目录hexo有非常好的主题拓展，支持的主题也很丰富。该目录下，每一个子目录就是一个主题，我的子目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|-- landscape</span><br><span class="line">   |--</span><br><span class="line">|-- Aurora</span><br><span class="line">   |--</span><br></pre></td></tr></table></figure>
+
+<p>我装了两个主题，<font color="#0070c0"> landscape</font> 是hexo博客的默认主题，我自己下载了一个 <font color="#126e82">anzhiyu </font>主题。</p>
+<p>你也可以自己下载主题放到该文件下， <a href="https://hexo.io/themes/">hexo主题传送门</a></p>
+<h3 id="node-module"><a href="#node-module" class="headerlink" title="node_module"></a>node_module</h3><p>这个目录下存放是通过nodejs下载的相应的hexo插件。</p>
+<hr>
+<ul>
+<li><font color="#61649f">sudo</font>：以管理员权限执行命令，确保有足够的权限安装插件。</li>
+<li><font color="#8b2671">cnpm</font>：使用淘宝的npm镜像，加速包的下载速度。</li>
+<li>install hexo-deployer-git                                                                                                      <ul>
+<li>安装hexo-deployer-git插件，用于将Hexo生成的静态文件部署到Git仓库。</li>
+</ul>
+</li>
+<li>–save：将安装的插件添加到项目的package.json文件中，作为依赖项<br> <code>sudo cnpm install hexo-deployer-git --save    </code></li>
+</ul>
+<h3 id="安装cnpm"><a href="#安装cnpm" class="headerlink" title="安装cnpm"></a>安装cnpm</h3><p>如果你尚未安装cnpm，可以通过以下命令全局安装：</p>
+<p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org    </code></p>
+<ul>
+<li><p>此命令会将cnpm安装到全局，并设置其使用淘宝的npm镜像源，从而加快包的下载速度。</p>
+</li>
+<li><p>如果还是提示失败请在前面加上 <code>sudo</code></p>
+</li>
+<li><p>在尝试与<font color="#0070c0"><em>GitHub</em></font> 建立连接的时候,如果提示找不到git。 </p>
+</li>
+<li><p>安装一下hexo的部署插件: npm install hexo-deployer-git –save </p>
+<ul>
+<li>或用阿里的镜像源改为cnpm即可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><p>安装完成后，通过以下命令验证cnpm是否安装成功：</p>
+<p>  <code>cnpm -v    </code><br>相似的还有 <code>git -v</code> <code>node -v</code> <code>hexo -v</code><br>如果安装成功，将显示cnpm的版本信息。</p>
+<h2 id="如果提示无法识别你的身份-说明还没有配置全局邮箱和用户名。使用以下命令配置：-git-config-global-user-email-你的邮箱-git-config-global-user-name-用户名"><a href="#如果提示无法识别你的身份-说明还没有配置全局邮箱和用户名。使用以下命令配置：-git-config-global-user-email-你的邮箱-git-config-global-user-name-用户名" class="headerlink" title="如果提示无法识别你的身份,说明还没有配置全局邮箱和用户名。使用以下命令配置：  git config --global user.email &quot;你的邮箱&quot;      git config --global user.name &quot;用户名&quot;                                                                                                                                            "></a>如果提示无法识别你的身份,说明还没有配置全局邮箱和用户名。<br>使用以下命令配置：<br>  <code>git config --global user.email &quot;你的邮箱&quot;</code>    <br>  <code>git config --global user.name &quot;用户名&quot;</code>                                                                                                                                            </h2><h3 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h3><h3 id="1-hexo-new"><a href="#1-hexo-new" class="headerlink" title="1. hexo new"></a>1. <strong><code>hexo new</code></strong></h3><p>这是 Hexo 用于创建新文章的基本命令。</p>
+<p><code>hexo new 你的文件名</code> 新建文章<br><code>hexo clean</code> 清理缓存<br><code>hexo g</code>  生成静态文件<br><code>hexo s</code> 生成本地预览<br><code>hexo d</code> 用于将生成的静态文件推送到到github仓库</p>
+<p>也可以 <code>hexo clean;hexo g;hexo s</code>  组合使用。<br>本地预览完毕 <code>ctrl+c</code> 停止预览，再使用 <code>hexo d</code> 推送部署。</p>
+<h3 id="2-layout-（可选）"><a href="#2-layout-（可选）" class="headerlink" title="2. [layout]（可选）"></a>2. <strong><code>[layout]</code>（可选）</strong></h3><p><code>layout</code> 是文章的布局类型。默认情况下，如果不指定布局类型，Hexo 会创建一个普通的文章布局。常见的布局类型包括：</p>
+<p><code>post</code>（默认，用于普通文章）</p>
+<p><code>draft</code>（草稿，文章不会自动发布）</p>
+<p><code>page</code>（独立页面，如关于页面）</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="创建普通文章"><a href="#创建普通文章" class="headerlink" title="创建普通文章"></a>创建普通文章</h4><p>bash复制</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这会在 Hexo 的 <code>source/_posts</code> 文件夹中创建一个名为 <code>my-new-post.md</code> 的文件。</p>
+<h4 id="创建草稿文章"><a href="#创建草稿文章" class="headerlink" title="创建草稿文章"></a>创建草稿文章</h4><p>bash复制</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft <span class="string">&quot;My Draft Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这会在 <code>source/_drafts</code> 文件夹中创建一个名为 <code>my-draft-post.md</code> 的文件。</p>
+<h4 id="创建独立页面"><a href="#创建独立页面" class="headerlink" title="创建独立页面"></a>创建独立页面</h4><p>bash复制</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;about&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这会在 <code>source/about</code> 文件夹中创建一个 <code>index.md</code> 文件，用于独立页面。</p>
+<h3 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h3><p>创建的文章或页面文件通常具有以下默认结构：</p>
+<p>markdown复制</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: My New Post</span><br><span class="line">date: 2025-02-26 12:00:00</span><br><span class="line">categories:</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">这里是文章内容。</span><br></pre></td></tr></table></figure>
+
+<p>你可以根据需要编辑 <code>title</code>、<code>date</code>、<code>categories</code> 和 <code>tags</code> 等元数据，然后在文件中添加文章内容。</p>
+<p>关于文章的<font color="#248067">标签</font>、<font color="#c09351">分类</font>、<font color="#126e82">封面图片</font>请参考不同<font color="#7030a0">主题的使用</font>说明<br><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/hexo%E6%A0%87%E9%A2%98%E5%B1%9E%E6%80%A7.webp"><font color="#61649f">title</font> 文章标题<br><font color="#8b2671">date</font> 创建时间<br><font color="#248067">tags</font> 文章标签<br><font color="#c09351">categories</font> 文章分类<br><font color="#126e82">cover</font> 文章封面<br>	- 关于配图建议使用图床生成html 网页代码插入<br>	- 文章内配图建议使用图床生成markdown图片代码<br>	- <span style="background:rgba(92, 92, 92, 0.2)">使用图床可以一定程度上提高网页的加载速度</span></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p><strong>文件名</strong>：Hexo 会自动将标题转换为文件名（<font color="#548dd4">如将空格替换为短横线</font>）。</p>
+<p><strong>文件位置</strong>：</p>
+<pre><code>- 文章默认保存在 `source/_posts` 文件夹。
+    
+- 草稿保存在 `source/_drafts` 文件夹。
+    
+- 独立页面保存在 `source/` 文件夹下，以文件夹形式组织。
+    
+</code></pre>
+<p><strong>编辑文章</strong>：创建后，你可以用任何文本编辑器（如 <font color="#0070c0">VS Code</font>、<font color="#126e82">Sublime Text</font> 等）编辑文章内容。</p>
+<p>关于文章的编辑推荐使用<font color="#7030a0">Obsidian</font>，新建一个 <code>Vault</code> ，指定到hexo的 <code>_posts</code> 文件夹，这样新建的文章就会自动出现在目录列表里面了，配合 <code>remotely save</code> 插件多端同步就可以随时随地编辑博客文章了。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Twikoo静态网站评论系统</title>
+    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以自动识别昵称，挺方便的。</p>
+<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
+<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以永久使用500MB的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-</p>
+<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择vercel，毕竟免费嘛🥳</p>
+<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>使用极空间部署MP</title>
+    <url>/2025/03/19/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2MP/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>相信绝大部分朋友玩NAS的主要用途之一就是搭建一个属于自己的影视库🎬，<br>鉴于我之前的下载方式太过原始🥶，<br>了解到 <code>MP</code> 以后才体会到影视收藏下载原来可以<font color="#b960d9">如此优雅</font>🎻，<br>看到MP登陆界面流动的海报墙也是那么的<font color="#3a8cf0">激动人心</font>🥳。<br>这篇笔记就简单介绍下Nas玩家必备的Docker应用之一 <code>MP</code> 。</p>
+</blockquote>
+<h1 id="下载、部署镜像"><a href="#下载、部署镜像" class="headerlink" title="下载、部署镜像"></a>下载、部署镜像</h1><p>首先在docker商店搜索moviepilot,列表第一个收藏人数最多的这个就是了，然后点击下载，<br>（如果搜索不到镜像，可能是因为没有打开代理，以后有时间会再写一篇关于使用代理的方法）<br>稍等片刻下载完毕以后回到本地镜像，双击下载好的镜像文件<font color="#9bbb59">开始部署</font>，具体步骤如下图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79bca27978.webp" alt="1.下载部署-mp.webp"><br>然后是环境配置，重点修改一下 <code>API服务端口</code> 和 <code>WEB服务端口</code> ，以免冲突，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79bd15df94.webp" alt="1.下载部署2-mp.webp"></p>
+<blockquote>
+<p>整个<font color="#fbad61">部署过程很简单</font>还是很简单的。</p>
+<ol>
+<li>在基本设置里关闭性能限制,容器名称改不改都可以。</li>
+<li>在文件夹路径里添加 <code>3行路径映射</code> ，前两个路径对应新建的两个文件夹，第三条路径是自己的硬盘根目录，这条跟重要。<br> . &#x2F;config<br> . &#x2F;moviepilot<br> . &#x2F;影音书（第三条是自己的硬盘根目录哦，我这里的影音书是自己修改的名字）</li>
+<li>网络里点更换把 <code>网络模式切换为host</code>  </li>
+<li>环境里面主要修改一下两个端口，（我有一次没改端口，在有代理的情况下网络测试不通，大概是因为端口冲突了。）</li>
+<li>点击应用，<font color="#548dd4">部署完成</font>。</li>
+</ol>
+</blockquote>
+<p>MP是会自动更新版本的哦<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c33f2a49.webp" alt="1.自动更新-mp.webp"></p>
+<h1 id="相关设置"><a href="#相关设置" class="headerlink" title="相关设置"></a>相关设置</h1><h3 id="1-初始化登陆"><a href="#1-初始化登陆" class="headerlink" title="1.初始化登陆"></a>1.初始化登陆</h3><p>镜像应用以后，有些迫不及待的朋友输入ip+端口 <font color="#92d050">（默认端口：13000）</font>会发现根本打不开，<br>其实这是因为MP还在进行一系列的初始化设置，可以在容器概况里打开日志看一下运行状态，<br>我大概<font color="#f74db5">等待了1-2分钟</font>才完成整个初始化过程.<br>查看日志需要注意一个重要信息：<font color="#b960d9">超级管理员初始密码</font>。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c4114135.webp" alt="2.管理员密码-mp.webp"><br>第一次登陆，默认的用户名是：<font color="#f74db5">admin</font>，密码就是这个：<font color="#3a8cf0">超级管理员初始密码</font>，<br>建议直接复制保存一下。<br>不过即使日志刷新太快错过了保存，也可以在配置文件夹的文件内<br>（<code>日志文件路径为/config对应映射目录下&quot;logs/moviepilot.log&quot;文件</code>）找到这个密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c47cda83.webp" alt="3.查看日志-mp.webp"><br>看到运行日志显示开始发现豆瓣电影、电视剧，所有插件<font color="#6eb957">初始化完成</font>以后，<br>输入ip+端口就可以打开MP了。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c4dc1bf4.webp" alt="4.初始登陆-mp.webp"></p>
+<h3 id="2-修改登陆密码"><a href="#2-修改登陆密码" class="headerlink" title="2.修改登陆密码"></a>2.修改登陆密码</h3><p>登陆以后首先来修改一下<font color="#31859b">登录密码</font>，设置成自己的常用密码即可,修改完以后退出重新登录一下。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c5431298.webp" alt="5.修改密码-mp.webp"></p>
+<h3 id="3-站点认证"><a href="#3-站点认证" class="headerlink" title="3.站点认证"></a>3.站点认证</h3><p>重新登录-然后点击头像-<font color="#c09351">用户认证</font>，用户认证是<font color="#b960d9">必须操作</font><br>官方给出了一个可以认证的站点列表，只有注册过这些站点的才可以继续下面的操作哦.<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c5c5bd79.webp" alt="6.用户认证-mp.webp"><br>选择站点以后，根据提示输入相关信息-点击认证<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c6361383.webp" alt="6.用户认证2-mp.webp"><br>认证成功以后会自动退出并返回登陆界面。</p>
+<h3 id="4-添加下载器"><a href="#4-添加下载器" class="headerlink" title="4.添加下载器"></a>4.添加下载器</h3><p>点击小齿轮设定-添加下载器，下载器常用的就是<code>qB</code>和<code>tr</code>,关于下载器的部署就不再做说明了，根据官方教程都可以部署成功，根据说明添加相关信息即可。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c695f460.webp" alt="7.添加下载器-mp.webp"></p>
+<h3 id="5-配置储存-目录"><a href="#5-配置储存-目录" class="headerlink" title="5.配置储存&amp;目录"></a>5.配置储存&amp;目录</h3><p>目录设置<font color="#b960d9">至关重要</font>，搞不清楚设置逻辑的话也没关系，可以直接参考下图设置：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c6f1d904.webp" alt="8.目录设置-mp.webp"><br>关键是两个目录要对齐，设置完以后记得点击下面的保存哦</p>
+<h3 id="6-同步站点"><a href="#6-同步站点" class="headerlink" title="6.同步站点"></a>6.同步站点</h3><p>把自己的注册过的Pt站跟MP关联起来，添加订阅的时候就会在你添加的这些pt站内搜索资源了，<br>添加方式有两种：<br><code>使用内置插件同步</code>，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c7af3617.webp" alt="9.同步站点-mp.webp"><br><code>使用浏览器插件同步</code>，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c8227a38.webp" alt="9.同步站点2-mp.webp">两个方法都可以试试，如果一直没添加进来还可以去<font color="#f74db5">服务</font>里面，找到<font color="#6eb957">站点同步</font>服务，手动点执行按钮，多试几次总会成功的。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c8b7aa44.webp" alt="9.同步站点3-mp.webp"></p>
+<h3 id="7-配置规则"><a href="#7-配置规则" class="headerlink" title="7.配置规则"></a>7.配置规则</h3><p>规则是搜索资源的前置条件，有<code>自定义规则</code>和<code>优先级规则</code>两种，<br>我也不太懂内在含义，直接套用先成的即可<br><code>自定义规则</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;Complete&quot;,&quot;include&quot;:&quot;(全|共)\\d(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;filterGlobal&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|DV|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|DVD|vcd|480p|OPUS&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;filerGroup&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|DBD|HDH|COLLECTiVE|SRVFI|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;filterMovie&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-22000&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;filterSeries&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-102400&quot;&#125;,&#123;&quot;id&quot;:&quot;AnimeGroup&quot;,&quot;name&quot;:&quot;AnimeGroup&quot;,&quot;include&quot;:&quot;7³ACG|VCB-Studio&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Audiences&quot;,&quot;name&quot;:&quot;Audiences&quot;,&quot;include&quot;:&quot;ADE|ADWeb&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HHWEB&quot;,&quot;name&quot;:&quot;HHWEB&quot;,&quot;include&quot;:&quot;HHWEB&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;Crunchyroll&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;Netflix&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;B-Global&quot;,&quot;name&quot;:&quot;B-Global&quot;,&quot;include&quot;:&quot;B-Global|BG&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;HQ&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;DDP&quot;,&quot;include&quot;:&quot;DDP&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;排除杜比无中字&quot;,&quot;name&quot;:&quot;排除杜比无中字&quot;,&quot;exclude&quot;:&quot;无中字|无中文|已切|120fps|120FPS|杜比&quot;&#125;,&#123;&quot;id&quot;:&quot;原盘&quot;,&quot;name&quot;:&quot;原盘&quot;,&quot;include&quot;:&quot;原盘&quot;&#125;]</span><br></pre></td></tr></table></figure>
+<p><code>优先级规则</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !REMUX &amp; !3D &amp; !DOLBY &amp;filerGroup&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &gt; CNSUB &amp; 1080P &amp; BLURAY &gt; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;Audiences&amp;HHWEB&amp;DDP&gt; 4K &amp;Audiences&amp;HHWEB&gt; 1080P &amp;Audiences&amp;HHWEB&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot;AnimeGroup&amp; CNSUB &amp; BLURAY &amp; 1080P &gt;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;B-Global&amp; 4K &amp; CNSUB &gt;Audiences&amp;B-Global&amp; 1080P &amp; CNSUB &gt;Audiences&amp;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;Complete&gt; 4K &amp; WEBDL &amp;HHWEB&gt; WEBDL &amp; 1080P &amp;HHWEB&gt; 4K &amp; WEBDL &amp;Audiences&gt; 1080P &amp;Audiences&amp; WEBDL &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;HQ&gt; 4K &amp; WEBDL &gt; 4K &amp; WEBDL &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; 1080P &amp; WEBDL &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;,&#123;&quot;name&quot;:&quot;排除杜比&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;rule_string&quot;:&quot; !DOLBY &amp; !HDR &amp; !720P &amp;排除杜比无中字&quot;&#125;]</span><br></pre></td></tr></table></figure>
+<p>复制以后直接导入,自定义规则与优先级规则使用方法一样。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c93c9349.webp" alt="10.自定义规则-mp.webp"></p>
+<h3 id="8-订阅设置"><a href="#8-订阅设置" class="headerlink" title="8.订阅设置"></a>8.订阅设置</h3><p>除了设定里面的规则以外还有一种个性化的<code>默认规则</code>设置，可根据<font color="#fbad61">个人爱好</font>修改添加，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c99b3e21.webp" alt="11.订阅规则-mp.webp"></p>
+<h3 id="9-插件"><a href="#9-插件" class="headerlink" title="9.插件"></a>9.插件</h3><p><code>内置丰富的插件</code>也是MP的玩法之一，但很多插件我也看不太懂，也用的很少，<br>比如：站点自动签到、自动辅种、豆瓣想看、二级分类策略等，根据个人的需要安装即可，插件的使用也很简单。</p>
+<hr>
+<p>参考上述方法完成设置，那么恭喜你已经基本掌握了关于MP的使用方法了🎉🎉🎉，<br>这时候可以去推荐、趋势里面订阅自己喜爱的影视剧了，添加订阅以后（点亮小心心💗💗💗）<br>会自动在添加的站点里搜索资源🔎，搜索时间与你添加的站点多少和资源的热门程度都有关系，<br>只需稍等片刻我们想看的影视资源就入库啦🥳🥳🥳</p>
+<hr>
+<p>最最后，不知道是我家的网络原因还是极空间的docker不稳定还是mp的服务不稳定，<br>总之在你部署好以后可能会遇见打不开的情况，或者qb下载器打不开，<br>如果没有进行多余操作一般重启一下应用即可恢复。</p>
+<hr>
+<p>写这篇笔记的目的在于：<br>想让更多我这样的小白用户体验到<font color="#b960d9">优雅的、自动化</font>的影视资源订阅下载💗。<br>网上各种教程虽然也很多，但普遍都需要一些门槛，<br>个别朋友即使幸运的部署成功，<br>但面对后续一系列的操作设置也是<font color="#4bacc6">一脸问号</font>，并不能愉快的使用🙉。<br>我也是在多位朋友的帮助下才完整的执行了整个操作，<br>本篇教程可能是<font color="#6eb957">全网最简单、最贴心</font>的部署教程了，<br>最后希望你也可以享受到观影带来的<font color="#f74db5">纯粹快乐</font>💫💫💫。</p>
+<p>特别感谢<font color="#b960d9">@现充的正义</font>提供全程的技术支持</p>
+<hr>
+<blockquote>
+<p>如果你想了解更多mp的相关知识，请参阅<a href="https://wiki.movie-pilot.org/zh/basic">官方基础指南</a><br>  再放两个我最开始部署的时候参考的两篇博客作为辅助参考<br>  <a href="https://blog.zwbcc.cn/archives/1711674204030">博客一</a>  <a href="https://blog.goalonez.site/blog/MoviePilot%E9%85%8D%E7%BD%AE-Nas%E5%AA%92%E4%BD%93%E5%BA%93%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7.html">博客二</a><br>  也可以加入电报群<a href="https://t.me/MoviePilot_Wiki">wiki</a>获取更多个性化设置</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用极空间部署兰空图床</title>
+    <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为我是<font color="#985fff">比较笨拙</font>的，学东西的时候经常需要很详细的笔记，<br>比如我自己写博客就喜欢插入很多图片，初衷也是为了记录自己的部署、执行过程，<br>以免过了一段时间把当初学的方法全都消耗到了肚子里，<br>配图的话就离不开图床了，免费图床了解过后都不尽如意<br>综合体验下来还是决定来部署一个自己的<font color="#ff3586">图床</font>(lsky-pro)</p>
+<h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>首先在docker仓库搜索<code>halcyonazure/lsky-pro-docker</code> ，选择第一个下载<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66068051ea.webp" alt="0.搜索镜像.webp"></p>
+<ul>
+<li>兰空图床-新版2.0第三方维护的Docker镜像，当前为开源版最新源码构建</li>
+</ul>
+<h3 id="部署安装"><a href="#部署安装" class="headerlink" title="部署安装"></a>部署安装</h3><p>双击本地镜像开始安装，简单配置<font color="#b960d9">路径映射</font>、<font color="#f74db5">修改网络模式</font>并<font color="#3a8cf0">修改下端口</font>即可，参考下图<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66006ad486.webp" alt="1.部署.webp"></p>
+<h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>输入<code>本地ip+端口</code>打开应用（因为在环境里面修改了WEB_PORT，<font color="#ffc000">默认端口是18089</font>），<br>初次打开会有：环境监测-选择数据库-配置管理员密码三步操作。<br>环境监测直接点下一步，数据库类型选择<code>SQlite 3.8.8+</code> 数据库名称和路径留空。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e663d70163e.webp" alt="2.数据库.webp"><br>管理员账号邮箱和密码直接填自己常用的即可，然后点立即安装。<br>程序安装完成以后重新输入本地ip+端口即可打开应用。</p>
+<h3 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h3><p>打开以后直接点右上角登陆，输入管理员账号密码就可以进入后台了<br><font color="#acd51c">初始默认的储存空间只有500M.</font><br>在<code>角色组</code>-编辑-修改上传的文件大小、各种上传限制，控制允许上传的图片类型。<br>在<code>用户管理</code>-编辑-修改用户<font color="#985fff">容量</font>（储存空间），修改密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6676d5893a.webp" alt="3.设置.webp"><br><font color="#3bc1e3">系统设置</font>里面也有一些设置，按需修改即可，<br>整个部署过程和设置还是<font color="#ff3586">很简单</font>的🙇‍♂️<br>由于使用的本地储存，<br>上传的图片被储存在<code>根目录/Docker/Lsky/storage/app/uploads/2025/03</code>下<br>看路径像是根据上传时间来创建的文件夹，<br>自建的优势啊，不担心图片丢失，管理起来也很方便，<br>注意：虽然支持批量上传，但是批量上传很容易出现重复和不匹配的情况，慎重使用，<br>上传以后图片下方会直接出现适合各种平台的神奇代码🎨<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e6d742d9609.webp" alt="5.各种代码.webp"><br>也可以在相册内-右键图片-复制链接-选择相应的神奇代码使用</p>
+<hr>
+<p>值得一提的是：<font color="#985fff">兰空图床</font><code>支持webp格式</code>和<code>创建多个相册</code>。<br>因为有些免费图床有的就不支持webp格式，或者不能创建相册，或者有上传限制·······<br>为什么说这两个值得一提？🧐<br>因为webp格式有<font color="#00b050">诸多优点</font>：</p>
+<ul>
+<li><font color="#f74db5">高压缩比、透明度支持、动画支持。</font></li>
+<li>随之带来的好处就是<font color="#fbad61">减少对带宽的消耗，进而提升网页的加载速度</font>。🏂<br>相册就不必多说了，可以对不同的博文创建对应的相册，<font color="#985fff">方便图片的管理</font>。</li>
+</ul>
+<hr>
+<p>最后分享下<font color="#f99f1e">感想</font>吧😐<br>对于NAS部署图床<font color="#ff3586">令人诟病</font>的一些问题，比如：</p>
+<ul>
+<li>家庭的网络<font color="#985fff">带宽上传较慢</font>，无法满足大量图片的上传和下载需求<br>我家宽带上传是100M，勉强能满足普通的浏览，我主要用来给博客配图，并且所有配图都会转换成webp格式；博客本身也没什么访问量，大部分时间都是我自己的记录浏览，所以不用担心，其实没什么访问量也是决定自建的出发点。😅</li>
+<li>公网ip问题<br>我是联通的宽带，特意申请了公网ip，不影响外网访问。</li>
+<li><font color="#3bc1e3">安全与隐私</font>问题<br>自有域名配合Lucky反代也一定程度避免了直接暴露nas的ip地址和端口的风险</li>
+<li>图片版权问题<br>普通人也接触不到涉敏的图片素材吧，有的话我一定第一时间删除。</li>
+<li>最后就是图床的<em>稳定性</em>了<br>极空间本身没有大问题，至于Docker应用的稳定性有待在未来的日常使用中慢慢检验。</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>网络上虽然有各式各样的图床可供选择使用，但还是要结合自身的实际情况，实际用途，<br>不要被网上的对各种图床的评价扰乱自己的想法，理清楚自己的需求，<br>不管是免费、付费还是自建，最合适自己的方式才是最棒的方式，<br><font color="#6eb957">希望这个自建图床能够撑一段时间吧</font>😐<br>还是有点担心</p>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修复Github与Vercel数据不同步</title>
+    <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
+<hr>
+<h4 id="解决方法（主要来自于ai的帮助）"><a href="#解决方法（主要来自于ai的帮助）" class="headerlink" title="解决方法（主要来自于ai的帮助）"></a>解决方法（主要来自于ai的帮助）</h4><p>你的 Hexo 网站已经成功部署到 GitHub Pages。如果网站没有正确更新，可能是缓存问题或 GitHub Pages 的更新延迟。你可以尝试清除浏览器缓存后再次访问，或者等待几分钟后刷新页面。</p>
+<p>那为什么vercel没有同步更新数据呢？<br>根据你的问题和搜索结果，Vercel 没有同步更新数据可能有以下几种原因及解决方法：</p>
+<ol>
+<li>Vercel 项目未正确关联 GitHub 仓库<br>如果 Vercel 项目没有正确关联到 GitHub 仓库，或者关联的仓库信息有误，可能会导致无法自动同步更新。</li>
+</ol>
+<p>解决方法：<br>登录到 Vercel 控制台，进入项目设置。<br>检查项目的 Git 部分是否正确关联到你的 GitHub 仓库。<br>如果关联错误，点击“Reconnect”重新连接 GitHub 仓库[^1^]。</p>
+<ol start="2">
+<li>GitHub 仓库的上游同步未启用<br>如果 GitHub 仓库的上游同步未启用，即使你在本地更新了代码，Vercel 也无法获取到最新的代码。</li>
+</ol>
+<p>解决方法：<br>在 GitHub 上，进入你的 Fork 仓库。<br>点击“Sync fork”按钮，手动同步上游仓库的最新代码[^3^]。<br>如果自动同步失败，可以手动点击“Update branch”按钮[^4^]。</p>
+<ol start="3">
+<li>Vercel 的自动部署触发条件未满足<br>Vercel 的自动部署通常依赖于 GitHub 的 Webhook 通知。如果 Webhook 没有正确配置，或者没有触发，Vercel 将不会自动部署。</li>
+</ol>
+<p>解决方法：<br>确保 GitHub 仓库的 Webhook 已正确设置，指向 Vercel 的 Webhook URL。<br>在 Vercel 项目设置中，检查“Build &amp; Development Settings”中的“Triggers”部分，确保自动部署已启用[^3^]。</p>
+<ol start="4">
+<li>Vercel 部署过程中出现错误<br>即使代码已经推送到 GitHub，但如果 Vercel 在部署过程中遇到错误，也可能导致更新失败。</li>
+</ol>
+<p>解决方法：<br>查看 Vercel 的部署日志，了解具体的错误信息[^2^]。<br>根据错误信息修复问题，例如缺少环境变量、依赖冲突等。<br>修复后，手动重新部署项目[^2^]。</p>
+<ol start="5">
+<li>Vercel 缓存问题<br>Vercel 的缓存机制可能会导致更新后的代码没有立即生效。</li>
+</ol>
+<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Settings”部分。<br>清除缓存，然后重新部署[^3^]。</p>
+<ol start="6">
+<li>GitHub Actions 的 Upstream Sync Action 未正确运行<br>如果你使用了 GitHub Actions 来同步上游代码，但 Action 未正确运行，也会导致更新失败。</li>
+</ol>
+<p>解决方法：<br>在 GitHub 仓库的 Actions 页面，检查“Upstream Sync Action”是否成功运行[^4^]。<br>如果失败，手动重新运行该 Action[^4^]。<br>7. 重新部署项目<br>如果上述方法都无法解决问题，可以尝试重新部署项目：</p>
+<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Deployments”部分。<br>点击“Redeploy”按钮，手动重新部署最新的代码[^3^]。</p>
+<p>总结<br>Vercel 未同步更新数据可能是由于项目未正确关联 GitHub 仓库、上游同步未启用、自动部署触发条件未满足、部署过程中出现错误、缓存问题或 GitHub Actions 未正确运行等原因导致的。你可以按照上述方法逐一排查并解决问题。如果问题仍然存在，建议查看 Vercel 的官方文档或联系 Vercel 的技术支持获取帮助。</p>
+<hr>
+<p>以上是ai给出的问题分析，<br>根据我的实际情况，我发现很可能是webhook的问题，因为这里的配置是空的。</p>
+<hr>
+<p>现在仓库的webhook是空的，我该如何设置？</p>
+<p>要将 GitHub 仓库的 Webhook 配置为与 Vercel 同步更新，你需要在 GitHub 仓库中添加一个 Webhook，使其在代码推送时通知 Vercel 触发部署。以下是详细的步骤：</p>
+<p>步骤 1：获取 Vercel 的 Webhook URL<br>登录到 Vercel 控制台。<br>选择你的项目。<br>在项目设置中，找到 “Git” 或 “Webhooks” 部分。<br>点击 “Add Webhook” 或 “Create Hook” 按钮。<br>填写以下信息：<br>Hook Name：自定义名称，例如 github-sync。<br>Branch：选择你希望触发部署的分支，例如 main。<br>点击 “Create Hook” 按钮。<br>创建完成后，Vercel 会生成一个 Webhook URL，复制这个 URL。</p>
+<p>步骤 2：在 GitHub 仓库中添加 Webhook<br>登录到 GitHub，进入你的仓库。<br>点击仓库页面右上角的 “Settings”（设置）。<br>在左侧菜单中，点击 “Webhooks”。<br>点击 “Add webhook” 按钮。<br>在弹出的表单中填写以下信息：<br>Payload URL：粘贴你在 Vercel 中复制的 Webhook URL。<br>Content type：选择 application&#x2F;json。<br>Secret：（可选）如果你在 Vercel 中设置了 Webhook 的密钥，这里需要填入相同的密钥。<br>Which events would you like to trigger this webhook?：选择 “Just the push event” 或 “Let me select individual events”，并确保勾选了 “Push events”。<br>Active：确保此选项被勾选。<br>点击 “Add webhook” 按钮。</p>
+<p>步骤 3：验证 Webhook 是否生效<br>在 GitHub 的 Webhook 设置页面，你会看到刚刚添加的 Webhook。<br>GitHub 会自动发送一个 ping 事件到 Webhook URL，以验证连接是否成功。<br>如果 Webhook 配置正确，Vercel 应该会收到这个 ping 事件，并在控制台中显示相关信息。<br>你也可以在 Vercel 的 Webhook 设置页面查看 Webhook 的状态和日志。</p>
+<hr>
+<p>通过以上设置恢复同步啦</p>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<hr>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
