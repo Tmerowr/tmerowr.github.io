@@ -95,10 +95,13 @@
   <entry>
     <title>Twikoo静态网站评论系统</title>
     <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以自动识别昵称，挺方便的。</p>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
 <p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
-<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以永久使用500MB的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-</p>
-<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择vercel，毕竟免费嘛🥳</p>
+<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
+<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
+<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
+
 <h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
 ]]></content>
       <categories>
@@ -107,24 +110,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/03/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>使用极空间部署MP</title>
@@ -213,6 +198,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<hr>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修复Github与Vercel数据不同步</title>
     <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
@@ -256,24 +277,6 @@
 <hr>
 <p>通过以上设置恢复同步啦</p>
 <p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
-<hr>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
 ]]></content>
       <categories>
         <category>Blog</category>
