@@ -112,6 +112,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>使用极空间部署MP</title>
     <url>/2025/03/19/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2MP/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
@@ -198,42 +216,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2025/03/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
-<hr>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>修复Github与Vercel数据不同步</title>
     <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
@@ -277,6 +259,108 @@
 <hr>
 <p>通过以上设置恢复同步啦</p>
 <p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>好玩的PT常用词汇</title>
+    <url>/2025/04/02/%E5%A5%BD%E7%8E%A9%E7%9A%84PT%E5%B8%B8%E7%94%A8%E8%AF%8D%E6%B1%87/</url>
+    <content><![CDATA[<p>好玩的pt常用词汇</p>
+<h2 id="贴吧篇"><a href="#贴吧篇" class="headerlink" title="贴吧篇"></a>贴吧篇</h2><table>
+<thead>
+<tr>
+<th align="center">名 称</th>
+<th align="left">释  义</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PT吧</td>
+<td align="left">一个交流PT的社区，具有公开性</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">八桂</td>
+<td align="left">即 吧规</td>
+<td>谐音梗无处不在啊</td>
+</tr>
+<tr>
+<td align="center">八级求邀</td>
+<td align="left">指在本吧达到8级才能开贴邀请（回帖无限制）</td>
+<td>很久都没玩过贴吧了······</td>
+</tr>
+<tr>
+<td align="center">绑定</td>
+<td align="left">以前是帮忙顶帖的意思，现在常用于水贴</td>
+<td>以前水贴我还有专门的小尾巴</td>
+</tr>
+<tr>
+<td align="center">不可说</td>
+<td align="left">因为PT吧具有公开性，一些PT站点不愿在公开场合被提及，故吧友将其称为不可说</td>
+<td>不可说不可说</td>
+</tr>
+<tr>
+<td align="center">大佬</td>
+<td align="left">吧友之间互相的称呼，没有任何意思</td>
+<td>都是大佬</td>
+</tr>
+<tr>
+<td align="center">吴昊</td>
+<td align="left">没有账号的意思，常和绑定连用</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="邀请篇"><a href="#邀请篇" class="headerlink" title="邀请篇"></a>邀请篇</h2><table>
+<thead>
+<tr>
+<th>名 称</th>
+<th>释  义</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>船票</td>
+<td>岛（一个站点）的邀请</td>
+<td></td>
+</tr>
+<tr>
+<td>官窑</td>
+<td>官方开始的邀请，一般在PT站内的邀请去参加能找到</td>
+<td></td>
+</tr>
+<tr>
+<td>后宫</td>
+<td>你的所有下家组成的后宫</td>
+<td></td>
+</tr>
+<tr>
+<td>砍树</td>
+<td>树根和树枝其中一人违规而ban掉整颗邀请树的账号</td>
+<td>看过到这个，违规后果很严重</td>
+</tr>
+<tr>
+<td>连坐</td>
+<td>一个人受到处罚，他的上家或下家受到牵连</td>
+<td>珍惜自己的邀请吧</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<hr>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
 ]]></content>
       <categories>
         <category>Blog</category>
