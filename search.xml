@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Twikoo静态网站评论系统</title>
+    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
+<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
+<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
+<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
+<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
+
+<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo基础使用介绍</title>
     <url>/2025/03/19/Hexo%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<blockquote>
@@ -93,25 +112,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Twikoo静态网站评论系统</title>
-    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
-<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
-<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
-<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
-<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
-
-<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2025/03/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -180,42 +180,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用极空间部署兰空图床</title>
-    <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为我是<font color="#985fff">比较笨拙</font>的，学东西的时候经常需要很详细的笔记，<br>比如我自己写博客就喜欢插入很多图片，初衷也是为了记录自己的部署、执行过程，<br>以免过了一段时间把当初学的方法全都消耗到了肚子里，<br>配图的话就离不开图床了，免费图床了解过后都不尽如意<br>综合体验下来还是决定来部署一个自己的<font color="#ff3586">图床</font>(lsky-pro)</p>
-<h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>首先在docker仓库搜索<code>halcyonazure/lsky-pro-docker</code> ，选择第一个下载<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66068051ea.webp" alt="0.搜索镜像.webp"></p>
-<ul>
-<li>兰空图床-新版2.0第三方维护的Docker镜像，当前为开源版最新源码构建</li>
-</ul>
-<h3 id="部署安装"><a href="#部署安装" class="headerlink" title="部署安装"></a>部署安装</h3><p>双击本地镜像开始安装，简单配置<font color="#b960d9">路径映射</font>、<font color="#f74db5">修改网络模式</font>并<font color="#3a8cf0">修改下端口</font>即可，参考下图<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66006ad486.webp" alt="1.部署.webp"></p>
-<h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>输入<code>本地ip+端口</code>打开应用（因为在环境里面修改了WEB_PORT，<font color="#ffc000">默认端口是18089</font>），<br>初次打开会有：环境监测-选择数据库-配置管理员密码三步操作。<br>环境监测直接点下一步，数据库类型选择<code>SQlite 3.8.8+</code> 数据库名称和路径留空。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e663d70163e.webp" alt="2.数据库.webp"><br>管理员账号邮箱和密码直接填自己常用的即可，然后点立即安装。<br>程序安装完成以后重新输入本地ip+端口即可打开应用。</p>
-<h3 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h3><p>打开以后直接点右上角登陆，输入管理员账号密码就可以进入后台了<br><font color="#acd51c">初始默认的储存空间只有500M.</font><br>在<code>角色组</code>-编辑-修改上传的文件大小、各种上传限制，控制允许上传的图片类型。<br>在<code>用户管理</code>-编辑-修改用户<font color="#985fff">容量</font>（储存空间），修改密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6676d5893a.webp" alt="3.设置.webp"><br><font color="#3bc1e3">系统设置</font>里面也有一些设置，按需修改即可，<br>整个部署过程和设置还是<font color="#ff3586">很简单</font>的🙇‍♂️<br>由于使用的本地储存，<br>上传的图片被储存在<code>根目录/Docker/Lsky/storage/app/uploads/2025/03</code>下<br>看路径像是根据上传时间来创建的文件夹，<br>自建的优势啊，不担心图片丢失，管理起来也很方便，<br>注意：虽然支持批量上传，但是批量上传很容易出现重复和不匹配的情况，慎重使用，<br>上传以后图片下方会直接出现适合各种平台的神奇代码🎨<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e6d742d9609.webp" alt="5.各种代码.webp"><br>也可以在相册内-右键图片-复制链接-选择相应的神奇代码使用</p>
-<hr>
-<p>值得一提的是：<font color="#985fff">兰空图床</font><code>支持webp格式</code>和<code>创建多个相册</code>。<br>因为有些免费图床有的就不支持webp格式，或者不能创建相册，或者有上传限制·······<br>为什么说这两个值得一提？🧐<br>因为webp格式有<font color="#00b050">诸多优点</font>：</p>
-<ul>
-<li><font color="#f74db5">高压缩比、透明度支持、动画支持。</font></li>
-<li>随之带来的好处就是<font color="#fbad61">减少对带宽的消耗，进而提升网页的加载速度</font>。🏂<br>相册就不必多说了，可以对不同的博文创建对应的相册，<font color="#985fff">方便图片的管理</font>。</li>
-</ul>
-<hr>
-<p>最后分享下<font color="#f99f1e">感想</font>吧😐<br>对于NAS部署图床<font color="#ff3586">令人诟病</font>的一些问题，比如：</p>
-<ul>
-<li>家庭的网络<font color="#985fff">带宽上传较慢</font>，无法满足大量图片的上传和下载需求<br>我家宽带上传是100M，勉强能满足普通的浏览，我主要用来给博客配图，并且所有配图都会转换成webp格式；博客本身也没什么访问量，大部分时间都是我自己的记录浏览，所以不用担心，其实没什么访问量也是决定自建的出发点。😅</li>
-<li>公网ip问题<br>我是联通的宽带，特意申请了公网ip，不影响外网访问。</li>
-<li><font color="#3bc1e3">安全与隐私</font>问题<br>自有域名配合Lucky反代也一定程度避免了直接暴露nas的ip地址和端口的风险</li>
-<li>图片版权问题<br>普通人也接触不到涉敏的图片素材吧，有的话我一定第一时间删除。</li>
-<li>最后就是图床的<em>稳定性</em>了<br>极空间本身没有大问题，至于Docker应用的稳定性有待在未来的日常使用中慢慢检验。</li>
-</ul>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>网络上虽然有各式各样的图床可供选择使用，但还是要结合自身的实际情况，实际用途，<br>不要被网上的对各种图床的评价扰乱自己的想法，理清楚自己的需求，<br>不管是免费、付费还是自建，最合适自己的方式才是最棒的方式，<br><font color="#6eb957">希望这个自建图床能够撑一段时间吧</font>😐<br>还是有点担心</p>
-]]></content>
-      <categories>
-        <category>Nas</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>修复Github与Vercel数据不同步</title>
     <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
@@ -268,9 +232,66 @@
       </tags>
   </entry>
   <entry>
+    <title>使用极空间部署兰空图床</title>
+    <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为我是<font color="#985fff">比较笨拙</font>的，学东西的时候经常需要很详细的笔记，<br>比如我自己写博客就喜欢插入很多图片，初衷也是为了记录自己的部署、执行过程，<br>以免过了一段时间把当初学的方法全都消耗到了肚子里，<br>配图的话就离不开图床了，免费图床了解过后都不尽如意<br>综合体验下来还是决定来部署一个自己的<font color="#ff3586">图床</font>(lsky-pro)</p>
+<h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>首先在docker仓库搜索<code>halcyonazure/lsky-pro-docker</code> ，选择第一个下载<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66068051ea.webp" alt="0.搜索镜像.webp"></p>
+<ul>
+<li>兰空图床-新版2.0第三方维护的Docker镜像，当前为开源版最新源码构建</li>
+</ul>
+<h3 id="部署安装"><a href="#部署安装" class="headerlink" title="部署安装"></a>部署安装</h3><p>双击本地镜像开始安装，简单配置<font color="#b960d9">路径映射</font>、<font color="#f74db5">修改网络模式</font>并<font color="#3a8cf0">修改下端口</font>即可，参考下图<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66006ad486.webp" alt="1.部署.webp"></p>
+<h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>输入<code>本地ip+端口</code>打开应用（因为在环境里面修改了WEB_PORT，<font color="#ffc000">默认端口是18089</font>），<br>初次打开会有：环境监测-选择数据库-配置管理员密码三步操作。<br>环境监测直接点下一步，数据库类型选择<code>SQlite 3.8.8+</code> 数据库名称和路径留空。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e663d70163e.webp" alt="2.数据库.webp"><br>管理员账号邮箱和密码直接填自己常用的即可，然后点立即安装。<br>程序安装完成以后重新输入本地ip+端口即可打开应用。</p>
+<h3 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h3><p>打开以后直接点右上角登陆，输入管理员账号密码就可以进入后台了<br><font color="#acd51c">初始默认的储存空间只有500M.</font><br>在<code>角色组</code>-编辑-修改上传的文件大小、各种上传限制，控制允许上传的图片类型。<br>在<code>用户管理</code>-编辑-修改用户<font color="#985fff">容量</font>（储存空间），修改密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6676d5893a.webp" alt="3.设置.webp"><br><font color="#3bc1e3">系统设置</font>里面也有一些设置，按需修改即可，<br>整个部署过程和设置还是<font color="#ff3586">很简单</font>的🙇‍♂️<br>由于使用的本地储存，<br>上传的图片被储存在<code>根目录/Docker/Lsky/storage/app/uploads/2025/03</code>下<br>看路径像是根据上传时间来创建的文件夹，<br>自建的优势啊，不担心图片丢失，管理起来也很方便，<br>注意：虽然支持批量上传，但是批量上传很容易出现重复和不匹配的情况，慎重使用，<br>上传以后图片下方会直接出现适合各种平台的神奇代码🎨<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e6d742d9609.webp" alt="5.各种代码.webp"><br>也可以在相册内-右键图片-复制链接-选择相应的神奇代码使用</p>
+<hr>
+<p>值得一提的是：<font color="#985fff">兰空图床</font><code>支持webp格式</code>和<code>创建多个相册</code>。<br>因为有些免费图床有的就不支持webp格式，或者不能创建相册，或者有上传限制·······<br>为什么说这两个值得一提？🧐<br>因为webp格式有<font color="#00b050">诸多优点</font>：</p>
+<ul>
+<li><font color="#f74db5">高压缩比、透明度支持、动画支持。</font></li>
+<li>随之带来的好处就是<font color="#fbad61">减少对带宽的消耗，进而提升网页的加载速度</font>。🏂<br>相册就不必多说了，可以对不同的博文创建对应的相册，<font color="#985fff">方便图片的管理</font>。</li>
+</ul>
+<hr>
+<p>最后分享下<font color="#f99f1e">感想</font>吧😐<br>对于NAS部署图床<font color="#ff3586">令人诟病</font>的一些问题，比如：</p>
+<ul>
+<li>家庭的网络<font color="#985fff">带宽上传较慢</font>，无法满足大量图片的上传和下载需求<br>我家宽带上传是100M，勉强能满足普通的浏览，我主要用来给博客配图，并且所有配图都会转换成webp格式；博客本身也没什么访问量，大部分时间都是我自己的记录浏览，所以不用担心，其实没什么访问量也是决定自建的出发点。😅</li>
+<li>公网ip问题<br>我是联通的宽带，特意申请了公网ip，不影响外网访问。</li>
+<li><font color="#3bc1e3">安全与隐私</font>问题<br>自有域名配合Lucky反代也一定程度避免了直接暴露nas的ip地址和端口的风险</li>
+<li>图片版权问题<br>普通人也接触不到涉敏的图片素材吧，有的话我一定第一时间删除。</li>
+<li>最后就是图床的<em>稳定性</em>了<br>极空间本身没有大问题，至于Docker应用的稳定性有待在未来的日常使用中慢慢检验。</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>网络上虽然有各式各样的图床可供选择使用，但还是要结合自身的实际情况，实际用途，<br>不要被网上的对各种图床的评价扰乱自己的想法，理清楚自己的需求，<br>不管是免费、付费还是自建，最合适自己的方式才是最棒的方式，<br><font color="#6eb957">希望这个自建图床能够撑一段时间吧</font>😐<br>还是有点担心</p>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<hr>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>好玩的PT常用词汇</title>
     <url>/2025/04/02/%E5%A5%BD%E7%8E%A9%E7%9A%84PT%E5%B8%B8%E7%94%A8%E8%AF%8D%E6%B1%87/</url>
-    <content><![CDATA[<p>好玩的pt常用词汇</p>
+    <content><![CDATA[<blockquote>
+<p>玩<code>pt</code>也好久了，经常看到好多词汇和标签，根据网络资料对一些名词做个梳理总结，<br>学到了很多有趣的词汇，pt圈还挺有意思的🥳</p>
+</blockquote>
+<hr>
 <h2 id="贴吧篇"><a href="#贴吧篇" class="headerlink" title="贴吧篇"></a>贴吧篇</h2><table>
 <thead>
 <tr>
@@ -318,55 +339,444 @@
 <h2 id="邀请篇"><a href="#邀请篇" class="headerlink" title="邀请篇"></a>邀请篇</h2><table>
 <thead>
 <tr>
-<th>名 称</th>
+<th align="center">名 称</th>
 <th>释  义</th>
 <th></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>船票</td>
+<td align="center">船票</td>
 <td>岛（一个站点）的邀请</td>
 <td></td>
 </tr>
 <tr>
-<td>官窑</td>
+<td align="center">药</td>
+<td>通“邀”，邀请，💊</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">求邀</td>
+<td>希望得到邀请</td>
+<td>论坛经常有个人邀请和官方邀请</td>
+</tr>
+<tr>
+<td align="center">官窑</td>
 <td>官方开始的邀请，一般在PT站内的邀请去参加能找到</td>
 <td></td>
 </tr>
 <tr>
-<td>后宫</td>
+<td align="center">后宫</td>
 <td>你的所有下家组成的后宫</td>
 <td></td>
 </tr>
 <tr>
-<td>砍树</td>
+<td align="center">砍树</td>
 <td>树根和树枝其中一人违规而ban掉整颗邀请树的账号</td>
 <td>看过到这个，违规后果很严重</td>
 </tr>
 <tr>
-<td>连坐</td>
+<td align="center">连坐</td>
 <td>一个人受到处罚，他的上家或下家受到牵连</td>
 <td>珍惜自己的邀请吧</td>
 </tr>
+<tr>
+<td align="center">契约</td>
+<td>发邀时的一种约定，常见的形式有x个月内保种yT、x个月内时魔达到z等。下家未达成契约，上家一般可在一定时间内申ban</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">树根</td>
+<td>通过开注、官窑、捐入等方式进站的人叫树根</td>
+<td>每逢节假日、周年活动经常有开注的站点</td>
+</tr>
+<tr>
+<td align="center">树枝</td>
+<td>树根发展的下家、下家的下家等叫树枝</td>
+<td>枝繁叶茂</td>
+</tr>
+<tr>
+<td align="center">速通</td>
+<td>原指迅速毕业获集齐所需PT站点，现在也指注册后迅速玩死（贬义）</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">蒸馒头</td>
+<td>攒魔力发送馒头（馒头站）邀请的过程</td>
+<td>我蒸了有一个馒头了</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
-]]></content>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
+<h2 id="站点篇"><a href="#站点篇" class="headerlink" title="站点篇"></a>站点篇</h2><table>
+<thead>
+<tr>
+<th align="center">名 称</th>
+<th>释  义</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PT精神</td>
+<td>我为人人，人人为我</td>
+<td>挺好的</td>
+</tr>
+<tr>
+<td align="center">开注</td>
+<td>开放注册</td>
+<td>多多留意节假日、特殊日期</td>
+</tr>
+<tr>
+<td align="center">新人考核</td>
+<td>网站对新注册会员的考试，未通过考核将被ban号，常见的考核指标有上传量、下载量、做种体积、平均做种时间</td>
+<td>一般考核都挺简单的，很好通过</td>
+</tr>
+<tr>
+<td align="center">UID</td>
+<td>你的数字id，你的个人主页，网址最后面的数字即为你的UID</td>
+<td>大多数网站皆如此</td>
+</tr>
+<tr>
+<td align="center">VIP</td>
+<td>VIP一般享有免分享率考核的特权，部分站点还有邀请权限，一般可通过捐赠或者加入工作组获得</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">权贵</td>
+<td>站点的管理人员和vip</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">魔力</td>
+<td>茉莉，pt站常见的一种保种奖励，通常可以用来兑换上传量、购买勋章、发送邀请等，有些站也称为“鲨币”</td>
+<td>不同特色站叫法千奇百怪</td>
+</tr>
+<tr>
+<td align="center">PT</td>
+<td>Ptivate tracker,一种私密的种子追踪器，通常不直接对外开放，，而通过邀请进站</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">站免</td>
+<td>全站所有种子free</td>
+<td>关注节假日等特殊事时间，经常会有站免</td>
+</tr>
+<tr>
+<td align="center">ban号</td>
+<td>禁用账号，长时间未登录、吸血、作弊、交易</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">H&amp;R</td>
+<td>下完就跑，为避免这种行为，有些站点会设置在下载x%后必须在y天内做种z小时，或者分享率达到1.0，不达标一定次数后将封号</td>
+<td>还是喜欢分享率这种考核多一些</td>
+</tr>
+<tr>
+<td align="center">9kg</td>
+<td>你问我9kg是什么，我只能回答你一句无可奉告</td>
+<td>18斤，应该是最好玩的一个词了</td>
+</tr>
+<tr>
+<td align="center">封存账号</td>
+<td>封存账号后，网站的一些功能被限制，避免一些网站因长时间未登录而被ban</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">刷流</td>
+<td>刷上传量</td>
+<td>维持一个良好的分享率</td>
+</tr>
+<tr>
+<td align="center">流控</td>
+<td>流量控制，有些站点短时间内流量过大会被冻结下载权限、警告甚至ban号，故需要流量控制。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">射魔</td>
+<td>在魔力使用界面对他人赠送魔力</td>
+<td>开注时首页经常有求射魔的</td>
+</tr>
+<tr>
+<td align="center">时魔</td>
+<td>石墨，每小时获得的魔力</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">tracker</td>
+<td>用于从服务器获取链接同一种子的其他用户，以及想服务器汇报数据</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">RSS</td>
+<td>定时自动获取种子，可用于追剧、刷流等</td>
+<td>folo，万物皆可rss</td>
+</tr>
+<tr>
+<td align="center">passkey</td>
+<td>种子的密钥，用于识别不同用户，一般在下载链接和tracker中包含，万万不可泄漏</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">电子书战士</td>
+<td>做种很多电子书、换取魔力数量加成的（部分站点）pt用户</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">图床</td>
+<td>托管图片的网站，站点一般不允许直接上传图片，而需要图床外链的方式显示图片</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">作弊</td>
+<td>严重违规行为，包括做假种、汇报虚假数据、添加其他站tracker、内网互传等</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="种子和资源篇"><a href="#种子和资源篇" class="headerlink" title="种子和资源篇"></a>种子和资源篇</h2><table>
+<thead>
+<tr>
+<th align="center">名 称</th>
+<th>释  义</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">free</td>
+<td>上传量按1倍计算，不计下载量</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">2xFree</td>
+<td>上传量按2倍计算，不计下载量</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">30%</td>
+<td>上传量按1倍计算，下载量按30%计算</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">50%</td>
+<td>上传量按1倍计算，下载量按50%计算</td>
+<td>这类标签有很多，大致意思相同</td>
+</tr>
+<tr>
+<td align="center">发种</td>
+<td>把本地文件制成种子，或把其他网站的种子发布出来，多数站点发种人可获得双倍上传量，并不受盒子规则限制</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">保种</td>
+<td>也叫做种，指下载完成后给其他人上传，种子下载完成后会自动进入做种状态</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">出种</td>
+<td>除发种人外其他人完成了下载，即做种人人数≥2</td>
+<td>出种人越多，下载越快😆</td>
+</tr>
+<tr>
+<td align="center">大包</td>
+<td>体积很大的种子，通常包含多种资源</td>
+<td>大包可以很轻松的刷流</td>
+</tr>
+<tr>
+<td align="center">辅种</td>
+<td>一个种子文件被多站转载，通过辅种可以一个文件在多个站进行上传，通常使用IYUU自动辅种</td>
+<td>mp有插件，简单设置即可完成辅种</td>
+</tr>
+<tr>
+<td align="center">孤种</td>
+<td>只有一个人做种的种子</td>
+<td>挺可怜的，下载也巨慢无比</td>
+</tr>
+<tr>
+<td align="center">禁转</td>
+<td>有些站叫独占，该种子为源站独家，不允许转载到其他站</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">校验</td>
+<td>检查你的本地文件是否与种子相符</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">dupe</td>
+<td>违反了网站的重复规则的种子</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">原盘</td>
+<td>从原生碟里面拷贝出来的文件，常见的有蓝光（BluRay）原盘，UHD蓝光原盘，DVD原盘</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">DIY原盘</td>
+<td>对原盘加入特效字幕，增加音轨获精简音轨等操作</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">Encode</td>
+<td>压制，把原文件压缩成较小文件，有BDRip、WEBRip、HDTVRip等</td>
+<td>各种格式，也是五花八门的</td>
+</tr>
+</tbody></table>
+<h2 id="设备、工具、技术篇"><a href="#设备、工具、技术篇" class="headerlink" title="设备、工具、技术篇"></a>设备、工具、技术篇</h2><table>
+<thead>
+<tr>
+<th align="center">名 称</th>
+<th>释  义</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">io</td>
+<td>指硬盘读写能力，当io跟不上上传&#x2F;下载速度时会引起卡io。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">NAS</td>
+<td>个人本地存储设备，家庭化服务器，可实现多种功能。常见品牌有群辉、威联通、极空间等。也可以自组。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">刮削</td>
+<td>也叫搜刮，指用tmm等工具从tmdb等网站获取片名、海报等元数据，在emby等软件中呈现海报墙。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">BitCome</td>
+<td>一种BT客户端，很多站点不支持使用。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">qb</td>
+<td>qBittorrent，PT常用的下载器，通常用于刷流。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">tr</td>
+<td>Transmission，PT常用的下载器，因其占用资源小通常用于保种。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">ut</td>
+<td>uTorrent&#x2F;μTorrent，PT曾经常用的下载器，常用版本为2.0.4和2.2.1。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">ART</td>
+<td>Auto-remove-torrents，一种经典的自动删种工具。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">vt</td>
+<td>Vertex，一种工具，通常用于RSS刷流、追剧、刮削等。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">PTPP</td>
+<td>PT助手Plus，一个浏览器插件，可在Microsoft Edge 加载项找到。用于多站一键搜索、一键访问网站、批量推送种子到下载器、生成数据图等。</td>
+<td>好用</td>
+</tr>
+<tr>
+<td align="center">IYUU Plus</td>
+<td>一种辅助工具，通常用于自动辅种、种子转移等。</td>
+<td>好用</td>
+</tr>
+<tr>
+<td align="center">Nastool</td>
+<td>一种工具，通常用于RSS刷流、追剧、刮削等。目前已停止更新。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">auto_<br>feed</td>
+<td>一个个篡改猴脚本，可以用于一键转种。<br></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">easy-upload</td>
+<td>一个篡改猴脚本，可以用于一键转种。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">Emby</td>
+<td>一种本地影音工具，具有串流播放、海报墙等功能。部分功能收费。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">Jellyfin</td>
+<td>一种本地影音工具，具有串流播放、海报墙等功能。开源免费。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">Plex</td>
+<td>一种本地影音工具，具有串流播放、海报墙等功能。部分功能收费。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">FlexGet</td>
+<td>一种经典的增强型RSS获取工具，具有过滤RSS到的种子、抓取免费种子等功能。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">CF</td>
+<td>CloudFlare，一个CDN提供商，多数站点套了CF，即由CloudFlare提供CDN服务。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">cookie</td>
+<td>用于存储你的登录信息等。可用PTPP备份。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">Docker</td>
+<td>一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">hosts</td>
+<td>当用户在浏览器中输入一个需要登录的网址时，系统会首先自动从Hosts文件中寻找对应的IP地址，一旦找到，系统会立即打开对应网页，如果没有找到，则系统会再将网址提交DNS域名解析服务器进行IP地址的解析。一般通过修改hosts来解决站点上不去、tracker连不上的问题。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">UPnP</td>
+<td>自动设置端口转发。如果UPnP使能，不用再手动设置端口转发。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">内网穿透</td>
+<td>内网穿透是一种让内网的数据可以被外网访问的技术。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">公网IP</td>
+<td>WAN口获取到的IP与网站显示的IP一致即公网IP。就家宽来说，IPv6通常默认为公网IP，IPv4一般不提供公网IP。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">光猫桥接</td>
+<td>光猫只承担光电转化作用，由路由器拨号。</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">黑群晖</td>
+<td>在非群晖nas上使用群晖系统，类似于黑苹果。</td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>大概就这么多吧，不知道有没有100个，<br>关于视频的不同格式也是一个很系统的框架，有空再查查资料<br>对常见的视频、音频格式也做个梳理总结</p>
+</blockquote>
 <hr>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
 ]]></content>
       <categories>
-        <category>Blog</category>
+        <category>Nas</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>PT</tag>
       </tags>
   </entry>
 </search>
