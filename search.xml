@@ -96,22 +96,25 @@
     <title>LM Studio本地部署蒸馏化模型</title>
     <url>/2025/04/20/Studio%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E8%92%B8%E9%A6%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>AI发展迅速，都说我们目前也身处于AI时代🌏<br>人工智能（AI）技术正以前所未有的速度改变着我们的生活和工作方式🙇‍♂️<br>本地部署模型呢，可以一定程度保证我们数据隐私和安全🙅‍♂️<br>还可以摆脱网络限制，提高数据处理的速度💫<br>根据我们自己的设备可以选择不同参数的模型，比较灵活👍</p>
+<p>AI发展迅速，都说我们目前正身处于AI时代🌏<br>人工智能（AI）技术正以前所未有的速度改变着我们的生活和工作方式🙇‍♂️<br>本地部署模型呢，可以一定程度保证我们数据隐私和安全🙅‍♂️<br>还可以摆脱网络限制，提高数据处理的速度💫<br>结合我们自己的设备性能可以选择不同参数的模型，比较灵活👍</p>
 </blockquote>
-<p>开始部署之前首先需要说明，由于本地硬件设备性能存在局限🤦‍♀️，我们大部分用户可能只能部署简单4b或8b模型，这些模型的实际表现或许达不到部分用户的预期，对于设备条件不够高的用户不妨直接选择现成的云端服务也是不错的选择，不必执着于本地部署。🦄</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>首先下载LM Studio,打开LM Studio的官网<a href="https://lmstudio.ai/">点我</a>，目前支持Win、Linux和Mac的M系列，英特尔系列的话了解下Ollama进行部署吧。<br>插入下载图片<br>安装步骤一直点下一步即可，默认英文，可以点右下角小齿轮，在语言选项内选择“简体中文”<br>插入图片</p>
-<h3 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h3><p>由于huggingface.co在国内没办法直接访问，直接在LMStudio下载模型，<br>大概率会遇到这种情况：Model details error:fetchf ailed<br>可以前往huggingface.co的国内镜像hf-mirror.com进行模型下载，<br>我们先下载一个DeepSeek-R1-Distill-Qwen-7B模型玩玩，<br>下载地址：<a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">7B模型</a><br><a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main</a><br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/6805294638176.webp" alt="4.模型列表 拷贝.webp"><br>打开后可以看到4个gguf模型文件，在LLM语言模型领域，Q3、Q4、Q6、Q8代表着不同量化位数的量化模型，及分别将模型参数以3位、4位、6位、8位来存储和计算，模型量化类型越大，意味着有更高的精度，但也会带来更大的内存占用以及更大的计算成本。</p>
+<p>开始部署之前首先需要说明，由于本地硬件设备性能<font color="#b960d9">存在局限</font>🤦‍♀️，我们大部分用户可能只能部署简单4b或8b模型，这些模型的实际表现或许达不到部分用户的预期，对于设备条件不够高的用户不妨直接选择现成的<font color="#6eb957">云端服务</font>也是不错的选择，不必执着于本地部署。🦄</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>首先下载LM Studio,打开LM Studio的官网<a href="https://lmstudio.ai/">点我</a>，目前支持<font color="#f74db5">Win、Linux和Mac</font>的M系列，英特尔系列的话了解下<code>Ollama</code>进行部署吧。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052a61bf660.webp" alt="1.下载 拷贝.webp"><br>安装步骤一直点下一步即可，默认英文，可以点右下角小齿轮，在语言选项内选择“简体中文”<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052ae3c0582.webp" alt="2.语言.webp"></p>
+<h3 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h3><p>由于<code>huggingface.co</code>在国内没办法直接访问，直接在LMStudio下载模型，<br>大概率会遇到这种情况：Model details error:fetchf ailed<br>可以前往huggingface.co的国内镜像<u>hf-mirror.com</u>进行模型下载，<br>我们先下载一个<u>DeepSeek-R1-Distill-Qwen-7B</u>模型玩玩，<br>下载地址：<a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">7B模型</a><br><a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main</a><br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/6805294638176.webp" alt="4.模型列表 拷贝.webp"><br>打开后可以看到4个gguf模型文件，在LLM语言模型领域，Q3、Q4、Q6、Q8代表着不同量化位数的量化模型，及分别将模型参数以3位、4位、6位、8位来存储和计算，模型量化类型越大，意味着有更高的精度，但也会带来更大的内存占用以及更大的计算成本。<br>当然，如果你的网路通畅，可以在<code>发现</code>栏直接下载<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059aa1e4c0b.webp" alt="3.模型下载.webp"></p>
 <h3 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h3><p>模型下载以后，是一个独立的gguf文件，打开LM Studio<code>我的模型</code>，找到模型目录，点击右侧路径设置，选择模型存放的路径加载即可。<br>比如我就是存放在外接的移动硬盘里，不占用Mac的本地储存空间。<br>设置好模型目录以后，LM Studio无需重启，会自动刷新模型目录，列表显示出我们下载的gguf模型即表示已经成功了。<br>插入图片</p>
-<h3 id="开始对话"><a href="#开始对话" class="headerlink" title="开始对话"></a>开始对话</h3><p>返回LM Studio<code>聊天</code> 界面,在顶部选择模型，模型参数默认即可，<br>对模型参数感兴趣的可以自行ai问答研究，等模型加载完毕就可以发送消息进行对话啦🏄<br>插入图片<br>LM Studio还支持显示模型的深度思考过程，挺有意思的。</p>
+<h3 id="开始对话"><a href="#开始对话" class="headerlink" title="开始对话"></a>开始对话</h3><p>返回LM Studio<code>聊天</code> 界面,在顶部选择模型，模型参数默认即可，<br>对模型参数感兴趣的可以自行ai问答研究，等模型加载完毕就可以发送消息进行对话啦🏄<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059dec1afd2.webp" alt="4.开始使用 拷贝.webp"><br>LM Studio还支持显示模型的深度思考过程，挺有意思的。</p>
 <h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p>最后简单科普一下模型的一些相关知识；</p>
 <ul>
-<li>什么是模型的蒸馏版？<br>  -模型的蒸馏版就是通过模型蒸馏技术，将一个大型的、复杂的<code>教师模型</code> 的知识转移到一个小型的、简单的<code>学生模型</code> 后得到的版本。<br>比如以本文使用的DeepSeek-R1-Distill-Qwen-7B模型为例，具体含义如下：<br>DeepSeek-R1：是指基础的教师模型，即671B的高性能推理模型DeepSeek-R1。<br>Distill：表示这是经过蒸馏技术处理得到的模型版本，代表该模型是通过将DeepSeek-R1模型的知识迁移到其他模型而产生的。<br>Qwen-7B：代表以Qwen2.5系列中的7B模型作为学生模型，接受来自DeepSeek-R1的知识蒸馏，其<br>中Qwen是阿里云的通义千问大模型，14B表示该模型具有70亿个参数。</li>
+<li>什么是模型的蒸馏版？<br>  模型的蒸馏版就是通过模型蒸馏技术，将一个大型的、复杂的<code>教师模型</code> 的知识转移到一个小型的、简单的<code>学生模型</code> 后得到的版本。<br>比如以本文使用的DeepSeek-R1-Distill-Qwen-7B模型为例，具体含义如下：</li>
+<li>DeepSeek-R1：是指基础的教师模型，即671B的高性能推理模型DeepSeek-R1。</li>
+<li>Distill：表示这是经过<font color="#fbad61">蒸馏技术</font>处理得到的模型版本，代表该模型是通过将DeepSeek-R1模型的知识迁移到其他模型而产生的。</li>
+<li>Qwen-7B：代表以Qwen2.5系列中的7B模型作为学生模型，接受来自DeepSeek-R1的知识蒸馏，其中Qwen是阿里云的通义千问大模型，7B表示该模型具有<font color="#b960d9">70亿个参数</font>。</li>
 </ul>
-<p>可见，本地部署的这个蒸馏模型并不是原版的模型，该模型可以看作是一个新的模型，所以性能要求降低的同时也不要指望结果和原版相近<br>为了更好的体验，在模型选择上，建议先追求更大参数的量的模型（14B、32B、70B等)，然后再根据可用内存选择量化程度（Q3、Q4、Q6、Q8等），至于选择Qwen还是Llama,中文任务的话建议选择Qwen。</p>
+<p>可见，本地部署的这个蒸馏模型并不是原版的模型，该模型可以看作是一个新的模型，所以性能要求降低的同时也不要指望结果和原版相近<br>为了更好的体验，在模型选择上，建议先追求更大参数的量的模型（14B、32B、70B等)，然后再根据可用内存选择量化程度（Q3、Q4、Q6、Q8等），至于选择Qwen还是Llama,<u>中文任务的话建议选择Qwen。</u></p>
 <h3 id="个人建议"><a href="#个人建议" class="headerlink" title="个人建议"></a>个人建议</h3><p>由于Apple Silicon的Mac使用了统一内存（内存显存共享），Mac电脑的16GB内存选7B参数量Q4量化模型，32GB内存选14B参数量Q4量化的模型。Windows平台要注意显存大小，显存不够可以使用内存来凑，但性能是没办法跟显存比的。</p>
 <h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>错误—:The model has crashed with out additional information.（Exitcode:5)<br>模型可以运行，但是运行过程中出现了内存不足，可尝试换个内存要求更低的模型。</p>
 <p>错误二：Model loading aborted due to insufficient system resources.Overloading the system will likely causeit to freeze.If you believe this is a mistake,you can try to change the model loading guardrails in the settings.<br>内存不足导致模型无法运行，可尝试换个内存要求更低的模型。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>最后，本地部署和在线使用各有利弊，有需要的小伙伴可以体验一下，由于大部分用户的硬件性能有限，现阶段本地部署对大部分人来说依然是伪需求，使用云端的模型无论性能还是回答结果，都比本地要好很多。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本地部署和在线使用<font color="#6eb957">各有利弊</font>，有需要的小伙伴可以体验一下，由于大部分用户的硬件性能有限，现阶段本地部署对大部分人来说依然是<font color="#f74db5">伪需求</font>，使用云端的模型无论性能还是回答结果，都比本地要好很多。</p>
 ]]></content>
       <categories>
         <category>AI</category>
