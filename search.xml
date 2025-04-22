@@ -1008,97 +1008,23 @@
     <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
 <hr>
-<ol>
-<li>节点相关名词</li>
-</ol>
-<ul>
-<li>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。</li>
-<li>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。</li>
-<li>Input (输入)：节点接收的数据，例如提示词、模型文件等。</li>
-<li>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</li>
-</ul>
+<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
 <hr>
-<ol start="2">
-<li>模型相关名词</li>
-</ol>
-<ul>
-<li>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。</li>
-<li>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。</li>
-<li>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。</li>
-<li>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。</li>
-<li>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</li>
-</ul>
+<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
 <hr>
-<ol start="3">
-<li>提示词相关名词</li>
-</ol>
-<ul>
-<li>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。</li>
-<li>Positive Prompt (正向提示词)：描述你想要生成的内容。</li>
-<li>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，例如“blurry, low quality”。</li>
-<li>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</li>
-</ul>
+<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
 <hr>
-<ol start="4">
-<li>图像与潜在空间相关名词</li>
-</ol>
-<ul>
-<li>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。</li>
-<li>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。</li>
-<li>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。</li>
-<li>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</li>
-</ul>
+<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
 <hr>
-<ol start="5">
-<li>采样相关名词</li>
-</ol>
-<ul>
-<li>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。</li>
-<li>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。</li>
-<li>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。</li>
-<li>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。</li>
-<li>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</li>
-</ul>
+<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
 <hr>
-<ol start="6">
-<li>文件与路径相关名词</li>
-</ol>
-<ul>
-<li>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。</li>
-<li>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。</li>
-<li>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</li>
-</ul>
+<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
 <hr>
-<ol start="7">
-<li>扩展功能相关名词</li>
-</ol>
-<ul>
-<li>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。</li>
-<li>Outpainting (扩展)：扩展图像边界，生成更大的图像。</li>
-<li>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。</li>
-<li>AnimateDiff：一个扩展，用于生成动画或视频。</li>
-</ul>
+<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
 <hr>
-<ol start="8">
-<li>其他常见名词</li>
-</ol>
-<ul>
-<li>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。</li>
-<li>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。</li>
-<li>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。</li>
-<li>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</li>
-</ul>
+<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
 <hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：</p>
-<ul>
-<li>基础：Node、Workflow、Input、Output。</li>
-<li>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。</li>
-<li>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。</li>
-<li>图像：Latent Image、Image、Resolution、Batch Size。</li>
-<li>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。</li>
-<li>文件：Checkpoint File、Output Directory、Filename Prefix。</li>
-<li>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</li>
-</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
 <p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
 ]]></content>
       <categories>
