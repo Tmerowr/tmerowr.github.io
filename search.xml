@@ -828,4 +828,284 @@
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基础节点与插件</title>
+    <url>/2025/04/23/%E5%9F%BA%E7%A1%80%E8%8A%82%E7%82%B9%E4%B8%8E%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<p>ComfyUI 中 文生图（Text-to-Image）**工作流中常用的节点，帮助你快速理解其核心功能。这些节点是构建文生图流程的基础，通过连接它们可以完成从文本提示到生成图像的过程。</p>
+<hr>
+<h2 id="Load-Checkpoint-加载模型"><a href="#Load-Checkpoint-加载模型" class="headerlink" title="Load Checkpoint (加载模型)"></a>Load Checkpoint (加载模型)</h2><ul>
+<li><p>作用：加载 Stable Diffusion 模型（例如 SD1.5、SDXL 等）。</p>
+</li>
+<li><p>输入：</p>
+<ul>
+<li>ckpt_name：选择模型文件（.ckpt 或 .safetensors 格式）。</li>
+</ul>
+</li>
+<li><p>输出：</p>
+<ul>
+<li><p>MODEL：模型对象。</p>
+</li>
+<li><p>CLIP：用于处理文本的 CLIP 模型。</p>
+</li>
+<li><p>VAE：变分自编码器，用于解码生成的图像。</p>
+</li>
+</ul>
+</li>
+<li><p>用途：这是文生图的起点，加载预训练模型以供后续节点使用。</p>
+</li>
+</ul>
+<hr>
+<h2 id="CLIP-Text-Encode-Prompt-文本编码"><a href="#CLIP-Text-Encode-Prompt-文本编码" class="headerlink" title="CLIP Text Encode (Prompt) (文本编码)"></a>CLIP Text Encode (Prompt) (文本编码)</h2><ul>
+<li><p>作用：将文本提示词（Prompt）编码为模型可理解的格式。</p>
+</li>
+<li><p>输入：</p>
+<ul>
+<li><p>text：输入提示词，例如“a cute cat in a sunny garden”。</p>
+</li>
+<li><p>clip：从 Load Checkpoint 节点输出的 CLIP 模型。</p>
+</li>
+</ul>
+</li>
+<li><p>输出：</p>
+<ul>
+<li>CONDITIONING：编码后的提示词条件。</li>
+</ul>
+</li>
+<li><p>用途：</p>
+<ul>
+<li><p>需要两个这样的节点：一个用于正向提示词（Positive Prompt），一个用于负向提示词（Negative Prompt，例如“blurry, low quality”）。</p>
+</li>
+<li><p>正向提示词描述你想要的内容，负向提示词排除不需要的元素。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Empty-Latent-Image-创建空白潜在图像"><a href="#Empty-Latent-Image-创建空白潜在图像" class="headerlink" title="Empty Latent Image (创建空白潜在图像)"></a>Empty Latent Image (创建空白潜在图像)</h2><ul>
+<li><p>作用：生成一个空白的潜在图像（Latent Image），作为生成图像的起点。</p>
+</li>
+<li><p>输入：</p>
+<ul>
+<li><p>width 和 height：设置生成图像的分辨率（例如 512x512 或 1024x768）。</p>
+</li>
+<li><p>batch_size：生成图像的数量（通常设为 1）。</p>
+</li>
+</ul>
+</li>
+<li><p>输出：</p>
+<ul>
+<li>LATENT：空白的潜在图像。</li>
+</ul>
+</li>
+<li><p>用途：为后续采样过程提供初始的潜在空间数据。</p>
+</li>
+</ul>
+<hr>
+<h2 id="KSampler-采样器"><a href="#KSampler-采样器" class="headerlink" title="KSampler (采样器)"></a>KSampler (采样器)</h2><ul>
+<li><p>作用：通过采样算法从潜在空间生成图像。</p>
+</li>
+<li><p>输入：</p>
+<ul>
+<li><p>model：从 Load Checkpoint 节点输出的 MODEL。</p>
+</li>
+<li><p>positive 和 negative：从 CLIP Text Encode 节点输出的正向和负向条件。</p>
+</li>
+<li><p>latent_image：从 Empty Latent Image 节点输出的空白潜在图像。</p>
+</li>
+<li><p>seed：随机种子（控制生成结果的随机性，固定种子可复现结果）。</p>
+</li>
+<li><p>steps：采样步数（通常 20-50，步数越多细节越精细但耗时更长）。</p>
+</li>
+<li><p>cfg：提示词引导系数（CFG Scale，通常 7-12，控制提示词对生成结果的影响）。</p>
+</li>
+<li><p>sampler_name 和 scheduler：选择采样器和调度器（例如 Euler a、DPM++ 2M Karras）。</p>
+</li>
+</ul>
+</li>
+<li><p>输出：</p>
+<ul>
+<li>LATENT：采样后的潜在图像。</li>
+</ul>
+</li>
+<li><p>用途：核心节点，执行文生图的扩散过程，生成潜在图像。</p>
+</li>
+</ul>
+<hr>
+<h2 id="VAE-Decode-解码潜在图像"><a href="#VAE-Decode-解码潜在图像" class="headerlink" title="VAE Decode (解码潜在图像)"></a>VAE Decode (解码潜在图像)</h2><ul>
+<li><p>作用：将潜在图像解码为实际图像。</p>
+</li>
+<li><p>输入：</p>
+<ul>
+<li><p>samples：从 KSampler 输出的 LATENT。</p>
+</li>
+<li><p>vae：从 Load Checkpoint 节点输出的 VAE。</p>
+</li>
+</ul>
+</li>
+<li><p>输出：</p>
+<ul>
+<li>IMAGE：最终生成的图像。</li>
+</ul>
+</li>
+<li><p>用途：将潜在空间的表示转换为可见的像素图像。</p>
+</li>
+</ul>
+<hr>
+<h2 id="Save-Image-保存图像"><a href="#Save-Image-保存图像" class="headerlink" title="Save Image (保存图像)"></a>Save Image (保存图像)</h2><ul>
+<li><p>作用：将生成的图像保存到本地。</p>
+</li>
+<li><p>输入：</p>
+<ul>
+<li><p>images：从 VAE Decode 输出的 IMAGE。</p>
+</li>
+<li><p>filename_prefix：文件名前缀（例如“output”）。</p>
+</li>
+</ul>
+</li>
+<li><p>输出：无（直接保存图像到指定路径）。</p>
+</li>
+<li><p>用途：保存生成结果，通常保存在 ComfyUI 的 output 文件夹中。</p>
+</li>
+</ul>
+<hr>
+<h3 id="典型文生图工作流连接"><a href="#典型文生图工作流连接" class="headerlink" title="典型文生图工作流连接"></a>典型文生图工作流连接</h3><ol>
+<li><p>Load Checkpoint → 输出 MODEL、CLIP、VAE。</p>
+</li>
+<li><p>CLIP Text Encode (Positive) 和 CLIP Text Encode (Negative) → 用 CLIP 编码正向和负向提示词。</p>
+</li>
+<li><p>Empty Latent Image → 创建空白潜在图像。</p>
+</li>
+<li><p>KSampler → 连接 MODEL、正向&#x2F;负向条件、空白潜在图像，设置采样参数，生成潜在图像。</p>
+</li>
+<li><p>VAE Decode → 连接 KSampler 的输出和 VAE，解码为图像。</p>
+</li>
+<li><p>Save Image → 保存最终图像。</p>
+</li>
+</ol>
+<hr>
+<h3 id="补充节点（可选）"><a href="#补充节点（可选）" class="headerlink" title="补充节点（可选）"></a>补充节点（可选）</h3><p>Preview Image：预览生成的图像，连接在 VAE Decode 后，方便调试。<br>Latent Upscale 或 Image Upscale：用于放大图像分辨率。<br>ControlNet 相关节点：如果需要基于草图、姿势等控制生成结果，可以添加 ControlNet 节点。</p>
+<hr>
+<h4 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h4><p>假设你想生成“一只可爱的猫在阳光明媚的花园中”（分辨率 512x512，20步采样，CFG 7）：</p>
+<ol>
+<li>Load Checkpoint：加载 SD1.5 模型。</li>
+<li>CLIP Text Encode (Positive)：输入“a cute cat in a sunny garden”。</li>
+<li>CLIP Text Encode (Negative)：输入“blurry, low quality”。</li>
+<li>Empty Latent Image：设置 512x512。</li>
+<li>KSampler：设置 steps&#x3D;20, CFG&#x3D;7, sampler&#x3D;Euler a。</li>
+<li>VAE Decode：解码图像。</li>
+<li>Save Image：保存结果。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>comfyui</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文生图工作流相关术语概念</title>
+    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
+<hr>
+<ol>
+<li>节点相关名词</li>
+</ol>
+<ul>
+<li>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。</li>
+<li>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。</li>
+<li>Input (输入)：节点接收的数据，例如提示词、模型文件等。</li>
+<li>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</li>
+</ul>
+<hr>
+<ol start="2">
+<li>模型相关名词</li>
+</ol>
+<ul>
+<li>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。</li>
+<li>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。</li>
+<li>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。</li>
+<li>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。</li>
+<li>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</li>
+</ul>
+<hr>
+<ol start="3">
+<li>提示词相关名词</li>
+</ol>
+<ul>
+<li>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。</li>
+<li>Positive Prompt (正向提示词)：描述你想要生成的内容。</li>
+<li>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，例如“blurry, low quality”。</li>
+<li>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</li>
+</ul>
+<hr>
+<ol start="4">
+<li>图像与潜在空间相关名词</li>
+</ol>
+<ul>
+<li>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。</li>
+<li>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。</li>
+<li>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。</li>
+<li>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</li>
+</ul>
+<hr>
+<ol start="5">
+<li>采样相关名词</li>
+</ol>
+<ul>
+<li>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。</li>
+<li>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。</li>
+<li>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。</li>
+<li>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。</li>
+<li>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</li>
+</ul>
+<hr>
+<ol start="6">
+<li>文件与路径相关名词</li>
+</ol>
+<ul>
+<li>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。</li>
+<li>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。</li>
+<li>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</li>
+</ul>
+<hr>
+<ol start="7">
+<li>扩展功能相关名词</li>
+</ol>
+<ul>
+<li>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。</li>
+<li>Outpainting (扩展)：扩展图像边界，生成更大的图像。</li>
+<li>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。</li>
+<li>AnimateDiff：一个扩展，用于生成动画或视频。</li>
+</ul>
+<hr>
+<ol start="8">
+<li>其他常见名词</li>
+</ol>
+<ul>
+<li>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。</li>
+<li>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。</li>
+<li>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。</li>
+<li>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：</p>
+<ul>
+<li>基础：Node、Workflow、Input、Output。</li>
+<li>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。</li>
+<li>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。</li>
+<li>图像：Latent Image、Image、Resolution、Batch Size。</li>
+<li>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。</li>
+<li>文件：Checkpoint File、Output Directory、Filename Prefix。</li>
+<li>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</li>
+</ul>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>comfyui</tag>
+      </tags>
+  </entry>
 </search>
