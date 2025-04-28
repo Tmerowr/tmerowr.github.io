@@ -130,56 +130,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LM Studio本地部署蒸馏化模型</title>
-    <url>/2025/04/20/Studio%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E8%92%B8%E9%A6%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>AI发展迅速，都说我们目前正身处于AI时代🌏<br>人工智能（AI）技术正以前所未有的速度改变着我们的生活和工作方式🙇‍♂️<br>本地部署模型呢，可以一定程度保证我们数据隐私和安全🙅‍♂️<br>还可以摆脱网络限制，提高数据处理的速度💫<br>结合我们自己的设备性能可以选择不同参数的模型，比较灵活👍</p>
-</blockquote>
-<p>开始部署之前首先需要说明，由于本地硬件设备性能<font color="#b960d9">存在局限</font>🤦‍♀️，我们大部分用户可能只能部署简单4b或8b模型，这些模型的实际表现或许达不到部分用户的预期，对于设备条件不够高的用户不妨直接选择现成的<font color="#6eb957">云端服务</font>也是不错的选择，不必执着于本地部署。🦄</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>首先下载LM Studio,打开LM Studio的官网<a href="https://lmstudio.ai/">点我</a>，目前支持<font color="#f74db5">Win、Linux和Mac</font>的M系列，英特尔系列的话了解下<code>Ollama</code>进行部署吧。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052a61bf660.webp" alt="1.下载 拷贝.webp"><br>安装步骤一直点下一步即可，默认英文，可以点右下角小齿轮，在语言选项内选择“简体中文”<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052ae3c0582.webp" alt="2.语言.webp"></p>
-<h3 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h3><p>由于<code>huggingface.co</code>在国内没办法直接访问，直接在LMStudio下载模型，<br>大概率会遇到这种情况：Model details error:fetchf ailed<br>可以前往huggingface.co的国内镜像<u>hf-mirror.com</u>进行模型下载，<br>我们先下载一个<u>DeepSeek-R1-Distill-Qwen-7B</u>模型玩玩，<br>下载地址：<a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">7B模型</a><br><a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main</a><br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/6805294638176.webp" alt="4.模型列表 拷贝.webp"><br>打开后可以看到4个gguf模型文件，在LLM语言模型领域，Q3、Q4、Q6、Q8代表着不同量化位数的量化模型，及分别将模型参数以3位、4位、6位、8位来存储和计算，模型量化类型越大，意味着有更高的精度，但也会带来更大的内存占用以及更大的计算成本。<br>当然，如果你的网路通畅，可以在<code>发现</code>栏直接下载<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059aa1e4c0b.webp" alt="3.模型下载.webp"></p>
-<h3 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h3><p>模型下载以后，是一个独立的gguf文件，打开LM Studio<code>我的模型</code>，找到模型目录，点击右侧路径设置，选择模型存放的路径加载即可。<br>比如我就是存放在外接的移动硬盘里，不占用Mac的本地储存空间。<br>设置好模型目录以后，LM Studio无需重启，会自动刷新模型目录，列表显示出我们下载的gguf模型即表示已经成功了。<br>插入图片</p>
-<h3 id="开始对话"><a href="#开始对话" class="headerlink" title="开始对话"></a>开始对话</h3><p>返回LM Studio<code>聊天</code> 界面,在顶部选择模型，模型参数默认即可，<br>对模型参数感兴趣的可以自行ai问答研究，等模型加载完毕就可以发送消息进行对话啦🏄<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059dec1afd2.webp" alt="4.开始使用 拷贝.webp"><br>LM Studio还支持显示模型的深度思考过程，挺有意思的。</p>
-<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p>最后简单科普一下模型的一些相关知识；</p>
-<ul>
-<li>什么是模型的蒸馏版？<br>  模型的蒸馏版就是通过模型蒸馏技术，将一个大型的、复杂的<code>教师模型</code> 的知识转移到一个小型的、简单的<code>学生模型</code> 后得到的版本。<br>比如以本文使用的DeepSeek-R1-Distill-Qwen-7B模型为例，具体含义如下：</li>
-<li>DeepSeek-R1：是指基础的教师模型，即671B的高性能推理模型DeepSeek-R1。</li>
-<li>Distill：表示这是经过<font color="#fbad61">蒸馏技术</font>处理得到的模型版本，代表该模型是通过将DeepSeek-R1模型的知识迁移到其他模型而产生的。</li>
-<li>Qwen-7B：代表以Qwen2.5系列中的7B模型作为学生模型，接受来自DeepSeek-R1的知识蒸馏，其中Qwen是阿里云的通义千问大模型，7B表示该模型具有<font color="#b960d9">70亿个参数</font>。</li>
-</ul>
-<p>可见，本地部署的这个蒸馏模型并不是原版的模型，该模型可以看作是一个新的模型，所以性能要求降低的同时也不要指望结果和原版相近<br>为了更好的体验，在模型选择上，建议先追求更大参数的量的模型（14B、32B、70B等)，然后再根据可用内存选择量化程度（Q3、Q4、Q6、Q8等），至于选择Qwen还是Llama,<u>中文任务的话建议选择Qwen。</u></p>
-<h3 id="个人建议"><a href="#个人建议" class="headerlink" title="个人建议"></a>个人建议</h3><p>由于Apple Silicon的Mac使用了统一内存（内存显存共享），Mac电脑的16GB内存选7B参数量Q4量化模型，32GB内存选14B参数量Q4量化的模型。Windows平台要注意显存大小，显存不够可以使用内存来凑，但性能是没办法跟显存比的。</p>
-<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>错误—:The model has crashed with out additional information.（Exitcode:5)<br>模型可以运行，但是运行过程中出现了内存不足，可尝试换个内存要求更低的模型。</p>
-<p>错误二：Model loading aborted due to insufficient system resources.Overloading the system will likely causeit to freeze.If you believe this is a mistake,you can try to change the model loading guardrails in the settings.<br>内存不足导致模型无法运行，可尝试换个内存要求更低的模型。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本地部署和在线使用<font color="#6eb957">各有利弊</font>，有需要的小伙伴可以体验一下，由于大部分用户的硬件性能有限，现阶段本地部署对大部分人来说依然是<font color="#f74db5">伪需求</font>，使用云端的模型无论性能还是回答结果，都比本地要好很多。</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>LmStudio</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Twikoo静态网站评论系统</title>
-    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
-<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
-<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
-<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
-<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
-
-<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2025/03/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -248,6 +198,37 @@
       </tags>
   </entry>
   <entry>
+    <title>LM Studio本地部署蒸馏化模型</title>
+    <url>/2025/04/20/Studio%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E8%92%B8%E9%A6%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>AI发展迅速，都说我们目前正身处于AI时代🌏<br>人工智能（AI）技术正以前所未有的速度改变着我们的生活和工作方式🙇‍♂️<br>本地部署模型呢，可以一定程度保证我们数据隐私和安全🙅‍♂️<br>还可以摆脱网络限制，提高数据处理的速度💫<br>结合我们自己的设备性能可以选择不同参数的模型，比较灵活👍</p>
+</blockquote>
+<p>开始部署之前首先需要说明，由于本地硬件设备性能<font color="#b960d9">存在局限</font>🤦‍♀️，我们大部分用户可能只能部署简单4b或8b模型，这些模型的实际表现或许达不到部分用户的预期，对于设备条件不够高的用户不妨直接选择现成的<font color="#6eb957">云端服务</font>也是不错的选择，不必执着于本地部署。🦄</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>首先下载LM Studio,打开LM Studio的官网<a href="https://lmstudio.ai/">点我</a>，目前支持<font color="#f74db5">Win、Linux和Mac</font>的M系列，英特尔系列的话了解下<code>Ollama</code>进行部署吧。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052a61bf660.webp" alt="1.下载 拷贝.webp"><br>安装步骤一直点下一步即可，默认英文，可以点右下角小齿轮，在语言选项内选择“简体中文”<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052ae3c0582.webp" alt="2.语言.webp"></p>
+<h3 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h3><p>由于<code>huggingface.co</code>在国内没办法直接访问，直接在LMStudio下载模型，<br>大概率会遇到这种情况：Model details error:fetchf ailed<br>可以前往huggingface.co的国内镜像<u>hf-mirror.com</u>进行模型下载，<br>我们先下载一个<u>DeepSeek-R1-Distill-Qwen-7B</u>模型玩玩，<br>下载地址：<a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">7B模型</a><br><a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main</a><br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/6805294638176.webp" alt="4.模型列表 拷贝.webp"><br>打开后可以看到4个gguf模型文件，在LLM语言模型领域，Q3、Q4、Q6、Q8代表着不同量化位数的量化模型，及分别将模型参数以3位、4位、6位、8位来存储和计算，模型量化类型越大，意味着有更高的精度，但也会带来更大的内存占用以及更大的计算成本。<br>当然，如果你的网路通畅，可以在<code>发现</code>栏直接下载<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059aa1e4c0b.webp" alt="3.模型下载.webp"></p>
+<h3 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h3><p>模型下载以后，是一个独立的gguf文件，打开LM Studio<code>我的模型</code>，找到模型目录，点击右侧路径设置，选择模型存放的路径加载即可。<br>比如我就是存放在外接的移动硬盘里，不占用Mac的本地储存空间。<br>设置好模型目录以后，LM Studio无需重启，会自动刷新模型目录，列表显示出我们下载的gguf模型即表示已经成功了。<br>插入图片</p>
+<h3 id="开始对话"><a href="#开始对话" class="headerlink" title="开始对话"></a>开始对话</h3><p>返回LM Studio<code>聊天</code> 界面,在顶部选择模型，模型参数默认即可，<br>对模型参数感兴趣的可以自行ai问答研究，等模型加载完毕就可以发送消息进行对话啦🏄<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059dec1afd2.webp" alt="4.开始使用 拷贝.webp"><br>LM Studio还支持显示模型的深度思考过程，挺有意思的。</p>
+<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p>最后简单科普一下模型的一些相关知识；</p>
+<ul>
+<li>什么是模型的蒸馏版？<br>  模型的蒸馏版就是通过模型蒸馏技术，将一个大型的、复杂的<code>教师模型</code> 的知识转移到一个小型的、简单的<code>学生模型</code> 后得到的版本。<br>比如以本文使用的DeepSeek-R1-Distill-Qwen-7B模型为例，具体含义如下：</li>
+<li>DeepSeek-R1：是指基础的教师模型，即671B的高性能推理模型DeepSeek-R1。</li>
+<li>Distill：表示这是经过<font color="#fbad61">蒸馏技术</font>处理得到的模型版本，代表该模型是通过将DeepSeek-R1模型的知识迁移到其他模型而产生的。</li>
+<li>Qwen-7B：代表以Qwen2.5系列中的7B模型作为学生模型，接受来自DeepSeek-R1的知识蒸馏，其中Qwen是阿里云的通义千问大模型，7B表示该模型具有<font color="#b960d9">70亿个参数</font>。</li>
+</ul>
+<p>可见，本地部署的这个蒸馏模型并不是原版的模型，该模型可以看作是一个新的模型，所以性能要求降低的同时也不要指望结果和原版相近<br>为了更好的体验，在模型选择上，建议先追求更大参数的量的模型（14B、32B、70B等)，然后再根据可用内存选择量化程度（Q3、Q4、Q6、Q8等），至于选择Qwen还是Llama,<u>中文任务的话建议选择Qwen。</u></p>
+<h3 id="个人建议"><a href="#个人建议" class="headerlink" title="个人建议"></a>个人建议</h3><p>由于Apple Silicon的Mac使用了统一内存（内存显存共享），Mac电脑的16GB内存选7B参数量Q4量化模型，32GB内存选14B参数量Q4量化的模型。Windows平台要注意显存大小，显存不够可以使用内存来凑，但性能是没办法跟显存比的。</p>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>错误—:The model has crashed with out additional information.（Exitcode:5)<br>模型可以运行，但是运行过程中出现了内存不足，可尝试换个内存要求更低的模型。</p>
+<p>错误二：Model loading aborted due to insufficient system resources.Overloading the system will likely causeit to freeze.If you believe this is a mistake,you can try to change the model loading guardrails in the settings.<br>内存不足导致模型无法运行，可尝试换个内存要求更低的模型。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本地部署和在线使用<font color="#6eb957">各有利弊</font>，有需要的小伙伴可以体验一下，由于大部分用户的硬件性能有限，现阶段本地部署对大部分人来说依然是<font color="#f74db5">伪需求</font>，使用云端的模型无论性能还是回答结果，都比本地要好很多。</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>LmStudio</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用极空间部署兰空图床</title>
     <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
@@ -284,73 +265,22 @@
       </tags>
   </entry>
   <entry>
-    <title>修复Github与Vercel数据不同步</title>
-    <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
-<hr>
-<h4 id="解决方法（主要来自于ai的帮助）"><a href="#解决方法（主要来自于ai的帮助）" class="headerlink" title="解决方法（主要来自于ai的帮助）"></a>解决方法（主要来自于ai的帮助）</h4><p>你的 Hexo 网站已经成功部署到 GitHub Pages。如果网站没有正确更新，可能是缓存问题或 GitHub Pages 的更新延迟。你可以尝试清除浏览器缓存后再次访问，或者等待几分钟后刷新页面。</p>
-<p>那为什么vercel没有同步更新数据呢？<br>根据你的问题和搜索结果，Vercel 没有同步更新数据可能有以下几种原因及解决方法：</p>
-<ol>
-<li>Vercel 项目未正确关联 GitHub 仓库<br>如果 Vercel 项目没有正确关联到 GitHub 仓库，或者关联的仓库信息有误，可能会导致无法自动同步更新。</li>
-</ol>
-<p>解决方法：<br>登录到 Vercel 控制台，进入项目设置。<br>检查项目的 Git 部分是否正确关联到你的 GitHub 仓库。<br>如果关联错误，点击“Reconnect”重新连接 GitHub 仓库[^1^]。</p>
-<ol start="2">
-<li>GitHub 仓库的上游同步未启用<br>如果 GitHub 仓库的上游同步未启用，即使你在本地更新了代码，Vercel 也无法获取到最新的代码。</li>
-</ol>
-<p>解决方法：<br>在 GitHub 上，进入你的 Fork 仓库。<br>点击“Sync fork”按钮，手动同步上游仓库的最新代码[^3^]。<br>如果自动同步失败，可以手动点击“Update branch”按钮[^4^]。</p>
-<ol start="3">
-<li>Vercel 的自动部署触发条件未满足<br>Vercel 的自动部署通常依赖于 GitHub 的 Webhook 通知。如果 Webhook 没有正确配置，或者没有触发，Vercel 将不会自动部署。</li>
-</ol>
-<p>解决方法：<br>确保 GitHub 仓库的 Webhook 已正确设置，指向 Vercel 的 Webhook URL。<br>在 Vercel 项目设置中，检查“Build &amp; Development Settings”中的“Triggers”部分，确保自动部署已启用[^3^]。</p>
-<ol start="4">
-<li>Vercel 部署过程中出现错误<br>即使代码已经推送到 GitHub，但如果 Vercel 在部署过程中遇到错误，也可能导致更新失败。</li>
-</ol>
-<p>解决方法：<br>查看 Vercel 的部署日志，了解具体的错误信息[^2^]。<br>根据错误信息修复问题，例如缺少环境变量、依赖冲突等。<br>修复后，手动重新部署项目[^2^]。</p>
-<ol start="5">
-<li>Vercel 缓存问题<br>Vercel 的缓存机制可能会导致更新后的代码没有立即生效。</li>
-</ol>
-<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Settings”部分。<br>清除缓存，然后重新部署[^3^]。</p>
-<ol start="6">
-<li>GitHub Actions 的 Upstream Sync Action 未正确运行<br>如果你使用了 GitHub Actions 来同步上游代码，但 Action 未正确运行，也会导致更新失败。</li>
-</ol>
-<p>解决方法：<br>在 GitHub 仓库的 Actions 页面，检查“Upstream Sync Action”是否成功运行[^4^]。<br>如果失败，手动重新运行该 Action[^4^]。<br>7. 重新部署项目<br>如果上述方法都无法解决问题，可以尝试重新部署项目：</p>
-<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Deployments”部分。<br>点击“Redeploy”按钮，手动重新部署最新的代码[^3^]。</p>
-<p>总结<br>Vercel 未同步更新数据可能是由于项目未正确关联 GitHub 仓库、上游同步未启用、自动部署触发条件未满足、部署过程中出现错误、缓存问题或 GitHub Actions 未正确运行等原因导致的。你可以按照上述方法逐一排查并解决问题。如果问题仍然存在，建议查看 Vercel 的官方文档或联系 Vercel 的技术支持获取帮助。</p>
-<hr>
-<p>以上是ai给出的问题分析，<br>根据我的实际情况，我发现很可能是webhook的问题，因为这里的配置是空的。</p>
-<hr>
-<p>现在仓库的webhook是空的，我该如何设置？</p>
-<p>要将 GitHub 仓库的 Webhook 配置为与 Vercel 同步更新，你需要在 GitHub 仓库中添加一个 Webhook，使其在代码推送时通知 Vercel 触发部署。以下是详细的步骤：</p>
-<p>步骤 1：获取 Vercel 的 Webhook URL<br>登录到 Vercel 控制台。<br>选择你的项目。<br>在项目设置中，找到 “Git” 或 “Webhooks” 部分。<br>点击 “Add Webhook” 或 “Create Hook” 按钮。<br>填写以下信息：<br>Hook Name：自定义名称，例如 github-sync。<br>Branch：选择你希望触发部署的分支，例如 main。<br>点击 “Create Hook” 按钮。<br>创建完成后，Vercel 会生成一个 Webhook URL，复制这个 URL。</p>
-<p>步骤 2：在 GitHub 仓库中添加 Webhook<br>登录到 GitHub，进入你的仓库。<br>点击仓库页面右上角的 “Settings”（设置）。<br>在左侧菜单中，点击 “Webhooks”。<br>点击 “Add webhook” 按钮。<br>在弹出的表单中填写以下信息：<br>Payload URL：粘贴你在 Vercel 中复制的 Webhook URL。<br>Content type：选择 application&#x2F;json。<br>Secret：（可选）如果你在 Vercel 中设置了 Webhook 的密钥，这里需要填入相同的密钥。<br>Which events would you like to trigger this webhook?：选择 “Just the push event” 或 “Let me select individual events”，并确保勾选了 “Push events”。<br>Active：确保此选项被勾选。<br>点击 “Add webhook” 按钮。</p>
-<p>步骤 3：验证 Webhook 是否生效<br>在 GitHub 的 Webhook 设置页面，你会看到刚刚添加的 Webhook。<br>GitHub 会自动发送一个 ping 事件到 Webhook URL，以验证连接是否成功。<br>如果 Webhook 配置正确，Vercel 应该会收到这个 ping 事件，并在控制台中显示相关信息。<br>你也可以在 Vercel 的 Webhook 设置页面查看 Webhook 的状态和日志。</p>
-<hr>
-<p>通过以上设置恢复同步啦</p>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
+    <title>Twikoo静态网站评论系统</title>
+    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
+<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
+<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
+<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
+<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
+
+<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
 ]]></content>
       <categories>
         <category>Blog</category>
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -520,6 +450,125 @@
 <li>VAE Decode：解码图像。</li>
 <li>Save Image：保存结果。</li>
 </ol>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修复Github与Vercel数据不同步</title>
+    <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
+<hr>
+<h4 id="解决方法（主要来自于ai的帮助）"><a href="#解决方法（主要来自于ai的帮助）" class="headerlink" title="解决方法（主要来自于ai的帮助）"></a>解决方法（主要来自于ai的帮助）</h4><p>你的 Hexo 网站已经成功部署到 GitHub Pages。如果网站没有正确更新，可能是缓存问题或 GitHub Pages 的更新延迟。你可以尝试清除浏览器缓存后再次访问，或者等待几分钟后刷新页面。</p>
+<p>那为什么vercel没有同步更新数据呢？<br>根据你的问题和搜索结果，Vercel 没有同步更新数据可能有以下几种原因及解决方法：</p>
+<ol>
+<li>Vercel 项目未正确关联 GitHub 仓库<br>如果 Vercel 项目没有正确关联到 GitHub 仓库，或者关联的仓库信息有误，可能会导致无法自动同步更新。</li>
+</ol>
+<p>解决方法：<br>登录到 Vercel 控制台，进入项目设置。<br>检查项目的 Git 部分是否正确关联到你的 GitHub 仓库。<br>如果关联错误，点击“Reconnect”重新连接 GitHub 仓库[^1^]。</p>
+<ol start="2">
+<li>GitHub 仓库的上游同步未启用<br>如果 GitHub 仓库的上游同步未启用，即使你在本地更新了代码，Vercel 也无法获取到最新的代码。</li>
+</ol>
+<p>解决方法：<br>在 GitHub 上，进入你的 Fork 仓库。<br>点击“Sync fork”按钮，手动同步上游仓库的最新代码[^3^]。<br>如果自动同步失败，可以手动点击“Update branch”按钮[^4^]。</p>
+<ol start="3">
+<li>Vercel 的自动部署触发条件未满足<br>Vercel 的自动部署通常依赖于 GitHub 的 Webhook 通知。如果 Webhook 没有正确配置，或者没有触发，Vercel 将不会自动部署。</li>
+</ol>
+<p>解决方法：<br>确保 GitHub 仓库的 Webhook 已正确设置，指向 Vercel 的 Webhook URL。<br>在 Vercel 项目设置中，检查“Build &amp; Development Settings”中的“Triggers”部分，确保自动部署已启用[^3^]。</p>
+<ol start="4">
+<li>Vercel 部署过程中出现错误<br>即使代码已经推送到 GitHub，但如果 Vercel 在部署过程中遇到错误，也可能导致更新失败。</li>
+</ol>
+<p>解决方法：<br>查看 Vercel 的部署日志，了解具体的错误信息[^2^]。<br>根据错误信息修复问题，例如缺少环境变量、依赖冲突等。<br>修复后，手动重新部署项目[^2^]。</p>
+<ol start="5">
+<li>Vercel 缓存问题<br>Vercel 的缓存机制可能会导致更新后的代码没有立即生效。</li>
+</ol>
+<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Settings”部分。<br>清除缓存，然后重新部署[^3^]。</p>
+<ol start="6">
+<li>GitHub Actions 的 Upstream Sync Action 未正确运行<br>如果你使用了 GitHub Actions 来同步上游代码，但 Action 未正确运行，也会导致更新失败。</li>
+</ol>
+<p>解决方法：<br>在 GitHub 仓库的 Actions 页面，检查“Upstream Sync Action”是否成功运行[^4^]。<br>如果失败，手动重新运行该 Action[^4^]。<br>7. 重新部署项目<br>如果上述方法都无法解决问题，可以尝试重新部署项目：</p>
+<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Deployments”部分。<br>点击“Redeploy”按钮，手动重新部署最新的代码[^3^]。</p>
+<p>总结<br>Vercel 未同步更新数据可能是由于项目未正确关联 GitHub 仓库、上游同步未启用、自动部署触发条件未满足、部署过程中出现错误、缓存问题或 GitHub Actions 未正确运行等原因导致的。你可以按照上述方法逐一排查并解决问题。如果问题仍然存在，建议查看 Vercel 的官方文档或联系 Vercel 的技术支持获取帮助。</p>
+<hr>
+<p>以上是ai给出的问题分析，<br>根据我的实际情况，我发现很可能是webhook的问题，因为这里的配置是空的。</p>
+<hr>
+<p>现在仓库的webhook是空的，我该如何设置？</p>
+<p>要将 GitHub 仓库的 Webhook 配置为与 Vercel 同步更新，你需要在 GitHub 仓库中添加一个 Webhook，使其在代码推送时通知 Vercel 触发部署。以下是详细的步骤：</p>
+<p>步骤 1：获取 Vercel 的 Webhook URL<br>登录到 Vercel 控制台。<br>选择你的项目。<br>在项目设置中，找到 “Git” 或 “Webhooks” 部分。<br>点击 “Add Webhook” 或 “Create Hook” 按钮。<br>填写以下信息：<br>Hook Name：自定义名称，例如 github-sync。<br>Branch：选择你希望触发部署的分支，例如 main。<br>点击 “Create Hook” 按钮。<br>创建完成后，Vercel 会生成一个 Webhook URL，复制这个 URL。</p>
+<p>步骤 2：在 GitHub 仓库中添加 Webhook<br>登录到 GitHub，进入你的仓库。<br>点击仓库页面右上角的 “Settings”（设置）。<br>在左侧菜单中，点击 “Webhooks”。<br>点击 “Add webhook” 按钮。<br>在弹出的表单中填写以下信息：<br>Payload URL：粘贴你在 Vercel 中复制的 Webhook URL。<br>Content type：选择 application&#x2F;json。<br>Secret：（可选）如果你在 Vercel 中设置了 Webhook 的密钥，这里需要填入相同的密钥。<br>Which events would you like to trigger this webhook?：选择 “Just the push event” 或 “Let me select individual events”，并确保勾选了 “Push events”。<br>Active：确保此选项被勾选。<br>点击 “Add webhook” 按钮。</p>
+<p>步骤 3：验证 Webhook 是否生效<br>在 GitHub 的 Webhook 设置页面，你会看到刚刚添加的 Webhook。<br>GitHub 会自动发送一个 ping 事件到 Webhook URL，以验证连接是否成功。<br>如果 Webhook 配置正确，Vercel 应该会收到这个 ping 事件，并在控制台中显示相关信息。<br>你也可以在 Vercel 的 Webhook 设置页面查看 Webhook 的状态和日志。</p>
+<hr>
+<p>通过以上设置恢复同步啦</p>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<hr>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文生图工作流相关术语概念</title>
+    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
+<hr>
+<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
+<hr>
+<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
+<hr>
+<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
+<hr>
+<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
+<hr>
+<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
+<hr>
+<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
+<hr>
+<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
+<hr>
+<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
 ]]></content>
       <categories>
         <category>AI</category>
@@ -1020,55 +1069,6 @@
       </categories>
       <tags>
         <tag>pt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文生图工作流相关术语概念</title>
-    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
-<hr>
-<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
-<hr>
-<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
-<hr>
-<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
-<hr>
-<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
-<hr>
-<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
-<hr>
-<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
-<hr>
-<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
-<hr>
-<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
-<hr>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
