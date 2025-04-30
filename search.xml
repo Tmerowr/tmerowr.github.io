@@ -93,6 +93,43 @@
       </tags>
   </entry>
   <entry>
+    <title>MP进阶设置</title>
+    <url>/2025/04/23/MP%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>对部分设置做进一步整理</p>
+<h2 id="整理刮削"><a href="#整理刮削" class="headerlink" title="整理刮削"></a>整理刮削</h2><h3 id="电影重命名格式"><a href="#电影重命名格式" class="headerlink" title="电影重命名格式"></a>电影重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125; - &#123;&#123;videoFormat&#125;&#125;&#123;% if videoCodec %&#125;.&#123;&#123;videoCodec&#125;&#125;&#123;% endif %&#125;&#123;% if audioCodec %&#125;.&#123;&#123;audioCodec&#125;&#125;&#123;% endif %&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;%if effect %&#125;.&#123;&#123;effect&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="电视剧重命名格式"><a href="#电视剧重命名格式" class="headerlink" title="电视剧重命名格式"></a>电视剧重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/Season &#123;&#123;season&#125;&#125;/&#123;&#123;title&#125;&#125; &#123;&#123;season_episode&#125;&#125; &#123;&#123;videoFormat&#125;&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义规则"><a href="#自定义规则" class="headerlink" title="自定义规则"></a>自定义规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|\\bDV\\b|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-25000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;AnimeGroup&quot;,&quot;name&quot;:&quot;动漫组&quot;,&quot;include&quot;:&quot;7³ACG|VCB-Studio&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Audiences&quot;,&quot;name&quot;:&quot;观众官组&quot;,&quot;include&quot;:&quot;ADE|ADWeb&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HHWEB&quot;,&quot;name&quot;:&quot;憨憨官组&quot;,&quot;include&quot;:&quot;HHWEB&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;B-Global&quot;,&quot;name&quot;:&quot;BG源&quot;,&quot;include&quot;:&quot;B-Global|BG&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;60fps&quot;,&quot;name&quot;:&quot;60帧&quot;,&quot;include&quot;:&quot;60帧|60fps&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="优先级规则"><a href="#优先级规则" class="headerlink" title="优先级规则"></a>优先级规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !REMUX &amp; !3D &amp; !DOLBY &amp;filerGroup&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &gt; CNSUB &amp; 1080P &amp; BLURAY &gt; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot;AnimeGroup&amp; CNSUB &amp; BLURAY &amp; 1080P &gt;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;B-Global&amp; 4K &amp; CNSUB &gt;Audiences&amp;B-Global&amp; 1080P &amp; CNSUB &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;Audiences&amp;DDP&gt; 4K &amp;HHWEB&amp;DDP&gt; 4K &amp;Audiences&gt; 4K &amp;HHWEB&gt; 1080P &amp;Audiences&gt; 1080P &amp;HHWEB&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;Complete&gt; 4K &amp; WEBDL &amp;HHWEB&gt; WEBDL &amp; 1080P &amp;HHWEB&gt; 4K &amp; WEBDL &amp;Audiences&gt; 1080P &amp;Audiences&amp; WEBDL &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;HQ&gt; 4K &amp; WEBDL &amp;60fps&amp; HDR &gt; 4K &amp; WEBDL &amp;HHWEB&gt; 4K &amp;Audiences&amp; WEBDL &gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="搜索-下载"><a href="#搜索-下载" class="headerlink" title="搜索&amp;下载"></a>搜索&amp;下载</h2><h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><p>订阅模式-推荐站点RSS<br>订阅优先级规则-留空全选<br>订阅定时搜索-如果没有漏订阅可以不开启</p>
+<h3 id="订阅站点"><a href="#订阅站点" class="headerlink" title="订阅站点"></a>订阅站点</h3><p>订阅的影片会从选中的站点订阅，订阅流程：</p>
+<ol>
+<li>订阅影片</li>
+<li>等待1分钟后开始执行搜索（站点搜索，补齐前面未下的集数）</li>
+<li>按照设定周期自动爬取站点&#x2F;检索RSS获取种子</li>
+<li>识别种子是否为订阅的影片</li>
+</ol>
+<h2 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h2><p><a href="https://wiki.movie-pilot.org/zh/notification">官方WIKI通知</a></p>
+<h2 id="词表"><a href="#词表" class="headerlink" title="词表"></a>词表</h2><h3 id="自定义识别词"><a href="#自定义识别词" class="headerlink" title="自定义识别词"></a>自定义识别词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\[Movie\]</span><br><span class="line">episode\.\d&#123;1&#125;</span><br><span class="line">\.(第\d&#123;1,2&#125;集)\. =&gt; \1</span><br><span class="line">(?i)Season( *)0?(\d+) =&gt; S\2</span><br><span class="line">(?&lt;=SBSUB.*DR.*?)- =&gt; part</span><br><span class="line">\[CHS\_CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHS\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">chs&amp;jpn =&gt; jpsc</span><br><span class="line">cht&amp;jpn =&gt; jptc</span><br><span class="line">\[SBSUB\]\[CONAN\]\[DR =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">\[SBSUB\]\[CONAN\]\[ =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)2nd Season =&gt; S02</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)IV =&gt; S04</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)III =&gt; S03</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)II =&gt; S02</span><br><span class="line">[【\[](Fin|END)[】\]]|(?:|\s|\s-\s)(Fin|END)(?=\])|(?&lt;=\d&#123;1,2&#125;)_?(Fin|END)</span><br><span class="line">(?&lt;=[\[【].*?(?:组|組|sub|S(?:UB|ub|tudio)|Raw(?:|s)|社)[\]】])(?:(?:\[|【|★|)\d&#123;1,2&#125;月新番(?:\]|】|★|)|)[\[【](.*?)[\]】] =&gt; \1</span><br><span class="line">(?&lt;=[\W_])(CR|Baha|KKTV|Abema|B-Global|Sentai|MyVideo|AMZN|KKTV|friDay|DSNP|LINETV|NF|Viu)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|_|＆|\x20)(CHT|BIG5|TC)(&amp;|_|＆|\x20)JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)_JA?PN?(&amp;|＆|\x20)(CHT|BIG5|TC)_JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|＆|\x20)(CHT|BIG5|TC) =&gt; 简繁内封</span><br><span class="line">(?i)(CHS|GB|SC)(_|&amp;|＆|\x20)JA?PN? =&gt; 简日双语</span><br><span class="line">(?i)\[JA?PN?(_|&amp;|＆|\x20)?(SC|CHS|GB)\] =&gt; [简日双语]</span><br><span class="line">(.*)(VCB-Studio)(.*)(Ma10p_?|Hi10p_?)(.*) =&gt; \1\2\3\5</span><br><span class="line">S(eason)? ?0?([2-9]) *\[(OVA|OAD)0?\(?(\d)?\)?\] =&gt; S0E\2\4</span><br><span class="line">(S(eason)? ?0?1 *)?\[(OVA|OAD)(\d+)?\] =&gt; S0E\4</span><br><span class="line">(S(eason)? ?\d+)? *\[\d+\(?(OVA|OAD)\)?\] =&gt; S0</span><br><span class="line">(?&lt;=[\W_])4(?:k|K)(?=[\W_]) =&gt; 2160p</span><br><span class="line">(?i)\bSBSUB\b =&gt; 银色子弹字幕组</span><br><span class="line">(?i)\bNekomoe kisstan\b =&gt; 喵萌奶茶屋</span><br><span class="line">(?i)\bOPFansMaplesnow\b =&gt; OPFans枫雪动漫</span><br><span class="line">(?i)\bSakurato\b|樱都字幕组|桜都字幕组|桜都 =&gt; 桜都字幕组</span><br><span class="line">(?i)\bHaruhana\b =&gt; ❀拨雪寻春❀</span><br><span class="line">(?&lt;=[\W_])CR(?=[\W_]) =&gt; Crunchyroll</span><br><span class="line">(?&lt;=[\W_])NF(?=[\W_]) =&gt; Netflix</span><br><span class="line">(?&lt;=[\W_])AMZN(?=[\W_]) =&gt; Amazon</span><br><span class="line">(?&lt;=[\W_])((H?MAX)|ATVP)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?&lt;=[\W_])ATVP(?=[\W_]) =&gt; AppleTV+</span><br><span class="line">(?&lt;=[\W_])DSNP(?=[\W_]) =&gt; Disney+</span><br><span class="line">(?&lt;=(1080p|2160p)\.)Max\. =&gt; -MAX.</span><br><span class="line">(?&lt;=(1080p|2160p)\.)iT\. =&gt; -iTunes.</span><br><span class="line">(?&lt;=S\d&#123;2&#125;E\d&#123;2&#125;).+(?=(2160|1080)p.+NTb) =&gt;  </span><br><span class="line">(?&lt;!-)(Disney\+|playWEB|Crunchyroll|Netflix|Amazon|AppleTV\+) =&gt; -\1</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义制作组-字幕组"><a href="#自定义制作组-字幕组" class="headerlink" title="自定义制作组&#x2F;字幕组"></a>自定义制作组&#x2F;字幕组</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">喵萌奶茶屋</span><br><span class="line">蓝色狂想</span><br><span class="line">风车字幕组</span><br><span class="line">银色子弹字幕组</span><br><span class="line">枫叶字幕组</span><br><span class="line">诸神字幕组</span><br><span class="line">❀拨雪寻春❀</span><br><span class="line">VARYG</span><br><span class="line">AI-Raws</span><br><span class="line">ANi</span><br><span class="line">SweetSub</span><br><span class="line">LoliHouse</span><br><span class="line">VCB-Studio</span><br><span class="line">7³ACG</span><br><span class="line">OPFans枫雪动漫</span><br><span class="line">SilverBullet</span><br><span class="line">APTX4869</span><br><span class="line">Snow-Raws</span><br><span class="line">B-Global</span><br><span class="line">CR</span><br><span class="line">KKTV</span><br><span class="line">Baha</span><br><span class="line">MyVideo</span><br><span class="line">AMZN</span><br><span class="line">KKTV</span><br><span class="line">friDay</span><br><span class="line">Disney+</span><br><span class="line">LINETV</span><br><span class="line">NF</span><br><span class="line">Viu</span><br><span class="line">Crunchyroll</span><br><span class="line">Netflix</span><br><span class="line">Amazon</span><br><span class="line">MAX</span><br><span class="line">AppleTV+</span><br><span class="line">HMAX</span><br><span class="line">BiliBili</span><br><span class="line">Abema</span><br><span class="line">CatchPlay</span><br><span class="line">iTunes</span><br><span class="line">Remux</span><br><span class="line">ADWeb</span><br><span class="line">NTb</span><br><span class="line">FLUX</span><br><span class="line">DSNP</span><br><span class="line">银色子弹字幕组</span><br><span class="line">RLWeb</span><br><span class="line">Breeze@Sunny</span><br><span class="line">Rain@Sunny</span><br><span class="line">RLeaves</span><br><span class="line">Nest</span><br><span class="line">AnimeF</span><br><span class="line">MWeb</span><br><span class="line">UBWEB</span><br><span class="line">FROGWEB</span><br><span class="line">FROG</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义占位符"><a href="#自定义占位符" class="headerlink" title="自定义占位符"></a>自定义占位符</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\b(简繁内封|简繁日内封|简繁日英内封|简繁官字内封|官简内封|简日双语|简体内封|简体内嵌|繁体内嵌|简英双语|简繁外挂|简体|HDR|DoVi)\b</span><br></pre></td></tr></table></figure>
+<h3 id="文件整理屏蔽词"><a href="#文件整理屏蔽词" class="headerlink" title="文件整理屏蔽词"></a>文件整理屏蔽词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">__\w&#123;6&#125;/</span><br><span class="line">\[((TV|BD|\bBlu-ray\b)?\s*CM\s*\d&#123;2,3&#125;)\]</span><br><span class="line">\[Teaser.*?\]</span><br><span class="line">\[PV.*?\]</span><br><span class="line">#\[\d&#123;2&#125;.\d\]</span><br><span class="line">\[NC[OPED]+.*?\]</span><br><span class="line">\[S\d+\s+Recap(\s+\d+)?\]</span><br><span class="line">\b(CDs|SPs|Scans|Preview|Menu|Bonus|映像特典|映像|Special Ending Movie|specials|特典CD|Menu|Logo|Preview|WiKi.sample|UHD.SAMPLE|/mv)\b</span><br><span class="line">\b(NC)?(Disc|片头|OP|OVA|OAD|SP|ED|Advice|Trailer|BDMenu|片尾|PV|CM|Preview|MENU|Info|EDPV|SongSpot|BDSpot)(\d&#123;0,2&#125;|_ALL)\b</span><br></pre></td></tr></table></figure>
+
+<p>转载至NEST，一个有菜又爱折腾的人<br><a href="https://blog.2nest.top/article/mpv2">MoviePilotV2使用教程 | NESTの博客</a></p>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LM Studio本地部署蒸馏化模型</title>
     <url>/2025/04/20/Studio%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E8%92%B8%E9%A6%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
@@ -141,24 +178,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/03/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>使用极空间部署MP</title>
@@ -211,41 +230,22 @@
       </tags>
   </entry>
   <entry>
-    <title>MP进阶设置</title>
-    <url>/2025/04/23/MP%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p>对部分设置做进一步整理</p>
-<h2 id="整理刮削"><a href="#整理刮削" class="headerlink" title="整理刮削"></a>整理刮削</h2><h3 id="电影重命名格式"><a href="#电影重命名格式" class="headerlink" title="电影重命名格式"></a>电影重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125; - &#123;&#123;videoFormat&#125;&#125;&#123;% if videoCodec %&#125;.&#123;&#123;videoCodec&#125;&#125;&#123;% endif %&#125;&#123;% if audioCodec %&#125;.&#123;&#123;audioCodec&#125;&#125;&#123;% endif %&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;%if effect %&#125;.&#123;&#123;effect&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="电视剧重命名格式"><a href="#电视剧重命名格式" class="headerlink" title="电视剧重命名格式"></a>电视剧重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/Season &#123;&#123;season&#125;&#125;/&#123;&#123;title&#125;&#125; &#123;&#123;season_episode&#125;&#125; &#123;&#123;videoFormat&#125;&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<h3 id="自定义规则"><a href="#自定义规则" class="headerlink" title="自定义规则"></a>自定义规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|\\bDV\\b|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-25000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;AnimeGroup&quot;,&quot;name&quot;:&quot;动漫组&quot;,&quot;include&quot;:&quot;7³ACG|VCB-Studio&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Audiences&quot;,&quot;name&quot;:&quot;观众官组&quot;,&quot;include&quot;:&quot;ADE|ADWeb&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HHWEB&quot;,&quot;name&quot;:&quot;憨憨官组&quot;,&quot;include&quot;:&quot;HHWEB&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;B-Global&quot;,&quot;name&quot;:&quot;BG源&quot;,&quot;include&quot;:&quot;B-Global|BG&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;60fps&quot;,&quot;name&quot;:&quot;60帧&quot;,&quot;include&quot;:&quot;60帧|60fps&quot;&#125;]</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<h3 id="优先级规则"><a href="#优先级规则" class="headerlink" title="优先级规则"></a>优先级规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !REMUX &amp; !3D &amp; !DOLBY &amp;filerGroup&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &gt; CNSUB &amp; 1080P &amp; BLURAY &gt; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot;AnimeGroup&amp; CNSUB &amp; BLURAY &amp; 1080P &gt;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;B-Global&amp; 4K &amp; CNSUB &gt;Audiences&amp;B-Global&amp; 1080P &amp; CNSUB &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;Audiences&amp;DDP&gt; 4K &amp;HHWEB&amp;DDP&gt; 4K &amp;Audiences&gt; 4K &amp;HHWEB&gt; 1080P &amp;Audiences&gt; 1080P &amp;HHWEB&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;Complete&gt; 4K &amp; WEBDL &amp;HHWEB&gt; WEBDL &amp; 1080P &amp;HHWEB&gt; 4K &amp; WEBDL &amp;Audiences&gt; 1080P &amp;Audiences&amp; WEBDL &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;HQ&gt; 4K &amp; WEBDL &amp;60fps&amp; HDR &gt; 4K &amp; WEBDL &amp;HHWEB&gt; 4K &amp;Audiences&amp; WEBDL &gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<h2 id="搜索-下载"><a href="#搜索-下载" class="headerlink" title="搜索&amp;下载"></a>搜索&amp;下载</h2><h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><p>订阅模式-推荐站点RSS<br>订阅优先级规则-留空全选<br>订阅定时搜索-如果没有漏订阅可以不开启</p>
-<h3 id="订阅站点"><a href="#订阅站点" class="headerlink" title="订阅站点"></a>订阅站点</h3><p>订阅的影片会从选中的站点订阅，订阅流程：</p>
-<ol>
-<li>订阅影片</li>
-<li>等待1分钟后开始执行搜索（站点搜索，补齐前面未下的集数）</li>
-<li>按照设定周期自动爬取站点&#x2F;检索RSS获取种子</li>
-<li>识别种子是否为订阅的影片</li>
-</ol>
-<h2 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h2><p><a href="https://wiki.movie-pilot.org/zh/notification">官方WIKI通知</a></p>
-<h2 id="词表"><a href="#词表" class="headerlink" title="词表"></a>词表</h2><h3 id="自定义识别词"><a href="#自定义识别词" class="headerlink" title="自定义识别词"></a>自定义识别词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\[Movie\]</span><br><span class="line">episode\.\d&#123;1&#125;</span><br><span class="line">\.(第\d&#123;1,2&#125;集)\. =&gt; \1</span><br><span class="line">(?i)Season( *)0?(\d+) =&gt; S\2</span><br><span class="line">(?&lt;=SBSUB.*DR.*?)- =&gt; part</span><br><span class="line">\[CHS\_CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHS\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">chs&amp;jpn =&gt; jpsc</span><br><span class="line">cht&amp;jpn =&gt; jptc</span><br><span class="line">\[SBSUB\]\[CONAN\]\[DR =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">\[SBSUB\]\[CONAN\]\[ =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)2nd Season =&gt; S02</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)IV =&gt; S04</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)III =&gt; S03</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)II =&gt; S02</span><br><span class="line">[【\[](Fin|END)[】\]]|(?:|\s|\s-\s)(Fin|END)(?=\])|(?&lt;=\d&#123;1,2&#125;)_?(Fin|END)</span><br><span class="line">(?&lt;=[\[【].*?(?:组|組|sub|S(?:UB|ub|tudio)|Raw(?:|s)|社)[\]】])(?:(?:\[|【|★|)\d&#123;1,2&#125;月新番(?:\]|】|★|)|)[\[【](.*?)[\]】] =&gt; \1</span><br><span class="line">(?&lt;=[\W_])(CR|Baha|KKTV|Abema|B-Global|Sentai|MyVideo|AMZN|KKTV|friDay|DSNP|LINETV|NF|Viu)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|_|＆|\x20)(CHT|BIG5|TC)(&amp;|_|＆|\x20)JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)_JA?PN?(&amp;|＆|\x20)(CHT|BIG5|TC)_JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|＆|\x20)(CHT|BIG5|TC) =&gt; 简繁内封</span><br><span class="line">(?i)(CHS|GB|SC)(_|&amp;|＆|\x20)JA?PN? =&gt; 简日双语</span><br><span class="line">(?i)\[JA?PN?(_|&amp;|＆|\x20)?(SC|CHS|GB)\] =&gt; [简日双语]</span><br><span class="line">(.*)(VCB-Studio)(.*)(Ma10p_?|Hi10p_?)(.*) =&gt; \1\2\3\5</span><br><span class="line">S(eason)? ?0?([2-9]) *\[(OVA|OAD)0?\(?(\d)?\)?\] =&gt; S0E\2\4</span><br><span class="line">(S(eason)? ?0?1 *)?\[(OVA|OAD)(\d+)?\] =&gt; S0E\4</span><br><span class="line">(S(eason)? ?\d+)? *\[\d+\(?(OVA|OAD)\)?\] =&gt; S0</span><br><span class="line">(?&lt;=[\W_])4(?:k|K)(?=[\W_]) =&gt; 2160p</span><br><span class="line">(?i)\bSBSUB\b =&gt; 银色子弹字幕组</span><br><span class="line">(?i)\bNekomoe kisstan\b =&gt; 喵萌奶茶屋</span><br><span class="line">(?i)\bOPFansMaplesnow\b =&gt; OPFans枫雪动漫</span><br><span class="line">(?i)\bSakurato\b|樱都字幕组|桜都字幕组|桜都 =&gt; 桜都字幕组</span><br><span class="line">(?i)\bHaruhana\b =&gt; ❀拨雪寻春❀</span><br><span class="line">(?&lt;=[\W_])CR(?=[\W_]) =&gt; Crunchyroll</span><br><span class="line">(?&lt;=[\W_])NF(?=[\W_]) =&gt; Netflix</span><br><span class="line">(?&lt;=[\W_])AMZN(?=[\W_]) =&gt; Amazon</span><br><span class="line">(?&lt;=[\W_])((H?MAX)|ATVP)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?&lt;=[\W_])ATVP(?=[\W_]) =&gt; AppleTV+</span><br><span class="line">(?&lt;=[\W_])DSNP(?=[\W_]) =&gt; Disney+</span><br><span class="line">(?&lt;=(1080p|2160p)\.)Max\. =&gt; -MAX.</span><br><span class="line">(?&lt;=(1080p|2160p)\.)iT\. =&gt; -iTunes.</span><br><span class="line">(?&lt;=S\d&#123;2&#125;E\d&#123;2&#125;).+(?=(2160|1080)p.+NTb) =&gt;  </span><br><span class="line">(?&lt;!-)(Disney\+|playWEB|Crunchyroll|Netflix|Amazon|AppleTV\+) =&gt; -\1</span><br></pre></td></tr></table></figure>
-
-<h3 id="自定义制作组-字幕组"><a href="#自定义制作组-字幕组" class="headerlink" title="自定义制作组&#x2F;字幕组"></a>自定义制作组&#x2F;字幕组</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">喵萌奶茶屋</span><br><span class="line">蓝色狂想</span><br><span class="line">风车字幕组</span><br><span class="line">银色子弹字幕组</span><br><span class="line">枫叶字幕组</span><br><span class="line">诸神字幕组</span><br><span class="line">❀拨雪寻春❀</span><br><span class="line">VARYG</span><br><span class="line">AI-Raws</span><br><span class="line">ANi</span><br><span class="line">SweetSub</span><br><span class="line">LoliHouse</span><br><span class="line">VCB-Studio</span><br><span class="line">7³ACG</span><br><span class="line">OPFans枫雪动漫</span><br><span class="line">SilverBullet</span><br><span class="line">APTX4869</span><br><span class="line">Snow-Raws</span><br><span class="line">B-Global</span><br><span class="line">CR</span><br><span class="line">KKTV</span><br><span class="line">Baha</span><br><span class="line">MyVideo</span><br><span class="line">AMZN</span><br><span class="line">KKTV</span><br><span class="line">friDay</span><br><span class="line">Disney+</span><br><span class="line">LINETV</span><br><span class="line">NF</span><br><span class="line">Viu</span><br><span class="line">Crunchyroll</span><br><span class="line">Netflix</span><br><span class="line">Amazon</span><br><span class="line">MAX</span><br><span class="line">AppleTV+</span><br><span class="line">HMAX</span><br><span class="line">BiliBili</span><br><span class="line">Abema</span><br><span class="line">CatchPlay</span><br><span class="line">iTunes</span><br><span class="line">Remux</span><br><span class="line">ADWeb</span><br><span class="line">NTb</span><br><span class="line">FLUX</span><br><span class="line">DSNP</span><br><span class="line">银色子弹字幕组</span><br><span class="line">RLWeb</span><br><span class="line">Breeze@Sunny</span><br><span class="line">Rain@Sunny</span><br><span class="line">RLeaves</span><br><span class="line">Nest</span><br><span class="line">AnimeF</span><br><span class="line">MWeb</span><br><span class="line">UBWEB</span><br><span class="line">FROGWEB</span><br><span class="line">FROG</span><br></pre></td></tr></table></figure>
-
-<h3 id="自定义占位符"><a href="#自定义占位符" class="headerlink" title="自定义占位符"></a>自定义占位符</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\b(简繁内封|简繁日内封|简繁日英内封|简繁官字内封|官简内封|简日双语|简体内封|简体内嵌|繁体内嵌|简英双语|简繁外挂|简体|HDR|DoVi)\b</span><br></pre></td></tr></table></figure>
-<h3 id="文件整理屏蔽词"><a href="#文件整理屏蔽词" class="headerlink" title="文件整理屏蔽词"></a>文件整理屏蔽词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">__\w&#123;6&#125;/</span><br><span class="line">\[((TV|BD|\bBlu-ray\b)?\s*CM\s*\d&#123;2,3&#125;)\]</span><br><span class="line">\[Teaser.*?\]</span><br><span class="line">\[PV.*?\]</span><br><span class="line">#\[\d&#123;2&#125;.\d\]</span><br><span class="line">\[NC[OPED]+.*?\]</span><br><span class="line">\[S\d+\s+Recap(\s+\d+)?\]</span><br><span class="line">\b(CDs|SPs|Scans|Preview|Menu|Bonus|映像特典|映像|Special Ending Movie|specials|特典CD|Menu|Logo|Preview|WiKi.sample|UHD.SAMPLE|/mv)\b</span><br><span class="line">\b(NC)?(Disc|片头|OP|OVA|OAD|SP|ED|Advice|Trailer|BDMenu|片尾|PV|CM|Preview|MENU|Info|EDPV|SongSpot|BDSpot)(\d&#123;0,2&#125;|_ALL)\b</span><br></pre></td></tr></table></figure>
-
-<p>转载至NEST，一个有菜又爱折腾的人<br><a href="https://blog.2nest.top/article/mpv2">MoviePilotV2使用教程 | NESTの博客</a></p>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>Nas</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-      </tags>
   </entry>
   <entry>
     <title>使用极空间部署兰空图床</title>
@@ -284,55 +284,21 @@
       </tags>
   </entry>
   <entry>
-    <title>修复Github与Vercel数据不同步</title>
-    <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
-<hr>
-<h4 id="解决方法（主要来自于ai的帮助）"><a href="#解决方法（主要来自于ai的帮助）" class="headerlink" title="解决方法（主要来自于ai的帮助）"></a>解决方法（主要来自于ai的帮助）</h4><p>你的 Hexo 网站已经成功部署到 GitHub Pages。如果网站没有正确更新，可能是缓存问题或 GitHub Pages 的更新延迟。你可以尝试清除浏览器缓存后再次访问，或者等待几分钟后刷新页面。</p>
-<p>那为什么vercel没有同步更新数据呢？<br>根据你的问题和搜索结果，Vercel 没有同步更新数据可能有以下几种原因及解决方法：</p>
-<ol>
-<li>Vercel 项目未正确关联 GitHub 仓库<br>如果 Vercel 项目没有正确关联到 GitHub 仓库，或者关联的仓库信息有误，可能会导致无法自动同步更新。</li>
-</ol>
-<p>解决方法：<br>登录到 Vercel 控制台，进入项目设置。<br>检查项目的 Git 部分是否正确关联到你的 GitHub 仓库。<br>如果关联错误，点击“Reconnect”重新连接 GitHub 仓库[^1^]。</p>
-<ol start="2">
-<li>GitHub 仓库的上游同步未启用<br>如果 GitHub 仓库的上游同步未启用，即使你在本地更新了代码，Vercel 也无法获取到最新的代码。</li>
-</ol>
-<p>解决方法：<br>在 GitHub 上，进入你的 Fork 仓库。<br>点击“Sync fork”按钮，手动同步上游仓库的最新代码[^3^]。<br>如果自动同步失败，可以手动点击“Update branch”按钮[^4^]。</p>
-<ol start="3">
-<li>Vercel 的自动部署触发条件未满足<br>Vercel 的自动部署通常依赖于 GitHub 的 Webhook 通知。如果 Webhook 没有正确配置，或者没有触发，Vercel 将不会自动部署。</li>
-</ol>
-<p>解决方法：<br>确保 GitHub 仓库的 Webhook 已正确设置，指向 Vercel 的 Webhook URL。<br>在 Vercel 项目设置中，检查“Build &amp; Development Settings”中的“Triggers”部分，确保自动部署已启用[^3^]。</p>
-<ol start="4">
-<li>Vercel 部署过程中出现错误<br>即使代码已经推送到 GitHub，但如果 Vercel 在部署过程中遇到错误，也可能导致更新失败。</li>
-</ol>
-<p>解决方法：<br>查看 Vercel 的部署日志，了解具体的错误信息[^2^]。<br>根据错误信息修复问题，例如缺少环境变量、依赖冲突等。<br>修复后，手动重新部署项目[^2^]。</p>
-<ol start="5">
-<li>Vercel 缓存问题<br>Vercel 的缓存机制可能会导致更新后的代码没有立即生效。</li>
-</ol>
-<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Settings”部分。<br>清除缓存，然后重新部署[^3^]。</p>
-<ol start="6">
-<li>GitHub Actions 的 Upstream Sync Action 未正确运行<br>如果你使用了 GitHub Actions 来同步上游代码，但 Action 未正确运行，也会导致更新失败。</li>
-</ol>
-<p>解决方法：<br>在 GitHub 仓库的 Actions 页面，检查“Upstream Sync Action”是否成功运行[^4^]。<br>如果失败，手动重新运行该 Action[^4^]。<br>7. 重新部署项目<br>如果上述方法都无法解决问题，可以尝试重新部署项目：</p>
-<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Deployments”部分。<br>点击“Redeploy”按钮，手动重新部署最新的代码[^3^]。</p>
-<p>总结<br>Vercel 未同步更新数据可能是由于项目未正确关联 GitHub 仓库、上游同步未启用、自动部署触发条件未满足、部署过程中出现错误、缓存问题或 GitHub Actions 未正确运行等原因导致的。你可以按照上述方法逐一排查并解决问题。如果问题仍然存在，建议查看 Vercel 的官方文档或联系 Vercel 的技术支持获取帮助。</p>
-<hr>
-<p>以上是ai给出的问题分析，<br>根据我的实际情况，我发现很可能是webhook的问题，因为这里的配置是空的。</p>
-<hr>
-<p>现在仓库的webhook是空的，我该如何设置？</p>
-<p>要将 GitHub 仓库的 Webhook 配置为与 Vercel 同步更新，你需要在 GitHub 仓库中添加一个 Webhook，使其在代码推送时通知 Vercel 触发部署。以下是详细的步骤：</p>
-<p>步骤 1：获取 Vercel 的 Webhook URL<br>登录到 Vercel 控制台。<br>选择你的项目。<br>在项目设置中，找到 “Git” 或 “Webhooks” 部分。<br>点击 “Add Webhook” 或 “Create Hook” 按钮。<br>填写以下信息：<br>Hook Name：自定义名称，例如 github-sync。<br>Branch：选择你希望触发部署的分支，例如 main。<br>点击 “Create Hook” 按钮。<br>创建完成后，Vercel 会生成一个 Webhook URL，复制这个 URL。</p>
-<p>步骤 2：在 GitHub 仓库中添加 Webhook<br>登录到 GitHub，进入你的仓库。<br>点击仓库页面右上角的 “Settings”（设置）。<br>在左侧菜单中，点击 “Webhooks”。<br>点击 “Add webhook” 按钮。<br>在弹出的表单中填写以下信息：<br>Payload URL：粘贴你在 Vercel 中复制的 Webhook URL。<br>Content type：选择 application&#x2F;json。<br>Secret：（可选）如果你在 Vercel 中设置了 Webhook 的密钥，这里需要填入相同的密钥。<br>Which events would you like to trigger this webhook?：选择 “Just the push event” 或 “Let me select individual events”，并确保勾选了 “Push events”。<br>Active：确保此选项被勾选。<br>点击 “Add webhook” 按钮。</p>
-<p>步骤 3：验证 Webhook 是否生效<br>在 GitHub 的 Webhook 设置页面，你会看到刚刚添加的 Webhook。<br>GitHub 会自动发送一个 ping 事件到 Webhook URL，以验证连接是否成功。<br>如果 Webhook 配置正确，Vercel 应该会收到这个 ping 事件，并在控制台中显示相关信息。<br>你也可以在 Vercel 的 Webhook 设置页面查看 Webhook 的状态和日志。</p>
-<hr>
-<p>通过以上设置恢复同步啦</p>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
 ]]></content>
       <categories>
-        <category>Blog</category>
+        <category>AI</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -511,34 +477,55 @@
       </tags>
   </entry>
   <entry>
-    <title>文生图工作流相关术语概念</title>
-    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
+    <title>修复Github与Vercel数据不同步</title>
+    <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
 <hr>
-<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
+<h4 id="解决方法（主要来自于ai的帮助）"><a href="#解决方法（主要来自于ai的帮助）" class="headerlink" title="解决方法（主要来自于ai的帮助）"></a>解决方法（主要来自于ai的帮助）</h4><p>你的 Hexo 网站已经成功部署到 GitHub Pages。如果网站没有正确更新，可能是缓存问题或 GitHub Pages 的更新延迟。你可以尝试清除浏览器缓存后再次访问，或者等待几分钟后刷新页面。</p>
+<p>那为什么vercel没有同步更新数据呢？<br>根据你的问题和搜索结果，Vercel 没有同步更新数据可能有以下几种原因及解决方法：</p>
+<ol>
+<li>Vercel 项目未正确关联 GitHub 仓库<br>如果 Vercel 项目没有正确关联到 GitHub 仓库，或者关联的仓库信息有误，可能会导致无法自动同步更新。</li>
+</ol>
+<p>解决方法：<br>登录到 Vercel 控制台，进入项目设置。<br>检查项目的 Git 部分是否正确关联到你的 GitHub 仓库。<br>如果关联错误，点击“Reconnect”重新连接 GitHub 仓库[^1^]。</p>
+<ol start="2">
+<li>GitHub 仓库的上游同步未启用<br>如果 GitHub 仓库的上游同步未启用，即使你在本地更新了代码，Vercel 也无法获取到最新的代码。</li>
+</ol>
+<p>解决方法：<br>在 GitHub 上，进入你的 Fork 仓库。<br>点击“Sync fork”按钮，手动同步上游仓库的最新代码[^3^]。<br>如果自动同步失败，可以手动点击“Update branch”按钮[^4^]。</p>
+<ol start="3">
+<li>Vercel 的自动部署触发条件未满足<br>Vercel 的自动部署通常依赖于 GitHub 的 Webhook 通知。如果 Webhook 没有正确配置，或者没有触发，Vercel 将不会自动部署。</li>
+</ol>
+<p>解决方法：<br>确保 GitHub 仓库的 Webhook 已正确设置，指向 Vercel 的 Webhook URL。<br>在 Vercel 项目设置中，检查“Build &amp; Development Settings”中的“Triggers”部分，确保自动部署已启用[^3^]。</p>
+<ol start="4">
+<li>Vercel 部署过程中出现错误<br>即使代码已经推送到 GitHub，但如果 Vercel 在部署过程中遇到错误，也可能导致更新失败。</li>
+</ol>
+<p>解决方法：<br>查看 Vercel 的部署日志，了解具体的错误信息[^2^]。<br>根据错误信息修复问题，例如缺少环境变量、依赖冲突等。<br>修复后，手动重新部署项目[^2^]。</p>
+<ol start="5">
+<li>Vercel 缓存问题<br>Vercel 的缓存机制可能会导致更新后的代码没有立即生效。</li>
+</ol>
+<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Settings”部分。<br>清除缓存，然后重新部署[^3^]。</p>
+<ol start="6">
+<li>GitHub Actions 的 Upstream Sync Action 未正确运行<br>如果你使用了 GitHub Actions 来同步上游代码，但 Action 未正确运行，也会导致更新失败。</li>
+</ol>
+<p>解决方法：<br>在 GitHub 仓库的 Actions 页面，检查“Upstream Sync Action”是否成功运行[^4^]。<br>如果失败，手动重新运行该 Action[^4^]。<br>7. 重新部署项目<br>如果上述方法都无法解决问题，可以尝试重新部署项目：</p>
+<p>解决方法：<br>在 Vercel 控制台中，找到项目的“Deployments”部分。<br>点击“Redeploy”按钮，手动重新部署最新的代码[^3^]。</p>
+<p>总结<br>Vercel 未同步更新数据可能是由于项目未正确关联 GitHub 仓库、上游同步未启用、自动部署触发条件未满足、部署过程中出现错误、缓存问题或 GitHub Actions 未正确运行等原因导致的。你可以按照上述方法逐一排查并解决问题。如果问题仍然存在，建议查看 Vercel 的官方文档或联系 Vercel 的技术支持获取帮助。</p>
 <hr>
-<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
+<p>以上是ai给出的问题分析，<br>根据我的实际情况，我发现很可能是webhook的问题，因为这里的配置是空的。</p>
 <hr>
-<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
+<p>现在仓库的webhook是空的，我该如何设置？</p>
+<p>要将 GitHub 仓库的 Webhook 配置为与 Vercel 同步更新，你需要在 GitHub 仓库中添加一个 Webhook，使其在代码推送时通知 Vercel 触发部署。以下是详细的步骤：</p>
+<p>步骤 1：获取 Vercel 的 Webhook URL<br>登录到 Vercel 控制台。<br>选择你的项目。<br>在项目设置中，找到 “Git” 或 “Webhooks” 部分。<br>点击 “Add Webhook” 或 “Create Hook” 按钮。<br>填写以下信息：<br>Hook Name：自定义名称，例如 github-sync。<br>Branch：选择你希望触发部署的分支，例如 main。<br>点击 “Create Hook” 按钮。<br>创建完成后，Vercel 会生成一个 Webhook URL，复制这个 URL。</p>
+<p>步骤 2：在 GitHub 仓库中添加 Webhook<br>登录到 GitHub，进入你的仓库。<br>点击仓库页面右上角的 “Settings”（设置）。<br>在左侧菜单中，点击 “Webhooks”。<br>点击 “Add webhook” 按钮。<br>在弹出的表单中填写以下信息：<br>Payload URL：粘贴你在 Vercel 中复制的 Webhook URL。<br>Content type：选择 application&#x2F;json。<br>Secret：（可选）如果你在 Vercel 中设置了 Webhook 的密钥，这里需要填入相同的密钥。<br>Which events would you like to trigger this webhook?：选择 “Just the push event” 或 “Let me select individual events”，并确保勾选了 “Push events”。<br>Active：确保此选项被勾选。<br>点击 “Add webhook” 按钮。</p>
+<p>步骤 3：验证 Webhook 是否生效<br>在 GitHub 的 Webhook 设置页面，你会看到刚刚添加的 Webhook。<br>GitHub 会自动发送一个 ping 事件到 Webhook URL，以验证连接是否成功。<br>如果 Webhook 配置正确，Vercel 应该会收到这个 ping 事件，并在控制台中显示相关信息。<br>你也可以在 Vercel 的 Webhook 设置页面查看 Webhook 的状态和日志。</p>
 <hr>
-<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
-<hr>
-<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
-<hr>
-<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
-<hr>
-<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
-<hr>
-<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
+<p>通过以上设置恢复同步啦</p>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
 ]]></content>
       <categories>
-        <category>AI</category>
+        <category>Blog</category>
       </categories>
       <tags>
-        <tag>ComfyUI</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1036,6 +1023,37 @@
       </tags>
   </entry>
   <entry>
+    <title>文生图工作流相关术语概念</title>
+    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
+<hr>
+<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
+<hr>
+<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
+<hr>
+<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
+<hr>
+<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
+<hr>
+<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
+<hr>
+<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
+<hr>
+<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
+<hr>
+<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试文章</title>
     <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
@@ -1051,24 +1069,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
       </tags>
   </entry>
 </search>
