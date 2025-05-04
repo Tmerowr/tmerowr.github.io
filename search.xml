@@ -130,6 +130,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Twikoo静态网站评论系统</title>
+    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
+<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
+<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
+<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
+<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
+
+<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LM Studio本地部署蒸馏化模型</title>
     <url>/2025/04/20/Studio%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E8%92%B8%E9%A6%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
@@ -158,25 +177,6 @@
       </categories>
       <tags>
         <tag>LmStudio</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Twikoo静态网站评论系统</title>
-    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
-<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
-<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
-<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
-<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
-
-<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -333,6 +333,24 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -502,24 +520,6 @@
 <li>VAE Decode：解码图像。</li>
 <li>Save Image：保存结果。</li>
 </ol>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
 ]]></content>
       <categories>
         <category>AI</category>
