@@ -21,7 +21,7 @@
 <p>我装了两个主题，<font color="#0070c0"> landscape</font> 是hexo博客的默认主题，我自己下载了一个 <font color="#126e82">anzhiyu </font>主题。</p>
 <p>你也可以自己下载主题放到该文件下， <a href="https://hexo.io/themes/">hexo主题传送门</a></p>
 <h3 id="node-module"><a href="#node-module" class="headerlink" title="node_module"></a>node_module</h3><p>这个目录下存放是通过nodejs下载的相应的hexo插件。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <ul>
 <li><font color="#61649f">sudo</font>：以管理员权限执行命令，确保有足够的权限安装插件。</li>
 <li><font color="#8b2671">cnpm</font>：使用淘宝的npm镜像，加速包的下载速度。</li>
@@ -93,22 +93,250 @@
       </tags>
   </entry>
   <entry>
-    <title>Twikoo静态网站评论系统</title>
-    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
-<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
-<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
-<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
-<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
+    <title>MP进阶设置</title>
+    <url>/2025/04/23/MP%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p>对部分设置做进一步整理</p>
+<h2 id="整理刮削"><a href="#整理刮削" class="headerlink" title="整理刮削"></a>整理刮削</h2><h3 id="电影重命名格式"><a href="#电影重命名格式" class="headerlink" title="电影重命名格式"></a>电影重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125; - &#123;&#123;videoFormat&#125;&#125;&#123;% if videoCodec %&#125;.&#123;&#123;videoCodec&#125;&#125;&#123;% endif %&#125;&#123;% if audioCodec %&#125;.&#123;&#123;audioCodec&#125;&#125;&#123;% endif %&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;%if effect %&#125;.&#123;&#123;effect&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
+<h3 id="电视剧重命名格式"><a href="#电视剧重命名格式" class="headerlink" title="电视剧重命名格式"></a>电视剧重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/Season &#123;&#123;season&#125;&#125;/&#123;&#123;title&#125;&#125; &#123;&#123;season_episode&#125;&#125; &#123;&#123;videoFormat&#125;&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义规则"><a href="#自定义规则" class="headerlink" title="自定义规则"></a>自定义规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|\\bDV\\b|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-25000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;AnimeGroup&quot;,&quot;name&quot;:&quot;动漫组&quot;,&quot;include&quot;:&quot;7³ACG|VCB-Studio&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Audiences&quot;,&quot;name&quot;:&quot;观众官组&quot;,&quot;include&quot;:&quot;ADE|ADWeb&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HHWEB&quot;,&quot;name&quot;:&quot;憨憨官组&quot;,&quot;include&quot;:&quot;HHWEB&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;B-Global&quot;,&quot;name&quot;:&quot;BG源&quot;,&quot;include&quot;:&quot;B-Global|BG&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;60fps&quot;,&quot;name&quot;:&quot;60帧&quot;,&quot;include&quot;:&quot;60帧|60fps&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="优先级规则"><a href="#优先级规则" class="headerlink" title="优先级规则"></a>优先级规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !REMUX &amp; !3D &amp; !DOLBY &amp;filerGroup&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &gt; CNSUB &amp; 1080P &amp; BLURAY &gt; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot;AnimeGroup&amp; CNSUB &amp; BLURAY &amp; 1080P &gt;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;B-Global&amp; 4K &amp; CNSUB &gt;Audiences&amp;B-Global&amp; 1080P &amp; CNSUB &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;Audiences&amp;DDP&gt; 4K &amp;HHWEB&amp;DDP&gt; 4K &amp;Audiences&gt; 4K &amp;HHWEB&gt; 1080P &amp;Audiences&gt; 1080P &amp;HHWEB&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;Complete&gt; 4K &amp; WEBDL &amp;HHWEB&gt; WEBDL &amp; 1080P &amp;HHWEB&gt; 4K &amp; WEBDL &amp;Audiences&gt; 1080P &amp;Audiences&amp; WEBDL &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;HQ&gt; 4K &amp; WEBDL &amp;60fps&amp; HDR &gt; 4K &amp; WEBDL &amp;HHWEB&gt; 4K &amp;Audiences&amp; WEBDL &gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="搜索-下载"><a href="#搜索-下载" class="headerlink" title="搜索&amp;下载"></a>搜索&amp;下载</h2><h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><p>订阅模式-推荐站点RSS<br>订阅优先级规则-留空全选<br>订阅定时搜索-如果没有漏订阅可以不开启</p>
+<h3 id="订阅站点"><a href="#订阅站点" class="headerlink" title="订阅站点"></a>订阅站点</h3><p>订阅的影片会从选中的站点订阅，订阅流程：</p>
+<ol>
+<li>订阅影片</li>
+<li>等待1分钟后开始执行搜索（站点搜索，补齐前面未下的集数）</li>
+<li>按照设定周期自动爬取站点&#x2F;检索RSS获取种子</li>
+<li>识别种子是否为订阅的影片</li>
+</ol>
+<h2 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h2><p><a href="https://wiki.movie-pilot.org/zh/notification">官方WIKI通知</a></p>
+<h2 id="词表"><a href="#词表" class="headerlink" title="词表"></a>词表</h2><h3 id="自定义识别词"><a href="#自定义识别词" class="headerlink" title="自定义识别词"></a>自定义识别词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\[Movie\]</span><br><span class="line">episode\.\d&#123;1&#125;</span><br><span class="line">\.(第\d&#123;1,2&#125;集)\. =&gt; \1</span><br><span class="line">(?i)Season( *)0?(\d+) =&gt; S\2</span><br><span class="line">(?&lt;=SBSUB.*DR.*?)- =&gt; part</span><br><span class="line">\[CHS\_CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHS\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">chs&amp;jpn =&gt; jpsc</span><br><span class="line">cht&amp;jpn =&gt; jptc</span><br><span class="line">\[SBSUB\]\[CONAN\]\[DR =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">\[SBSUB\]\[CONAN\]\[ =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)2nd Season =&gt; S02</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)IV =&gt; S04</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)III =&gt; S03</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)II =&gt; S02</span><br><span class="line">[【\[](Fin|END)[】\]]|(?:|\s|\s-\s)(Fin|END)(?=\])|(?&lt;=\d&#123;1,2&#125;)_?(Fin|END)</span><br><span class="line">(?&lt;=[\[【].*?(?:组|組|sub|S(?:UB|ub|tudio)|Raw(?:|s)|社)[\]】])(?:(?:\[|【|★|)\d&#123;1,2&#125;月新番(?:\]|】|★|)|)[\[【](.*?)[\]】] =&gt; \1</span><br><span class="line">(?&lt;=[\W_])(CR|Baha|KKTV|Abema|B-Global|Sentai|MyVideo|AMZN|KKTV|friDay|DSNP|LINETV|NF|Viu)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|_|＆|\x20)(CHT|BIG5|TC)(&amp;|_|＆|\x20)JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)_JA?PN?(&amp;|＆|\x20)(CHT|BIG5|TC)_JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|＆|\x20)(CHT|BIG5|TC) =&gt; 简繁内封</span><br><span class="line">(?i)(CHS|GB|SC)(_|&amp;|＆|\x20)JA?PN? =&gt; 简日双语</span><br><span class="line">(?i)\[JA?PN?(_|&amp;|＆|\x20)?(SC|CHS|GB)\] =&gt; [简日双语]</span><br><span class="line">(.*)(VCB-Studio)(.*)(Ma10p_?|Hi10p_?)(.*) =&gt; \1\2\3\5</span><br><span class="line">S(eason)? ?0?([2-9]) *\[(OVA|OAD)0?\(?(\d)?\)?\] =&gt; S0E\2\4</span><br><span class="line">(S(eason)? ?0?1 *)?\[(OVA|OAD)(\d+)?\] =&gt; S0E\4</span><br><span class="line">(S(eason)? ?\d+)? *\[\d+\(?(OVA|OAD)\)?\] =&gt; S0</span><br><span class="line">(?&lt;=[\W_])4(?:k|K)(?=[\W_]) =&gt; 2160p</span><br><span class="line">(?i)\bSBSUB\b =&gt; 银色子弹字幕组</span><br><span class="line">(?i)\bNekomoe kisstan\b =&gt; 喵萌奶茶屋</span><br><span class="line">(?i)\bOPFansMaplesnow\b =&gt; OPFans枫雪动漫</span><br><span class="line">(?i)\bSakurato\b|樱都字幕组|桜都字幕组|桜都 =&gt; 桜都字幕组</span><br><span class="line">(?i)\bHaruhana\b =&gt; ❀拨雪寻春❀</span><br><span class="line">(?&lt;=[\W_])CR(?=[\W_]) =&gt; Crunchyroll</span><br><span class="line">(?&lt;=[\W_])NF(?=[\W_]) =&gt; Netflix</span><br><span class="line">(?&lt;=[\W_])AMZN(?=[\W_]) =&gt; Amazon</span><br><span class="line">(?&lt;=[\W_])((H?MAX)|ATVP)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?&lt;=[\W_])ATVP(?=[\W_]) =&gt; AppleTV+</span><br><span class="line">(?&lt;=[\W_])DSNP(?=[\W_]) =&gt; Disney+</span><br><span class="line">(?&lt;=(1080p|2160p)\.)Max\. =&gt; -MAX.</span><br><span class="line">(?&lt;=(1080p|2160p)\.)iT\. =&gt; -iTunes.</span><br><span class="line">(?&lt;=S\d&#123;2&#125;E\d&#123;2&#125;).+(?=(2160|1080)p.+NTb) =&gt;  </span><br><span class="line">(?&lt;!-)(Disney\+|playWEB|Crunchyroll|Netflix|Amazon|AppleTV\+) =&gt; -\1</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义制作组-字幕组"><a href="#自定义制作组-字幕组" class="headerlink" title="自定义制作组&#x2F;字幕组"></a>自定义制作组&#x2F;字幕组</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">喵萌奶茶屋</span><br><span class="line">蓝色狂想</span><br><span class="line">风车字幕组</span><br><span class="line">银色子弹字幕组</span><br><span class="line">枫叶字幕组</span><br><span class="line">诸神字幕组</span><br><span class="line">❀拨雪寻春❀</span><br><span class="line">VARYG</span><br><span class="line">AI-Raws</span><br><span class="line">ANi</span><br><span class="line">SweetSub</span><br><span class="line">LoliHouse</span><br><span class="line">VCB-Studio</span><br><span class="line">7³ACG</span><br><span class="line">OPFans枫雪动漫</span><br><span class="line">SilverBullet</span><br><span class="line">APTX4869</span><br><span class="line">Snow-Raws</span><br><span class="line">B-Global</span><br><span class="line">CR</span><br><span class="line">KKTV</span><br><span class="line">Baha</span><br><span class="line">MyVideo</span><br><span class="line">AMZN</span><br><span class="line">KKTV</span><br><span class="line">friDay</span><br><span class="line">Disney+</span><br><span class="line">LINETV</span><br><span class="line">NF</span><br><span class="line">Viu</span><br><span class="line">Crunchyroll</span><br><span class="line">Netflix</span><br><span class="line">Amazon</span><br><span class="line">MAX</span><br><span class="line">AppleTV+</span><br><span class="line">HMAX</span><br><span class="line">BiliBili</span><br><span class="line">Abema</span><br><span class="line">CatchPlay</span><br><span class="line">iTunes</span><br><span class="line">Remux</span><br><span class="line">ADWeb</span><br><span class="line">NTb</span><br><span class="line">FLUX</span><br><span class="line">DSNP</span><br><span class="line">银色子弹字幕组</span><br><span class="line">RLWeb</span><br><span class="line">Breeze@Sunny</span><br><span class="line">Rain@Sunny</span><br><span class="line">RLeaves</span><br><span class="line">Nest</span><br><span class="line">AnimeF</span><br><span class="line">MWeb</span><br><span class="line">UBWEB</span><br><span class="line">FROGWEB</span><br><span class="line">FROG</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义占位符"><a href="#自定义占位符" class="headerlink" title="自定义占位符"></a>自定义占位符</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\b(简繁内封|简繁日内封|简繁日英内封|简繁官字内封|官简内封|简日双语|简体内封|简体内嵌|繁体内嵌|简英双语|简繁外挂|简体|HDR|DoVi)\b</span><br></pre></td></tr></table></figure>
+<h3 id="文件整理屏蔽词"><a href="#文件整理屏蔽词" class="headerlink" title="文件整理屏蔽词"></a>文件整理屏蔽词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">__\w&#123;6&#125;/</span><br><span class="line">\[((TV|BD|\bBlu-ray\b)?\s*CM\s*\d&#123;2,3&#125;)\]</span><br><span class="line">\[Teaser.*?\]</span><br><span class="line">\[PV.*?\]</span><br><span class="line">#\[\d&#123;2&#125;.\d\]</span><br><span class="line">\[NC[OPED]+.*?\]</span><br><span class="line">\[S\d+\s+Recap(\s+\d+)?\]</span><br><span class="line">\b(CDs|SPs|Scans|Preview|Menu|Bonus|映像特典|映像|Special Ending Movie|specials|特典CD|Menu|Logo|Preview|WiKi.sample|UHD.SAMPLE|/mv)\b</span><br><span class="line">\b(NC)?(Disc|片头|OP|OVA|OAD|SP|ED|Advice|Trailer|BDMenu|片尾|PV|CM|Preview|MENU|Info|EDPV|SongSpot|BDSpot)(\d&#123;0,2&#125;|_ALL)\b</span><br></pre></td></tr></table></figure>
+
+<p>转载至NEST，一个有菜又爱折腾的人<br><a href="https://blog.2nest.top/article/mpv2">MoviePilotV2使用教程 | NESTの博客</a></p>
+<p>&#96;&#96;</p>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown基础语法</title>
+    <url>/2025/05/06/Markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>Markdown 是一种轻量级的标记语言，允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的 XHTML（或者 HTML）文档。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="标题-Headers"><a href="#标题-Headers" class="headerlink" title="标题 (Headers)"></a><strong>标题 (Headers)</strong></h2><p>使用 <code>#</code> 号来表示标题，# 的数量表示标题的级别。一级标题使用一个 <code>#</code>，二级标题使用两个 <code>#</code>，以此类推，最多支持六级标题。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 这是一级标题</span><br><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
+
+<h2 id="段落和换行-Paragraphs-and-Line-Breaks"><a href="#段落和换行-Paragraphs-and-Line-Breaks" class="headerlink" title="段落和换行 (Paragraphs and Line Breaks)"></a><strong>段落和换行 (Paragraphs and Line Breaks)</strong></h2><p>段落是由一个或多个连续的文本行组成，它们之间由一个或多个空行分隔。</p>
+<p>如果需要强制换行（创建一个 <code>&lt;br&gt;</code> 标签），可以在一行的末尾输入两个或多个空格，然后按回车键。</p>
+<h2 id="强调-Emphasis"><a href="#强调-Emphasis" class="headerlink" title="强调 (Emphasis)"></a><strong>强调 (Emphasis)</strong></h2><ul>
+<li><p><strong>加粗 (Bold)</strong>: 使用两个星号 <code>**</code> 或两个下划线 <code>__</code> 包裹文本。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">**这是加粗的文字**</span><br><span class="line">__这也是加粗的文字__</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>斜体 (Italic)</strong>: 使用一个星号 <code>*</code> 或一个下划线 <code>_</code> 包裹文本。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*这是倾斜的文字*</span><br><span class="line">_这也是倾斜的文字_</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>加粗并倾斜 (Bold and Italic)</strong>: 使用三个星号 <code>***</code> 或三个下划线 <code>___</code> 包裹文本。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">***这是加粗并倾斜的文字***</span><br><span class="line">___这也是加粗并倾斜的文字___</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="列表-Lists"><a href="#列表-Lists" class="headerlink" title="列表 (Lists)"></a><strong>列表 (Lists)</strong></h2><ul>
+<li><p><strong>无序列表 (Unordered Lists)</strong>: 使用星号 <code>*</code>、加号 <code>+</code> 或减号 <code>-</code> 作为列表标记。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">* 项目一</span><br><span class="line">* 项目二</span><br><span class="line">* 项目三</span><br><span class="line"></span><br><span class="line">+ 项目一</span><br><span class="line">+ 项目二</span><br><span class="line">+ 项目三</span><br><span class="line"></span><br><span class="line">- 项目一</span><br><span class="line">- 项目二</span><br><span class="line">- 项目三</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>有序列表 (Ordered Lists)</strong>: 使用数字加一个英文句点 <code>.</code> 作为列表标记。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 项目一</span><br><span class="line">2. 项目二</span><br><span class="line">3. 项目三</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="链接-Links"><a href="#链接-Links" class="headerlink" title="链接 (Links)"></a><strong>链接 (Links)</strong></h2><ul>
+<li><p><strong>行内式链接 (Inline Links)</strong>: 链接文字用方括号 <code>[]</code> 包裹，后面紧跟着括号 <code>()</code> 包裹的 <a href="https://www.google.com/search?q=URL%EF%BC%8C%E8%BF%98%E5%8F%AF%E4%BB%A5%E5%9C%A8">https://www.google.com/search?q=URL，还可以在</a> <a href="https://www.google.com/search?q=URL">https://www.google.com/search?q=URL</a> 后面用引号添加可选的 title 属性。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个 [链接示例](http://example.com &quot;链接标题&quot;)。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>参考式链接 (Reference Links)</strong>: 将链接的定义放在文档的其他地方。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个 [参考式链接的例子][id]。</span><br><span class="line"></span><br><span class="line">[id]: http://example.com  &quot;可选的标题&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="图片-Images"><a href="#图片-Images" class="headerlink" title="图片 (Images)"></a><strong>图片 (Images)</strong></h2><p>图片的语法和链接非常相似，只是在方括号前多一个感叹号 <code>!</code>。</p>
+<ul>
+<li><p><strong>行内式图片 (Inline Images)</strong>:</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![替代文本](图片URL &quot;可选标题&quot;)</span><br></pre></td></tr></table></figure>
+<p>  例如:</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![谷歌Logo](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png &quot;谷歌Logo&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>参考式图片 (Reference Images)</strong>:</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![替代文本][图片id]</span><br><span class="line"></span><br><span class="line">[图片id]: 图片URL &quot;可选标题&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码 (Code)"></a><strong>代码 (Code)</strong></h2><ul>
+<li><p><strong>行内代码 (Inline Code)</strong>: 使用反引号 <code>`</code> 包裹代码。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个 `&lt;code&gt;` 示例。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>代码块 (Code Blocks)</strong>: 使用三个反引号 &#96;&#96;&#96; 或者四个空格（或一个制表符）缩进。推荐使用三个反引号，并可以指定语言类型以实现语法高亮。</p>
+<p>  Markdown</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">```javascript</span><br><span class="line">function greet() &#123;</span><br><span class="line">  console.log(&quot;Hello, world!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">    // 这是一个使用空格缩进的代码块</span><br><span class="line">    int main() &#123;</span><br><span class="line">      return 0;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><u>这个有点难，不过可以直接右键-插入-代码块，会更方便些一些。</u></p>
+<h2 id="引用-Blockquotes"><a href="#引用-Blockquotes" class="headerlink" title="引用 (Blockquotes)"></a><strong>引用 (Blockquotes)</strong></h2><p>使用大于号 <code>&gt;</code> 来创建引用。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 这是一个引用。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 这是引用的第二段。</span><br><span class="line">&gt;&gt; 这是一个嵌套的引用。</span><br></pre></td></tr></table></figure>
+
+<h2 id="分隔线-Horizontal-Rules"><a href="#分隔线-Horizontal-Rules" class="headerlink" title="分隔线 (Horizontal Rules)"></a><strong>分隔线 (Horizontal Rules)</strong></h2><p>可以在一行中使用三个或更多的星号 <code>***</code>、减号 <code>---</code> 或下划线 <code>___</code> 来创建分隔线，行内不能有其他东西。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<p>关于分割线，不同主题渲染效果不同，<br>比如我觉得主题自带的分割线不美观，但我又不会通过代码修改，于是我就自己做了一个图片，<br>我的分割线其实是一个图片哦😜~~~~~</p>
+<h2 id="转义字符-Escaping-Characters"><a href="#转义字符-Escaping-Characters" class="headerlink" title="转义字符 (Escaping Characters)"></a><strong>转义字符 (Escaping Characters)</strong></h2><p>如果你想在 Markdown 中显示一些具有特殊含义的字符，比如 <code>*</code>、<code>#</code>、<code>\</code> 等，可以在这些字符前面加上反斜杠 <code>\</code> 进行转义。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\*这不是斜体\*</span><br><span class="line">\# 这不是标题</span><br><span class="line">\\ 这是一个反斜杠</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>列表、标题类的符号需要空格才会生效，加粗、强调类的符号可以直接输入。<br>所以有时候如果输入了符号没效果，不妨再按下空格试试看😊</p>
+</blockquote>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>由于博客笔记全都是用Obsidian来编辑管理的，所以对Markdown语法做个总结，<br>加深记忆，方便学习使用，最后放一下系统的语法教程及在线体验连接。<br><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法 | Markdown 教程</a><br><a href="https://markdown.com.cn/editor/">在线markdown编辑器</a></p>
 ]]></content>
       <categories>
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Markdown</tag>
+        <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown进阶语法</title>
+    <url>/2025/05/06/Markdown%E8%BF%9B%E9%98%B6%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>好的，除了<font color="#6eb957">基础语法</font>，Markdown 还有一些进阶或者说<font color="#3a8cf0">扩展的语法</font>，它们在不同的 Markdown<br>解析器或平台中支持程度可能不同，但很多现代的 Markdown 编辑器和平台都支持这些功能。<br>以下是一些常见的进阶 Markdown 语法：</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="表格-Tables"><a href="#表格-Tables" class="headerlink" title="表格 (Tables)"></a><strong>表格 (Tables)</strong></h2><p>表格的创建相对直观，使用竖线 <code>|</code> 来分隔不同的单元格，使用连字符 <code>-</code> 来创建表头和表格内容的分隔线。可以在分隔线中使用冒号 <code>:</code> 来定义列的对齐方式。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 表头1 | 表头2 | 表头3 |</span><br><span class="line">| :---- | :---: | ----: |</span><br><span class="line">| 左对齐 | 居中对齐 | 右对齐 |</span><br><span class="line">| 内容1 | 内容2 | 内容3 |</span><br><span class="line">| 内容A | 内容B | 内容C |</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">表头1</th>
+<th align="center">表头2</th>
+<th align="right">表头3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">左对齐</td>
+<td align="center">居中对齐</td>
+<td align="right">右对齐</td>
+</tr>
+<tr>
+<td align="left">内容1</td>
+<td align="center">内容2</td>
+<td align="right">内容3</td>
+</tr>
+<tr>
+<td align="left">内容A</td>
+<td align="center">内容B</td>
+<td align="right">内容C</td>
+</tr>
+</tbody></table>
+<p>导出到 Google 表格</p>
+<ul>
+<li><code>:----</code> 表示该列左对齐（默认）</li>
+<li><code>:---:</code> 表示该列居中对齐</li>
+<li><code>----:</code> 表示该列右对齐</li>
+</ul>
+<blockquote>
+<p>表格我一直输入不出来，建议直接用插件更方便哦🐯</p>
+</blockquote>
+<h2 id="删除线-Strikethrough"><a href="#删除线-Strikethrough" class="headerlink" title="删除线 (Strikethrough)"></a><strong>删除线 (Strikethrough)</strong></h2><p>使用两个波浪线 <code>~~</code> 包裹文本来实现删除线效果。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~这段文字会被划上删除线。~~</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<p><del>这段文字会被划上删除线。</del></p>
+<h2 id="任务列表-Task-Lists"><a href="#任务列表-Task-Lists" class="headerlink" title="任务列表 (Task Lists)"></a><strong>任务列表 (Task Lists)</strong></h2><p>任务列表允许你创建带有复选框的列表。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- [x] 已完成的任务</span><br><span class="line">- [ ] 未完成的任务</span><br><span class="line">  - [ ] 子任务1 (未完成)</span><br><span class="line">  - [x] 子任务2 (已完成)</span><br><span class="line">- [ ] 另一个未完成的任务</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 已完成的任务</li>
+<li><input disabled="" type="checkbox"> 未完成的任务<ul>
+<li><input disabled="" type="checkbox"> 子任务1 (未完成)</li>
+<li><input checked="" disabled="" type="checkbox"> 子任务2 (已完成)</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 另一个未完成的任务</li>
+</ul>
+<h2 id="脚注-Footnotes"><a href="#脚注-Footnotes" class="headerlink" title="脚注 (Footnotes)"></a><strong>脚注 (Footnotes)</strong></h2><p>脚注允许你为文本添加注释，注释内容会显示在文档的末尾。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个需要脚注的句子。[^1]</span><br><span class="line">这是另一个需要脚注的句子。[^another]</span><br><span class="line"></span><br><span class="line">[^1]: 这是第一个脚注的内容。</span><br><span class="line">[^another]: 这是另一个脚注的内容，可以使用任何不包含空格和制表符的标签。</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果 (大致)：</strong></p>
+<p>这是一个需要脚注的句子。&lt;sup&gt;1&lt;&#x2F;sup&gt; 这是另一个需要脚注的句子。&lt;sup&gt;another&lt;&#x2F;sup&gt;</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>&lt;sup&gt;1&lt;&#x2F;sup&gt; 这是第一个脚注的内容。 &lt;sup&gt;another&lt;&#x2F;sup&gt; 这是另一个脚注的内容，可以使用任何不包含空格和制表符的标签。</p>
+<h2 id="定义列表-Definition-Lists-并非所有-Markdown-解析器都支持"><a href="#定义列表-Definition-Lists-并非所有-Markdown-解析器都支持" class="headerlink" title="定义列表 (Definition Lists) (并非所有 Markdown 解析器都支持)"></a><strong>定义列表 (Definition Lists)</strong> (并非所有 Markdown 解析器都支持)</h2><p>用来创建术语及其定义的列表。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Markdown</span><br><span class="line">: 轻量级标记语言。</span><br><span class="line"></span><br><span class="line">HTML</span><br><span class="line">: 超文本标记语言。</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果 (大致，取决于解析器)：</strong></p>
+<p>&lt;dl&gt; &lt;dt&gt;Markdown&lt;&#x2F;dt&gt; &lt;dd&gt;轻量级标记语言。&lt;&#x2F;dd&gt; &lt;dt&gt;HTML&lt;&#x2F;dt&gt; &lt;dd&gt;超文本标记语言。&lt;&#x2F;dd&gt; &lt;&#x2F;dl&gt;</p>
+<h2 id="Emoji-表情-Emoji-支持程度取决于解析器或平台"><a href="#Emoji-表情-Emoji-支持程度取决于解析器或平台" class="headerlink" title="Emoji 表情 (Emoji) (支持程度取决于解析器或平台)"></a><strong>Emoji 表情 (Emoji)</strong> (支持程度取决于解析器或平台)</h2><p>很多 Markdown 编辑器和平台支持通过快捷码插入 Emoji。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:smile:</span><br><span class="line">:tada:</span><br><span class="line">:rocket:</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果 (取决于解析器)：</strong></p>
+<p>😄 🎉 🚀</p>
+<p>具体的 Emoji 代码可能因平台而异，但通常是 <code>:emoji_name:</code> 的格式。</p>
+<blockquote>
+<p>表情更难记忆了，建议直接用插件</p>
+</blockquote>
+<h2 id="自动-URL-链接-Automatic-URL-Linking-很多解析器支持"><a href="#自动-URL-链接-Automatic-URL-Linking-很多解析器支持" class="headerlink" title="自动 URL 链接 (Automatic URL Linking) (很多解析器支持)"></a><strong>自动 URL 链接 (Automatic URL Linking)</strong> (很多解析器支持)</h2><p>很多 Markdown 解析器会自动将看起来像 URL 的文本转换为可点击的链接。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.example.com</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<p><a href="http://www.example.com/">http://www.example.com</a></p>
+<p>或者直接是可点击的链接： <a href="http://www.example.com/">http://www.example.com</a></p>
+<h2 id="HTML-标签-Raw-HTML"><a href="#HTML-标签-Raw-HTML" class="headerlink" title="HTML 标签 (Raw HTML)"></a><strong>HTML 标签 (Raw HTML)</strong></h2><p>Markdown 的一个强大之处在于它允许你直接嵌入 <font color="#3a8cf0">HTML </font>代码。如果你需要实现 Markdown 语法无法覆盖的复杂布局或功能，可以直接使用 HTML。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一段 Markdown 文本。</span><br><span class="line">&lt;div style=&quot;color: red;&quot;&gt;</span><br><span class="line">  这是一段红色的 HTML 文本。</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">*Markdown 列表*</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意事项：</strong></p>
+<ul>
+<li><strong>兼容性：</strong> 上述进阶语法并非所有 Markdown 解析器都完全支持。最常见和广泛支持的是表格、删除线和任务列表。脚注和定义列表的支持程度各不相同。</li>
+<li><strong>GFM (GitHub Flavored Markdown):</strong> 很多进阶语法，如表格、任务列表、删除线、自动 URL 链接和部分 Emoji 支持，都源自或被广泛采纳于 GitHub Flavored Markdown (GFM)。如果你主要在 GitHub 或支持 GFM 的平台上使用 Markdown，这些语法通常都能很好地工作。</li>
+</ul>
+<p>学习这些进阶语法可以让你编写内容更丰富、结构更复杂的 Markdown 文档。<br>建议在你常用的 Markdown 编辑器或平台上测试这些语法的实际效果。</p>
+<p>来源参考：<br><a href="https://www.markdown.xyz/basic-syntax/">Markdown指南中文版</a></p>
+<blockquote>
+<p>虽然语法可以完成绝大部分操作，但是别忘了Obsidian还有<font color="#b960d9">丰富的插件</font>来帮我更便捷的完成编辑，<br>比如网页可以直接复制-粘贴，插入图片会让产生更多<font color="#f74db5">碎片化的文件</font>，不如图床连接来的方便，<br>表格和字体色彩等操作也有类似的Word的<font color="#6eb957">工具条</font>可以一键操作，<br>下一篇将总结一下我常用的<font color="#fbad61">效率插件</font>。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Obsidian</tag>
       </tags>
   </entry>
   <entry>
@@ -143,40 +371,23 @@
       </tags>
   </entry>
   <entry>
-    <title>MP进阶设置</title>
-    <url>/2025/04/23/MP%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p>对部分设置做进一步整理</p>
-<h2 id="整理刮削"><a href="#整理刮削" class="headerlink" title="整理刮削"></a>整理刮削</h2><h3 id="电影重命名格式"><a href="#电影重命名格式" class="headerlink" title="电影重命名格式"></a>电影重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125; - &#123;&#123;videoFormat&#125;&#125;&#123;% if videoCodec %&#125;.&#123;&#123;videoCodec&#125;&#125;&#123;% endif %&#125;&#123;% if audioCodec %&#125;.&#123;&#123;audioCodec&#125;&#125;&#123;% endif %&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;%if effect %&#125;.&#123;&#123;effect&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
+    <title>Twikoo静态网站评论系统</title>
+    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
+<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
+<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
+<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
 
-<h3 id="电视剧重命名格式"><a href="#电视剧重命名格式" class="headerlink" title="电视剧重命名格式"></a>电视剧重命名格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;title&#125;&#125;&#123;% if year %&#125; (&#123;&#123;year&#125;&#125;)&#123;% endif %&#125;&#123;% if tmdbid %&#125; &#123;tmdbid=&#123;&#123;tmdbid&#125;&#125;&#125;&#123;% endif %&#125;/Season &#123;&#123;season&#125;&#125;/&#123;&#123;title&#125;&#125; &#123;&#123;season_episode&#125;&#125; &#123;&#123;videoFormat&#125;&#125;&#123;% if customization %&#125;.&#123;&#123;customization&#125;&#125;&#123;% endif %&#125;&#123;% if releaseGroup %&#125;.&#123;&#123;releaseGroup&#125;&#125;&#123;% endif %&#125;&#123;&#123;fileExt&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="自定义规则"><a href="#自定义规则" class="headerlink" title="自定义规则"></a>自定义规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|\\bDV\\b|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-25000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;AnimeGroup&quot;,&quot;name&quot;:&quot;动漫组&quot;,&quot;include&quot;:&quot;7³ACG|VCB-Studio&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Audiences&quot;,&quot;name&quot;:&quot;观众官组&quot;,&quot;include&quot;:&quot;ADE|ADWeb&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HHWEB&quot;,&quot;name&quot;:&quot;憨憨官组&quot;,&quot;include&quot;:&quot;HHWEB&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;B-Global&quot;,&quot;name&quot;:&quot;BG源&quot;,&quot;include&quot;:&quot;B-Global|BG&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;60fps&quot;,&quot;name&quot;:&quot;60帧&quot;,&quot;include&quot;:&quot;60帧|60fps&quot;&#125;]</span><br></pre></td></tr></table></figure>
-
-<h3 id="优先级规则"><a href="#优先级规则" class="headerlink" title="优先级规则"></a>优先级规则</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !REMUX &amp; !3D &amp; !DOLBY &amp;filerGroup&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &gt; CNSUB &amp; 1080P &amp; BLURAY &gt; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot;AnimeGroup&amp; CNSUB &amp; BLURAY &amp; 1080P &gt;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;B-Global&amp; 4K &amp; CNSUB &gt;Audiences&amp;B-Global&amp; 1080P &amp; CNSUB &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp; CNSUB &amp; 1080P &gt;HHWEB&amp;AMZN&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp; CNSUB &amp; 1080P &gt;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp; CNSUB &amp; 1080P &gt;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;Audiences&amp;DDP&gt; 4K &amp;HHWEB&amp;DDP&gt; 4K &amp;Audiences&gt; 4K &amp;HHWEB&gt; 1080P &amp;Audiences&gt; 1080P &amp;HHWEB&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;Complete&gt; 4K &amp; WEBDL &amp;HHWEB&gt; WEBDL &amp; 1080P &amp;HHWEB&gt; 4K &amp; WEBDL &amp;Audiences&gt; 1080P &amp;Audiences&amp; WEBDL &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;HQ&gt; 4K &amp; WEBDL &amp;60fps&amp; HDR &gt; 4K &amp; WEBDL &amp;HHWEB&gt; 4K &amp;Audiences&amp; WEBDL &gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
-
-<h2 id="搜索-下载"><a href="#搜索-下载" class="headerlink" title="搜索&amp;下载"></a>搜索&amp;下载</h2><h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><p>订阅模式-推荐站点RSS<br>订阅优先级规则-留空全选<br>订阅定时搜索-如果没有漏订阅可以不开启</p>
-<h3 id="订阅站点"><a href="#订阅站点" class="headerlink" title="订阅站点"></a>订阅站点</h3><p>订阅的影片会从选中的站点订阅，订阅流程：</p>
-<ol>
-<li>订阅影片</li>
-<li>等待1分钟后开始执行搜索（站点搜索，补齐前面未下的集数）</li>
-<li>按照设定周期自动爬取站点&#x2F;检索RSS获取种子</li>
-<li>识别种子是否为订阅的影片</li>
-</ol>
-<h2 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h2><p><a href="https://wiki.movie-pilot.org/zh/notification">官方WIKI通知</a></p>
-<h2 id="词表"><a href="#词表" class="headerlink" title="词表"></a>词表</h2><h3 id="自定义识别词"><a href="#自定义识别词" class="headerlink" title="自定义识别词"></a>自定义识别词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\[Movie\]</span><br><span class="line">episode\.\d&#123;1&#125;</span><br><span class="line">\.(第\d&#123;1,2&#125;集)\. =&gt; \1</span><br><span class="line">(?i)Season( *)0?(\d+) =&gt; S\2</span><br><span class="line">(?&lt;=SBSUB.*DR.*?)- =&gt; part</span><br><span class="line">\[CHS\_CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHT\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">\[CHS\_JP\]\(\w&#123;8&#125;\)</span><br><span class="line">chs&amp;jpn =&gt; jpsc</span><br><span class="line">cht&amp;jpn =&gt; jptc</span><br><span class="line">\[SBSUB\]\[CONAN\]\[DR =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">\[SBSUB\]\[CONAN\]\[ =&gt; [银色子弹字幕组][名侦探柯南][S01E</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)2nd Season =&gt; S02</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)IV =&gt; S04</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)III =&gt; S03</span><br><span class="line">(?&lt;=(VCB-Studio|ANi).*?)II =&gt; S02</span><br><span class="line">[【\[](Fin|END)[】\]]|(?:|\s|\s-\s)(Fin|END)(?=\])|(?&lt;=\d&#123;1,2&#125;)_?(Fin|END)</span><br><span class="line">(?&lt;=[\[【].*?(?:组|組|sub|S(?:UB|ub|tudio)|Raw(?:|s)|社)[\]】])(?:(?:\[|【|★|)\d&#123;1,2&#125;月新番(?:\]|】|★|)|)[\[【](.*?)[\]】] =&gt; \1</span><br><span class="line">(?&lt;=[\W_])(CR|Baha|KKTV|Abema|B-Global|Sentai|MyVideo|AMZN|KKTV|friDay|DSNP|LINETV|NF|Viu)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|_|＆|\x20)(CHT|BIG5|TC)(&amp;|_|＆|\x20)JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)_JA?PN?(&amp;|＆|\x20)(CHT|BIG5|TC)_JA?PN? =&gt; 简繁日内封</span><br><span class="line">(?i)(CHS|GB|SC)(&amp;|＆|\x20)(CHT|BIG5|TC) =&gt; 简繁内封</span><br><span class="line">(?i)(CHS|GB|SC)(_|&amp;|＆|\x20)JA?PN? =&gt; 简日双语</span><br><span class="line">(?i)\[JA?PN?(_|&amp;|＆|\x20)?(SC|CHS|GB)\] =&gt; [简日双语]</span><br><span class="line">(.*)(VCB-Studio)(.*)(Ma10p_?|Hi10p_?)(.*) =&gt; \1\2\3\5</span><br><span class="line">S(eason)? ?0?([2-9]) *\[(OVA|OAD)0?\(?(\d)?\)?\] =&gt; S0E\2\4</span><br><span class="line">(S(eason)? ?0?1 *)?\[(OVA|OAD)(\d+)?\] =&gt; S0E\4</span><br><span class="line">(S(eason)? ?\d+)? *\[\d+\(?(OVA|OAD)\)?\] =&gt; S0</span><br><span class="line">(?&lt;=[\W_])4(?:k|K)(?=[\W_]) =&gt; 2160p</span><br><span class="line">(?i)\bSBSUB\b =&gt; 银色子弹字幕组</span><br><span class="line">(?i)\bNekomoe kisstan\b =&gt; 喵萌奶茶屋</span><br><span class="line">(?i)\bOPFansMaplesnow\b =&gt; OPFans枫雪动漫</span><br><span class="line">(?i)\bSakurato\b|樱都字幕组|桜都字幕组|桜都 =&gt; 桜都字幕组</span><br><span class="line">(?i)\bHaruhana\b =&gt; ❀拨雪寻春❀</span><br><span class="line">(?&lt;=[\W_])CR(?=[\W_]) =&gt; Crunchyroll</span><br><span class="line">(?&lt;=[\W_])NF(?=[\W_]) =&gt; Netflix</span><br><span class="line">(?&lt;=[\W_])AMZN(?=[\W_]) =&gt; Amazon</span><br><span class="line">(?&lt;=[\W_])((H?MAX)|ATVP)(?=[\W_]) =&gt; -\1</span><br><span class="line">(?&lt;=[\W_])ATVP(?=[\W_]) =&gt; AppleTV+</span><br><span class="line">(?&lt;=[\W_])DSNP(?=[\W_]) =&gt; Disney+</span><br><span class="line">(?&lt;=(1080p|2160p)\.)Max\. =&gt; -MAX.</span><br><span class="line">(?&lt;=(1080p|2160p)\.)iT\. =&gt; -iTunes.</span><br><span class="line">(?&lt;=S\d&#123;2&#125;E\d&#123;2&#125;).+(?=(2160|1080)p.+NTb) =&gt;  </span><br><span class="line">(?&lt;!-)(Disney\+|playWEB|Crunchyroll|Netflix|Amazon|AppleTV\+) =&gt; -\1</span><br></pre></td></tr></table></figure>
-
-<h3 id="自定义制作组-字幕组"><a href="#自定义制作组-字幕组" class="headerlink" title="自定义制作组&#x2F;字幕组"></a>自定义制作组&#x2F;字幕组</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">喵萌奶茶屋</span><br><span class="line">蓝色狂想</span><br><span class="line">风车字幕组</span><br><span class="line">银色子弹字幕组</span><br><span class="line">枫叶字幕组</span><br><span class="line">诸神字幕组</span><br><span class="line">❀拨雪寻春❀</span><br><span class="line">VARYG</span><br><span class="line">AI-Raws</span><br><span class="line">ANi</span><br><span class="line">SweetSub</span><br><span class="line">LoliHouse</span><br><span class="line">VCB-Studio</span><br><span class="line">7³ACG</span><br><span class="line">OPFans枫雪动漫</span><br><span class="line">SilverBullet</span><br><span class="line">APTX4869</span><br><span class="line">Snow-Raws</span><br><span class="line">B-Global</span><br><span class="line">CR</span><br><span class="line">KKTV</span><br><span class="line">Baha</span><br><span class="line">MyVideo</span><br><span class="line">AMZN</span><br><span class="line">KKTV</span><br><span class="line">friDay</span><br><span class="line">Disney+</span><br><span class="line">LINETV</span><br><span class="line">NF</span><br><span class="line">Viu</span><br><span class="line">Crunchyroll</span><br><span class="line">Netflix</span><br><span class="line">Amazon</span><br><span class="line">MAX</span><br><span class="line">AppleTV+</span><br><span class="line">HMAX</span><br><span class="line">BiliBili</span><br><span class="line">Abema</span><br><span class="line">CatchPlay</span><br><span class="line">iTunes</span><br><span class="line">Remux</span><br><span class="line">ADWeb</span><br><span class="line">NTb</span><br><span class="line">FLUX</span><br><span class="line">DSNP</span><br><span class="line">银色子弹字幕组</span><br><span class="line">RLWeb</span><br><span class="line">Breeze@Sunny</span><br><span class="line">Rain@Sunny</span><br><span class="line">RLeaves</span><br><span class="line">Nest</span><br><span class="line">AnimeF</span><br><span class="line">MWeb</span><br><span class="line">UBWEB</span><br><span class="line">FROGWEB</span><br><span class="line">FROG</span><br></pre></td></tr></table></figure>
-
-<h3 id="自定义占位符"><a href="#自定义占位符" class="headerlink" title="自定义占位符"></a>自定义占位符</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\b(简繁内封|简繁日内封|简繁日英内封|简繁官字内封|官简内封|简日双语|简体内封|简体内嵌|繁体内嵌|简英双语|简繁外挂|简体|HDR|DoVi)\b</span><br></pre></td></tr></table></figure>
-<h3 id="文件整理屏蔽词"><a href="#文件整理屏蔽词" class="headerlink" title="文件整理屏蔽词"></a>文件整理屏蔽词</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">__\w&#123;6&#125;/</span><br><span class="line">\[((TV|BD|\bBlu-ray\b)?\s*CM\s*\d&#123;2,3&#125;)\]</span><br><span class="line">\[Teaser.*?\]</span><br><span class="line">\[PV.*?\]</span><br><span class="line">#\[\d&#123;2&#125;.\d\]</span><br><span class="line">\[NC[OPED]+.*?\]</span><br><span class="line">\[S\d+\s+Recap(\s+\d+)?\]</span><br><span class="line">\b(CDs|SPs|Scans|Preview|Menu|Bonus|映像特典|映像|Special Ending Movie|specials|特典CD|Menu|Logo|Preview|WiKi.sample|UHD.SAMPLE|/mv)\b</span><br><span class="line">\b(NC)?(Disc|片头|OP|OVA|OAD|SP|ED|Advice|Trailer|BDMenu|片尾|PV|CM|Preview|MENU|Info|EDPV|SongSpot|BDSpot)(\d&#123;0,2&#125;|_ALL)\b</span><br></pre></td></tr></table></figure>
-
-<p>转载至NEST，一个有菜又爱折腾的人<br><a href="https://blog.2nest.top/article/mpv2">MoviePilotV2使用教程 | NESTの博客</a></p>
+<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
 ]]></content>
       <categories>
-        <category>Nas</category>
+        <category>Blog</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -228,14 +439,13 @@
 <p>复制以后直接导入,自定义规则与优先级规则使用方法一样。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c93c9349.webp" alt="10.自定义规则-mp.webp"></p>
 <h3 id="8-订阅设置"><a href="#8-订阅设置" class="headerlink" title="8.订阅设置"></a>8.订阅设置</h3><p>除了设定里面的规则以外还有一种个性化的<code>默认规则</code>设置，可根据<font color="#fbad61">个人爱好</font>修改添加，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c99b3e21.webp" alt="11.订阅规则-mp.webp"></p>
 <h3 id="9-插件"><a href="#9-插件" class="headerlink" title="9.插件"></a>9.插件</h3><p><code>内置丰富的插件</code>也是MP的玩法之一，但很多插件我也看不太懂，也用的很少，<br>比如：站点自动签到、自动辅种、豆瓣想看、二级分类策略等，根据个人的需要安装即可，插件的使用也很简单。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>参考上述方法完成设置，那么恭喜你已经基本掌握了关于MP的使用方法了🎉🎉🎉，<br>这时候可以去推荐、趋势里面订阅自己喜爱的影视剧了，添加订阅以后（点亮小心心💗💗💗）<br>会自动在添加的站点里搜索资源🔎，搜索时间与你添加的站点多少和资源的热门程度都有关系，<br>只需稍等片刻我们想看的影视资源就入库啦🥳🥳🥳</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>最最后，不知道是我家的网络原因还是极空间的docker不稳定还是mp的服务不稳定，<br>总之在你部署好以后可能会遇见打不开的情况，或者qb下载器打不开，<br>如果没有进行多余操作一般重启一下应用即可恢复。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>写这篇笔记的目的在于：<br>想让更多我这样的小白用户体验到<font color="#b960d9">优雅的、自动化</font>的影视资源订阅下载💗。<br>网上各种教程虽然也很多，但普遍都需要一些门槛，<br>个别朋友即使幸运的部署成功，<br>但面对后续一系列的操作设置也是<font color="#4bacc6">一脸问号</font>，并不能愉快的使用🙉。<br>我也是在多位朋友的帮助下才完整的执行了整个操作，<br>本篇教程可能是<font color="#6eb957">全网最简单、最贴心</font>的部署教程了，<br>最后希望你也可以享受到观影带来的<font color="#f74db5">纯粹快乐</font>💫💫💫。</p>
 <p>特别感谢<font color="#b960d9">@现充的正义</font>提供全程的技术支持</p>
-<hr>
 <blockquote>
 <p>如果你想了解更多mp的相关知识，请参阅<a href="https://wiki.movie-pilot.org/zh/basic">官方基础指南</a><br>  再放两个我最开始部署的时候参考的两篇博客作为辅助参考<br>  <a href="https://blog.zwbcc.cn/archives/1711674204030">博客一</a>  <a href="https://blog.goalonez.site/blog/MoviePilot%E9%85%8D%E7%BD%AE-Nas%E5%AA%92%E4%BD%93%E5%BA%93%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7.html">博客二</a><br>  也可以加入电报群<a href="https://t.me/MoviePilot_Wiki">wiki</a>获取更多个性化设置</p>
 </blockquote>
@@ -252,6 +462,7 @@
     <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为我是<font color="#985fff">比较笨拙</font>的，学东西的时候经常需要很详细的笔记，<br>比如我自己写博客就喜欢插入很多图片，初衷也是为了记录自己的部署、执行过程，<br>以免过了一段时间把当初学的方法全都消耗到了肚子里，<br>配图的话就离不开图床了，免费图床了解过后都不尽如意<br>综合体验下来还是决定来部署一个自己的<font color="#ff3586">图床</font>(lsky-pro)</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>首先在docker仓库搜索<code>halcyonazure/lsky-pro-docker</code> ，选择第一个下载<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66068051ea.webp" alt="0.搜索镜像.webp"></p>
 <ul>
 <li>兰空图床-新版2.0第三方维护的Docker镜像，当前为开源版最新源码构建</li>
@@ -259,13 +470,13 @@
 <h3 id="部署安装"><a href="#部署安装" class="headerlink" title="部署安装"></a>部署安装</h3><p>双击本地镜像开始安装，简单配置<font color="#b960d9">路径映射</font>、<font color="#f74db5">修改网络模式</font>并<font color="#3a8cf0">修改下端口</font>即可，参考下图<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66006ad486.webp" alt="1.部署.webp"></p>
 <h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>输入<code>本地ip+端口</code>打开应用（因为在环境里面修改了WEB_PORT，<font color="#ffc000">默认端口是18089</font>），<br>初次打开会有：环境监测-选择数据库-配置管理员密码三步操作。<br>环境监测直接点下一步，数据库类型选择<code>SQlite 3.8.8+</code> 数据库名称和路径留空。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e663d70163e.webp" alt="2.数据库.webp"><br>管理员账号邮箱和密码直接填自己常用的即可，然后点立即安装。<br>程序安装完成以后重新输入本地ip+端口即可打开应用。</p>
 <h3 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h3><p>打开以后直接点右上角登陆，输入管理员账号密码就可以进入后台了<br><font color="#acd51c">初始默认的储存空间只有500M.</font><br>在<code>角色组</code>-编辑-修改上传的文件大小、各种上传限制，控制允许上传的图片类型。<br>在<code>用户管理</code>-编辑-修改用户<font color="#985fff">容量</font>（储存空间），修改密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6676d5893a.webp" alt="3.设置.webp"><br><font color="#3bc1e3">系统设置</font>里面也有一些设置，按需修改即可，<br>整个部署过程和设置还是<font color="#ff3586">很简单</font>的🙇‍♂️<br>由于使用的本地储存，<br>上传的图片被储存在<code>根目录/Docker/Lsky/storage/app/uploads/2025/03</code>下<br>看路径像是根据上传时间来创建的文件夹，<br>自建的优势啊，不担心图片丢失，管理起来也很方便，<br>注意：虽然支持批量上传，但是批量上传很容易出现重复和不匹配的情况，慎重使用，<br>上传以后图片下方会直接出现适合各种平台的神奇代码🎨<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e6d742d9609.webp" alt="5.各种代码.webp"><br>也可以在相册内-右键图片-复制链接-选择相应的神奇代码使用</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>值得一提的是：<font color="#985fff">兰空图床</font><code>支持webp格式</code>和<code>创建多个相册</code>。<br>因为有些免费图床有的就不支持webp格式，或者不能创建相册，或者有上传限制·······<br>为什么说这两个值得一提？🧐<br>因为webp格式有<font color="#00b050">诸多优点</font>：</p>
 <ul>
 <li><font color="#f74db5">高压缩比、透明度支持、动画支持。</font></li>
 <li>随之带来的好处就是<font color="#fbad61">减少对带宽的消耗，进而提升网页的加载速度</font>。🏂<br>相册就不必多说了，可以对不同的博文创建对应的相册，<font color="#985fff">方便图片的管理</font>。</li>
 </ul>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>最后分享下<font color="#f99f1e">感想</font>吧😐<br>对于NAS部署图床<font color="#ff3586">令人诟病</font>的一些问题，比如：</p>
 <ul>
 <li>家庭的网络<font color="#985fff">带宽上传较慢</font>，无法满足大量图片的上传和下载需求<br>我家宽带上传是100M，勉强能满足普通的浏览，我主要用来给博客配图，并且所有配图都会转换成webp格式；博客本身也没什么访问量，大部分时间都是我自己的记录浏览，所以不用担心，其实没什么访问量也是决定自建的出发点。😅</li>
@@ -284,28 +495,10 @@
       </tags>
   </entry>
   <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>修复Github与Vercel数据不同步</title>
     <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <h4 id="解决方法（主要来自于ai的帮助）"><a href="#解决方法（主要来自于ai的帮助）" class="headerlink" title="解决方法（主要来自于ai的帮助）"></a>解决方法（主要来自于ai的帮助）</h4><p>你的 Hexo 网站已经成功部署到 GitHub Pages。如果网站没有正确更新，可能是缓存问题或 GitHub Pages 的更新延迟。你可以尝试清除浏览器缓存后再次访问，或者等待几分钟后刷新页面。</p>
 <p>那为什么vercel没有同步更新数据呢？<br>根据你的问题和搜索结果，Vercel 没有同步更新数据可能有以下几种原因及解决方法：</p>
 <ol>
@@ -334,15 +527,15 @@
 <p>解决方法：<br>在 GitHub 仓库的 Actions 页面，检查“Upstream Sync Action”是否成功运行[^4^]。<br>如果失败，手动重新运行该 Action[^4^]。<br>7. 重新部署项目<br>如果上述方法都无法解决问题，可以尝试重新部署项目：</p>
 <p>解决方法：<br>在 Vercel 控制台中，找到项目的“Deployments”部分。<br>点击“Redeploy”按钮，手动重新部署最新的代码[^3^]。</p>
 <p>总结<br>Vercel 未同步更新数据可能是由于项目未正确关联 GitHub 仓库、上游同步未启用、自动部署触发条件未满足、部署过程中出现错误、缓存问题或 GitHub Actions 未正确运行等原因导致的。你可以按照上述方法逐一排查并解决问题。如果问题仍然存在，建议查看 Vercel 的官方文档或联系 Vercel 的技术支持获取帮助。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>以上是ai给出的问题分析，<br>根据我的实际情况，我发现很可能是webhook的问题，因为这里的配置是空的。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>现在仓库的webhook是空的，我该如何设置？</p>
 <p>要将 GitHub 仓库的 Webhook 配置为与 Vercel 同步更新，你需要在 GitHub 仓库中添加一个 Webhook，使其在代码推送时通知 Vercel 触发部署。以下是详细的步骤：</p>
 <p>步骤 1：获取 Vercel 的 Webhook URL<br>登录到 Vercel 控制台。<br>选择你的项目。<br>在项目设置中，找到 “Git” 或 “Webhooks” 部分。<br>点击 “Add Webhook” 或 “Create Hook” 按钮。<br>填写以下信息：<br>Hook Name：自定义名称，例如 github-sync。<br>Branch：选择你希望触发部署的分支，例如 main。<br>点击 “Create Hook” 按钮。<br>创建完成后，Vercel 会生成一个 Webhook URL，复制这个 URL。</p>
 <p>步骤 2：在 GitHub 仓库中添加 Webhook<br>登录到 GitHub，进入你的仓库。<br>点击仓库页面右上角的 “Settings”（设置）。<br>在左侧菜单中，点击 “Webhooks”。<br>点击 “Add webhook” 按钮。<br>在弹出的表单中填写以下信息：<br>Payload URL：粘贴你在 Vercel 中复制的 Webhook URL。<br>Content type：选择 application&#x2F;json。<br>Secret：（可选）如果你在 Vercel 中设置了 Webhook 的密钥，这里需要填入相同的密钥。<br>Which events would you like to trigger this webhook?：选择 “Just the push event” 或 “Let me select individual events”，并确保勾选了 “Push events”。<br>Active：确保此选项被勾选。<br>点击 “Add webhook” 按钮。</p>
 <p>步骤 3：验证 Webhook 是否生效<br>在 GitHub 的 Webhook 设置页面，你会看到刚刚添加的 Webhook。<br>GitHub 会自动发送一个 ping 事件到 Webhook URL，以验证连接是否成功。<br>如果 Webhook 配置正确，Vercel 应该会收到这个 ping 事件，并在控制台中显示相关信息。<br>你也可以在 Vercel 的 Webhook 设置页面查看 Webhook 的状态和日志。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>通过以上设置恢复同步啦</p>
 <p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%90%8C%E6%AD%A5-%E9%85%8D%E5%9B%BE.webp"></p>
 ]]></content>
@@ -354,10 +547,28 @@
       </tags>
   </entry>
   <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础节点与插件</title>
     <url>/2025/04/23/%E5%9F%BA%E7%A1%80%E8%8A%82%E7%82%B9%E4%B8%8E%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<p>ComfyUI 中 文生图（Text-to-Image）**工作流中常用的节点，帮助你快速理解其核心功能。这些节点是构建文生图流程的基础，通过连接它们可以完成从文本提示到生成图像的过程。</p>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <h2 id="Load-Checkpoint-加载模型"><a href="#Load-Checkpoint-加载模型" class="headerlink" title="Load Checkpoint (加载模型)"></a>Load Checkpoint (加载模型)</h2><ul>
 <li><p>作用：加载 Stable Diffusion 模型（例如 SD1.5、SDXL 等）。</p>
 </li>
@@ -379,7 +590,6 @@
 <li><p>用途：这是文生图的起点，加载预训练模型以供后续节点使用。</p>
 </li>
 </ul>
-<hr>
 <h2 id="CLIP-Text-Encode-Prompt-文本编码"><a href="#CLIP-Text-Encode-Prompt-文本编码" class="headerlink" title="CLIP Text Encode (Prompt) (文本编码)"></a>CLIP Text Encode (Prompt) (文本编码)</h2><ul>
 <li><p>作用：将文本提示词（Prompt）编码为模型可理解的格式。</p>
 </li>
@@ -405,7 +615,6 @@
 </ul>
 </li>
 </ul>
-<hr>
 <h2 id="Empty-Latent-Image-创建空白潜在图像"><a href="#Empty-Latent-Image-创建空白潜在图像" class="headerlink" title="Empty Latent Image (创建空白潜在图像)"></a>Empty Latent Image (创建空白潜在图像)</h2><ul>
 <li><p>作用：生成一个空白的潜在图像（Latent Image），作为生成图像的起点。</p>
 </li>
@@ -425,7 +634,6 @@
 <li><p>用途：为后续采样过程提供初始的潜在空间数据。</p>
 </li>
 </ul>
-<hr>
 <h2 id="KSampler-采样器"><a href="#KSampler-采样器" class="headerlink" title="KSampler (采样器)"></a>KSampler (采样器)</h2><ul>
 <li><p>作用：通过采样算法从潜在空间生成图像。</p>
 </li>
@@ -455,7 +663,6 @@
 <li><p>用途：核心节点，执行文生图的扩散过程，生成潜在图像。</p>
 </li>
 </ul>
-<hr>
 <h2 id="VAE-Decode-解码潜在图像"><a href="#VAE-Decode-解码潜在图像" class="headerlink" title="VAE Decode (解码潜在图像)"></a>VAE Decode (解码潜在图像)</h2><ul>
 <li><p>作用：将潜在图像解码为实际图像。</p>
 </li>
@@ -475,7 +682,6 @@
 <li><p>用途：将潜在空间的表示转换为可见的像素图像。</p>
 </li>
 </ul>
-<hr>
 <h2 id="Save-Image-保存图像"><a href="#Save-Image-保存图像" class="headerlink" title="Save Image (保存图像)"></a>Save Image (保存图像)</h2><ul>
 <li><p>作用：将生成的图像保存到本地。</p>
 </li>
@@ -492,7 +698,6 @@
 <li><p>用途：保存生成结果，通常保存在 ComfyUI 的 output 文件夹中。</p>
 </li>
 </ul>
-<hr>
 <h3 id="典型文生图工作流连接"><a href="#典型文生图工作流连接" class="headerlink" title="典型文生图工作流连接"></a>典型文生图工作流连接</h3><ol>
 <li><p>Load Checkpoint → 输出 MODEL、CLIP、VAE。</p>
 </li>
@@ -507,9 +712,7 @@
 <li><p>Save Image → 保存最终图像。</p>
 </li>
 </ol>
-<hr>
 <h3 id="补充节点（可选）"><a href="#补充节点（可选）" class="headerlink" title="补充节点（可选）"></a>补充节点（可选）</h3><p>Preview Image：预览生成的图像，连接在 VAE Decode 后，方便调试。<br>Latent Upscale 或 Image Upscale：用于放大图像分辨率。<br>ControlNet 相关节点：如果需要基于草图、姿势等控制生成结果，可以添加 ControlNet 节点。</p>
-<hr>
 <h4 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h4><p>假设你想生成“一只可爱的猫在阳光明媚的花园中”（分辨率 512x512，20步采样，CFG 7）：</p>
 <ol>
 <li>Load Checkpoint：加载 SD1.5 模型。</li>
@@ -534,7 +737,7 @@
     <content><![CDATA[<blockquote>
 <p>玩<code>pt</code>也好久了，经常看到好多词汇和标签，根据网络资料对一些名词做个梳理总结，<br>学到了很多有趣的词汇，pt圈还挺有意思的🥳</p>
 </blockquote>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <h2 id="贴吧篇"><a href="#贴吧篇" class="headerlink" title="贴吧篇"></a>贴吧篇</h2><table>
 <thead>
 <tr>
@@ -1013,13 +1216,36 @@
 <blockquote>
 <p>大概就这么多吧，不知道有没有100个，<br>关于视频的不同格式也是一个很系统的框架，有空再查查资料<br>对常见的视频、音频格式也做个梳理总结</p>
 </blockquote>
-<hr>
 ]]></content>
       <categories>
         <category>Nas</category>
       </categories>
       <tags>
         <tag>pt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文生图工作流相关术语概念</title>
+    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
+<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
+<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
+<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
+<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
+<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
+<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
+<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -1030,7 +1256,7 @@
 <li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
 <li>已修复</li>
 </ul>
-<hr>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
 ]]></content>
       <categories>
@@ -1038,37 +1264,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文生图工作流相关术语概念</title>
-    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
-<hr>
-<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
-<hr>
-<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
-<hr>
-<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
-<hr>
-<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
-<hr>
-<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
-<hr>
-<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
-<hr>
-<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
-<hr>
-<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
       </tags>
   </entry>
 </search>
