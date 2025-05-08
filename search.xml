@@ -172,6 +172,9 @@
 <p>  Markdown</p>
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个 [参考式链接的例子][id]。</span><br><span class="line"></span><br><span class="line">[id]: http://example.com  &quot;可选的标题&quot;</span><br></pre></td></tr></table></figure></li>
 </ul>
+<blockquote>
+<p>链接可以直接复制粘贴过来，会自动识别哦，链接名称可自定义修改</p>
+</blockquote>
 <h2 id="图片-Images"><a href="#图片-Images" class="headerlink" title="图片 (Images)"></a><strong>图片 (Images)</strong></h2><p>图片的语法和链接非常相似，只是在方括号前多一个感叹号 <code>!</code>。</p>
 <ul>
 <li><p><strong>行内式图片 (Inline Images)</strong>:</p>
@@ -185,6 +188,9 @@
 <p>  Markdown</p>
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![替代文本][图片id]</span><br><span class="line"></span><br><span class="line">[图片id]: 图片URL &quot;可选标题&quot;</span><br></pre></td></tr></table></figure></li>
 </ul>
+<blockquote>
+<p>如果要配图的话建议使用图床链接，不然会产生碎片化文件，还要专门整理图片，并不是很方便</p>
+</blockquote>
 <h2 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码 (Code)"></a><strong>代码 (Code)</strong></h2><ul>
 <li><p><strong>行内代码 (Inline Code)</strong>: 使用反引号 <code>`</code> 包裹代码。</p>
 <p>  Markdown</p>
@@ -195,15 +201,22 @@
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">```javascript</span><br><span class="line">function greet() &#123;</span><br><span class="line">  console.log(&quot;Hello, world!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">    // 这是一个使用空格缩进的代码块</span><br><span class="line">    int main() &#123;</span><br><span class="line">      return 0;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><u>这个有点难，不过可以直接右键-插入-代码块，会更方便些一些。</u></p>
+<p><u>插入代码可以直接右键-插入-代码块，会更方便些一些哦。</u></p>
 <h2 id="引用-Blockquotes"><a href="#引用-Blockquotes" class="headerlink" title="引用 (Blockquotes)"></a><strong>引用 (Blockquotes)</strong></h2><p>使用大于号 <code>&gt;</code> 来创建引用。</p>
 <p>Markdown</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 这是一个引用。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 这是引用的第二段。</span><br><span class="line">&gt;&gt; 这是一个嵌套的引用。</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>这就是引用效果</p>
+</blockquote>
 <h2 id="分隔线-Horizontal-Rules"><a href="#分隔线-Horizontal-Rules" class="headerlink" title="分隔线 (Horizontal Rules)"></a><strong>分隔线 (Horizontal Rules)</strong></h2><p>可以在一行中使用三个或更多的星号 <code>***</code>、减号 <code>---</code> 或下划线 <code>___</code> 来创建分隔线，行内不能有其他东西。</p>
 <p>Markdown</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
-<p>关于分割线，不同主题渲染效果不同，<br>比如我觉得主题自带的分割线不美观，但我又不会通过代码修改，于是我就自己做了一个图片，<br>我的分割线其实是一个图片哦😜~~~~~</p>
+<hr>
+<blockquote>
+<p>关于分割线，不同主题渲染效果也不同，<br>比如我觉得主题自带的分割线不美观，但我又不会通过代码修改，于是我就自己做了一个图片，<br>我的分割线其实是一个图片哦😜~~~~~</p>
+</blockquote>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <h2 id="转义字符-Escaping-Characters"><a href="#转义字符-Escaping-Characters" class="headerlink" title="转义字符 (Escaping Characters)"></a><strong>转义字符 (Escaping Characters)</strong></h2><p>如果你想在 Markdown 中显示一些具有特殊含义的字符，比如 <code>*</code>、<code>#</code>、<code>\</code> 等，可以在这些字符前面加上反斜杠 <code>\</code> 进行转义。</p>
 <p>Markdown</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">\*这不是斜体\*</span><br><span class="line">\# 这不是标题</span><br><span class="line">\\ 这是一个反斜杠</span><br></pre></td></tr></table></figure>
@@ -389,24 +402,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/03/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>使用极空间部署MP</title>
@@ -730,6 +725,24 @@
       <tags>
         <tag>ComfyUI</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>好玩的PT常用词汇</title>
@@ -1269,10 +1282,14 @@
   <entry>
     <title>记-第二曲线创新</title>
     <url>/2025/05/08/%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E6%9B%B2%E7%BA%BF%E5%88%9B%E6%96%B0/</url>
-    <content><![CDATA[<ol>
-<li></li>
-</ol>
+    <content><![CDATA[<p>记</p>
 <p><img src="https://ls.imsoso.cn:6688/i/2025/05/08/681ca2634ebba.webp" alt="1.目录.webp"></p>
+<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><p>什么是管理？<br>管理是通过实施计划、组织、领导、协调、控制等职能与他人沟通，使他人同自己一起实现既定目标的活动过程。”</p>
+<h2 id="创新"><a href="#创新" class="headerlink" title="创新"></a>创新</h2><p>什么是创新？<br>“创新不是在同一条曲线里渐进性改良，而是从一条曲线变为另一条曲线的新组合。”</p>
+<h2 id="熵增定律"><a href="#熵增定律" class="headerlink" title="熵增定律"></a>熵增定律</h2><p>在自然过程中，一个孤立（封闭）系统的总混乱度（即“熵”）不会减小。它代表了在封闭系统中，如果熵增加，封闭系统的总能量不变时，其中可用能量将减少，并且随着时间的推移，封闭系统中的熵将不断增加，且不可逆。换句话说，越来越多的有效能量将转为无效能量。”“随着时间的推移，封闭组织势必会遭遇“组织熵增”，一定会涣散化、官僚化、失效化，并最终走向消亡。”</p>
+<blockquote>
+<p>“企业的两大终极宿命：无论企业的规模有多大，其“寿命”都有上限；企业规模越大，其增长速度越慢。”</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>生活</category>
