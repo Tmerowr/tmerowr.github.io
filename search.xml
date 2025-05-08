@@ -89,7 +89,7 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -400,8 +400,26 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>使用极空间部署MP</title>
@@ -538,7 +556,7 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -725,24 +743,6 @@
       <tags>
         <tag>ComfyUI</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/03/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>好玩的PT常用词汇</title>
@@ -1234,7 +1234,7 @@
         <category>Nas</category>
       </categories>
       <tags>
-        <tag>pt</tag>
+        <tag>PT</tag>
       </tags>
   </entry>
   <entry>
@@ -1276,7 +1276,7 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1286,9 +1286,21 @@
 <p><img src="https://ls.imsoso.cn:6688/i/2025/05/08/681ca2634ebba.webp" alt="1.目录.webp"></p>
 <h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><p>什么是管理？<br>管理是通过实施计划、组织、领导、协调、控制等职能与他人沟通，使他人同自己一起实现既定目标的活动过程。”</p>
 <h2 id="创新"><a href="#创新" class="headerlink" title="创新"></a>创新</h2><p>什么是创新？<br>“创新不是在同一条曲线里渐进性改良，而是从一条曲线变为另一条曲线的新组合。”</p>
-<h2 id="熵增定律"><a href="#熵增定律" class="headerlink" title="熵增定律"></a>熵增定律</h2><p>在自然过程中，一个孤立（封闭）系统的总混乱度（即“熵”）不会减小。它代表了在封闭系统中，如果熵增加，封闭系统的总能量不变时，其中可用能量将减少，并且随着时间的推移，封闭系统中的熵将不断增加，且不可逆。换句话说，越来越多的有效能量将转为无效能量。”“随着时间的推移，封闭组织势必会遭遇“组织熵增”，一定会涣散化、官僚化、失效化，并最终走向消亡。”</p>
+<h2 id="熵增定律"><a href="#熵增定律" class="headerlink" title="熵增定律"></a>熵增定律</h2><p>在自然过程中，一个孤立（封闭）系统的总混乱度（即“熵”）不会减小。它代表了在封闭系统中，如果熵增加，封闭系统的总能量不变时，其中可用能量将减少，并且随着时间的推移，封闭系统中的熵将不断增加，且不可逆。换句话说，越来越多的有效能量将转为无效能量。<br>“随着时间的推移，封闭组织势必会遭遇“组织熵增”，一定会涣散化、官僚化、失效化，并最终走向消亡。”</p>
 <blockquote>
 <p>“企业的两大终极宿命：无论企业的规模有多大，其“寿命”都有上限；企业规模越大，其增长速度越慢。”</p>
+</blockquote>
+<h2 id="基业长青的具体方法论——守正出奇。"><a href="#基业长青的具体方法论——守正出奇。" class="headerlink" title="基业长青的具体方法论——守正出奇。"></a>基业长青的具体方法论——守正出奇。</h2><p><font color="#b960d9">“守正”</font>是指企业要对第一曲线进行管理，相对保守一些也没有关系。规模越大越好，收入越多越好，可以通过扩大企业规模来延长第一曲线的区间，推迟“极限点”可能出现的时间。<br><font color="#f74db5">“出奇”</font>则是指企业在对待第二曲线创新时，一定要积极进取，通过对第二曲线的扶持，为企业赢得全新的增长空间。”</p>
+<blockquote>
+<p>“庄子在《大宗师》中的说法就是：“终其天年而不中道夭”。”<br>避免生硬转型、新旧合并。</p>
+</blockquote>
+<p>“变异+选择&#x3D;新物种”        “创新+选择&#x3D;第二曲线”</p>
+<blockquote>
+<p>“乔布斯十分推崇西班牙画家巴勃罗·毕加索（Pablo Picasso）的一句话，并将其挂在嘴边：<br>“聪明的艺术家模仿皮毛，伟大的艺术家窃取灵魂（Good artists copy，great artists steal）”。<br>乔布斯从施乐公司“偷走”了图形界面和鼠标应用，由此研发了新一代的麦金塔电脑，夯实了苹果公司当时的主航道。”</p>
+</blockquote>
+<h2 id="组合创新"><a href="#组合创新" class="headerlink" title="组合创新"></a>组合创新</h2><p>归根结底就是拆解基本要素，然后重新组合。因此可以说：“拆解基本要素的能力，是创新的基本功。”就好比同一个事物，在普通人眼里是混乱的一团，在高手眼里却能看到条分缕析的基本单元。”</p>
+<blockquote>
+<p>很像我现在所处的工作，充分理解了空间结构、色彩、材质、形状、组合······</p>
 </blockquote>
 ]]></content>
       <categories>
