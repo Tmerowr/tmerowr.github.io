@@ -471,6 +471,43 @@
       </tags>
   </entry>
   <entry>
+    <title>使用极空间部署兰空图床</title>
+    <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为我是<font color="#985fff">比较笨拙</font>的，学东西的时候经常需要很详细的笔记，<br>比如我自己写博客就喜欢插入很多图片，初衷也是为了记录自己的部署、执行过程，<br>以免过了一段时间把当初学的方法全都消耗到了肚子里，<br>配图的话就离不开图床了，免费图床了解过后都不尽如意<br>综合体验下来还是决定来部署一个自己的<font color="#ff3586">图床</font>(lsky-pro)</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>首先在docker仓库搜索<code>halcyonazure/lsky-pro-docker</code> ，选择第一个下载<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66068051ea.webp" alt="0.搜索镜像.webp"></p>
+<ul>
+<li>兰空图床-新版2.0第三方维护的Docker镜像，当前为开源版最新源码构建</li>
+</ul>
+<h3 id="部署安装"><a href="#部署安装" class="headerlink" title="部署安装"></a>部署安装</h3><p>双击本地镜像开始安装，简单配置<font color="#b960d9">路径映射</font>、<font color="#f74db5">修改网络模式</font>并<font color="#3a8cf0">修改下端口</font>即可，参考下图<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66006ad486.webp" alt="1.部署.webp"></p>
+<h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>输入<code>本地ip+端口</code>打开应用（因为在环境里面修改了WEB_PORT，<font color="#ffc000">默认端口是18089</font>），<br>初次打开会有：环境监测-选择数据库-配置管理员密码三步操作。<br>环境监测直接点下一步，数据库类型选择<code>SQlite 3.8.8+</code> 数据库名称和路径留空。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e663d70163e.webp" alt="2.数据库.webp"><br>管理员账号邮箱和密码直接填自己常用的即可，然后点立即安装。<br>程序安装完成以后重新输入本地ip+端口即可打开应用。</p>
+<h3 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h3><p>打开以后直接点右上角登陆，输入管理员账号密码就可以进入后台了<br><font color="#acd51c">初始默认的储存空间只有500M.</font><br>在<code>角色组</code>-编辑-修改上传的文件大小、各种上传限制，控制允许上传的图片类型。<br>在<code>用户管理</code>-编辑-修改用户<font color="#985fff">容量</font>（储存空间），修改密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6676d5893a.webp" alt="3.设置.webp"><br><font color="#3bc1e3">系统设置</font>里面也有一些设置，按需修改即可，<br>整个部署过程和设置还是<font color="#ff3586">很简单</font>的🙇‍♂️<br>由于使用的本地储存，<br>上传的图片被储存在<code>根目录/Docker/Lsky/storage/app/uploads/2025/03</code>下<br>看路径像是根据上传时间来创建的文件夹，<br>自建的优势啊，不担心图片丢失，管理起来也很方便，<br>注意：虽然支持批量上传，但是批量上传很容易出现重复和不匹配的情况，慎重使用，<br>上传以后图片下方会直接出现适合各种平台的神奇代码🎨<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e6d742d9609.webp" alt="5.各种代码.webp"><br>也可以在相册内-右键图片-复制链接-选择相应的神奇代码使用</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>值得一提的是：<font color="#985fff">兰空图床</font><code>支持webp格式</code>和<code>创建多个相册</code>。<br>因为有些免费图床有的就不支持webp格式，或者不能创建相册，或者有上传限制·······<br>为什么说这两个值得一提？🧐<br>因为webp格式有<font color="#00b050">诸多优点</font>：</p>
+<ul>
+<li><font color="#f74db5">高压缩比、透明度支持、动画支持。</font></li>
+<li>随之带来的好处就是<font color="#fbad61">减少对带宽的消耗，进而提升网页的加载速度</font>。🏂<br>相册就不必多说了，可以对不同的博文创建对应的相册，<font color="#985fff">方便图片的管理</font>。</li>
+</ul>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>最后分享下<font color="#f99f1e">感想</font>吧😐<br>对于NAS部署图床<font color="#ff3586">令人诟病</font>的一些问题，比如：</p>
+<ul>
+<li>家庭的网络<font color="#985fff">带宽上传较慢</font>，无法满足大量图片的上传和下载需求<br>我家宽带上传是100M，勉强能满足普通的浏览，我主要用来给博客配图，并且所有配图都会转换成webp格式；博客本身也没什么访问量，大部分时间都是我自己的记录浏览，所以不用担心，其实没什么访问量也是决定自建的出发点。😅</li>
+<li>公网ip问题<br>我是联通的宽带，特意申请了公网ip，不影响外网访问。</li>
+<li><font color="#3bc1e3">安全与隐私</font>问题<br>自有域名配合Lucky反代也一定程度避免了直接暴露nas的ip地址和端口的风险</li>
+<li>图片版权问题<br>普通人也接触不到涉敏的图片素材吧，有的话我一定第一时间删除。</li>
+<li>最后就是图床的<em>稳定性</em>了<br>极空间本身没有大问题，至于Docker应用的稳定性有待在未来的日常使用中慢慢检验。</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>网络上虽然有各式各样的图床可供选择使用，但还是要结合自身的实际情况，实际用途，<br>不要被网上的对各种图床的评价扰乱自己的想法，理清楚自己的需求，<br>不管是免费、付费还是自建，最合适自己的方式才是最棒的方式，<br><font color="#6eb957">希望这个自建图床能够撑一段时间吧</font>😐<br>还是有点担心</p>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修复Github与Vercel数据不同步</title>
     <url>/2025/03/19/%E4%BF%AE%E5%A4%8DGithub%E4%B8%8EVercel%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5/</url>
     <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Hexo部署到GitHub并托管到vercel以后，上传到仓库的文章不能及时更新。</p>
@@ -520,43 +557,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用极空间部署兰空图床</title>
-    <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为我是<font color="#985fff">比较笨拙</font>的，学东西的时候经常需要很详细的笔记，<br>比如我自己写博客就喜欢插入很多图片，初衷也是为了记录自己的部署、执行过程，<br>以免过了一段时间把当初学的方法全都消耗到了肚子里，<br>配图的话就离不开图床了，免费图床了解过后都不尽如意<br>综合体验下来还是决定来部署一个自己的<font color="#ff3586">图床</font>(lsky-pro)</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>首先在docker仓库搜索<code>halcyonazure/lsky-pro-docker</code> ，选择第一个下载<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66068051ea.webp" alt="0.搜索镜像.webp"></p>
-<ul>
-<li>兰空图床-新版2.0第三方维护的Docker镜像，当前为开源版最新源码构建</li>
-</ul>
-<h3 id="部署安装"><a href="#部署安装" class="headerlink" title="部署安装"></a>部署安装</h3><p>双击本地镜像开始安装，简单配置<font color="#b960d9">路径映射</font>、<font color="#f74db5">修改网络模式</font>并<font color="#3a8cf0">修改下端口</font>即可，参考下图<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e66006ad486.webp" alt="1.部署.webp"></p>
-<h3 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h3><p>输入<code>本地ip+端口</code>打开应用（因为在环境里面修改了WEB_PORT，<font color="#ffc000">默认端口是18089</font>），<br>初次打开会有：环境监测-选择数据库-配置管理员密码三步操作。<br>环境监测直接点下一步，数据库类型选择<code>SQlite 3.8.8+</code> 数据库名称和路径留空。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e663d70163e.webp" alt="2.数据库.webp"><br>管理员账号邮箱和密码直接填自己常用的即可，然后点立即安装。<br>程序安装完成以后重新输入本地ip+端口即可打开应用。</p>
-<h3 id="进一步配置"><a href="#进一步配置" class="headerlink" title="进一步配置"></a>进一步配置</h3><p>打开以后直接点右上角登陆，输入管理员账号密码就可以进入后台了<br><font color="#acd51c">初始默认的储存空间只有500M.</font><br>在<code>角色组</code>-编辑-修改上传的文件大小、各种上传限制，控制允许上传的图片类型。<br>在<code>用户管理</code>-编辑-修改用户<font color="#985fff">容量</font>（储存空间），修改密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6676d5893a.webp" alt="3.设置.webp"><br><font color="#3bc1e3">系统设置</font>里面也有一些设置，按需修改即可，<br>整个部署过程和设置还是<font color="#ff3586">很简单</font>的🙇‍♂️<br>由于使用的本地储存，<br>上传的图片被储存在<code>根目录/Docker/Lsky/storage/app/uploads/2025/03</code>下<br>看路径像是根据上传时间来创建的文件夹，<br>自建的优势啊，不担心图片丢失，管理起来也很方便，<br>注意：虽然支持批量上传，但是批量上传很容易出现重复和不匹配的情况，慎重使用，<br>上传以后图片下方会直接出现适合各种平台的神奇代码🎨<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e6d742d9609.webp" alt="5.各种代码.webp"><br>也可以在相册内-右键图片-复制链接-选择相应的神奇代码使用</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>值得一提的是：<font color="#985fff">兰空图床</font><code>支持webp格式</code>和<code>创建多个相册</code>。<br>因为有些免费图床有的就不支持webp格式，或者不能创建相册，或者有上传限制·······<br>为什么说这两个值得一提？🧐<br>因为webp格式有<font color="#00b050">诸多优点</font>：</p>
-<ul>
-<li><font color="#f74db5">高压缩比、透明度支持、动画支持。</font></li>
-<li>随之带来的好处就是<font color="#fbad61">减少对带宽的消耗，进而提升网页的加载速度</font>。🏂<br>相册就不必多说了，可以对不同的博文创建对应的相册，<font color="#985fff">方便图片的管理</font>。</li>
-</ul>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>最后分享下<font color="#f99f1e">感想</font>吧😐<br>对于NAS部署图床<font color="#ff3586">令人诟病</font>的一些问题，比如：</p>
-<ul>
-<li>家庭的网络<font color="#985fff">带宽上传较慢</font>，无法满足大量图片的上传和下载需求<br>我家宽带上传是100M，勉强能满足普通的浏览，我主要用来给博客配图，并且所有配图都会转换成webp格式；博客本身也没什么访问量，大部分时间都是我自己的记录浏览，所以不用担心，其实没什么访问量也是决定自建的出发点。😅</li>
-<li>公网ip问题<br>我是联通的宽带，特意申请了公网ip，不影响外网访问。</li>
-<li><font color="#3bc1e3">安全与隐私</font>问题<br>自有域名配合Lucky反代也一定程度避免了直接暴露nas的ip地址和端口的风险</li>
-<li>图片版权问题<br>普通人也接触不到涉敏的图片素材吧，有的话我一定第一时间删除。</li>
-<li>最后就是图床的<em>稳定性</em>了<br>极空间本身没有大问题，至于Docker应用的稳定性有待在未来的日常使用中慢慢检验。</li>
-</ul>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>网络上虽然有各式各样的图床可供选择使用，但还是要结合自身的实际情况，实际用途，<br>不要被网上的对各种图床的评价扰乱自己的想法，理清楚自己的需求，<br>不管是免费、付费还是自建，最合适自己的方式才是最棒的方式，<br><font color="#6eb957">希望这个自建图床能够撑一段时间吧</font>😐<br>还是有点担心</p>
-]]></content>
-      <categories>
-        <category>Nas</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -718,6 +718,24 @@
 <li>VAE Decode：解码图像。</li>
 <li>Save Image：保存结果。</li>
 </ol>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
 ]]></content>
       <categories>
         <category>AI</category>
@@ -1220,15 +1238,21 @@
       </tags>
   </entry>
   <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
+    <title>文生图工作流相关术语概念</title>
+    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
+<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
+<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
+<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
+<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
+<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
+<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
+<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
 ]]></content>
       <categories>
         <category>AI</category>
@@ -1256,27 +1280,18 @@
       </tags>
   </entry>
   <entry>
-    <title>文生图工作流相关术语概念</title>
-    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
-<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
-<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
-<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
-<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
-<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
-<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
-<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
+    <title>苔藓</title>
+    <url>/2025/05/23/%E8%8B%94%E8%97%93/</url>
+    <content><![CDATA[<blockquote>
+<p>这是一个全新的系列，主要用来记录日常生活中遇见的各种植物，用绿植让生活充满诗意🌵</p>
+</blockquote>
+<p>苔藓植物是一类非常古老的植物，它们在植物界中属于最低等的类群之一，具有独特的形态结构和生态习性。</p>
 ]]></content>
       <categories>
-        <category>AI</category>
+        <category>Green</category>
       </categories>
       <tags>
-        <tag>ComfyUI</tag>
+        <tag>Plant</tag>
       </tags>
   </entry>
   <entry>
@@ -1347,21 +1362,6 @@
       </categories>
       <tags>
         <tag>Read</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>苔藓</title>
-    <url>/2025/05/23/%E8%8B%94%E8%97%93/</url>
-    <content><![CDATA[<blockquote>
-<p>这是一个全新的系列，主要用来记录日常生活中遇见的各种植物，用绿植让生活充满诗意🌵</p>
-</blockquote>
-<p>苔藓植物是一类非常古老的植物，它们在植物界中属于最低等的类群之一，具有独特的形态结构和生态习性。</p>
-]]></content>
-      <categories>
-        <category>Green</category>
-      </categories>
-      <tags>
-        <tag>Plant</tag>
       </tags>
   </entry>
 </search>
