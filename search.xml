@@ -1364,4 +1364,33 @@
         <tag>Read</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ComfyUI-文生图对比工作流</title>
+    <url>/2025/05/27/comfyui%E6%96%87%E7%94%9F%E5%9B%BE%E8%8A%82%E7%82%B9%E5%AF%B9%E6%AF%94/</url>
+    <content><![CDATA[<h1 id="开始准备"><a href="#开始准备" class="headerlink" title="开始准备"></a>开始准备</h1><p>首先需要用到的节点有：</p>
+<ul>
+<li><font color="#f74db5">ComfyUI-Detail-Daemon</font>:增强细节节点<br><a href="https://github.com/Jonseed/ComfyUI-Detail-Daemon">Jonseed&#x2F;ComfyUI-Detail-Daemon</a></li>
+<li><font color="#f74db5">ComfyUI-Easy-Use</font>：一个化繁为简的节点整合包。<br><a href="https://github.com/yolain/ComfyUI-Easy-Use/blob/main/README.ZH_CN.md">ComfyUI-Easy-Use</a></li>
+<li><font color="#b960d9">rgthree-comfy</font>：让工作流更清晰、更轻松、更快速，实现对比效果<br><a href="https://github.com/rgthree/rgthree-comfy">rgthree:让 ComfyUI 更舒适！</a></li>
+<li><font color="#fbad61">Translation</font>:翻译（备选，新版本已失效）<br><a href="https://github.com/AIGODLIKE/AIGODLIKE-COMFYUI-TRANSLATION">AIGODLIKE&#x2F;AIGODLIKE-ComfyUI-Translation:</a><br>主要就是前三个节点。</li>
+</ul>
+<h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p><img src="https://ls.imsoso.cn:6688/i/2025/05/27/6834997111b36.webp" alt="1.工作流.webp"></p>
+<h2 id="节点介绍"><a href="#节点介绍" class="headerlink" title="节点介绍"></a>节点介绍</h2><p>双Clip加载器加载对应模型<br>UNet加载器加载Flux模型<br>K采样器选择：<font color="#3a8cf0">euler</font><br>空Latent设置为官方建议尺寸：<font color="#6eb957">1024x1024</font><br><font color="#b960d9">Flux引导值默认：3.5</font>，负向提示词官方已优化，添加<font color="#3a8cf0">条件零化</font><br>采样器种子数<font color="#6eb957">使用统一的随机种</font>，保证生成结果是在同一张图片上进行对比<br>	<font color="#fbad61">随机种需要安装Easy-Use节点才会出现哦</font></p>
+<p><font color="#f74db5">Detail Daemon</font>节点（用于增加细节）<br><img src="https://ls.imsoso.cn:6688/i/2025/05/27/68349e3e0d3c4.webp" alt="2.细节节点.webp"><br>最后输出需要添加：<font color="#b960d9">Image Comparer </font>（ 图像比较器）节点</p>
+<h1 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h1><p><font color="#6eb957">提示词书写格式：</font><br>词与词之间用逗号“，”隔开；<br>权重变化：（提示词：1.5）、减权重【提示词：0.3】、<font color="#b960d9">加减权重使用的括号不同</font>。</p>
+<p>可以使用文本AI，<u>让提示词更加丰富详尽</u>，也可以更换不同风格的模型让生成图片更具<font color="#3a8cf0">个性化</font>。</p>
+<p>在采样器节点-右键-将控件转换为输入-<font color="#f74db5">转换seed</font>为输入<br>在自定义采样器-右键-将控件转换为输入-<font color="#6eb957">转换 noise_seed</font>为输入</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><u>按住ctrl键可以框选节点</u>，<font color="#b960d9">ctrl+b</font>键，可以冻结、禁用所选节点。</p>
+<blockquote>
+<p>不提供模型下载，请根据实际需要下载相对应的模型。</p>
+</blockquote>
+<p>国内模型网站<br><a href="https://www.liblib.art/">LiblibAI-哩布哩布AI - 中国领先的AI创作平台</a><br>国外模型网站<br><a href="https://civitai.com/models">Civitai Models | Discover Free Stable Diffusion &amp; Flux Models</a></p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
 </search>
