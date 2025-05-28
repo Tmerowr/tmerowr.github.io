@@ -1270,6 +1270,24 @@
       </tags>
   </entry>
   <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文生图工作流相关术语概念</title>
     <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
@@ -1291,24 +1309,6 @@
       </categories>
       <tags>
         <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
