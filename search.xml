@@ -404,6 +404,38 @@
       </tags>
   </entry>
   <entry>
+    <title>ComfyUI-文生图对比工作流</title>
+    <url>/2025/05/27/comfyui%E6%96%87%E7%94%9F%E5%9B%BE%E8%8A%82%E7%82%B9%E5%AF%B9%E6%AF%94/</url>
+    <content><![CDATA[<h1 id="开始准备"><a href="#开始准备" class="headerlink" title="开始准备"></a>开始准备</h1><p>首先需要用到的节点有：</p>
+<ul>
+<li><font color="#f74db5">ComfyUI-Detail-Daemon</font>:增强细节节点<br><a href="https://github.com/Jonseed/ComfyUI-Detail-Daemon">Jonseed&#x2F;ComfyUI-Detail-Daemon</a></li>
+<li><font color="#f74db5">ComfyUI-Easy-Use</font>：一个化繁为简的节点整合包。<br><a href="https://github.com/yolain/ComfyUI-Easy-Use/blob/main/README.ZH_CN.md">ComfyUI-Easy-Use</a></li>
+<li><font color="#b960d9">rgthree-comfy</font>：让工作流更清晰、更轻松、更快速，实现对比效果<br><a href="https://github.com/rgthree/rgthree-comfy">rgthree:让 ComfyUI 更舒适！</a></li>
+<li><font color="#fbad61">Translation</font>:翻译（备选，新版本已失效）<br><a href="https://github.com/AIGODLIKE/AIGODLIKE-COMFYUI-TRANSLATION">AIGODLIKE&#x2F;AIGODLIKE-ComfyUI-Translation:</a><br>主要就是前三个节点。</li>
+</ul>
+<h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p><img src="https://ls.imsoso.cn:6688/i/2025/05/27/6834997111b36.webp" alt="1.工作流.webp"></p>
+<h2 id="节点介绍"><a href="#节点介绍" class="headerlink" title="节点介绍"></a>节点介绍</h2><p>双Clip加载器加载对应模型<br>UNet加载器加载Flux模型<br>K采样器选择：<font color="#3a8cf0">euler</font><br>空Latent设置为官方建议尺寸：<font color="#6eb957">1024x1024</font><br><font color="#b960d9">Flux引导值默认：3.5</font>，负向提示词官方已优化，添加<font color="#3a8cf0">条件零化</font><br>采样器种子数<font color="#6eb957">使用统一的随机种</font>，保证生成结果是在同一张图片上进行对比<br>	<font color="#fbad61">随机种需要安装Easy-Use节点才会出现哦</font></p>
+<p><font color="#f74db5">Detail Daemon</font>节点（用于增加细节）<br><img src="https://ls.imsoso.cn:6688/i/2025/05/27/68349e3e0d3c4.webp" alt="2.细节节点.webp"><br>最后输出需要添加：<font color="#b960d9">Image Comparer </font>（ 图像比较器）节点</p>
+<h1 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h1><p><font color="#6eb957">提示词书写格式：</font><br>词与词之间用逗号“，”隔开；<br>权重变化：（提示词：1.5）、减权重【提示词：0.3】、<font color="#b960d9">加减权重使用的括号不同</font>。</p>
+<p>可以使用文本AI，<u>让提示词更加丰富详尽</u>，也可以更换不同风格的模型让生成图片更具<font color="#3a8cf0">个性化</font>。</p>
+<p>在采样器节点-右键-将控件转换为输入-<font color="#f74db5">转换seed</font>为输入<br>在自定义采样器-右键-将控件转换为输入-<font color="#6eb957">转换 noise_seed</font>为输入</p>
+<ul>
+<li>最新版已经不需要再右键转换了，可以直接添加随机种，连接到seed上。</li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><u>按住ctrl键可以框选节点</u>，<font color="#b960d9">ctrl+b</font>键，可以冻结、禁用所选节点。</p>
+<blockquote>
+<p>不提供模型下载，请根据实际需要下载相对应的模型。</p>
+</blockquote>
+<p>国内模型网站<br><a href="https://www.liblib.art/">LiblibAI-哩布哩布AI - 中国领先的AI创作平台</a><br>国外模型网站<br><a href="https://civitai.com/models">Civitai Models | Discover Free Stable Diffusion &amp; Flux Models</a></p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2025/03/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -557,6 +589,24 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -718,24 +768,6 @@
 <li>VAE Decode：解码图像。</li>
 <li>Save Image：保存结果。</li>
 </ol>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
 ]]></content>
       <categories>
         <category>AI</category>
@@ -1238,6 +1270,24 @@
       </tags>
   </entry>
   <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文生图工作流相关术语概念</title>
     <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
@@ -1259,24 +1309,6 @@
       </categories>
       <tags>
         <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1362,35 +1394,6 @@
       </categories>
       <tags>
         <tag>Read</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ComfyUI-文生图对比工作流</title>
-    <url>/2025/05/27/comfyui%E6%96%87%E7%94%9F%E5%9B%BE%E8%8A%82%E7%82%B9%E5%AF%B9%E6%AF%94/</url>
-    <content><![CDATA[<h1 id="开始准备"><a href="#开始准备" class="headerlink" title="开始准备"></a>开始准备</h1><p>首先需要用到的节点有：</p>
-<ul>
-<li><font color="#f74db5">ComfyUI-Detail-Daemon</font>:增强细节节点<br><a href="https://github.com/Jonseed/ComfyUI-Detail-Daemon">Jonseed&#x2F;ComfyUI-Detail-Daemon</a></li>
-<li><font color="#f74db5">ComfyUI-Easy-Use</font>：一个化繁为简的节点整合包。<br><a href="https://github.com/yolain/ComfyUI-Easy-Use/blob/main/README.ZH_CN.md">ComfyUI-Easy-Use</a></li>
-<li><font color="#b960d9">rgthree-comfy</font>：让工作流更清晰、更轻松、更快速，实现对比效果<br><a href="https://github.com/rgthree/rgthree-comfy">rgthree:让 ComfyUI 更舒适！</a></li>
-<li><font color="#fbad61">Translation</font>:翻译（备选，新版本已失效）<br><a href="https://github.com/AIGODLIKE/AIGODLIKE-COMFYUI-TRANSLATION">AIGODLIKE&#x2F;AIGODLIKE-ComfyUI-Translation:</a><br>主要就是前三个节点。</li>
-</ul>
-<h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p><img src="https://ls.imsoso.cn:6688/i/2025/05/27/6834997111b36.webp" alt="1.工作流.webp"></p>
-<h2 id="节点介绍"><a href="#节点介绍" class="headerlink" title="节点介绍"></a>节点介绍</h2><p>双Clip加载器加载对应模型<br>UNet加载器加载Flux模型<br>K采样器选择：<font color="#3a8cf0">euler</font><br>空Latent设置为官方建议尺寸：<font color="#6eb957">1024x1024</font><br><font color="#b960d9">Flux引导值默认：3.5</font>，负向提示词官方已优化，添加<font color="#3a8cf0">条件零化</font><br>采样器种子数<font color="#6eb957">使用统一的随机种</font>，保证生成结果是在同一张图片上进行对比<br>	<font color="#fbad61">随机种需要安装Easy-Use节点才会出现哦</font></p>
-<p><font color="#f74db5">Detail Daemon</font>节点（用于增加细节）<br><img src="https://ls.imsoso.cn:6688/i/2025/05/27/68349e3e0d3c4.webp" alt="2.细节节点.webp"><br>最后输出需要添加：<font color="#b960d9">Image Comparer </font>（ 图像比较器）节点</p>
-<h1 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h1><p><font color="#6eb957">提示词书写格式：</font><br>词与词之间用逗号“，”隔开；<br>权重变化：（提示词：1.5）、减权重【提示词：0.3】、<font color="#b960d9">加减权重使用的括号不同</font>。</p>
-<p>可以使用文本AI，<u>让提示词更加丰富详尽</u>，也可以更换不同风格的模型让生成图片更具<font color="#3a8cf0">个性化</font>。</p>
-<p>在采样器节点-右键-将控件转换为输入-<font color="#f74db5">转换seed</font>为输入<br>在自定义采样器-右键-将控件转换为输入-<font color="#6eb957">转换 noise_seed</font>为输入</p>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><u>按住ctrl键可以框选节点</u>，<font color="#b960d9">ctrl+b</font>键，可以冻结、禁用所选节点。</p>
-<blockquote>
-<p>不提供模型下载，请根据实际需要下载相对应的模型。</p>
-</blockquote>
-<p>国内模型网站<br><a href="https://www.liblib.art/">LiblibAI-哩布哩布AI - 中国领先的AI创作平台</a><br>国外模型网站<br><a href="https://civitai.com/models">Civitai Models | Discover Free Stable Diffusion &amp; Flux Models</a></p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
       </tags>
   </entry>
 </search>
