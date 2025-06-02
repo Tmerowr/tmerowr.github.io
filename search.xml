@@ -93,6 +93,32 @@
       </tags>
   </entry>
   <entry>
+    <title>MP订阅规则</title>
+    <url>/2025/06/02/MP%E8%AE%A2%E9%98%85%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<p>更新记录：</p>
+<ul>
+<li>2025-5-24：新增杜比P8，去掉单独分组，使用白名单以及优先组（主要是防止下到枪版）</li>
+<li>2025-5-24：重新修改部分优先级</li>
+</ul>
+<blockquote>
+<p>直接把原来的规则删除，重新导入保存即可</p>
+</blockquote>
+<h1 id="自定义代码"><a href="#自定义代码" class="headerlink" title="自定义代码"></a>自定义代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d+(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|YTS.MX|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-1000000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DVP8&quot;,&quot;name&quot;:&quot;杜比P8&quot;,&quot;exclude&quot;:&quot;^(?!.*HDR).*(DV|dovi|DoVi)&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP|DD+&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;WhiteList&quot;,&quot;name&quot;:&quot;白名单&quot;,&quot;include&quot;:&quot;\\b(Oldboys|GTR|RO|Telesto|CatEDU|PbK|Rainbaby|Ao|BMDru|c0kE|cfandora|jsum|RNML|FraMeSToR|ADE|CHD|CMCT|Sunny|WiKi|PTer|MTeam|FRDS|UBits|FROGE|beAst|Dream|BeiTai|RLeaves|R²|PTH|HDChina|LHD|ZONE|btshd|ADWeb|HHWEB|CHDWEB|CMCTV|TJUPT|OurTV|PTerWEB|MWeb|UBWEB|FROGWeb|QHstudIo|DBTV|RLWeb|LeagueWEB|HDCTV|ZWEX|ZmWeb|Kitsune|NTb|playWEB|BYNDR|FLUX|ETHEL|EDITH|VARYG|HONE|YingWEB|OPS|AilMWeb|ARiC|喵萌奶茶屋|豌豆字幕组|爱恋字幕社|漫猫字幕社|北宇治字幕组|云光字幕组|织梦字幕组|千夏字幕组|极影字幕社|风之圣殿字幕组|风车字幕组|银色子弹字幕组|熔岩动画|MingYSub|枫叶字幕组|诸神字幕组|AKito|秋人|霜庭云花Sub|轻之国度字幕组|星空字幕组|离谱Sub|雪飘工作室|拨雪寻春|新Sub|MCE汉化组|極彩字幕组|氢气烤肉架|悠哈璃羽字幕社|桜都字幕组|SweetSub|LoliHouse|&amp;VCB-Studio|VCB-Studio&amp;|7³ACG|幻之字幕组|魔穗字幕组|澄空学园|LittleBakas!|白恋字幕组|动漫国字幕组|FSD字幕组|FSD粉羽社|一只出格君|猫恋汉化组|OPFans枫雪动漫|GM-Team|康复重症监护室字幕组|SilverBullet|APTX4869|幻樱字幕组|永恒译制|咪梦字幕组|NEO·QSW)\\b&quot;&#125;,&#123;&quot;id&quot;:&quot;PreferenceGroup&quot;,&quot;name&quot;:&quot;优先组&quot;,&quot;include&quot;:&quot;ADWeb|HHWEb|FROGWeb|ADE|FROGE&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="优先级代码"><a href="#优先级代码" class="headerlink" title="优先级代码"></a>优先级代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !3D &amp;WhiteList&amp;DVP8&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; CNSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp;PreferenceGroup&amp; 1080P &gt; BLURAY &amp; H265 &amp; CNSUB &amp; 1080P &gt; BLURAY &amp; CNSUB &amp; 1080P &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;Crunchyroll&gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;AMZN&gt;PreferenceGroup&amp;Netflix&amp; 1080P &amp; WEBDL &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &gt; 1080P &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp; CNSUB &gt; BLURAY &amp; CNSUB &gt; WEBDL &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;DDP&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;Complete&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; UHD &gt; 1080P &amp; BLURAY &gt; 4K &amp; WEBDL &amp;HQ&amp;PreferenceGroup&amp;filterSeries&gt; 4K &amp; WEBDL &amp; HDR &amp;PreferenceGroup&gt; 4K &amp; WEBDL &amp;PreferenceGroup&gt; 4K &amp; WEBDL &gt; 1080P &amp; WEBDL &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 4K &amp; BLURAY &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 4K &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&amp; BLURAY &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>同样转载自NEST大佬的最新分享<br>原帖地址：<br><a href="https://blog.2nest.top/article/mpv2">https://blog.2nest.top/article/mpv2</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MP进阶设置</title>
     <url>/2025/04/23/MP%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<p>对部分设置做进一步整理</p>
@@ -452,6 +478,35 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Obsidian同步方案及插件</title>
+    <url>/2025/05/31/obsidian%E5%90%8C%E6%AD%A5%E6%96%B9%E6%A1%88%E5%8F%8A%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<blockquote>
+<p>Obsidian作为一款出色的双链笔记软件，整体使用体验非常出色，目前已成为我的主力笔记软件。<br>  本文将简要介绍下我个人在<font color="#b960d9">Obsidian</font>使用中使用的<font color="#6eb957">同步方案</font>和几款实用插件。</p>
+</blockquote>
+<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a>同步方案</h2><h3 id="方案一：Remotely-Save插件"><a href="#方案一：Remotely-Save插件" class="headerlink" title="方案一：Remotely Save插件"></a>方案一：Remotely Save插件</h3><p>要实现笔记的跨设备同步，我们可以借助<code>Remotely save</code> 这款社区插件<br>安装与配置步骤：<br>在设置里面-第三方插件-关闭安全模式-在社区插件市场里面搜索安装，安装以后点击启用<br>在<font color="#b960d9">Remotely save</font>里面选择<font color="#3a8cf0">OneDrive</font>(个人版)同步方案<br>然后点击鉴权，点击弹出的链接跳转浏览器输入微软账号密码，<br>完成鉴权以后根据提示跳转回Obsidian,<br>在<code>修改远端基文件夹</code> 里输入一个文件名（随便输入都可以）-点击确定<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d967507061.webp" alt="1.save选择 拷贝.webp"><br>这个文件夹会自动在<font color="#3a8cf0">OneDrive</font>里创建，不同仓库要设置不同的文件夹哦，以避免数据混淆。<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d996d0e194.webp" alt="1.save选择2 拷贝.webp"><br>故障排除：<br>这种同步方法受限于网络状况，又是可能会遇到<font color="#6eb957">连接中断</font>的情况，<br>如果出现同步失败只需要点<font color="#3a8cf0">撤回鉴权</font>-<font color="#fbad61">清理登陆信息</font>，重新鉴权登录一下即可，<br>重新登陆以后记得检查一下远端基文件夹名称是否是自己设置的。</p>
+<blockquote>
+<p>Tips:<br>默认的OneDrive免费储存空间只有5GB,如果空间不足，<br>万能的某宝上有<font color="#f74db5">廉价的永久扩容服务</font>哦，可以扩容10GB，或考虑官方的付费升级方案。</p>
+</blockquote>
+<h2 id="方法二：WebDAV"><a href="#方法二：WebDAV" class="headerlink" title="方法二：WebDAV"></a>方法二：WebDAV</h2><p>第二种同步方案是使用极空间的<font color="#b960d9">文件共享服务</font>（WebDAV）<br>配置步骤：<br>首先来系统设置查看一下文件共享服务的<font color="#6eb957">地址及端口</font><br>在浏览器输入地址及端口-输入账号密码登录（极空间的账号密码）- 选择任意一个路径当作自己的同步位置<br>选择以后记得看下浏览器的地址栏，我们要把这个地址粘贴到同步插件的<font color="#3a8cf0">服务器地址</font>里<br>同样的远端基文件夹可以随意输入设置，不同仓库可以设置不同的文件夹路径<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d9d9e72d13.webp" alt="1.WEBDAV 拷贝.webp"><br>这里服务器地址我是<font color="#f74db5">反代</font>了一下，这个方法需要<font color="#f74db5">公网IP</font>或者<font color="#b960d9">内网穿透</font>以达到<font color="#4bacc6">外网访问</font>的效果.<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683da0409b4d6.webp" alt="1.WEBDAV2 拷贝.webp"><br>目前来看使用NAS自带的文件共享服务<font color="#00b050">最稳定</font>，几乎没有出现过连接不上的情况，<br>当然，Obsidian的同步方案还有很多，有兴趣的朋友可以进一步研究，选择更适合自己的方案。</p>
+<h2 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h2><p>介绍完同步方案以后，下面就简单介绍一下我使用的一些插件<br><font color="#b960d9">Obsidian</font>的强大很大程度得益于<font color="#f74db5">无所不能</font><font color="#b960d9">包罗万象</font>的社区插件库</p>
+<h3 id="编辑增强：Obsidian-EditingToolbar"><a href="#编辑增强：Obsidian-EditingToolbar" class="headerlink" title="编辑增强：Obsidian EditingToolbar"></a>编辑增强：Obsidian EditingToolbar</h3><p>这款插件让<font color="#b960d9">Obsidian</font>拥有一个类似<font color="#0070c0">word</font>的可视化工具栏，<br>方便用户更快捷的对文本、段落进行编辑，<br>虽然熟练掌握<font color="#4bacc6">Markdown</font>语法以后，可以直接输入大多数格式标记，<br>但在需要修改字体颜色、添加下划线或高亮文本等操作时，通过点击工具栏按钮往往比手动输入标记更为高效。</p>
+<h3 id="翻译辅助：沉浸式翻译-Obsidian-i18n"><a href="#翻译辅助：沉浸式翻译-Obsidian-i18n" class="headerlink" title="翻译辅助：沉浸式翻译 (Obsidian i18n)"></a>翻译辅助：沉浸式翻译 (Obsidian i18n)</h3><p><font color="#f74db5">沉浸式翻译</font>相信大家都在浏览器里体验过它的强大，在obsidain里也可以使用沉浸式翻译哦，<br>由于很多插件都是国外的开发者开发 ，并没有<font color="#fbad61">原生适配中文</font>，<br>沉浸式翻译可以让我们没有<font color="#b960d9">阅读障碍</font>，轻松使用我们需要的插件了。<br>因为沉浸式翻译并没有上架Obsidian插件市场，我们需要先安装<font color="#00b0f0">BRAT</font><br>Brat可以直接在插件市场搜索安装，<br>安装以后-快捷键<code>ctrl+p</code>,选择命令<code>BRAT: Plugins: Add a beta plugin for testing</code><br>(如果列表中未立即看到该命令，请向下滚动查找)<br>在弹出的输入框中粘贴以下 GitHub 仓库地址：<code>https://github.com/0011000000110010/obsidian-i18n</code><br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683da3fad3b2a.webp" alt="3.翻译 拷贝.webp"><br>添加成功以后会弹出一个<font color="#6eb957">使用协议</font>，勾选知晓并点击同意，<br>之后便可以去插件设置中进行自定义配置<br>关于插件的详细使用方法，开发者在<font color="#f74db5">GitHub项目地址</font>中有<font color="#92d050">详细介绍</font>。</p>
+<blockquote>
+<p>相关概念：i18n 与 L10n<br>在信息技术领域，国际化与本地化（英文：internationalization and localization）<br>是指修改软件，使之能适应目标市场的语言、地区差异以及技术需要。<br>基于它们的英文单字长度过长，常被分别简称成i18n<br>（18意味着在“internationalization”这个单字中，i和n之间有18个字母）及L10n。</p>
+</blockquote>
+<p>除了以上介绍的这些，我目前使用的插件数量并不算多，<br>更希望回归笔记与写作的本质——专注于内容的创作与输出。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>除了官方社区以外，下面再分享一个<font color="#b960d9">Obsidian</font>学习社区<br><a href="https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/obsidian%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">PKMER-一个关于Obsidian的学习社区</a></p>
+<p>再分享一个纯粹的笔记软件（需注册登录）<br><a href="https://chronnote.top/">Chronnote笔记，一款”All-in-One”工具</a><br>简约纯粹，全平台，自带AI问答</p>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Obsidian</tag>
+      </tags>
   </entry>
   <entry>
     <title>使用极空间部署MP</title>
@@ -1270,24 +1325,6 @@
       </tags>
   </entry>
   <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>文生图工作流相关术语概念</title>
     <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
@@ -1312,12 +1349,54 @@
       </tags>
   </entry>
   <entry>
-    <title>苔藓</title>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GREEN-苔藓</title>
     <url>/2025/05/23/%E8%8B%94%E8%97%93/</url>
     <content><![CDATA[<blockquote>
-<p>这是一个全新的系列，主要用来记录日常生活中遇见的各种植物，用绿植让生活充满诗意🌵</p>
+<p>这是一个全新的系列，主要用来记录日常生活中遇见的各种植物🌵</p>
 </blockquote>
-<p>苔藓植物是一类非常古老的植物，它们在植物界中属于最低等的类群之一，具有独特的形态结构和生态习性。</p>
+<p>“苔藓植物”（Bryophytes）是一个总称，指的是一类结构相对简单、体型通常较小的陆生植物。它们是地球上最早的陆地植物之一，在植物演化中占据着重要的位置。</p>
+<p>苔藓植物主要包括三大类群：</p>
+<p><strong>苔类 (Mosses &#x2F; Musci &#x2F; Bryopsida)：</strong><br>这是苔藓植物中种类最多、分布最广的一类。植株通常有类似“茎”和“叶”的分化（但并非真正的茎和叶），白发藓（Leucobryum）和大灰藓（Hypnum）都属于这一类。它们通常有直立或匍匐的茎，叶片小而密集。<br><strong>藓类 (Liverworts &#x2F; Hepaticae &#x2F; Marchantiopsida)：</strong><br>藓类植物体可以是扁平的叶状体（像一片平铺的叶子），也可以是具有茎叶分化的茎叶体。叶状体藓类的一个例子是地钱（Marchantia）。它们的名字来源于一些叶状体种类外观像肝脏的形状。<br><strong>角苔类 (Hornworts &#x2F; Anthocerotae &#x2F; Anthocerotopsida)：</strong><br>角苔的植物体是扁平的叶状体，其最显著的特征是它们长而角状的孢子体（产生孢子的结构），这也是它们名字的由来。角苔种类相对较少。</p>
+<h1 id="白发藓"><a href="#白发藓" class="headerlink" title="白发藓"></a>白发藓</h1><p>常被称为<strong>枕藓</strong>或<strong>白灰藓</strong>，是一种常见的苔藓植物。</p>
+<ul>
+<li><strong>核心特征：</strong> 外观呈独特的<strong>灰白色、浅绿或蓝绿色</strong>，形成密集、隆起的垫状或丘状群体，触感厚实有弹性。</li>
+<li><strong>生长环境：</strong> 偏好<strong>半阴湿润</strong>、排水良好的<strong>酸性</strong>环境，常见于林下、腐木或岩石表面。</li>
+<li><strong>主要价值：</strong><ul>
+<li><strong>生态上：</strong> 是重要的先锋植物，有助于水土保持，并为微小生物提供栖息地。</li>
+<li><strong>园艺上：</strong> 因其美观独特，常用于苔藓微景观、生态瓶和园林绿化。</li>
+</ul>
+</li>
+</ul>
+<p>简而言之，白发藓是一种颜色独特、形态可爱的苔藓，既有生态价值，也常用于观赏。</p>
+<h1 id="大灰藓"><a href="#大灰藓" class="headerlink" title="大灰藓"></a>大灰藓</h1><p>尤指<strong>多形灰藓 (Hypnum plumaeforme)</strong>，常被称为<strong>羽藓</strong>或<strong>匍匐藓</strong>。</p>
+<ul>
+<li><strong>核心特征：</strong> 通常呈<strong>黄绿色或绿色</strong>，以<strong>匍匐、垫状</strong>方式大片生长，形成地毯状群落。其叶片常向一侧弯曲，形似镰刀。</li>
+<li><strong>生长环境：</strong> 适应性强，喜欢<strong>湿润</strong>环境，能生长在林下土壤、岩石、树基等多种基质上，对光照要求不严。</li>
+<li><strong>主要价值：</strong><ul>
+<li><strong>生态上：</strong> 重要的地表覆盖植物，有助于水土保持，为微小生物提供庇护所，并可作为环境指示植物。</li>
+<li><strong>园艺上：</strong> 因其形态优美且易于铺展，广泛用于苔藓微景观、盆景覆盖和生态瓶制作。</li>
+</ul>
+</li>
+</ul>
+<p>简而言之，大灰藓是一种适应力强、分布广泛的绿色匍匐苔藓，既在生态系统中发挥作用，也是园艺造景的常用材料。</p>
 ]]></content>
       <categories>
         <category>Green</category>
