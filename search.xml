@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MP订阅规则</title>
-    <url>/2025/06/02/MP%E8%AE%A2%E9%98%85%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<p>更新记录：</p>
-<ul>
-<li>2025-5-24：新增杜比P8，去掉单独分组，使用白名单以及优先组（主要是防止下到枪版）</li>
-<li>2025-5-24：重新修改部分优先级</li>
-</ul>
-<blockquote>
-<p>直接把原来的规则删除，重新导入保存即可</p>
-</blockquote>
-<h1 id="自定义代码"><a href="#自定义代码" class="headerlink" title="自定义代码"></a>自定义代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d+(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|YTS.MX|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-1000000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DVP8&quot;,&quot;name&quot;:&quot;杜比P8&quot;,&quot;exclude&quot;:&quot;^(?!.*HDR).*(DV|dovi|DoVi)&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP|DD+&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;WhiteList&quot;,&quot;name&quot;:&quot;白名单&quot;,&quot;include&quot;:&quot;\\b(Oldboys|GTR|RO|Telesto|CatEDU|PbK|Rainbaby|Ao|BMDru|c0kE|cfandora|jsum|RNML|FraMeSToR|ADE|CHD|CMCT|Sunny|WiKi|PTer|MTeam|FRDS|UBits|FROGE|beAst|Dream|BeiTai|RLeaves|R²|PTH|HDChina|LHD|ZONE|btshd|ADWeb|HHWEB|CHDWEB|CMCTV|TJUPT|OurTV|PTerWEB|MWeb|UBWEB|FROGWeb|QHstudIo|DBTV|RLWeb|LeagueWEB|HDCTV|ZWEX|ZmWeb|Kitsune|NTb|playWEB|BYNDR|FLUX|ETHEL|EDITH|VARYG|HONE|YingWEB|OPS|AilMWeb|ARiC|喵萌奶茶屋|豌豆字幕组|爱恋字幕社|漫猫字幕社|北宇治字幕组|云光字幕组|织梦字幕组|千夏字幕组|极影字幕社|风之圣殿字幕组|风车字幕组|银色子弹字幕组|熔岩动画|MingYSub|枫叶字幕组|诸神字幕组|AKito|秋人|霜庭云花Sub|轻之国度字幕组|星空字幕组|离谱Sub|雪飘工作室|拨雪寻春|新Sub|MCE汉化组|極彩字幕组|氢气烤肉架|悠哈璃羽字幕社|桜都字幕组|SweetSub|LoliHouse|&amp;VCB-Studio|VCB-Studio&amp;|7³ACG|幻之字幕组|魔穗字幕组|澄空学园|LittleBakas!|白恋字幕组|动漫国字幕组|FSD字幕组|FSD粉羽社|一只出格君|猫恋汉化组|OPFans枫雪动漫|GM-Team|康复重症监护室字幕组|SilverBullet|APTX4869|幻樱字幕组|永恒译制|咪梦字幕组|NEO·QSW)\\b&quot;&#125;,&#123;&quot;id&quot;:&quot;PreferenceGroup&quot;,&quot;name&quot;:&quot;优先组&quot;,&quot;include&quot;:&quot;ADWeb|HHWEb|FROGWeb|ADE|FROGE&quot;&#125;]</span><br></pre></td></tr></table></figure>
-
-<h1 id="优先级代码"><a href="#优先级代码" class="headerlink" title="优先级代码"></a>优先级代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !3D &amp;WhiteList&amp;DVP8&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; CNSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp;PreferenceGroup&amp; 1080P &gt; BLURAY &amp; H265 &amp; CNSUB &amp; 1080P &gt; BLURAY &amp; CNSUB &amp; 1080P &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;Crunchyroll&gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;AMZN&gt;PreferenceGroup&amp;Netflix&amp; 1080P &amp; WEBDL &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &gt; 1080P &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp; CNSUB &gt; BLURAY &amp; CNSUB &gt; WEBDL &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;DDP&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;Complete&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; UHD &gt; 1080P &amp; BLURAY &gt; 4K &amp; WEBDL &amp;HQ&amp;PreferenceGroup&amp;filterSeries&gt; 4K &amp; WEBDL &amp; HDR &amp;PreferenceGroup&gt; 4K &amp; WEBDL &amp;PreferenceGroup&gt; 4K &amp; WEBDL &gt; 1080P &amp; WEBDL &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 4K &amp; BLURAY &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 4K &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&amp; BLURAY &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>同样转载自NEST大佬的最新分享<br>原帖地址：<br><a href="https://blog.2nest.top/article/mpv2">https://blog.2nest.top/article/mpv2</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Nas</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo基础使用介绍</title>
     <url>/2025/03/19/Hexo%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<blockquote>
@@ -119,6 +93,32 @@
       </tags>
   </entry>
   <entry>
+    <title>MP订阅规则</title>
+    <url>/2025/06/02/MP%E8%AE%A2%E9%98%85%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<p>更新记录：</p>
+<ul>
+<li>2025-5-24：新增杜比P8，去掉单独分组，使用白名单以及优先组（主要是防止下到枪版）</li>
+<li>2025-5-24：重新修改部分优先级</li>
+</ul>
+<blockquote>
+<p>直接把原来的规则删除，重新导入保存即可</p>
+</blockquote>
+<h1 id="自定义代码"><a href="#自定义代码" class="headerlink" title="自定义代码"></a>自定义代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d+(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|YTS.MX|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-1000000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DVP8&quot;,&quot;name&quot;:&quot;杜比P8&quot;,&quot;exclude&quot;:&quot;^(?!.*HDR).*(DV|dovi|DoVi)&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP|DD+&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;WhiteList&quot;,&quot;name&quot;:&quot;白名单&quot;,&quot;include&quot;:&quot;\\b(Oldboys|GTR|RO|Telesto|CatEDU|PbK|Rainbaby|Ao|BMDru|c0kE|cfandora|jsum|RNML|FraMeSToR|ADE|CHD|CMCT|Sunny|WiKi|PTer|MTeam|FRDS|UBits|FROGE|beAst|Dream|BeiTai|RLeaves|R²|PTH|HDChina|LHD|ZONE|btshd|ADWeb|HHWEB|CHDWEB|CMCTV|TJUPT|OurTV|PTerWEB|MWeb|UBWEB|FROGWeb|QHstudIo|DBTV|RLWeb|LeagueWEB|HDCTV|ZWEX|ZmWeb|Kitsune|NTb|playWEB|BYNDR|FLUX|ETHEL|EDITH|VARYG|HONE|YingWEB|OPS|AilMWeb|ARiC|喵萌奶茶屋|豌豆字幕组|爱恋字幕社|漫猫字幕社|北宇治字幕组|云光字幕组|织梦字幕组|千夏字幕组|极影字幕社|风之圣殿字幕组|风车字幕组|银色子弹字幕组|熔岩动画|MingYSub|枫叶字幕组|诸神字幕组|AKito|秋人|霜庭云花Sub|轻之国度字幕组|星空字幕组|离谱Sub|雪飘工作室|拨雪寻春|新Sub|MCE汉化组|極彩字幕组|氢气烤肉架|悠哈璃羽字幕社|桜都字幕组|SweetSub|LoliHouse|&amp;VCB-Studio|VCB-Studio&amp;|7³ACG|幻之字幕组|魔穗字幕组|澄空学园|LittleBakas!|白恋字幕组|动漫国字幕组|FSD字幕组|FSD粉羽社|一只出格君|猫恋汉化组|OPFans枫雪动漫|GM-Team|康复重症监护室字幕组|SilverBullet|APTX4869|幻樱字幕组|永恒译制|咪梦字幕组|NEO·QSW)\\b&quot;&#125;,&#123;&quot;id&quot;:&quot;PreferenceGroup&quot;,&quot;name&quot;:&quot;优先组&quot;,&quot;include&quot;:&quot;ADWeb|HHWEb|FROGWeb|ADE|FROGE&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="优先级代码"><a href="#优先级代码" class="headerlink" title="优先级代码"></a>优先级代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !3D &amp;WhiteList&amp;DVP8&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; CNSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp;PreferenceGroup&amp; 1080P &gt; BLURAY &amp; H265 &amp; CNSUB &amp; 1080P &gt; BLURAY &amp; CNSUB &amp; 1080P &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;Crunchyroll&gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;AMZN&gt;PreferenceGroup&amp;Netflix&amp; 1080P &amp; WEBDL &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &gt; 1080P &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp; CNSUB &gt; BLURAY &amp; CNSUB &gt; WEBDL &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;DDP&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;Complete&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; UHD &gt; 1080P &amp; BLURAY &gt; 4K &amp; WEBDL &amp;HQ&amp;PreferenceGroup&amp;filterSeries&gt; 4K &amp; WEBDL &amp; HDR &amp;PreferenceGroup&gt; 4K &amp; WEBDL &amp;PreferenceGroup&gt; 4K &amp; WEBDL &gt; 1080P &amp; WEBDL &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 4K &amp; BLURAY &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 4K &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&amp; BLURAY &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>同样转载自NEST大佬的最新分享<br>原帖地址：<br><a href="https://blog.2nest.top/article/mpv2">https://blog.2nest.top/article/mpv2</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MP进阶设置</title>
     <url>/2025/04/23/MP%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<p>对部分设置做进一步整理</p>
@@ -154,6 +154,89 @@
       </categories>
       <tags>
         <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LM Studio本地部署蒸馏化模型</title>
+    <url>/2025/04/20/Studio%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E8%92%B8%E9%A6%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>AI发展迅速，都说我们目前正身处于AI时代🌏<br>人工智能（AI）技术正以前所未有的速度改变着我们的生活和工作方式🙇‍♂️<br>本地部署模型呢，可以一定程度保证我们数据隐私和安全🙅‍♂️<br>还可以摆脱网络限制，提高数据处理的速度💫<br>结合我们自己的设备性能可以选择不同参数的模型，比较灵活👍</p>
+</blockquote>
+<p>开始部署之前首先需要说明，由于本地硬件设备性能<font color="#b960d9">存在局限</font>🤦‍♀️，我们大部分用户可能只能部署简单4b或8b模型，这些模型的实际表现或许达不到部分用户的预期，对于设备条件不够高的用户不妨直接选择现成的<font color="#6eb957">云端服务</font>也是不错的选择，不必执着于本地部署。🦄</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>首先下载LM Studio,打开LM Studio的官网<a href="https://lmstudio.ai/">点我</a>，目前支持<font color="#f74db5">Win、Linux和Mac</font>的M系列，英特尔系列的话了解下<code>Ollama</code>进行部署吧。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052a61bf660.webp" alt="1.下载 拷贝.webp"><br>安装步骤一直点下一步即可，默认英文，可以点右下角小齿轮，在语言选项内选择“简体中文”<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052ae3c0582.webp" alt="2.语言.webp"></p>
+<h3 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h3><p>由于<code>huggingface.co</code>在国内没办法直接访问，直接在LMStudio下载模型，<br>大概率会遇到这种情况：Model details error:fetchf ailed<br>可以前往huggingface.co的国内镜像<u>hf-mirror.com</u>进行模型下载，<br>我们先下载一个<u>DeepSeek-R1-Distill-Qwen-7B</u>模型玩玩，<br>下载地址：<a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">7B模型</a><br><a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main</a><br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/6805294638176.webp" alt="4.模型列表 拷贝.webp"><br>打开后可以看到4个gguf模型文件，在LLM语言模型领域，Q3、Q4、Q6、Q8代表着不同量化位数的量化模型，及分别将模型参数以3位、4位、6位、8位来存储和计算，模型量化类型越大，意味着有更高的精度，但也会带来更大的内存占用以及更大的计算成本。<br>当然，如果你的网路通畅，可以在<code>发现</code>栏直接下载<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059aa1e4c0b.webp" alt="3.模型下载.webp"></p>
+<h3 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h3><p>模型下载以后，是一个独立的gguf文件，打开LM Studio<code>我的模型</code>，找到模型目录，点击右侧路径设置，选择模型存放的路径加载即可。<br>比如我就是存放在外接的移动硬盘里，不占用Mac的本地储存空间。<br>设置好模型目录以后，LM Studio无需重启，会自动刷新模型目录，列表显示出我们下载的gguf模型即表示已经成功了。<br>插入图片</p>
+<h3 id="开始对话"><a href="#开始对话" class="headerlink" title="开始对话"></a>开始对话</h3><p>返回LM Studio<code>聊天</code> 界面,在顶部选择模型，模型参数默认即可，<br>对模型参数感兴趣的可以自行ai问答研究，等模型加载完毕就可以发送消息进行对话啦🏄<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059dec1afd2.webp" alt="4.开始使用 拷贝.webp"><br>LM Studio还支持显示模型的深度思考过程，挺有意思的。</p>
+<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p>最后简单科普一下模型的一些相关知识；</p>
+<ul>
+<li>什么是模型的蒸馏版？<br>  模型的蒸馏版就是通过模型蒸馏技术，将一个大型的、复杂的<code>教师模型</code> 的知识转移到一个小型的、简单的<code>学生模型</code> 后得到的版本。<br>比如以本文使用的DeepSeek-R1-Distill-Qwen-7B模型为例，具体含义如下：</li>
+<li>DeepSeek-R1：是指基础的教师模型，即671B的高性能推理模型DeepSeek-R1。</li>
+<li>Distill：表示这是经过<font color="#fbad61">蒸馏技术</font>处理得到的模型版本，代表该模型是通过将DeepSeek-R1模型的知识迁移到其他模型而产生的。</li>
+<li>Qwen-7B：代表以Qwen2.5系列中的7B模型作为学生模型，接受来自DeepSeek-R1的知识蒸馏，其中Qwen是阿里云的通义千问大模型，7B表示该模型具有<font color="#b960d9">70亿个参数</font>。</li>
+</ul>
+<p>可见，本地部署的这个蒸馏模型并不是原版的模型，该模型可以看作是一个新的模型，所以性能要求降低的同时也不要指望结果和原版相近<br>为了更好的体验，在模型选择上，建议先追求更大参数的量的模型（14B、32B、70B等)，然后再根据可用内存选择量化程度（Q3、Q4、Q6、Q8等），至于选择Qwen还是Llama,<u>中文任务的话建议选择Qwen。</u></p>
+<h3 id="个人建议"><a href="#个人建议" class="headerlink" title="个人建议"></a>个人建议</h3><p>由于Apple Silicon的Mac使用了统一内存（内存显存共享），Mac电脑的16GB内存选7B参数量Q4量化模型，32GB内存选14B参数量Q4量化的模型。Windows平台要注意显存大小，显存不够可以使用内存来凑，但性能是没办法跟显存比的。</p>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>错误—:The model has crashed with out additional information.（Exitcode:5)<br>模型可以运行，但是运行过程中出现了内存不足，可尝试换个内存要求更低的模型。</p>
+<p>错误二：Model loading aborted due to insufficient system resources.Overloading the system will likely causeit to freeze.If you believe this is a mistake,you can try to change the model loading guardrails in the settings.<br>内存不足导致模型无法运行，可尝试换个内存要求更低的模型。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本地部署和在线使用<font color="#6eb957">各有利弊</font>，有需要的小伙伴可以体验一下，由于大部分用户的硬件性能有限，现阶段本地部署对大部分人来说依然是<font color="#f74db5">伪需求</font>，使用云端的模型无论性能还是回答结果，都比本地要好很多。</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>LmStudio</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Twikoo静态网站评论系统</title>
+    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
+<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
+<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
+<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
+
+<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ComfyUI-文生图对比工作流</title>
+    <url>/2025/05/27/comfyui%E6%96%87%E7%94%9F%E5%9B%BE%E8%8A%82%E7%82%B9%E5%AF%B9%E6%AF%94/</url>
+    <content><![CDATA[<h1 id="开始准备"><a href="#开始准备" class="headerlink" title="开始准备"></a>开始准备</h1><p>首先需要用到的节点有：</p>
+<ul>
+<li><font color="#f74db5">ComfyUI-Detail-Daemon</font>:增强细节节点<br><a href="https://github.com/Jonseed/ComfyUI-Detail-Daemon">Jonseed&#x2F;ComfyUI-Detail-Daemon</a></li>
+<li><font color="#f74db5">ComfyUI-Easy-Use</font>：一个化繁为简的节点整合包。<br><a href="https://github.com/yolain/ComfyUI-Easy-Use/blob/main/README.ZH_CN.md">ComfyUI-Easy-Use</a></li>
+<li><font color="#b960d9">rgthree-comfy</font>：让工作流更清晰、更轻松、更快速，实现对比效果<br><a href="https://github.com/rgthree/rgthree-comfy">rgthree:让 ComfyUI 更舒适！</a></li>
+<li><font color="#fbad61">Translation</font>:翻译（备选，新版本已失效）<br><a href="https://github.com/AIGODLIKE/AIGODLIKE-COMFYUI-TRANSLATION">AIGODLIKE&#x2F;AIGODLIKE-ComfyUI-Translation:</a><br>主要就是前三个节点。</li>
+</ul>
+<h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p><img src="https://ls.imsoso.cn:6688/i/2025/05/27/6834997111b36.webp" alt="1.工作流.webp"></p>
+<h2 id="节点介绍"><a href="#节点介绍" class="headerlink" title="节点介绍"></a>节点介绍</h2><p>双Clip加载器加载对应模型<br>UNet加载器加载Flux模型<br>K采样器选择：<font color="#3a8cf0">euler</font><br>空Latent设置为官方建议尺寸：<font color="#6eb957">1024x1024</font><br><font color="#b960d9">Flux引导值默认：3.5</font>，负向提示词官方已优化，添加<font color="#3a8cf0">条件零化</font><br>采样器种子数<font color="#6eb957">使用统一的随机种</font>，保证生成结果是在同一张图片上进行对比<br>	<font color="#fbad61">随机种需要安装Easy-Use节点才会出现哦</font></p>
+<p><font color="#f74db5">Detail Daemon</font>节点（用于增加细节）<br><img src="https://ls.imsoso.cn:6688/i/2025/05/27/68349e3e0d3c4.webp" alt="2.细节节点.webp"><br>最后输出需要添加：<font color="#b960d9">Image Comparer </font>（ 图像比较器）节点</p>
+<h1 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h1><p><font color="#6eb957">提示词书写格式：</font><br>词与词之间用逗号“，”隔开；<br>权重变化：（提示词：1.5）、减权重【提示词：0.3】、<font color="#b960d9">加减权重使用的括号不同</font>。</p>
+<p>可以使用文本AI，<u>让提示词更加丰富详尽</u>，也可以更换不同风格的模型让生成图片更具<font color="#3a8cf0">个性化</font>。</p>
+<p>在采样器节点-右键-将控件转换为输入-<font color="#f74db5">转换seed</font>为输入<br>在自定义采样器-右键-将控件转换为输入-<font color="#6eb957">转换 noise_seed</font>为输入</p>
+<ul>
+<li>最新版已经不需要再右键转换了，可以直接添加随机种，连接到seed上。</li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><u>按住ctrl键可以框选节点</u>，<font color="#b960d9">ctrl+b</font>键，可以冻结、禁用所选节点。</p>
+<blockquote>
+<p>不提供模型下载，请根据实际需要下载相对应的模型。</p>
+</blockquote>
+<p>国内模型网站<br><a href="https://www.liblib.art/">LiblibAI-哩布哩布AI - 中国领先的AI创作平台</a><br>国外模型网站<br><a href="https://civitai.com/models">Civitai Models | Discover Free Stable Diffusion &amp; Flux Models</a></p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -262,206 +345,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown进阶语法</title>
-    <url>/2025/05/06/Markdown%E8%BF%9B%E9%98%B6%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>好的，除了<font color="#6eb957">基础语法</font>，Markdown 还有一些进阶或者说<font color="#3a8cf0">扩展的语法</font>，它们在不同的 Markdown<br>解析器或平台中支持程度可能不同，但很多现代的 Markdown 编辑器和平台都支持这些功能。<br>以下是一些常见的进阶 Markdown 语法：</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<h2 id="表格-Tables"><a href="#表格-Tables" class="headerlink" title="表格 (Tables)"></a><strong>表格 (Tables)</strong></h2><p>表格的创建相对直观，使用竖线 <code>|</code> 来分隔不同的单元格，使用连字符 <code>-</code> 来创建表头和表格内容的分隔线。可以在分隔线中使用冒号 <code>:</code> 来定义列的对齐方式。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 表头1 | 表头2 | 表头3 |</span><br><span class="line">| :---- | :---: | ----: |</span><br><span class="line">| 左对齐 | 居中对齐 | 右对齐 |</span><br><span class="line">| 内容1 | 内容2 | 内容3 |</span><br><span class="line">| 内容A | 内容B | 内容C |</span><br></pre></td></tr></table></figure>
-
-<p><strong>渲染效果：</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">表头1</th>
-<th align="center">表头2</th>
-<th align="right">表头3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">左对齐</td>
-<td align="center">居中对齐</td>
-<td align="right">右对齐</td>
-</tr>
-<tr>
-<td align="left">内容1</td>
-<td align="center">内容2</td>
-<td align="right">内容3</td>
-</tr>
-<tr>
-<td align="left">内容A</td>
-<td align="center">内容B</td>
-<td align="right">内容C</td>
-</tr>
-</tbody></table>
-<p>导出到 Google 表格</p>
-<ul>
-<li><code>:----</code> 表示该列左对齐（默认）</li>
-<li><code>:---:</code> 表示该列居中对齐</li>
-<li><code>----:</code> 表示该列右对齐</li>
-</ul>
-<blockquote>
-<p>表格我一直输入不出来，建议直接用插件更方便哦🐯</p>
-</blockquote>
-<h2 id="删除线-Strikethrough"><a href="#删除线-Strikethrough" class="headerlink" title="删除线 (Strikethrough)"></a><strong>删除线 (Strikethrough)</strong></h2><p>使用两个波浪线 <code>~~</code> 包裹文本来实现删除线效果。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~这段文字会被划上删除线。~~</span><br></pre></td></tr></table></figure>
-
-<p><strong>渲染效果：</strong></p>
-<p><del>这段文字会被划上删除线。</del></p>
-<h2 id="任务列表-Task-Lists"><a href="#任务列表-Task-Lists" class="headerlink" title="任务列表 (Task Lists)"></a><strong>任务列表 (Task Lists)</strong></h2><p>任务列表允许你创建带有复选框的列表。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- [x] 已完成的任务</span><br><span class="line">- [ ] 未完成的任务</span><br><span class="line">  - [ ] 子任务1 (未完成)</span><br><span class="line">  - [x] 子任务2 (已完成)</span><br><span class="line">- [ ] 另一个未完成的任务</span><br></pre></td></tr></table></figure>
-
-<p><strong>渲染效果：</strong></p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 已完成的任务</li>
-<li><input disabled="" type="checkbox"> 未完成的任务<ul>
-<li><input disabled="" type="checkbox"> 子任务1 (未完成)</li>
-<li><input checked="" disabled="" type="checkbox"> 子任务2 (已完成)</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> 另一个未完成的任务</li>
-</ul>
-<h2 id="脚注-Footnotes"><a href="#脚注-Footnotes" class="headerlink" title="脚注 (Footnotes)"></a><strong>脚注 (Footnotes)</strong></h2><p>脚注允许你为文本添加注释，注释内容会显示在文档的末尾。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个需要脚注的句子。[^1]</span><br><span class="line">这是另一个需要脚注的句子。[^another]</span><br><span class="line"></span><br><span class="line">[^1]: 这是第一个脚注的内容。</span><br><span class="line">[^another]: 这是另一个脚注的内容，可以使用任何不包含空格和制表符的标签。</span><br></pre></td></tr></table></figure>
-
-<p><strong>渲染效果 (大致)：</strong></p>
-<p>这是一个需要脚注的句子。&lt;sup&gt;1&lt;&#x2F;sup&gt; 这是另一个需要脚注的句子。&lt;sup&gt;another&lt;&#x2F;sup&gt;</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>&lt;sup&gt;1&lt;&#x2F;sup&gt; 这是第一个脚注的内容。 &lt;sup&gt;another&lt;&#x2F;sup&gt; 这是另一个脚注的内容，可以使用任何不包含空格和制表符的标签。</p>
-<h2 id="定义列表-Definition-Lists-并非所有-Markdown-解析器都支持"><a href="#定义列表-Definition-Lists-并非所有-Markdown-解析器都支持" class="headerlink" title="定义列表 (Definition Lists) (并非所有 Markdown 解析器都支持)"></a><strong>定义列表 (Definition Lists)</strong> (并非所有 Markdown 解析器都支持)</h2><p>用来创建术语及其定义的列表。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Markdown</span><br><span class="line">: 轻量级标记语言。</span><br><span class="line"></span><br><span class="line">HTML</span><br><span class="line">: 超文本标记语言。</span><br></pre></td></tr></table></figure>
-
-<p><strong>渲染效果 (大致，取决于解析器)：</strong></p>
-<p>&lt;dl&gt; &lt;dt&gt;Markdown&lt;&#x2F;dt&gt; &lt;dd&gt;轻量级标记语言。&lt;&#x2F;dd&gt; &lt;dt&gt;HTML&lt;&#x2F;dt&gt; &lt;dd&gt;超文本标记语言。&lt;&#x2F;dd&gt; &lt;&#x2F;dl&gt;</p>
-<h2 id="Emoji-表情-Emoji-支持程度取决于解析器或平台"><a href="#Emoji-表情-Emoji-支持程度取决于解析器或平台" class="headerlink" title="Emoji 表情 (Emoji) (支持程度取决于解析器或平台)"></a><strong>Emoji 表情 (Emoji)</strong> (支持程度取决于解析器或平台)</h2><p>很多 Markdown 编辑器和平台支持通过快捷码插入 Emoji。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:smile:</span><br><span class="line">:tada:</span><br><span class="line">:rocket:</span><br></pre></td></tr></table></figure>
-
-<p><strong>渲染效果 (取决于解析器)：</strong></p>
-<p>😄 🎉 🚀</p>
-<p>具体的 Emoji 代码可能因平台而异，但通常是 <code>:emoji_name:</code> 的格式。</p>
-<blockquote>
-<p>表情更难记忆了，建议直接用插件</p>
-</blockquote>
-<h2 id="自动-URL-链接-Automatic-URL-Linking-很多解析器支持"><a href="#自动-URL-链接-Automatic-URL-Linking-很多解析器支持" class="headerlink" title="自动 URL 链接 (Automatic URL Linking) (很多解析器支持)"></a><strong>自动 URL 链接 (Automatic URL Linking)</strong> (很多解析器支持)</h2><p>很多 Markdown 解析器会自动将看起来像 URL 的文本转换为可点击的链接。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.example.com</span><br></pre></td></tr></table></figure>
-
-<p><strong>渲染效果：</strong></p>
-<p><a href="http://www.example.com/">http://www.example.com</a></p>
-<p>或者直接是可点击的链接： <a href="http://www.example.com/">http://www.example.com</a></p>
-<h2 id="HTML-标签-Raw-HTML"><a href="#HTML-标签-Raw-HTML" class="headerlink" title="HTML 标签 (Raw HTML)"></a><strong>HTML 标签 (Raw HTML)</strong></h2><p>Markdown 的一个强大之处在于它允许你直接嵌入 <font color="#3a8cf0">HTML </font>代码。如果你需要实现 Markdown 语法无法覆盖的复杂布局或功能，可以直接使用 HTML。</p>
-<p>Markdown</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一段 Markdown 文本。</span><br><span class="line">&lt;div style=&quot;color: red;&quot;&gt;</span><br><span class="line">  这是一段红色的 HTML 文本。</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">*Markdown 列表*</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意事项：</strong></p>
-<ul>
-<li><strong>兼容性：</strong> 上述进阶语法并非所有 Markdown 解析器都完全支持。最常见和广泛支持的是表格、删除线和任务列表。脚注和定义列表的支持程度各不相同。</li>
-<li><strong>GFM (GitHub Flavored Markdown):</strong> 很多进阶语法，如表格、任务列表、删除线、自动 URL 链接和部分 Emoji 支持，都源自或被广泛采纳于 GitHub Flavored Markdown (GFM)。如果你主要在 GitHub 或支持 GFM 的平台上使用 Markdown，这些语法通常都能很好地工作。</li>
-</ul>
-<p>学习这些进阶语法可以让你编写内容更丰富、结构更复杂的 Markdown 文档。<br>建议在你常用的 Markdown 编辑器或平台上测试这些语法的实际效果。</p>
-<p>来源参考：<br><a href="https://www.markdown.xyz/basic-syntax/">Markdown指南中文版</a></p>
-<blockquote>
-<p>虽然语法可以完成绝大部分操作，但是别忘了Obsidian还有<font color="#b960d9">丰富的插件</font>来帮我更便捷的完成编辑，<br>比如网页可以直接复制-粘贴，插入图片会让产生更多<font color="#f74db5">碎片化的文件</font>，不如图床连接来的方便，<br>表格和字体色彩等操作也有类似的Word的<font color="#6eb957">工具条</font>可以一键操作，<br>下一篇将总结一下我常用的<font color="#fbad61">效率插件</font>。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>Obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Twikoo静态网站评论系统</title>
-    <url>/2025/03/29/Twikoo%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e8315cc08cd.webp" alt="0.首图.webp"><br>简单回顾下博客评论系统的设置<br>看了好多博客都在使用Twikko评论系统😼<br>外观简洁大方，输入QQ号还可以<font color="#6eb957">自动识别昵称</font>，挺方便的。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>部署过程参考<a href="https://twikoo.js.org/">官网快速上手</a>，还有视频教程🏂<br>（虽然是2021年录制的，不过也有一定的参考价值，不算过时）</p>
-<h3 id="数据库支持"><a href="#数据库支持" class="headerlink" title="数据库支持"></a>数据库支持</h3><p>首先评论需要一个地方来托管数据，这里使用<a href="https://www.mongodb.com/cloud/atlas/register">MongoDB Atlas</a>，<br>免费账户可以<font color="#b960d9">永久使用500MB</font>的空间，足够储存Twikoo评论使用。<br>打开链接根据提示输入相关信息注册账号<br>创建数据库-设置数据库的用户名和密码-添加网络白名单<code>0.0.0.0</code> (允许所有ip地址的连接)<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79711cdf.webp" alt="1.创建用户名密码.webp"></p>
-<h3 id="云函数部署"><a href="#云函数部署" class="headerlink" title="云函数部署"></a>云函数部署</h3><p>有了hexo部署的前车之鉴，评论系统自然也要选择<font color="#f74db5">vercel</font>，毕竟免费嘛🥳<br>在指导文档里面点击<code>一键部署</code> 按钮，进入Settings - Environment Variables，添加环境变量<code>MONGODB_URI</code> ，值为前面记录的数据库连接字符串。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca79d42732.webp" alt="2.输入环境变量.webp"><br>进入 Settings - Deployment Protection，设置 Vercel Authentication 为 Disabled，并 Save<br>进入 Deployments , 然后在任意一项后面点击更多（三个点） , 然后点击 Redeploy ,<br>最后点击下面的 Redeploy<br>进入 Overview，点击 Domains 下方的链接，如果环境配置正确，<br>可以看到 “Twikoo 云函数运行正常” 的提示👍<br><img src="https://ls.imsoso.cn:6688/i/2025/04/02/67eca7a8918fc.webp" alt="3.函数运行正常.webp"><br>至此已经<font color="#3a8cf0">完成整个部署</font>啦。🎉🎉🎉</p>
-<h3 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h3><p>在主题里找到twikoo评论开关，然后在envid后面粘贴<code>Domains</code> 的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Twikoo</span><br><span class="line"># https://github.com/imaegoo/twikoo</span><br><span class="line">twikoo:</span><br><span class="line">  envId: https://twikoo-khvkri-seveno.vercel.app/</span><br><span class="line">  region:</span><br><span class="line">  visitor: false</span><br><span class="line">  option:</span><br></pre></td></tr></table></figure>
-
-<h3 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h3><p>线条、圆角设计跟主题的风格接近，还挺不错的🤪<br><img src="https://ls.imsoso.cn:6688/i/2025/03/30/67e83246ab524.webp" alt="8.展示.webp"><br>希望有帮助有价值的笔记下面可以多多评论互动🎉🎉🎉</p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LM Studio本地部署蒸馏化模型</title>
-    <url>/2025/04/20/Studio%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E8%92%B8%E9%A6%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>AI发展迅速，都说我们目前正身处于AI时代🌏<br>人工智能（AI）技术正以前所未有的速度改变着我们的生活和工作方式🙇‍♂️<br>本地部署模型呢，可以一定程度保证我们数据隐私和安全🙅‍♂️<br>还可以摆脱网络限制，提高数据处理的速度💫<br>结合我们自己的设备性能可以选择不同参数的模型，比较灵活👍</p>
-</blockquote>
-<p>开始部署之前首先需要说明，由于本地硬件设备性能<font color="#b960d9">存在局限</font>🤦‍♀️，我们大部分用户可能只能部署简单4b或8b模型，这些模型的实际表现或许达不到部分用户的预期，对于设备条件不够高的用户不妨直接选择现成的<font color="#6eb957">云端服务</font>也是不错的选择，不必执着于本地部署。🦄</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>首先下载LM Studio,打开LM Studio的官网<a href="https://lmstudio.ai/">点我</a>，目前支持<font color="#f74db5">Win、Linux和Mac</font>的M系列，英特尔系列的话了解下<code>Ollama</code>进行部署吧。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052a61bf660.webp" alt="1.下载 拷贝.webp"><br>安装步骤一直点下一步即可，默认英文，可以点右下角小齿轮，在语言选项内选择“简体中文”<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68052ae3c0582.webp" alt="2.语言.webp"></p>
-<h3 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h3><p>由于<code>huggingface.co</code>在国内没办法直接访问，直接在LMStudio下载模型，<br>大概率会遇到这种情况：Model details error:fetchf ailed<br>可以前往huggingface.co的国内镜像<u>hf-mirror.com</u>进行模型下载，<br>我们先下载一个<u>DeepSeek-R1-Distill-Qwen-7B</u>模型玩玩，<br>下载地址：<a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">7B模型</a><br><a href="https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main">https://hf-mirror.com/lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/tree/main</a><br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/6805294638176.webp" alt="4.模型列表 拷贝.webp"><br>打开后可以看到4个gguf模型文件，在LLM语言模型领域，Q3、Q4、Q6、Q8代表着不同量化位数的量化模型，及分别将模型参数以3位、4位、6位、8位来存储和计算，模型量化类型越大，意味着有更高的精度，但也会带来更大的内存占用以及更大的计算成本。<br>当然，如果你的网路通畅，可以在<code>发现</code>栏直接下载<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059aa1e4c0b.webp" alt="3.模型下载.webp"></p>
-<h3 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h3><p>模型下载以后，是一个独立的gguf文件，打开LM Studio<code>我的模型</code>，找到模型目录，点击右侧路径设置，选择模型存放的路径加载即可。<br>比如我就是存放在外接的移动硬盘里，不占用Mac的本地储存空间。<br>设置好模型目录以后，LM Studio无需重启，会自动刷新模型目录，列表显示出我们下载的gguf模型即表示已经成功了。<br>插入图片</p>
-<h3 id="开始对话"><a href="#开始对话" class="headerlink" title="开始对话"></a>开始对话</h3><p>返回LM Studio<code>聊天</code> 界面,在顶部选择模型，模型参数默认即可，<br>对模型参数感兴趣的可以自行ai问答研究，等模型加载完毕就可以发送消息进行对话啦🏄<br><img src="https://ls.imsoso.cn:6688/i/2025/04/21/68059dec1afd2.webp" alt="4.开始使用 拷贝.webp"><br>LM Studio还支持显示模型的深度思考过程，挺有意思的。</p>
-<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p>最后简单科普一下模型的一些相关知识；</p>
-<ul>
-<li>什么是模型的蒸馏版？<br>  模型的蒸馏版就是通过模型蒸馏技术，将一个大型的、复杂的<code>教师模型</code> 的知识转移到一个小型的、简单的<code>学生模型</code> 后得到的版本。<br>比如以本文使用的DeepSeek-R1-Distill-Qwen-7B模型为例，具体含义如下：</li>
-<li>DeepSeek-R1：是指基础的教师模型，即671B的高性能推理模型DeepSeek-R1。</li>
-<li>Distill：表示这是经过<font color="#fbad61">蒸馏技术</font>处理得到的模型版本，代表该模型是通过将DeepSeek-R1模型的知识迁移到其他模型而产生的。</li>
-<li>Qwen-7B：代表以Qwen2.5系列中的7B模型作为学生模型，接受来自DeepSeek-R1的知识蒸馏，其中Qwen是阿里云的通义千问大模型，7B表示该模型具有<font color="#b960d9">70亿个参数</font>。</li>
-</ul>
-<p>可见，本地部署的这个蒸馏模型并不是原版的模型，该模型可以看作是一个新的模型，所以性能要求降低的同时也不要指望结果和原版相近<br>为了更好的体验，在模型选择上，建议先追求更大参数的量的模型（14B、32B、70B等)，然后再根据可用内存选择量化程度（Q3、Q4、Q6、Q8等），至于选择Qwen还是Llama,<u>中文任务的话建议选择Qwen。</u></p>
-<h3 id="个人建议"><a href="#个人建议" class="headerlink" title="个人建议"></a>个人建议</h3><p>由于Apple Silicon的Mac使用了统一内存（内存显存共享），Mac电脑的16GB内存选7B参数量Q4量化模型，32GB内存选14B参数量Q4量化的模型。Windows平台要注意显存大小，显存不够可以使用内存来凑，但性能是没办法跟显存比的。</p>
-<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>错误—:The model has crashed with out additional information.（Exitcode:5)<br>模型可以运行，但是运行过程中出现了内存不足，可尝试换个内存要求更低的模型。</p>
-<p>错误二：Model loading aborted due to insufficient system resources.Overloading the system will likely causeit to freeze.If you believe this is a mistake,you can try to change the model loading guardrails in the settings.<br>内存不足导致模型无法运行，可尝试换个内存要求更低的模型。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>本地部署和在线使用<font color="#6eb957">各有利弊</font>，有需要的小伙伴可以体验一下，由于大部分用户的硬件性能有限，现阶段本地部署对大部分人来说依然是<font color="#f74db5">伪需求</font>，使用云端的模型无论性能还是回答结果，都比本地要好很多。</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>LmStudio</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ComfyUI-文生图对比工作流</title>
-    <url>/2025/05/27/comfyui%E6%96%87%E7%94%9F%E5%9B%BE%E8%8A%82%E7%82%B9%E5%AF%B9%E6%AF%94/</url>
-    <content><![CDATA[<h1 id="开始准备"><a href="#开始准备" class="headerlink" title="开始准备"></a>开始准备</h1><p>首先需要用到的节点有：</p>
-<ul>
-<li><font color="#f74db5">ComfyUI-Detail-Daemon</font>:增强细节节点<br><a href="https://github.com/Jonseed/ComfyUI-Detail-Daemon">Jonseed&#x2F;ComfyUI-Detail-Daemon</a></li>
-<li><font color="#f74db5">ComfyUI-Easy-Use</font>：一个化繁为简的节点整合包。<br><a href="https://github.com/yolain/ComfyUI-Easy-Use/blob/main/README.ZH_CN.md">ComfyUI-Easy-Use</a></li>
-<li><font color="#b960d9">rgthree-comfy</font>：让工作流更清晰、更轻松、更快速，实现对比效果<br><a href="https://github.com/rgthree/rgthree-comfy">rgthree:让 ComfyUI 更舒适！</a></li>
-<li><font color="#fbad61">Translation</font>:翻译（备选，新版本已失效）<br><a href="https://github.com/AIGODLIKE/AIGODLIKE-COMFYUI-TRANSLATION">AIGODLIKE&#x2F;AIGODLIKE-ComfyUI-Translation:</a><br>主要就是前三个节点。</li>
-</ul>
-<h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p><img src="https://ls.imsoso.cn:6688/i/2025/05/27/6834997111b36.webp" alt="1.工作流.webp"></p>
-<h2 id="节点介绍"><a href="#节点介绍" class="headerlink" title="节点介绍"></a>节点介绍</h2><p>双Clip加载器加载对应模型<br>UNet加载器加载Flux模型<br>K采样器选择：<font color="#3a8cf0">euler</font><br>空Latent设置为官方建议尺寸：<font color="#6eb957">1024x1024</font><br><font color="#b960d9">Flux引导值默认：3.5</font>，负向提示词官方已优化，添加<font color="#3a8cf0">条件零化</font><br>采样器种子数<font color="#6eb957">使用统一的随机种</font>，保证生成结果是在同一张图片上进行对比<br>	<font color="#fbad61">随机种需要安装Easy-Use节点才会出现哦</font></p>
-<p><font color="#f74db5">Detail Daemon</font>节点（用于增加细节）<br><img src="https://ls.imsoso.cn:6688/i/2025/05/27/68349e3e0d3c4.webp" alt="2.细节节点.webp"><br>最后输出需要添加：<font color="#b960d9">Image Comparer </font>（ 图像比较器）节点</p>
-<h1 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h1><p><font color="#6eb957">提示词书写格式：</font><br>词与词之间用逗号“，”隔开；<br>权重变化：（提示词：1.5）、减权重【提示词：0.3】、<font color="#b960d9">加减权重使用的括号不同</font>。</p>
-<p>可以使用文本AI，<u>让提示词更加丰富详尽</u>，也可以更换不同风格的模型让生成图片更具<font color="#3a8cf0">个性化</font>。</p>
-<p>在采样器节点-右键-将控件转换为输入-<font color="#f74db5">转换seed</font>为输入<br>在自定义采样器-右键-将控件转换为输入-<font color="#6eb957">转换 noise_seed</font>为输入</p>
-<ul>
-<li>最新版已经不需要再右键转换了，可以直接添加随机种，连接到seed上。</li>
-</ul>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><u>按住ctrl键可以框选节点</u>，<font color="#b960d9">ctrl+b</font>键，可以冻结、禁用所选节点。</p>
-<blockquote>
-<p>不提供模型下载，请根据实际需要下载相对应的模型。</p>
-</blockquote>
-<p>国内模型网站<br><a href="https://www.liblib.art/">LiblibAI-哩布哩布AI - 中国领先的AI创作平台</a><br>国外模型网站<br><a href="https://civitai.com/models">Civitai Models | Discover Free Stable Diffusion &amp; Flux Models</a></p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2025/03/18/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -478,35 +361,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Obsidian同步方案及插件</title>
-    <url>/2025/05/31/obsidian%E5%90%8C%E6%AD%A5%E6%96%B9%E6%A1%88%E5%8F%8A%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<blockquote>
-<p>Obsidian作为一款出色的双链笔记软件，整体使用体验非常出色，目前已成为我的主力笔记软件。<br>  本文将简要介绍下我个人在<font color="#b960d9">Obsidian</font>使用中使用的<font color="#6eb957">同步方案</font>和几款实用插件。</p>
-</blockquote>
-<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a><font color="#00b050">同步方案</font></h2><h3 id="方案一：Remotely-Save插件"><a href="#方案一：Remotely-Save插件" class="headerlink" title="方案一：Remotely Save插件"></a><font color="#0070c0">方案一：Remotely Save插件</font></h3><p>要实现笔记的跨设备同步，我们可以借助<code>Remotely save</code> 这款社区插件<br>安装与配置步骤：<br>在设置里面-第三方插件-关闭安全模式-在社区插件市场里面搜索安装，安装以后点击启用<br>在<font color="#b960d9">Remotely save</font>里面选择<font color="#3a8cf0">OneDrive</font>(个人版)同步方案<br>然后点击鉴权，点击弹出的链接跳转浏览器输入微软账号密码，<br>完成鉴权以后根据提示跳转回Obsidian,<br>在<code>修改远端基文件夹</code> 里输入一个文件名（随便输入都可以）-点击确定<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d967507061.webp" alt="1.save选择 拷贝.webp"><br>这个文件夹会自动在<font color="#3a8cf0">OneDrive</font>里创建，不同仓库要设置不同的文件夹哦，以避免数据混淆。<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d996d0e194.webp" alt="1.save选择2 拷贝.webp"><br>故障排除：<br>这种同步方法受限于网络状况，有时可能会遇到<font color="#6eb957">连接中断</font>的情况，<br>如果出现同步失败只需要点<font color="#3a8cf0">撤回鉴权</font>-<font color="#fbad61">清理登陆信息</font>，重新鉴权登录一下即可，<br>重新登陆以后记得检查一下远端基文件夹名称是否是自己设置的。</p>
-<blockquote>
-<p>Tips:<br>默认的OneDrive免费储存空间只有5GB,如果空间不足，<br>万能的某宝上有<font color="#f74db5">廉价的永久扩容服务</font>哦，可以扩容10GB，或考虑官方的付费升级方案。</p>
-</blockquote>
-<h2 id="方法二：WebDAV"><a href="#方法二：WebDAV" class="headerlink" title="方法二：WebDAV"></a><font color="#f79646">方法二：WebDAV</font></h2><p>第二种同步方案是使用极空间的<font color="#b960d9">文件共享服务</font>（WebDAV）<br>配置步骤：<br>首先来系统设置查看一下文件共享服务的<font color="#6eb957">地址及端口</font><br>在浏览器输入地址及端口-输入账号密码登录（极空间的账号密码）- 选择任意一个路径当作自己的同步位置<br>选择以后记得看下浏览器的地址栏，我们要把这个地址粘贴到同步插件的<font color="#3a8cf0">服务器地址</font>里<br>同样的远端基文件夹可以随意输入设置，不同仓库可以设置不同的文件夹路径<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d9d9e72d13.webp" alt="1.WEBDAV 拷贝.webp"><br>这里服务器地址我是<font color="#f74db5">反代</font>了一下，这个方法需要<font color="#f74db5">公网IP</font>或者<font color="#b960d9">内网穿透</font>以达到<font color="#4bacc6">外网访问</font>的效果.<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683da0409b4d6.webp" alt="1.WEBDAV2 拷贝.webp"><br>目前来看使用NAS自带的文件共享服务<font color="#00b050">最稳定</font>，几乎没有出现过连接不上的情况，<br>当然，Obsidian的同步方案还有很多，有兴趣的朋友可以进一步研究，选择更适合自己的方案。</p>
-<h2 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a><font color="#00b050">推荐插件</font></h2><p>介绍完同步方案以后，下面就简单介绍一下我使用的一些插件<br><font color="#b960d9">Obsidian</font>的强大很大程度得益于<font color="#f74db5">无所不能</font><font color="#b960d9">包罗万象</font>的社区插件库</p>
-<h3 id="编辑增强：Obsidian-EditingToolbar"><a href="#编辑增强：Obsidian-EditingToolbar" class="headerlink" title="编辑增强：Obsidian EditingToolbar"></a><font color="#f74db5">编辑增强：Obsidian EditingToolbar</font></h3><p>这款插件让<font color="#b960d9">Obsidian</font>拥有一个类似<font color="#0070c0">word</font>的可视化工具栏，<br>方便用户更快捷的对文本、段落进行编辑，<br>虽然熟练掌握<font color="#4bacc6">Markdown</font>语法以后，可以直接输入大多数格式标记，<br>但在需要修改字体颜色、添加下划线或高亮文本等操作时，通过点击工具栏按钮往往比手动输入标记更为高效。</p>
-<h3 id="翻译辅助：沉浸式翻译-Obsidian-i18n"><a href="#翻译辅助：沉浸式翻译-Obsidian-i18n" class="headerlink" title="翻译辅助：沉浸式翻译 (Obsidian i18n)"></a><font color="#0070c0">翻译辅助：沉浸式翻译 (Obsidian i18n)</font></h3><p><font color="#f74db5">沉浸式翻译</font>相信大家都在浏览器里体验过它的强大，在obsidain里也可以使用沉浸式翻译哦，<br>由于很多插件都是国外的开发者开发 ，并没有<font color="#fbad61">原生适配中文</font>，<br>沉浸式翻译可以让我们没有<font color="#b960d9">阅读障碍</font>，轻松使用我们需要的插件了。<br>因为沉浸式翻译并没有上架Obsidian插件市场，我们需要先安装<font color="#00b0f0">BRAT</font><br>Brat可以直接在插件市场搜索安装，<br>安装以后-快捷键<code>ctrl+p</code>,选择命令<code>BRAT: Plugins: Add a beta plugin for testing</code><br>(如果列表中未立即看到该命令，请向下滚动查找)<br>在弹出的输入框中粘贴以下 GitHub 仓库地址：<code>https://github.com/0011000000110010/obsidian-i18n</code><br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683da3fad3b2a.webp" alt="3.翻译 拷贝.webp"><br>添加成功以后会弹出一个<font color="#6eb957">使用协议</font>，勾选知晓并点击同意，<br>之后便可以去插件设置中进行自定义配置<br>关于插件的详细使用方法，开发者在<font color="#f74db5">GitHub项目地址</font>中有<font color="#92d050">详细介绍</font>。</p>
-<blockquote>
-<p>相关概念：<font color="#b960d9">i18n 与 L10n</font><br>在信息技术领域，<font color="#6eb957">国际化与本地化</font>（英文：internationalization and localization）<br>是指修改软件，使之能适应目标市场的语言、地区差异以及技术需要。<br>基于它们的英文单字长度过长，常被分别简称成i18n<br>（18意味着在“internationalization”这个单字中，i和n之间有18个字母）及L10n。</p>
-</blockquote>
-<p>除了以上介绍的这些，我目前使用的插件数量并不算多，<br>更希望回归笔记与写作的本质——专注于内容的创作与输出。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>除了官方社区以外，下面再分享一个<font color="#b960d9">Obsidian</font>学习社区<br><a href="https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/obsidian%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">PKMER-一个关于Obsidian的学习社区</a></p>
-<p>再分享一个纯粹的笔记软件（需注册登录）<br><a href="https://chronnote.top/">Chronnote笔记，一款”All-in-One”工具</a><br>简约纯粹，全平台，自带AI问答</p>
-]]></content>
-      <categories>
-        <category>Nas</category>
-      </categories>
-      <tags>
-        <tag>Obsidian</tag>
-      </tags>
   </entry>
   <entry>
     <title>使用极空间部署MP</title>
@@ -644,6 +498,24 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -805,24 +677,6 @@
 <li>VAE Decode：解码图像。</li>
 <li>Save Image：保存结果。</li>
 </ol>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
 ]]></content>
       <categories>
         <category>AI</category>
@@ -1325,30 +1179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>文生图工作流相关术语概念</title>
-    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
-<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
-<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
-<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
-<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
-<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
-<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
-<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>测试文章</title>
     <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
@@ -1364,6 +1194,170 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown进阶语法</title>
+    <url>/2025/05/06/Markdown%E8%BF%9B%E9%98%B6%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>好的，除了<font color="#6eb957">基础语法</font>，Markdown 还有一些进阶或者说<font color="#3a8cf0">扩展的语法</font>，它们在不同的 Markdown<br>解析器或平台中支持程度可能不同，但很多现代的 Markdown 编辑器和平台都支持这些功能。<br>以下是一些常见的进阶 Markdown 语法：</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="表格-Tables"><a href="#表格-Tables" class="headerlink" title="表格 (Tables)"></a><strong>表格 (Tables)</strong></h2><p>表格的创建相对直观，使用竖线 <code>|</code> 来分隔不同的单元格，使用连字符 <code>-</code> 来创建表头和表格内容的分隔线。可以在分隔线中使用冒号 <code>:</code> 来定义列的对齐方式。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| 表头1 | 表头2 | 表头3 |</span><br><span class="line">| :---- | :---: | ----: |</span><br><span class="line">| 左对齐 | 居中对齐 | 右对齐 |</span><br><span class="line">| 内容1 | 内容2 | 内容3 |</span><br><span class="line">| 内容A | 内容B | 内容C |</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">表头1</th>
+<th align="center">表头2</th>
+<th align="right">表头3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">左对齐</td>
+<td align="center">居中对齐</td>
+<td align="right">右对齐</td>
+</tr>
+<tr>
+<td align="left">内容1</td>
+<td align="center">内容2</td>
+<td align="right">内容3</td>
+</tr>
+<tr>
+<td align="left">内容A</td>
+<td align="center">内容B</td>
+<td align="right">内容C</td>
+</tr>
+</tbody></table>
+<p>导出到 Google 表格</p>
+<ul>
+<li><code>:----</code> 表示该列左对齐（默认）</li>
+<li><code>:---:</code> 表示该列居中对齐</li>
+<li><code>----:</code> 表示该列右对齐</li>
+</ul>
+<blockquote>
+<p>表格我一直输入不出来，建议直接用插件更方便哦🐯</p>
+</blockquote>
+<h2 id="删除线-Strikethrough"><a href="#删除线-Strikethrough" class="headerlink" title="删除线 (Strikethrough)"></a><strong>删除线 (Strikethrough)</strong></h2><p>使用两个波浪线 <code>~~</code> 包裹文本来实现删除线效果。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~~这段文字会被划上删除线。~~</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<p><del>这段文字会被划上删除线。</del></p>
+<h2 id="任务列表-Task-Lists"><a href="#任务列表-Task-Lists" class="headerlink" title="任务列表 (Task Lists)"></a><strong>任务列表 (Task Lists)</strong></h2><p>任务列表允许你创建带有复选框的列表。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- [x] 已完成的任务</span><br><span class="line">- [ ] 未完成的任务</span><br><span class="line">  - [ ] 子任务1 (未完成)</span><br><span class="line">  - [x] 子任务2 (已完成)</span><br><span class="line">- [ ] 另一个未完成的任务</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 已完成的任务</li>
+<li><input disabled="" type="checkbox"> 未完成的任务<ul>
+<li><input disabled="" type="checkbox"> 子任务1 (未完成)</li>
+<li><input checked="" disabled="" type="checkbox"> 子任务2 (已完成)</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 另一个未完成的任务</li>
+</ul>
+<h2 id="脚注-Footnotes"><a href="#脚注-Footnotes" class="headerlink" title="脚注 (Footnotes)"></a><strong>脚注 (Footnotes)</strong></h2><p>脚注允许你为文本添加注释，注释内容会显示在文档的末尾。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一个需要脚注的句子。[^1]</span><br><span class="line">这是另一个需要脚注的句子。[^another]</span><br><span class="line"></span><br><span class="line">[^1]: 这是第一个脚注的内容。</span><br><span class="line">[^another]: 这是另一个脚注的内容，可以使用任何不包含空格和制表符的标签。</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果 (大致)：</strong></p>
+<p>这是一个需要脚注的句子。&lt;sup&gt;1&lt;&#x2F;sup&gt; 这是另一个需要脚注的句子。&lt;sup&gt;another&lt;&#x2F;sup&gt;</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>&lt;sup&gt;1&lt;&#x2F;sup&gt; 这是第一个脚注的内容。 &lt;sup&gt;another&lt;&#x2F;sup&gt; 这是另一个脚注的内容，可以使用任何不包含空格和制表符的标签。</p>
+<h2 id="定义列表-Definition-Lists-并非所有-Markdown-解析器都支持"><a href="#定义列表-Definition-Lists-并非所有-Markdown-解析器都支持" class="headerlink" title="定义列表 (Definition Lists) (并非所有 Markdown 解析器都支持)"></a><strong>定义列表 (Definition Lists)</strong> (并非所有 Markdown 解析器都支持)</h2><p>用来创建术语及其定义的列表。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Markdown</span><br><span class="line">: 轻量级标记语言。</span><br><span class="line"></span><br><span class="line">HTML</span><br><span class="line">: 超文本标记语言。</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果 (大致，取决于解析器)：</strong></p>
+<p>&lt;dl&gt; &lt;dt&gt;Markdown&lt;&#x2F;dt&gt; &lt;dd&gt;轻量级标记语言。&lt;&#x2F;dd&gt; &lt;dt&gt;HTML&lt;&#x2F;dt&gt; &lt;dd&gt;超文本标记语言。&lt;&#x2F;dd&gt; &lt;&#x2F;dl&gt;</p>
+<h2 id="Emoji-表情-Emoji-支持程度取决于解析器或平台"><a href="#Emoji-表情-Emoji-支持程度取决于解析器或平台" class="headerlink" title="Emoji 表情 (Emoji) (支持程度取决于解析器或平台)"></a><strong>Emoji 表情 (Emoji)</strong> (支持程度取决于解析器或平台)</h2><p>很多 Markdown 编辑器和平台支持通过快捷码插入 Emoji。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:smile:</span><br><span class="line">:tada:</span><br><span class="line">:rocket:</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果 (取决于解析器)：</strong></p>
+<p>😄 🎉 🚀</p>
+<p>具体的 Emoji 代码可能因平台而异，但通常是 <code>:emoji_name:</code> 的格式。</p>
+<blockquote>
+<p>表情更难记忆了，建议直接用插件</p>
+</blockquote>
+<h2 id="自动-URL-链接-Automatic-URL-Linking-很多解析器支持"><a href="#自动-URL-链接-Automatic-URL-Linking-很多解析器支持" class="headerlink" title="自动 URL 链接 (Automatic URL Linking) (很多解析器支持)"></a><strong>自动 URL 链接 (Automatic URL Linking)</strong> (很多解析器支持)</h2><p>很多 Markdown 解析器会自动将看起来像 URL 的文本转换为可点击的链接。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://www.example.com</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染效果：</strong></p>
+<p><a href="http://www.example.com/">http://www.example.com</a></p>
+<p>或者直接是可点击的链接： <a href="http://www.example.com/">http://www.example.com</a></p>
+<h2 id="HTML-标签-Raw-HTML"><a href="#HTML-标签-Raw-HTML" class="headerlink" title="HTML 标签 (Raw HTML)"></a><strong>HTML 标签 (Raw HTML)</strong></h2><p>Markdown 的一个强大之处在于它允许你直接嵌入 <font color="#3a8cf0">HTML </font>代码。如果你需要实现 Markdown 语法无法覆盖的复杂布局或功能，可以直接使用 HTML。</p>
+<p>Markdown</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是一段 Markdown 文本。</span><br><span class="line">&lt;div style=&quot;color: red;&quot;&gt;</span><br><span class="line">  这是一段红色的 HTML 文本。</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">*Markdown 列表*</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意事项：</strong></p>
+<ul>
+<li><strong>兼容性：</strong> 上述进阶语法并非所有 Markdown 解析器都完全支持。最常见和广泛支持的是表格、删除线和任务列表。脚注和定义列表的支持程度各不相同。</li>
+<li><strong>GFM (GitHub Flavored Markdown):</strong> 很多进阶语法，如表格、任务列表、删除线、自动 URL 链接和部分 Emoji 支持，都源自或被广泛采纳于 GitHub Flavored Markdown (GFM)。如果你主要在 GitHub 或支持 GFM 的平台上使用 Markdown，这些语法通常都能很好地工作。</li>
+</ul>
+<p>学习这些进阶语法可以让你编写内容更丰富、结构更复杂的 Markdown 文档。<br>建议在你常用的 Markdown 编辑器或平台上测试这些语法的实际效果。</p>
+<p>来源参考：<br><a href="https://www.markdown.xyz/basic-syntax/">Markdown指南中文版</a></p>
+<blockquote>
+<p>虽然语法可以完成绝大部分操作，但是别忘了Obsidian还有<font color="#b960d9">丰富的插件</font>来帮我更便捷的完成编辑，<br>比如网页可以直接复制-粘贴，插入图片会让产生更多<font color="#f74db5">碎片化的文件</font>，不如图床连接来的方便，<br>表格和字体色彩等操作也有类似的Word的<font color="#6eb957">工具条</font>可以一键操作，<br>下一篇将总结一下我常用的<font color="#fbad61">效率插件</font>。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记-第二曲线创新</title>
+    <url>/2025/05/08/%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E6%9B%B2%E7%BA%BF%E5%88%9B%E6%96%B0/</url>
+    <content><![CDATA[<blockquote>
+<p>记录《第二曲线创新》的阅读，有兴趣一起阅读的朋友，网站左上角-<code>公开仓库</code>提供了下载链接。</p>
+</blockquote>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/08/681ca2634ebba.webp" alt="1.目录.webp"></p>
+<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><p>什么是<font color="#f74db5">管理</font>？<br>管理是通过实施计划、组织、领导、协调、控制等职能与他人沟通，使他人同自己一起实现既定目标的活动过程。”</p>
+<h2 id="创新"><a href="#创新" class="headerlink" title="创新"></a>创新</h2><p>什么是<font color="#b960d9">创新</font>？<br>“创新不是在同一条曲线里渐进性改良，而是从一条曲线变为另一条曲线的新组合。”</p>
+<h2 id="熵增定律"><a href="#熵增定律" class="headerlink" title="熵增定律"></a>熵增定律</h2><p>在自然过程中，一个孤立（封闭）系统的总混乱度（即“熵”）不会减小。<br>它代表了在封闭系统中，如果熵增加，封闭系统的总能量不变时，其中可用能量将减少，并且随着时间的推移，封闭系统中的熵将不断增加，且不可逆。<br>换句话说，越来越多的有效能量将转为无效能量。<br>“随着时间的推移，封闭组织势必会遭遇“<font color="#3a8cf0">组织熵增</font>”，一定会涣散化、官僚化、失效化，并最终走向消亡。”</p>
+<blockquote>
+<p>“企业的两大终极宿命：无论企业的规模有多大，其“寿命”都有上限；<br>企业规模越大，其增长速度越慢。”</p>
+</blockquote>
+<h2 id="基业长青的具体方法论——守正出奇。"><a href="#基业长青的具体方法论——守正出奇。" class="headerlink" title="基业长青的具体方法论——守正出奇。"></a>基业长青的具体方法论——守正出奇。</h2><p><font color="#b960d9">“守正”</font>是指企业要对第一曲线进行管理，相对保守一些也没有关系。规模越大越好，收入越多越好，可以通过扩大企业规模来延长第一曲线的区间，推迟“极限点”可能出现的时间。<br><font color="#f74db5">“出奇”</font>则是指企业在对待第二曲线创新时，一定要积极进取，通过对第二曲线的扶持，为企业赢得全新的增长空间。”</p>
+<blockquote>
+<p>“庄子在《大宗师》中的说法就是：“<font color="#b960d9">终其天年而不中道夭</font>”。”<br>避免生硬转型、新旧合并。</p>
+</blockquote>
+<p>“变异+选择&#x3D;新物种”        “创新+选择&#x3D;第二曲线”</p>
+<blockquote>
+<p>“乔布斯十分推崇西班牙画家巴勃罗·毕加索（Pablo Picasso）的一句话，并将其挂在嘴边：<br>“聪明的艺术家模仿皮毛，伟大的艺术家窃取灵魂（Good artists copy，great artists steal）”。<br>乔布斯从施乐公司“偷走”了图形界面和鼠标应用，由此研发了新一代的麦金塔电脑，夯实了苹果公司当时的主航道。”</p>
+</blockquote>
+<h2 id="组合创新"><a href="#组合创新" class="headerlink" title="组合创新"></a>组合创新</h2><p>归根结底就是拆解基本要素，然后重新组合。<br>因此可以说：“拆解基本要素的能力，是创新的基本功。”<br>就好比同一个事物，在普通人眼里是混乱的一团，在高手眼里却能看到条分缕析的基本单元。”</p>
+<blockquote>
+<p>很像我现在所处的工作，剖析空间结构、解构成最小单元，色彩、材质、形状、组合······</p>
+</blockquote>
+<h2 id="亚马逊“飞轮效应”“增长飞轮”"><a href="#亚马逊“飞轮效应”“增长飞轮”" class="headerlink" title="亚马逊“飞轮效应”“增长飞轮”"></a>亚马逊“飞轮效应”“增长飞轮”</h2><p><font color="#4bacc6">无限选择</font>、<font color="#6eb957">最低价格</font>、<font color="#b960d9">快速配送</font>（同时也是用户的三大期望）</p>
+<blockquote>
+<p>“什么是战略？<br>我们发现取舍概念为解答这个问题提供了崭新的视角。<br>战略就是在竞争中做出取舍。战略的本质就是选择不做什么，<br>没有取舍就不需要选择，也就不需要战略。”<br>迈克尔·波特 - -《哈佛商业评论》</p>
+</blockquote>
+<p>“创业公司的本质是寻找正确的事，这就需要不停地犯错，也意味着缺乏秩序、混乱和不确定。<br>而大公司的本质是正确做事，重在执行，一旦确立了商业模式，<br>就围绕它制定KPI，并努力建立有效的流程来实现这个目标。”</p>
+<h2 id="销售与产品"><a href="#销售与产品" class="headerlink" title="销售与产品"></a>销售与产品</h2><p>“在《史蒂夫·乔布斯传》中，沃尔特·艾萨克森记录了乔布斯对IBM和微软的评价：<br>“像IBM或微软这样的公司为什么会衰落，我有我自己的见解。<br>这样的公司干得很好，它们进行创新，成为或接近成为某个领域的垄断者，然后产品的质量就变得不那么重要了。<br>这些公司开始重视优秀的销售人员，因为是他们在推动销售、改写收入数字，而不是产品的工程师和设计师。<br>因此销售人员最后成为公司的经营者。”</p>
+<p><font color="#f74db5">“我将产品做得这么好，你们卖出去是天经地义的事情。”</font><br><font color="#f74db5">在乔布斯眼中，产品好，才能卖得好，这是天经地义的事。</font><br><font color="#f74db5">乔布斯最重视的永远是产品，而非销售，产品是苹果公司的根。”</font></p>
+<p>“我们坚信，如果能打造出好的产品，用户一定会喜欢，如果他们喜欢，他们一定会掏钱买，我们就能赚钱。”这也正是苹果公司的“增长飞轮”</p>
+<blockquote>
+<p>“乔布斯在面对公司、技术、管理、销售、资本与产品的取舍时，毫无例外地将其他选项舍弃，最重视的<font color="#6eb957">永远是产品</font>。当然，并不是说其他选项不重要，而是要将产品作为企业的核心能力，以此调配其他要素。” - -<br> <font color="#b960d9">舍九取一</font>，战略的关键在于取舍，如何找到那个不变的“一”。</p>
+</blockquote>
+<p>“现代管理学之父”彼得·德鲁克在其著作《创新与企业家精神》[3]中说：“创业之所以含有风险，其主要原因是在所谓的企业家中，只有极少数人知道自己在干什么。他们缺少方法论，并违背了基本且众所周知的规则，高科技企业家尤为如此。”</p>
+<h2 id="“错位竞争法则”："><a href="#“错位竞争法则”：" class="headerlink" title="“错位竞争法则”："></a>“错位竞争法则”：</h2><p>与其更好，不如不同。<br>所谓“错位”，指的是创新企业在技术和市场两大要素上的组合方式，<br>与在位企业的组合方式之间存在明显的不同，即你的“组合”与在位企业的“组合”之间的错位。”</p>
+<p>“创业者真正应该做的事情是，通过独立思考找到技术与市场全新的组合方式，搭建一个“新兴价值网”，在独有的生态位里发挥优势、成为领军者，充分享受创新带来的红利。”</p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Read</tag>
       </tags>
   </entry>
   <entry>
@@ -1429,50 +1423,56 @@
       </tags>
   </entry>
   <entry>
-    <title>记-第二曲线创新</title>
-    <url>/2025/05/08/%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E6%9B%B2%E7%BA%BF%E5%88%9B%E6%96%B0/</url>
+    <title>Obsidian同步方案及插件</title>
+    <url>/2025/05/31/obsidian%E5%90%8C%E6%AD%A5%E6%96%B9%E6%A1%88%E5%8F%8A%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<blockquote>
-<p>记录《第二曲线创新》的阅读，有兴趣一起阅读的朋友，网站左上角-<code>公开仓库</code>提供了下载链接。</p>
+<p>Obsidian作为一款出色的双链笔记软件，整体使用体验非常出色，目前已成为我的主力笔记软件。<br>  本文将简要介绍下我个人在<font color="#b960d9">Obsidian</font>使用中使用的<font color="#6eb957">同步方案</font>和几款实用插件。</p>
 </blockquote>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/08/681ca2634ebba.webp" alt="1.目录.webp"></p>
-<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><p>什么是<font color="#f74db5">管理</font>？<br>管理是通过实施计划、组织、领导、协调、控制等职能与他人沟通，使他人同自己一起实现既定目标的活动过程。”</p>
-<h2 id="创新"><a href="#创新" class="headerlink" title="创新"></a>创新</h2><p>什么是<font color="#b960d9">创新</font>？<br>“创新不是在同一条曲线里渐进性改良，而是从一条曲线变为另一条曲线的新组合。”</p>
-<h2 id="熵增定律"><a href="#熵增定律" class="headerlink" title="熵增定律"></a>熵增定律</h2><p>在自然过程中，一个孤立（封闭）系统的总混乱度（即“熵”）不会减小。<br>它代表了在封闭系统中，如果熵增加，封闭系统的总能量不变时，其中可用能量将减少，并且随着时间的推移，封闭系统中的熵将不断增加，且不可逆。<br>换句话说，越来越多的有效能量将转为无效能量。<br>“随着时间的推移，封闭组织势必会遭遇“<font color="#3a8cf0">组织熵增</font>”，一定会涣散化、官僚化、失效化，并最终走向消亡。”</p>
+<h2 id="同步方案"><a href="#同步方案" class="headerlink" title="同步方案"></a><font color="#00b050">同步方案</font></h2><h3 id="方案一：Remotely-Save插件"><a href="#方案一：Remotely-Save插件" class="headerlink" title="方案一：Remotely Save插件"></a><font color="#0070c0">方案一：Remotely Save插件</font></h3><p>要实现笔记的跨设备同步，我们可以借助<code>Remotely save</code> 这款社区插件<br>安装与配置步骤：<br>在设置里面-第三方插件-关闭安全模式-在社区插件市场里面搜索安装，安装以后点击启用<br>在<font color="#b960d9">Remotely save</font>里面选择<font color="#3a8cf0">OneDrive</font>(个人版)同步方案<br>然后点击鉴权，点击弹出的链接跳转浏览器输入微软账号密码，<br>完成鉴权以后根据提示跳转回Obsidian,<br>在<code>修改远端基文件夹</code> 里输入一个文件名（随便输入都可以）-点击确定<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d967507061.webp" alt="1.save选择 拷贝.webp"><br>这个文件夹会自动在<font color="#3a8cf0">OneDrive</font>里创建，不同仓库要设置不同的文件夹哦，以避免数据混淆。<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d996d0e194.webp" alt="1.save选择2 拷贝.webp"><br>故障排除：<br>这种同步方法受限于网络状况，有时可能会遇到<font color="#6eb957">连接中断</font>的情况，<br>如果出现同步失败只需要点<font color="#3a8cf0">撤回鉴权</font>-<font color="#fbad61">清理登陆信息</font>，重新鉴权登录一下即可，<br>重新登陆以后记得检查一下远端基文件夹名称是否是自己设置的。</p>
 <blockquote>
-<p>“企业的两大终极宿命：无论企业的规模有多大，其“寿命”都有上限；<br>企业规模越大，其增长速度越慢。”</p>
+<p>Tips:<br>默认的OneDrive免费储存空间只有5GB,如果空间不足，<br>万能的某宝上有<font color="#f74db5">廉价的永久扩容服务</font>哦，可以扩容10GB，或考虑官方的付费升级方案。</p>
 </blockquote>
-<h2 id="基业长青的具体方法论——守正出奇。"><a href="#基业长青的具体方法论——守正出奇。" class="headerlink" title="基业长青的具体方法论——守正出奇。"></a>基业长青的具体方法论——守正出奇。</h2><p><font color="#b960d9">“守正”</font>是指企业要对第一曲线进行管理，相对保守一些也没有关系。规模越大越好，收入越多越好，可以通过扩大企业规模来延长第一曲线的区间，推迟“极限点”可能出现的时间。<br><font color="#f74db5">“出奇”</font>则是指企业在对待第二曲线创新时，一定要积极进取，通过对第二曲线的扶持，为企业赢得全新的增长空间。”</p>
+<h2 id="方法二：WebDAV"><a href="#方法二：WebDAV" class="headerlink" title="方法二：WebDAV"></a><font color="#f79646">方法二：WebDAV</font></h2><p>第二种同步方案是使用极空间的<font color="#b960d9">文件共享服务</font>（WebDAV）<br>配置步骤：<br>首先来系统设置查看一下文件共享服务的<font color="#6eb957">地址及端口</font><br>在浏览器输入地址及端口-输入账号密码登录（极空间的账号密码）- 选择任意一个路径当作自己的同步位置<br>选择以后记得看下浏览器的地址栏，我们要把这个地址粘贴到同步插件的<font color="#3a8cf0">服务器地址</font>里<br>同样的远端基文件夹可以随意输入设置，不同仓库可以设置不同的文件夹路径<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683d9d9e72d13.webp" alt="1.WEBDAV 拷贝.webp"><br>这里服务器地址我是<font color="#f74db5">反代</font>了一下，这个方法需要<font color="#f74db5">公网IP</font>或者<font color="#b960d9">内网穿透</font>以达到<font color="#4bacc6">外网访问</font>的效果.<br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683da0409b4d6.webp" alt="1.WEBDAV2 拷贝.webp"><br>目前来看使用NAS自带的文件共享服务<font color="#00b050">最稳定</font>，几乎没有出现过连接不上的情况，<br>当然，Obsidian的同步方案还有很多，有兴趣的朋友可以进一步研究，选择更适合自己的方案。</p>
+<h2 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a><font color="#00b050">推荐插件</font></h2><p>介绍完同步方案以后，下面就简单介绍一下我使用的一些插件<br><font color="#b960d9">Obsidian</font>的强大很大程度得益于<font color="#f74db5">无所不能</font><font color="#b960d9">包罗万象</font>的社区插件库</p>
+<h3 id="编辑增强：Obsidian-EditingToolbar"><a href="#编辑增强：Obsidian-EditingToolbar" class="headerlink" title="编辑增强：Obsidian EditingToolbar"></a><font color="#f74db5">编辑增强：Obsidian EditingToolbar</font></h3><p>这款插件让<font color="#b960d9">Obsidian</font>拥有一个类似<font color="#0070c0">word</font>的可视化工具栏，<br>方便用户更快捷的对文本、段落进行编辑，<br>虽然熟练掌握<font color="#4bacc6">Markdown</font>语法以后，可以直接输入大多数格式标记，<br>但在需要修改字体颜色、添加下划线或高亮文本等操作时，通过点击工具栏按钮往往比手动输入标记更为高效。</p>
+<h3 id="翻译辅助：沉浸式翻译-Obsidian-i18n"><a href="#翻译辅助：沉浸式翻译-Obsidian-i18n" class="headerlink" title="翻译辅助：沉浸式翻译 (Obsidian i18n)"></a><font color="#0070c0">翻译辅助：沉浸式翻译 (Obsidian i18n)</font></h3><p><font color="#f74db5">沉浸式翻译</font>相信大家都在浏览器里体验过它的强大，在obsidain里也可以使用沉浸式翻译哦，<br>由于很多插件都是国外的开发者开发 ，并没有<font color="#fbad61">原生适配中文</font>，<br>沉浸式翻译可以让我们没有<font color="#b960d9">阅读障碍</font>，轻松使用我们需要的插件了。<br>因为沉浸式翻译并没有上架Obsidian插件市场，我们需要先安装<font color="#00b0f0">BRAT</font><br>Brat可以直接在插件市场搜索安装，<br>安装以后-快捷键<code>ctrl+p</code>,选择命令<code>BRAT: Plugins: Add a beta plugin for testing</code><br>(如果列表中未立即看到该命令，请向下滚动查找)<br>在弹出的输入框中粘贴以下 GitHub 仓库地址：<code>https://github.com/0011000000110010/obsidian-i18n</code><br><img src="https://ls.imsoso.cn:6688/i/2025/06/02/683da3fad3b2a.webp" alt="3.翻译 拷贝.webp"><br>添加成功以后会弹出一个<font color="#6eb957">使用协议</font>，勾选知晓并点击同意，<br>之后便可以去插件设置中进行自定义配置<br>关于插件的详细使用方法，开发者在<font color="#f74db5">GitHub项目地址</font>中有<font color="#92d050">详细介绍</font>。</p>
 <blockquote>
-<p>“庄子在《大宗师》中的说法就是：“<font color="#b960d9">终其天年而不中道夭</font>”。”<br>避免生硬转型、新旧合并。</p>
+<p>相关概念：<font color="#b960d9">i18n 与 L10n</font><br>在信息技术领域，<font color="#6eb957">国际化与本地化</font>（英文：internationalization and localization）<br>是指修改软件，使之能适应目标市场的语言、地区差异以及技术需要。<br>基于它们的英文单字长度过长，常被分别简称成i18n<br>（18意味着在“internationalization”这个单字中，i和n之间有18个字母）及L10n。</p>
 </blockquote>
-<p>“变异+选择&#x3D;新物种”        “创新+选择&#x3D;第二曲线”</p>
-<blockquote>
-<p>“乔布斯十分推崇西班牙画家巴勃罗·毕加索（Pablo Picasso）的一句话，并将其挂在嘴边：<br>“聪明的艺术家模仿皮毛，伟大的艺术家窃取灵魂（Good artists copy，great artists steal）”。<br>乔布斯从施乐公司“偷走”了图形界面和鼠标应用，由此研发了新一代的麦金塔电脑，夯实了苹果公司当时的主航道。”</p>
-</blockquote>
-<h2 id="组合创新"><a href="#组合创新" class="headerlink" title="组合创新"></a>组合创新</h2><p>归根结底就是拆解基本要素，然后重新组合。<br>因此可以说：“拆解基本要素的能力，是创新的基本功。”<br>就好比同一个事物，在普通人眼里是混乱的一团，在高手眼里却能看到条分缕析的基本单元。”</p>
-<blockquote>
-<p>很像我现在所处的工作，剖析空间结构、解构成最小单元，色彩、材质、形状、组合······</p>
-</blockquote>
-<h2 id="亚马逊“飞轮效应”“增长飞轮”"><a href="#亚马逊“飞轮效应”“增长飞轮”" class="headerlink" title="亚马逊“飞轮效应”“增长飞轮”"></a>亚马逊“飞轮效应”“增长飞轮”</h2><p><font color="#4bacc6">无限选择</font>、<font color="#6eb957">最低价格</font>、<font color="#b960d9">快速配送</font>（同时也是用户的三大期望）</p>
-<blockquote>
-<p>“什么是战略？<br>我们发现取舍概念为解答这个问题提供了崭新的视角。<br>战略就是在竞争中做出取舍。战略的本质就是选择不做什么，<br>没有取舍就不需要选择，也就不需要战略。”<br>迈克尔·波特 - -《哈佛商业评论》</p>
-</blockquote>
-<p>“创业公司的本质是寻找正确的事，这就需要不停地犯错，也意味着缺乏秩序、混乱和不确定。<br>而大公司的本质是正确做事，重在执行，一旦确立了商业模式，<br>就围绕它制定KPI，并努力建立有效的流程来实现这个目标。”</p>
-<h2 id="销售与产品"><a href="#销售与产品" class="headerlink" title="销售与产品"></a>销售与产品</h2><p>“在《史蒂夫·乔布斯传》中，沃尔特·艾萨克森记录了乔布斯对IBM和微软的评价：<br>“像IBM或微软这样的公司为什么会衰落，我有我自己的见解。<br>这样的公司干得很好，它们进行创新，成为或接近成为某个领域的垄断者，然后产品的质量就变得不那么重要了。<br>这些公司开始重视优秀的销售人员，因为是他们在推动销售、改写收入数字，而不是产品的工程师和设计师。<br>因此销售人员最后成为公司的经营者。”</p>
-<p><font color="#f74db5">“我将产品做得这么好，你们卖出去是天经地义的事情。”</font><br><font color="#f74db5">在乔布斯眼中，产品好，才能卖得好，这是天经地义的事。</font><br><font color="#f74db5">乔布斯最重视的永远是产品，而非销售，产品是苹果公司的根。”</font></p>
-<p>“我们坚信，如果能打造出好的产品，用户一定会喜欢，如果他们喜欢，他们一定会掏钱买，我们就能赚钱。”这也正是苹果公司的“增长飞轮”</p>
-<blockquote>
-<p>“乔布斯在面对公司、技术、管理、销售、资本与产品的取舍时，毫无例外地将其他选项舍弃，最重视的<font color="#6eb957">永远是产品</font>。当然，并不是说其他选项不重要，而是要将产品作为企业的核心能力，以此调配其他要素。” - -<br> <font color="#b960d9">舍九取一</font>，战略的关键在于取舍，如何找到那个不变的“一”。</p>
-</blockquote>
-<p>“现代管理学之父”彼得·德鲁克在其著作《创新与企业家精神》[3]中说：“创业之所以含有风险，其主要原因是在所谓的企业家中，只有极少数人知道自己在干什么。他们缺少方法论，并违背了基本且众所周知的规则，高科技企业家尤为如此。”</p>
-<h2 id="“错位竞争法则”："><a href="#“错位竞争法则”：" class="headerlink" title="“错位竞争法则”："></a>“错位竞争法则”：</h2><p>与其更好，不如不同。<br>所谓“错位”，指的是创新企业在技术和市场两大要素上的组合方式，<br>与在位企业的组合方式之间存在明显的不同，即你的“组合”与在位企业的“组合”之间的错位。”</p>
-<p>“创业者真正应该做的事情是，通过独立思考找到技术与市场全新的组合方式，搭建一个“新兴价值网”，在独有的生态位里发挥优势、成为领军者，充分享受创新带来的红利。”</p>
+<p>除了以上介绍的这些，我目前使用的插件数量并不算多，<br>更希望回归笔记与写作的本质——专注于内容的创作与输出。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>除了官方社区以外，下面再分享一个<font color="#b960d9">Obsidian</font>学习社区<br><a href="https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/obsidian%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">PKMER-一个关于Obsidian的学习社区</a></p>
+<p>再分享一个纯粹的笔记软件（需注册登录）<br><a href="https://chronnote.top/">Chronnote笔记，一款”All-in-One”工具</a><br>简约纯粹，全平台，自带AI问答</p>
 ]]></content>
       <categories>
-        <category>Life</category>
+        <category>Nas</category>
       </categories>
       <tags>
-        <tag>Read</tag>
+        <tag>Obsidian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文生图工作流相关术语概念</title>
+    <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="节点相关名词"><a href="#节点相关名词" class="headerlink" title="节点相关名词"></a>节点相关名词</h2><p>Node (节点)：ComfyUI 的基本构建单元，每个节点代表一个功能（例如加载模型、编码文本、采样等）。用户通过连接节点构建工作流。<br>Workflow (工作流)：由多个节点连接组成的一个完整流程，例如从文本生成图像的工作流。<br>Input (输入)：节点接收的数据，例如提示词、模型文件等。<br>Output (输出)：节点生成的结果，例如编码后的条件、生成的图像等。</p>
+<h2 id="模型相关名词"><a href="#模型相关名词" class="headerlink" title="模型相关名词"></a>模型相关名词</h2><p>Checkpoint (检查点)：预训练的 Stable Diffusion 模型文件（.ckpt 或 .safetensors 格式），包含模型权重，例如 SD1.5、SDXL 等。<br>CLIP：用于处理文本的模型模块，将提示词编码为模型可理解的条件。<br>VAE (变分自编码器)：用于将潜在图像（Latent Image）编码或解码为实际图像的模块。<br>LoRA (Low-Rank Adaptation)：一种轻量级微调模型，用于在不改变原始模型的情况下添加特定风格或主题（例如卡通风格）。<br>ControlNet：一种模型扩展，用于通过附加条件（如姿势、边缘图）控制生成结果。</p>
+<h2 id="提示词相关名词"><a href="#提示词相关名词" class="headerlink" title="提示词相关名词"></a>提示词相关名词</h2><p>Prompt (提示词)：描述生成内容的文本输入，例如“a cute cat in a sunny garden”。<br>Positive Prompt (正向提示词)：描述你想要生成的内容。<br>Negative Prompt (负向提示词)：描述你不希望出现在生成结果中的内容，<br>例如“blurry, low quality”。<br>Conditioning (条件)：提示词经过 CLIP 编码后生成的条件，供采样器使用。</p>
+<h2 id="图像与潜在空间相关名词"><a href="#图像与潜在空间相关名词" class="headerlink" title="图像与潜在空间相关名词"></a>图像与潜在空间相关名词</h2><p>Latent Image (潜在图像)：图像在潜在空间中的表示形式，是扩散模型处理的对象，比实际像素图像更小，节省计算资源。<br>Image (图像)：最终生成的像素图像，通常由 VAE Decode 解码得到。<br>Resolution (分辨率)：生成图像的尺寸，例如 512x512、1024x768。<br>Batch Size (批次大小)：一次生成图像的数量，例如生成 1 张或多张。</p>
+<h2 id="采样相关名词"><a href="#采样相关名词" class="headerlink" title="采样相关名词"></a>采样相关名词</h2><p>Sampler (采样器)：扩散模型生成图像时使用的算法，例如 Euler a、DPM++ 2M Karras、DDIM 等。<br>Scheduler (调度器)：控制采样过程中的步进策略，例如 Karras、Normal。<br>Steps (步数)：采样过程中的迭代次数，通常 20-50 步，步数越多细节越精细。<br>CFG Scale (提示词引导系数)：控制提示词对生成结果的影响程度，通常 7-12。<br>Seed (种子)：随机种子，用于控制生成结果的随机性，固定种子可复现相同结果。</p>
+<h2 id="文件与路径相关名词"><a href="#文件与路径相关名词" class="headerlink" title="文件与路径相关名词"></a>文件与路径相关名词</h2><p>Checkpoint File (模型文件)：Stable Diffusion 模型的存储文件，通常放在 ComfyUI 的 models&#x2F;checkpoints 文件夹中。<br>Output Directory (输出目录)：生成图像保存的文件夹，通常是 ComfyUI 的 output 文件夹。<br>Filename Prefix (文件名前缀)：保存图像时指定的前缀，例如“output”。</p>
+<h2 id="扩展功能相关名词"><a href="#扩展功能相关名词" class="headerlink" title="扩展功能相关名词"></a>扩展功能相关名词</h2><p>Inpainting (修补)：对图像的特定区域进行修改或生成，例如修复缺失部分。<br>Outpainting (扩展)：扩展图像边界，生成更大的图像。<br>Upscale (放大)：提升图像分辨率，例如从 512x512 放大到 1024x1024。<br>AnimateDiff：一个扩展，用于生成动画或视频。</p>
+<h2 id="其他常见名词"><a href="#其他常见名词" class="headerlink" title="其他常见名词"></a>其他常见名词</h2><p>Stable Diffusion (稳定扩散)：ComfyUI 使用的核心扩散模型，用于从噪声生成图像。<br>Diffusion Process (扩散过程)：从随机噪声逐步生成图像的过程，核心是去噪。<br>Community (社区)：ComfyUI 的用户群体，提供教程、自定义节点等资源，例如 GitHub 上的 ComfyUI 社区。<br>Custom Node (自定义节点)：社区或用户开发的额外节点，扩展 ComfyUI 功能。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些名词涵盖了 ComfyUI 文生图工作流的核心概念：<br>基础：Node、Workflow、Input、Output。<br>模型：Checkpoint、CLIP、VAE、LoRA、ControlNet。<br>提示词：Prompt、Positive&#x2F;Negative Prompt、Conditioning。<br>图像：Latent Image、Image、Resolution、Batch Size。<br>采样：Sampler、Scheduler、Steps、CFG Scale、Seed。<br>文件：Checkpoint File、Output Directory、Filename Prefix。<br>扩展：Inpainting、Outpainting、Upscale、AnimateDiff。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807d5f9302fe.webp" alt="基础名词.webp"></p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
       </tags>
   </entry>
 </search>
