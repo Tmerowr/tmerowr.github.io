@@ -453,24 +453,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2025/03/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>ComfyUI-文生图对比工作流</title>
     <url>/2025/05/27/comfyui%E6%96%87%E7%94%9F%E5%9B%BE%E8%8A%82%E7%82%B9%E5%AF%B9%E6%AF%94/</url>
     <content><![CDATA[<h1 id="开始准备"><a href="#开始准备" class="headerlink" title="开始准备"></a>开始准备</h1><p>首先需要用到的节点有：</p>
@@ -501,6 +483,24 @@
       <tags>
         <tag>ComfyUI</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Obsidian同步方案及插件</title>
@@ -877,6 +877,24 @@
       </tags>
   </entry>
   <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础节点与插件</title>
     <url>/2025/04/23/%E5%9F%BA%E7%A1%80%E8%8A%82%E7%82%B9%E4%B8%8E%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<p>ComfyUI 中 文生图（Text-to-Image）**工作流中常用的节点，帮助你快速理解其核心功能。这些节点是构建文生图流程的基础，通过连接它们可以完成从文本提示到生成图像的过程。</p>
@@ -1035,24 +1053,6 @@
 <li>VAE Decode：解码图像。</li>
 <li>Save Image：保存结果。</li>
 </ol>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
 ]]></content>
       <categories>
         <category>AI</category>
@@ -1597,45 +1597,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GREEN-苔藓</title>
-    <url>/2025/05/23/%E8%8B%94%E8%97%93/</url>
-    <content><![CDATA[<blockquote>
-<p>这是一个全新的系列，主要用来记录日常生活中遇见的各种植物🌵</p>
-</blockquote>
-<p>“<font color="#00b050">苔藓植物</font>”（Bryophytes）是一个总称，指的是一类结构相对简单、体型通常较小的陆生植物。它们是地球上<font color="#6eb957">最早的陆地植物</font>之一，在植物演化中占据着重要的位置。</p>
-<p>苔藓植物主要包括三大类群：</p>
-<p><strong>苔类 (Mosses &#x2F; Musci &#x2F; Bryopsida)：</strong><br>这是苔藓植物中种类最多、分布最广的一类。植株通常有类似“茎”和“叶”的分化（但并非真正的茎和叶），白发藓（Leucobryum）和大灰藓（Hypnum）都属于这一类。它们通常有直立或匍匐的茎，叶片小而密集。<br><strong>藓类 (Liverworts &#x2F; Hepaticae &#x2F; Marchantiopsida)：</strong><br>藓类植物体可以是扁平的叶状体（像一片平铺的叶子），也可以是具有茎叶分化的茎叶体。叶状体藓类的一个例子是地钱（Marchantia）。它们的名字来源于一些叶状体种类外观像肝脏的形状。<br><strong>角苔类 (Hornworts &#x2F; Anthocerotae &#x2F; Anthocerotopsida)：</strong><br>角苔的植物体是扁平的叶状体，其最显著的特征是它们长而角状的孢子体（产生孢子的结构），这也是它们名字的由来。角苔种类相对较少。</p>
-<h1 id="白发藓"><a href="#白发藓" class="headerlink" title="白发藓"></a><font color="#00b050">白发藓</font></h1><p>常被称为<strong>枕藓</strong>或<strong>白灰藓</strong>，是一种常见的苔藓植物。</p>
-<ul>
-<li><strong>核心特征：</strong> 外观呈独特的<strong>灰白色、浅绿或蓝绿色</strong>，形成密集、隆起的垫状或丘状群体，触感厚实有弹性。</li>
-<li><strong>生长环境：</strong> 偏好<strong>半阴湿润</strong>、排水良好的<strong>酸性</strong>环境，常见于林下、腐木或岩石表面。</li>
-<li><strong>主要价值：</strong><ul>
-<li><strong>生态上：</strong> 是重要的先锋植物，有助于水土保持，并为微小生物提供栖息地。</li>
-<li><strong>园艺上：</strong> 因其美观独特，常用于苔藓微景观、生态瓶和园林绿化。</li>
-</ul>
-</li>
-</ul>
-<p>简而言之，白发藓是一种颜色独特、形态可爱的苔藓，既有生态价值，也常用于观赏。</p>
-<h1 id="大灰藓"><a href="#大灰藓" class="headerlink" title="大灰藓"></a><font color="#00b050">大灰藓</font></h1><p>尤指<strong>多形灰藓 (Hypnum plumaeforme)</strong>，常被称为<strong>羽藓</strong>或<strong>匍匐藓</strong>。</p>
-<ul>
-<li><strong>核心特征：</strong> 通常呈<strong>黄绿色或绿色</strong>，以<strong>匍匐、垫状</strong>方式大片生长，形成地毯状群落。其叶片常向一侧弯曲，形似镰刀。</li>
-<li><strong>生长环境：</strong> 适应性强，喜欢<strong>湿润</strong>环境，能生长在林下土壤、岩石、树基等多种基质上，对光照要求不严。</li>
-<li><strong>主要价值：</strong><ul>
-<li><strong>生态上：</strong> 重要的地表覆盖植物，有助于水土保持，为微小生物提供庇护所，并可作为环境指示植物。</li>
-<li><strong>园艺上：</strong> 因其形态优美且易于铺展，广泛用于苔藓微景观、盆景覆盖和生态瓶制作。</li>
-</ul>
-</li>
-</ul>
-<p>简而言之，大灰藓是一种适应力强、分布广泛的绿色匍匐苔藓，既在生态系统中发挥作用，也是园艺造景的常用材料。</p>
-]]></content>
-      <categories>
-        <category>Green</category>
-      </categories>
-      <tags>
-        <tag>Plant</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记-第二曲线创新</title>
     <url>/2025/05/08/%E8%AE%B0-%E7%AC%AC%E4%BA%8C%E6%9B%B2%E7%BA%BF%E5%88%9B%E6%96%B0/</url>
     <content><![CDATA[<blockquote>
@@ -1680,6 +1641,45 @@
       </categories>
       <tags>
         <tag>Read</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GREEN-苔藓</title>
+    <url>/2025/05/23/%E8%8B%94%E8%97%93/</url>
+    <content><![CDATA[<blockquote>
+<p>这是一个全新的系列，主要用来记录日常生活中遇见的各种植物🌵</p>
+</blockquote>
+<p>“<font color="#00b050">苔藓植物</font>”（Bryophytes）是一个总称，指的是一类结构相对简单、体型通常较小的陆生植物。它们是地球上<font color="#6eb957">最早的陆地植物</font>之一，在植物演化中占据着重要的位置。</p>
+<p>苔藓植物主要包括三大类群：</p>
+<p><strong>苔类 (Mosses &#x2F; Musci &#x2F; Bryopsida)：</strong><br>这是苔藓植物中种类最多、分布最广的一类。植株通常有类似“茎”和“叶”的分化（但并非真正的茎和叶），白发藓（Leucobryum）和大灰藓（Hypnum）都属于这一类。它们通常有直立或匍匐的茎，叶片小而密集。<br><strong>藓类 (Liverworts &#x2F; Hepaticae &#x2F; Marchantiopsida)：</strong><br>藓类植物体可以是扁平的叶状体（像一片平铺的叶子），也可以是具有茎叶分化的茎叶体。叶状体藓类的一个例子是地钱（Marchantia）。它们的名字来源于一些叶状体种类外观像肝脏的形状。<br><strong>角苔类 (Hornworts &#x2F; Anthocerotae &#x2F; Anthocerotopsida)：</strong><br>角苔的植物体是扁平的叶状体，其最显著的特征是它们长而角状的孢子体（产生孢子的结构），这也是它们名字的由来。角苔种类相对较少。</p>
+<h1 id="白发藓"><a href="#白发藓" class="headerlink" title="白发藓"></a><font color="#00b050">白发藓</font></h1><p>常被称为<strong>枕藓</strong>或<strong>白灰藓</strong>，是一种常见的苔藓植物。</p>
+<ul>
+<li><strong>核心特征：</strong> 外观呈独特的<strong>灰白色、浅绿或蓝绿色</strong>，形成密集、隆起的垫状或丘状群体，触感厚实有弹性。</li>
+<li><strong>生长环境：</strong> 偏好<strong>半阴湿润</strong>、排水良好的<strong>酸性</strong>环境，常见于林下、腐木或岩石表面。</li>
+<li><strong>主要价值：</strong><ul>
+<li><strong>生态上：</strong> 是重要的先锋植物，有助于水土保持，并为微小生物提供栖息地。</li>
+<li><strong>园艺上：</strong> 因其美观独特，常用于苔藓微景观、生态瓶和园林绿化。</li>
+</ul>
+</li>
+</ul>
+<p>简而言之，白发藓是一种颜色独特、形态可爱的苔藓，既有生态价值，也常用于观赏。</p>
+<h1 id="大灰藓"><a href="#大灰藓" class="headerlink" title="大灰藓"></a><font color="#00b050">大灰藓</font></h1><p>尤指<strong>多形灰藓 (Hypnum plumaeforme)</strong>，常被称为<strong>羽藓</strong>或<strong>匍匐藓</strong>。</p>
+<ul>
+<li><strong>核心特征：</strong> 通常呈<strong>黄绿色或绿色</strong>，以<strong>匍匐、垫状</strong>方式大片生长，形成地毯状群落。其叶片常向一侧弯曲，形似镰刀。</li>
+<li><strong>生长环境：</strong> 适应性强，喜欢<strong>湿润</strong>环境，能生长在林下土壤、岩石、树基等多种基质上，对光照要求不严。</li>
+<li><strong>主要价值：</strong><ul>
+<li><strong>生态上：</strong> 重要的地表覆盖植物，有助于水土保持，为微小生物提供庇护所，并可作为环境指示植物。</li>
+<li><strong>园艺上：</strong> 因其形态优美且易于铺展，广泛用于苔藓微景观、盆景覆盖和生态瓶制作。</li>
+</ul>
+</li>
+</ul>
+<p>简而言之，大灰藓是一种适应力强、分布广泛的绿色匍匐苔藓，既在生态系统中发挥作用，也是园艺造景的常用材料。</p>
+]]></content>
+      <categories>
+        <category>Green</category>
+      </categories>
+      <tags>
+        <tag>Plant</tag>
       </tags>
   </entry>
   <entry>
