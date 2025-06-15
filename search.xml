@@ -180,6 +180,13 @@
 <p>  Markdown</p>
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">***这是加粗并倾斜的文字***</span><br><span class="line">___这也是加粗并倾斜的文字___</span><br></pre></td></tr></table></figure></li>
 </ul>
+<blockquote>
+<p>实在记不住也是有快捷键操作的哦</p>
+<ul>
+<li><strong>加粗</strong>：<code>ctrl+b</code></li>
+<li><strong>斜体</strong>：<code>ctrl+i</code></li>
+</ul>
+</blockquote>
 <h2 id="列表-Lists"><a href="#列表-Lists" class="headerlink" title="列表 (Lists)"></a><strong>列表 (Lists)</strong></h2><ul>
 <li><p><strong>无序列表 (Unordered Lists)</strong>: 使用星号 <code>*</code>、加号 <code>+</code> 或减号 <code>-</code> 作为列表标记。</p>
 <p>  Markdown</p>
@@ -188,6 +195,21 @@
 <li><p><strong>有序列表 (Ordered Lists)</strong>: 使用数字加一个英文句点 <code>.</code> 作为列表标记。</p>
 <p>  Markdown</p>
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. 项目一</span><br><span class="line">2. 项目二</span><br><span class="line">3. 项目三</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><p>任务列表使您可以创建带有复选框的项目列表。在支持任务列表的 Markdown 应用程序中，复选框将显示在内容旁边。要创建任务列表，请在任务列表项之前添加破折号 - 和方括号 [ ]，并在 [ ] 前面加上空格。要选择一个复选框，请在方括号 [x] 之间添加 x 。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- [x] Write the press release</span><br><span class="line">- [ ] Update the website</span><br><span class="line">- [ ] Contact the media</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Write the press release</li>
+<li><input disabled="" type="checkbox"> Update the website</li>
+<li><input disabled="" type="checkbox"> Contact the media</li>
+</ul>
+<h4 id="创建任务："><a href="#创建任务：" class="headerlink" title="创建任务："></a><strong>创建任务：</strong></h4><ul>
+<li><strong>-</strong> + <strong>空格</strong> +<strong><code>[ ]</code></strong> +<strong>空格</strong> + 任务列表内容 ( 中括号 <code>[ ]</code>  里面必须有个空格)</li>
+<li>或者更简单点，对着某个行文字，按下“Ctrl + L”</li>
+<li><strong>完成任务</strong> - 在渲染界面，直接鼠标左键点击 mm - 在源代码界面，在中括号内输入  <strong>英文字母 x</strong> - 部分编辑器，在 中括号内 输入 <strong>任意字符</strong> 都可以打  <strong><code>√</code></strong> ( 例如  <strong>Obsidian</strong> )</li>
+<li><strong>任务列表也是可以缩进 + 退格的，操作跟 无序列表、有序列表一样</strong></li>
 </ul>
 <h2 id="链接-Links"><a href="#链接-Links" class="headerlink" title="链接 (Links)"></a><strong>链接 (Links)</strong></h2><ul>
 <li><p><strong>行内式链接 (Inline Links)</strong>: 链接文字用方括号 <code>[]</code> 包裹，后面紧跟着括号 <code>()</code> 包裹的 <a href="https://www.google.com/search?q=URL%EF%BC%8C%E8%BF%98%E5%8F%AF%E4%BB%A5%E5%9C%A8">https://www.google.com/search?q=URL，还可以在</a> <a href="https://www.google.com/search?q=URL">https://www.google.com/search?q=URL</a> 后面用引号添加可选的 title 属性。</p>
@@ -228,8 +250,8 @@
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">    // 这是一个使用空格缩进的代码块</span><br><span class="line">    int main() &#123;</span><br><span class="line">      return 0;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p><u>插入代码可以直接右键-插入-代码块，会更方便些一些哦。</u></p>
-<h2 id="引用-Blockquotes"><a href="#引用-Blockquotes" class="headerlink" title="引用 (Blockquotes)"></a><strong>引用 (Blockquotes)</strong></h2><p>使用大于号 <code>&gt;</code> 来创建引用。</p>
-<p>Markdown</p>
+<h2 id="引用-Blockquotes"><a href="#引用-Blockquotes" class="headerlink" title="引用 (Blockquotes)"></a><strong>引用 (Blockquotes)</strong></h2><p>使用大于号 <code>&gt;</code> 来创建引用;  <strong>&gt;</strong> + 文本内容 （<strong>不需要空格</strong>)。</p>
+<p>渲染效果如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 这是一个引用。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 这是引用的第二段。</span><br><span class="line">&gt;&gt; 这是一个嵌套的引用。</span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -250,6 +272,7 @@
 <blockquote>
 <p>列表、标题类的符号需要空格才会生效，加粗、强调类的符号可以直接输入。<br>所以有时候如果输入了符号没效果，不妨再按下空格试试看😊</p>
 </blockquote>
+<p>最后还有一个是关于emoji的，可以使用windows的快捷键<code>win+;</code> 🤭</p>
 <p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
 <p>由于博客笔记全都是用Obsidian来编辑管理的，所以对Markdown语法做个总结，<br>加深记忆，方便学习使用，最后放一下系统的语法教程及在线体验连接。<br><a href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法 | Markdown 教程</a><br><a href="https://markdown.com.cn/editor/">在线markdown编辑器</a></p>
 ]]></content>
@@ -1467,12 +1490,220 @@
 <p>“荔枝的物性，一日色变，两日香变”</p>
 <p>“明媚的日光从窗牖空隙洒进来，却不能带来哪怕一点点振奋。”</p>
 <p>“云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。” ”</p>
+<p>出门日已远，不受徒旅欺。<br>骨肉恩岂断，男儿死无时。<br>走马脱辔头，手中挑青丝。<br>捷下万仞冈，俯身试搴旗。</p>
 ]]></content>
       <categories>
         <category>Life</category>
       </categories>
       <tags>
         <tag>Read</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>世界三大电影运动</title>
+    <url>/2025/06/04/%E4%B8%96%E7%95%8C%E4%B8%89%E5%A4%A7%E7%94%B5%E5%BD%B1%E8%BF%90%E5%8A%A8/</url>
+    <content><![CDATA[<blockquote>
+<p>在电影史上，有几个电影运动因其创新性、影响力以及对后世电影制作和电影语言的深远改变而被广泛认可。虽然“三大”的说法可能因评价标准和视角不同略有差异，但以下三个电影运动通常被认为是具有里程碑意义的，并且经常一起被提及：</p>
+</blockquote>
+<h1 id="德国表现主义-German-Expressionism"><a href="#德国表现主义-German-Expressionism" class="headerlink" title="德国表现主义 (German Expressionism)"></a><font color="#f74db5">德国表现主义</font> (German Expressionism)</h1><p><strong>时间：</strong> 约1919年 - 1926年<br><strong>核心思想：</strong> 电影的使命并非客观地记录现实，而是要<strong>表现人物的内心世界和主观情绪</strong>。通过扭曲、夸张的视觉元素，将角色的精神状态（如恐惧、疯狂、焦虑）外化为观众可见的影像。</p>
+<h2 id="时代背景🎬"><a href="#时代背景🎬" class="headerlink" title="时代背景🎬"></a><font color="#7030a0">时代背景</font>🎬</h2><p>第一次世界大战后，德国作为战败国，社会动荡、经济崩溃、民心惶惶。民众普遍充满了对现实的失望、对未来的恐惧和精神上的创伤。这种集体性的焦虑和压抑情绪，催生了表现主义这一强调内心、逃避现实的艺术形式。</p>
+<h2 id="艺术特点💫"><a href="#艺术特点💫" class="headerlink" title="艺术特点💫"></a><font color="#7030a0">艺术特点</font>💫</h2><p><strong>怪诞的视觉风格：</strong> 布景极度扭曲，使用倾斜的线条、奇形怪状的建筑和不合比例的道具，营造出一个噩梦般的世界。<br><strong>强烈的光影对比：</strong> 锐利的棱角、扭曲的线条、强烈的明暗对比（chiaroscuro）、倾斜或不稳定的构图、巨大的阴影（常具有生命力，能独立于角色存在）。布景是影片叙事的核心组成部分，而非仅仅是背景。<br><strong>夸张的表演方式：</strong> 拒绝现实主义，刻意追求扭曲变形、高度风格化的视觉表现。演员的表演风格舞台化、模式化，通过大幅度的肢体语言和面部表情来传达极端的情绪（恐惧、焦虑、疯狂、欲望）和精神状态。<br><strong>主题黑暗深刻：</strong> 故事多涉及疯狂、谋杀、催眠、暴政、身份错乱等主题，探索人性的阴暗面和心理的深渊。反映了第一次世界大战后德国社会普遍的焦虑、不安和精神创伤。</p>
+<h2 id="代表人物与作品👩‍🎓"><a href="#代表人物与作品👩‍🎓" class="headerlink" title="代表人物与作品👩‍🎓"></a>代表人物与作品👩‍🎓</h2><p><strong>罗伯特·维内 (Robert Wiene)</strong>：《卡里加里博士的小屋》(Das Cabinet des Dr. Caligari, 1920) - 被誉为表现主义的开山之作，其怪异的美术设计和对疯狂心理的探索成为典范。<br><a href="https://movie.douban.com/subject/1292547/"><font color="#00b050">豆瓣-卡里加里博士的小屋</font></a><br><strong>F.W. 茂瑙 (F.W. Murnau)</strong>：《诺斯费拉图》(Nosferatu, 1922) - 经典的吸血鬼电影，将表现主义的光影技巧运用到极致，营造出无与伦比的恐怖氛围。<br><a href="https://movie.douban.com/subject/1296791/"><font color="#00b050">豆瓣-诺斯费拉图</font></a><br><strong>弗里茨·朗 (Fritz Lang)</strong>：《大都会》(Metropolis, 1927) - 融合了表现主义和未来主义的科幻巨作，其宏大的布景和对阶级矛盾的探讨影响深远。<br><a href="https://movie.douban.com/subject/1298107/"><font color="#00b050">豆瓣-大都会</font></a></p>
+<h2 id="深远影响🏂"><a href="#深远影响🏂" class="headerlink" title="深远影响🏂"></a><font color="#7030a0">深远影响</font>🏂</h2><p>德国表现主义直接催生了<strong>美国黑色电影 (Film Noir)</strong> 的视觉风格，并深刻影响了后来的<strong>恐怖片</strong>和<strong>科幻片</strong>。蒂姆·波顿 (Tim Burton) 的哥特式美学、大卫·林奇 (David Lynch) 的超现实影像，都能看到其影子。- 对电影美术设计的艺术性和表意功能达到了前所未有的高度。</p>
+<h1 id="苏联蒙太奇-Soviet-Montage"><a href="#苏联蒙太奇-Soviet-Montage" class="headerlink" title="苏联蒙太奇 (Soviet Montage)"></a><font color="#0070c0">苏联蒙太奇</font> (Soviet Montage)</h1><p><strong>约1924年 - 1930年</strong><br><strong>核心思想：</strong> <strong>电影的精髓在于剪辑</strong>。单个镜头本身意义有限，而将不同的镜头并置、冲撞、组合在一起，才能创造出新的、更深刻的意义，从而引导观众的情感和思想。</p>
+<h2 id="时代背景🎬-1"><a href="#时代背景🎬-1" class="headerlink" title="时代背景🎬"></a><font color="#7030a0">时代背景</font>🎬</h2><p>1917年十月革命后，新生的苏维埃政权急需一种强大的宣传工具来教育和动员广大不识字的民众。列宁曾说：“在所有的艺术中，电影对我们来说是最重要的。”电影被赋予了强烈的政治使命和宣传功能。</p>
+<h2 id="艺术特点💫-1"><a href="#艺术特点💫-1" class="headerlink" title="艺术特点💫"></a><font color="#7030a0">艺术特点</font>💫</h2><p><em>剪辑至上</em>：认为电影的核心和力量不在于单个镜头的内容，而在于镜头之间的组合（即蒙太奇）。通过剪辑创造出新的含义、节奏、情绪和思想。<br>“<em>库里肖夫效应</em>”： 列夫·库里肖夫的实验证明，一个中性表情的镜头，与不同的镜头并置，观众会解读出完全不同的情绪（<font color="#92d050">如演员面无表情的脸 + 一碗汤 &#x3D; 饥饿；同一张脸 + 棺材 &#x3D; 悲伤</font>）。这证明了观众赋予前后相连镜头的意义是由剪辑关系本身创造的。<br><strong>爱森斯坦的“理性&#x2F;吸引力蒙太奇”</strong>：谢尔盖·爱森斯坦提出，镜头之间不应是简单的连接，而应是“冲撞”。通过将两个不相干的镜头并列，可以产生一个全新的、抽象的概念，从而激发观众的理性思考。（<font color="#ffc000">如A镜头与B镜头产生碰撞）能产生新的思想（C概念），是为“理性蒙太奇”。追求冲击性的视觉和情绪效果来感染和引导观众（“吸引力蒙太奇”</font>）。<br><strong>普多夫金的“叙事&#x2F;联结蒙太奇”</strong>：更侧重叙事的流畅性和情感的累积，镜头像积木一样堆叠连接。注重演员表演的连续性。<br><strong>非个人英雄主义：</strong> 影片主角通常是集体（如人民、水手、工人），强调阶级和群众的力量，而非个人英雄。</p>
+<h2 id="代表人物与作品👩‍🎓-1"><a href="#代表人物与作品👩‍🎓-1" class="headerlink" title="代表人物与作品👩‍🎓"></a><font color="#7030a0">代表人物与作品</font>👩‍🎓</h2><p><strong>谢尔盖·爱森斯坦 (Sergei Eisenstein)</strong>：《战舰波将金号》(Battleship Potemkin, 1925) - 其中的“敖德萨阶梯”段落是影史上最著名的蒙太奇范例，通过交叉剪辑将民众的恐慌和军队的冷血无情表现得淋漓尽致。<br><a href="https://movie.douban.com/subject/1293492/"><font color="#00b050">豆瓣-战舰波将金号</font></a><br><strong>弗谢沃洛德·普多夫金 (Vsevolod Pudovkin)</strong>：《母亲》(Mother, 1926) - 他的蒙太奇风格更侧重于抒情和叙事，通过镜头的连接构建情感链条。<br><a href="https://movie.douban.com/subject/1297803/"><font color="#00b050">豆瓣-母亲</font></a><br><strong>吉加·维尔托夫 (Dziga Vertov)</strong>：《持摄影机的人》(Man with a Movie Camera, 1929) - 一部实验性的纪录片，本身就是关于电影制作和蒙太奇理论的宣言，充满了<font color="#6eb957">炫技式的剪辑</font>。<br><a href="https://movie.douban.com/subject/1293199/"><font color="#00b050">豆瓣-持摄影机的人</font></a></p>
+<h2 id="深远影响🏂-1"><a href="#深远影响🏂-1" class="headerlink" title="深远影响🏂"></a><font color="#7030a0">深远影响</font>🏂</h2><p>苏联蒙太奇理论奠定了现代电影剪辑的基础，彻底革新了电影剪辑的艺术，证明了剪辑能独立创造意义。为电影作为政治宣传和意识形态工具提供了强大的方法论。其理论和技巧（节奏、冲突剪辑、隐喻、象征等）成为所有类型电影剪辑的基础，影响了从好莱坞经典电影到现代动作片、MV等所有领域。- - <em><font color="#0070c0">极大地拓展了电影艺术表达的潜能和复杂性</font></em>。</p>
+<h1 id="意大利新现实主义-Italian-Neorealism"><a href="#意大利新现实主义-Italian-Neorealism" class="headerlink" title="意大利新现实主义 (Italian Neorealism)"></a><font color="#00b050">意大利新现实主义</font> (Italian Neorealism)</h1><p><strong>时间：</strong> 约1944年 - 1952年<br><strong>核心思想：</strong> 将镜头对准普通人（工人、农民、失业者、小市民）而非明星，关注现实社会问题（战后意大利的贫穷、失业、住房紧缺、社会冲突）。- 反对法西斯统治时期粉饰太平的“白色电话片”和好莱坞的梦幻工厂模式。致力于以纪实的手法展现战后意大利的社会现实和底层人民的苦难。</p>
+<h2 id="时代背景🎬-2"><a href="#时代背景🎬-2" class="headerlink" title="时代背景🎬"></a><font color="#7030a0">时代背景</font>🎬</h2><p>第二次世界大战结束后，意大利满目疮痍，法西斯政权倒台，社会贫困、失业严重。电影制片厂被毁，资金匮乏。在这样的困境下，一批电影人决定<font color="#b960d9">放弃摄影棚</font>，走向街头，用最朴素的方式记录下这个时代的真实面貌。</p>
+<h2 id="艺术特点💫-2"><a href="#艺术特点💫-2" class="headerlink" title="艺术特点💫"></a><font color="#7030a0">艺术特点</font>💫</h2><p><strong>实景拍摄</strong>：几乎所有场景都在真实的街道、公寓、乡村拍摄，赋予影片强烈的现场感和真实感，尽量使用自然光源或接近自然的光效。。<br><strong>启用非职业演员：</strong> 为了追求真实，导演常常选用当地的工人、农民、儿童来扮演角色，他们的表演质朴、自然，没有戏剧腔，追求质朴真实的表演。<br><strong>关注底层生活和社会问题：</strong> 故事聚焦于失业、贫困、战争创伤、人与人之间的疏离等社会议题，充满人文关怀。<br><strong>纪实风格的摄影：</strong> 使用长镜头和深焦镜头来维持时空连续性，减少剪辑干预。避免花哨的剪辑和复杂的摄影机运动，仿佛是生活的客观观察者。<br><strong>开放式结局：</strong> 影片结尾常常不提供明确的解决方案，问题依然存在，给观众留下思考和怅惘。</p>
+<h2 id="代表人物与作品👩‍🎓-2"><a href="#代表人物与作品👩‍🎓-2" class="headerlink" title="代表人物与作品👩‍🎓"></a><font color="#7030a0">代表人物与作品</font>👩‍🎓</h2><p><strong>罗伯托·罗西里尼 (Roberto Rossellini)</strong>：《罗马，不设防的城市》(Rome, Open City, 1945) - 在德军占领的罗马刚刚解放时拍摄，充满了即时性和新闻报道般的真实感，被视为新现实主义的开篇之作。<br><a href="https://movie.douban.com/subject/1296669/"><font color="#00b050">豆瓣-罗马，不设防的城市</font></a><br><strong>维托里奥·德·西卡 (Vittorio De Sica)</strong>：《偷自行车的人》(Bicycle Thieves, 1948) - 讲述一个失业工人和儿子在罗马街头寻找被偷的自行车的辛酸故事，是新现实主义的巅峰之作，完美体现了其所有美学特征。<br><a href="https://movie.douban.com/subject/1295873/"><font color="#00b050">豆瓣-偷自行车的人</font></a><br><strong>卢基诺·维斯康蒂 (Luchino Visconti)</strong>：《大地在波动》(La Terra Trema, 1948) - 深入西西里渔村，全片使用当地方言和非职业演员，展现渔民与批发商的斗争。<br><a href="https://movie.douban.com/subject/1294377/"><font color="#00b050">豆瓣-大地在波动</font></a></p>
+<h2 id="深远影响🏂-2"><a href="#深远影响🏂-2" class="headerlink" title="深远影响🏂"></a><font color="#7030a0">深远影响</font>🏂</h2><p>意大利新现实主义是<strong>写实主义电影</strong>的里程碑， 彻底改变了电影与“现实”的关系，开创了纪实美学的先河。它直接启发了<strong>法国新浪潮 (French New Wave)</strong>，并对世界各国的电影产生了深远影响，包括中国的<strong>第五代、第六代导演</strong>（如张艺谋的《秋菊打官司》、贾樟柯的《小武》），以及各类独立电影和纪录片。它确立了电影可以成为一种深刻介入社会、反思现实的艺术形式，- 为艺术电影树立了新的标杆，证明了电影可以严肃地探讨社会问题，促使电影更多地关注边缘人群和社会问题。</p>
+<table>
+<thead>
+<tr>
+<th>代表人物（主要导演）</th>
+<th>代表作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>卢奇诺·维斯康蒂（Luchino Visconti）</td>
+<td>《沉沦》（Ossessione, 1943）常被认为是新现实主义的先声或开端之作。《大地在波动》（La Terra Trema, 1948</td>
+</tr>
+<tr>
+<td>罗伯托·罗西里尼（Roberto Rossellini）</td>
+<td>“战争三部曲”《罗马，不设防的城市》（Roma, città aperta, 1945）《战火》（Paisà, 1946）《德意志零年》（Germania anno zero, 1948）</td>
+</tr>
+<tr>
+<td>维托里奥·德·西卡（Vittorio De Sica）</td>
+<td>《擦鞋童》（Sciuscià, 1946）《偷自行车的人》（Ladri di biciclette, 1948） - 被誉为新现实主义的巅峰之作和最具代表性的作品之一。《米兰的奇迹》（Miracolo a Milano, 1951）《温别尔托·D》（Umberto D., 1952）</td>
+</tr>
+<tr>
+<td>朱塞佩·德·桑蒂斯（Giuseppe De Santis）</td>
+<td>《罗马11时》（Roma ore 11, 1952）《艰辛的米》（Riso Amaro, 1949）</td>
+</tr>
+<tr>
+<td>切萨雷·萨瓦提尼（Cesare Zavattini）</td>
+<td>意大利新现实主义最重要的理论家和编剧，与德·西卡等人合作了多部重要作品。他强调电影应该“跟踪”现实，展现生活的本来面目。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>如果说前三大电影运动是奠定了电影语言的“古典时期”，<br>那么<strong>法国新浪潮 (French New Wave &#x2F; La Nouvelle Vague)</strong> 就是开启电影“<em>现代主义</em>”大门的<font color="#f74db5">革命性浪潮。</font><br>  它与德国表现主义、苏联蒙太奇和意大利新现实主义并列，<br>  有时甚至被认为是影响力更广泛的第四大电影运动。<br>  它彻底改变了电影的制作方式、美学观念和导演的地位。</p>
+</blockquote>
+<h1 id="法国新浪潮-French-New-Wave-La-Nouvelle-Vague"><a href="#法国新浪潮-French-New-Wave-La-Nouvelle-Vague" class="headerlink" title="法国新浪潮 (French New Wave &#x2F; La Nouvelle Vague)"></a><font color="#0070c0">法国新浪潮</font> (French New Wave &#x2F; La Nouvelle Vague)</h1><p><strong>时间：</strong> 约1958年 - 1967年<br><strong>核心思想：导演即作者 (Auteur Theory)</strong><br><em>电影是导演个人表达的工具</em>，如同作家用笔写作一样，导演应该用摄影机来“写作”（即“摄影机-笔”论，Caméra-stylo）。他们激烈反对当时法国影坛僵化、陈腐的“优质传统”电影 (Cinéma de Qualité)，倡导一种<font color="#6eb957">更自由、更个人、更贴近现代生活</font>的电影。</p>
+<h2 id="时代背景"><a href="#时代背景" class="headerlink" title="时代背景"></a><font color="#7030a0">时代背景</font></h2><p><strong>文化土壤：</strong> 二战后的法国，存在主义哲学盛行，强调个人自由、选择和存在的荒诞感。这为新浪潮电影中那些迷惘、反叛、没有明确生活目标的主角提供了思想底色。</p>
+<ul>
+<li><strong>《电影手册》(Cahiers du Cinéma)：</strong> 这是新浪潮的摇篮。一群热爱电影的年轻人，包括<strong>戈达尔、特吕弗、夏布洛尔、侯麦、里维特</strong>等，先是作为影评人聚集在这本杂志周围。他们在巴黎的<strong>法国电影资料馆 (Cinémathèque Française)</strong> 观看了海量电影，尤其是被当时主流评论界忽视的美国B级片导演（如希区柯克、霍华德·霍克斯）和意大利新现实主义作品。他们通过写影评，率先提出了“作者论”，为自己的创作奠定了理论基础。</li>
+<li><strong>技术革新：</strong> 轻便的手持摄影机和高感光度的胶片出现，使得电影制作不再局限于笨重的设备和庞大的摄制组。这让年轻的导演们可以用极低的成本，带着小团队走上街头，捕捉真实的生活气息。</li>
+</ul>
+<h2 id="艺术特点"><a href="#艺术特点" class="headerlink" title="艺术特点"></a><font color="#7030a0">艺术特点</font></h2><p>新浪潮的特点就是“<strong>打破一切规则</strong>”：</p>
+<ol>
+<li><strong>实景拍摄 (On-location Shooting)：</strong> 和新现实主义一样，他们走出摄影棚，将巴黎的街景、咖啡馆、公寓作为天然的舞台，充满了都市的现代感和即时性。</li>
+<li><strong>跳接 (Jump Cut)：</strong> 这是最具革命性的剪辑手法，由戈达尔在《精疲力尽》中发扬光大。它在一个连续的动作中故意切掉中间的一小段，造成视觉上的跳跃感，打破了传统剪辑的流畅性，营造出一种不安、焦虑和现代生活的碎片感。</li>
+<li><strong>手持摄影与自然光：</strong> 摄影机常常是晃动的、不稳定的，跟随人物移动，创造出一种纪录片式的真实感和亲密感。他们也常利用自然光，反对摄影棚内精致的人工布光。</li>
+<li><strong>即兴创作：</strong> 剧本常常只是一个大纲，导演在现场鼓励演员即兴表演，对白也充满了生活气息和偶然性，显得格外自然、生动。</li>
+<li><strong>打破“第四堵墙”：</strong> 角色会突然望向镜头，直接与观众对话，主动揭示电影的虚构性，提醒观众“你正在看一部电影”。这是一种“电影自觉”的体现。</li>
+<li><strong>反英雄主角与开放式结局：</strong> 主角不再是传统意义上的英雄，他们常常是道德模糊、行为冲动的法外之徒、迷惘青年。影片的结局也往往是开放的，不提供答案，正如生活本身。</li>
+<li><strong>致敬与互文性 (Homage &amp; Intertextuality)：</strong> 这些导演都是狂热影迷，他们的电影里充满了对所崇拜导演和经典影片的引用和致敬，电影本身成为了一场关于电影的对话。</li>
+</ol>
+<h2 id="两大阵营与代表人物-作品"><a href="#两大阵营与代表人物-作品" class="headerlink" title="两大阵营与代表人物&#x2F;作品"></a><font color="#4bacc6">两大阵营与代表人物&#x2F;作品</font></h2><p>法国新浪潮内部大致可以分为两个群体：</p>
+<p><strong>A. 《电影手册》派 (The Cahiers du Cinéma Group)</strong> 他们是影评人出身，更注重颠覆传统电影语法，风格更加自由不羁。</p>
+<ul>
+<li><strong>弗朗索瓦·特吕弗 (François Truffaut)</strong>：风格相对温和、抒情，充满人文关怀。<ul>
+<li><strong>《四百击》(The 400 Blows, 1959)</strong>：新浪潮的开山之作，半自传体地讲述了一个叛逆少年的成长故事，结尾处安托万奔向大海的定格长镜头成为影史经典。</li>
+</ul>
+</li>
+<li><strong>让-吕克·戈达尔 (Jean-Luc Godard)</strong>：最激进、最具实验精神的导演，不断解构和重塑电影语言。<ul>
+<li><strong>《精疲力尽》(Breathless, 1960)</strong>：新浪潮的美学宣言，将跳接、即兴表演等手法运用到极致，风格凌厉，酷感十足。</li>
+</ul>
+</li>
+<li><strong>克洛德·夏布洛尔 (Claude Chabrol)</strong>：被称为“法国的希区柯克”，擅长拍摄悬疑惊悚片，揭示法国中产阶级的伪善与暗流。代表作《表兄弟》(Les Cousins, 1959)。</li>
+<li><strong>埃里克·侯麦 (Éric Rohmer)</strong> 和 <strong>雅克·里维特 (Jacques Rivette)</strong> 也是此派重要成员。</li>
+</ul>
+<p><strong>B. 左岸派 (The Left Bank Group)</strong> 这批导演通常年龄稍长，有文学或纪录片背景，他们的作品更具文学性、政治性和哲学思辨，形式上也更严谨。</p>
+<ul>
+<li><strong>阿伦·雷乃 (Alain Resnais)</strong>：痴迷于时间、记忆与创伤的主题。<ul>
+<li><strong>《广岛之恋》(Hiroshima Mon Amour, 1959)</strong>：由作家玛格丽特·杜拉斯编剧，影片通过意识流的叙事，将个人的爱情记忆与广岛核爆的历史创伤交织在一起，是现代主义电影的典范。</li>
+</ul>
+</li>
+<li><strong>阿涅斯·瓦尔达 (Agnès Varda)</strong>：被誉为“新浪潮的祖母”，是该运动中最重要的女性导演，作品融合了纪录与虚构，充满女性主义视角和温柔的生命力。<ul>
+<li><strong>《五至七时的克莱奥》(Cléo from 5 to 7, 1962)</strong>：实时记录了一位女歌手在等待癌症诊断结果的两个小时里的心路历程。</li>
+</ul>
+</li>
+<li><strong>克里斯·马克 (Chris Marker)</strong>：实验电影和散文电影大师，其作品《堤》(La Jetée, 1962) 几乎完全由静止照片构成，深刻影响了后来的科幻电影（如《十二猴子》）。</li>
+</ul>
+<h2 id="深远影响"><a href="#深远影响" class="headerlink" title="深远影响"></a><font color="#7030a0">深远影响</font></h2><p>法国新浪潮的影响力遍及全球，可以说，现代电影的样貌在很大程度上是由它塑造的：</p>
+<ul>
+<li><strong>启发了“新好莱坞”</strong>：马丁·斯科塞斯、弗朗西斯·福特·科波拉等美国导演深受其影响，开启了好莱坞的作者电影时代。</li>
+<li><strong>成为全球独立电影的灯塔</strong>：它向全世界的青年证明，不需要巨额投资和电影工厂，凭借才华和热情就能拍出伟大的个人电影。</li>
+<li><strong>确立了“作者论”</strong>：从此，导演作为电影核心创作者的地位被广泛接受，电影批评和理论进入了新纪元。</li>
+<li><strong>解放了电影美学</strong>：它让“技术错误”（如跳接、镜头摇晃）变成了有效的艺术表达，极大地拓宽了电影创作的自由度。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>代表人物（主要导演）</th>
+<th>代表作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>弗朗索瓦·特吕弗（François Truffaut）</td>
+<td>《四百击》（Les Quatre Cents Coups）、《朱尔与吉姆》（Jules et Jim）</td>
+</tr>
+<tr>
+<td>让-吕克·戈达尔（Jean-Luc Godard）</td>
+<td>《筋疲力尽》（À bout de souffle）、《狂人皮埃罗》（Pierrot le Fou）</td>
+</tr>
+<tr>
+<td>克洛德·夏布洛尔（Claude Chabrol）</td>
+<td>《漂亮的塞尔吉》（Le Beau Serge）、《表兄弟》（Les Cousins）</td>
+</tr>
+<tr>
+<td>埃里克·侯麦（Éric Rohmer）</td>
+<td>《慕德家一夜》（Ma nuit chez Maud）</td>
+</tr>
+<tr>
+<td>雅克·里维特（Jacques Rivette）</td>
+<td>《巴黎属于我们》（Paris nous appartient）</td>
+</tr>
+<tr>
+<td>阿伦·雷乃（Alain Resnais）</td>
+<td>《广岛之恋》（Hiroshima mon amour）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>四大电影运动横向对比</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>德国表现主义</th>
+<th>苏联蒙太奇</th>
+<th>意大利新现实主义</th>
+<th>法国新浪潮 (</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>大致时间</strong></td>
+<td>约 1919 - 1926年</td>
+<td>约 1924 - 1930年</td>
+<td>约 1944 - 1952年</td>
+<td>约 1958 - 1967年</td>
+</tr>
+<tr>
+<td><strong>核心思想</strong></td>
+<td><strong>心理外化</strong>：表现人物扭曲、疯狂的内心世界，而非客观现实。</td>
+<td><strong>剪辑至上</strong>：通过镜头的冲突与并置创造新的思想和意义。</td>
+<td><strong>直面现实</strong>：将摄影机扛到大街上，记录战后普通人的真实苦难。</td>
+<td><strong>导演即作者</strong>：电影是导演的个人表达，用摄影机自由“写作”。</td>
+</tr>
+<tr>
+<td><strong>时代背景</strong></td>
+<td>一战后德国的社会创伤、经济崩溃与集体焦虑。</td>
+<td>苏维埃政权建立，电影被视为最重要的政治宣传和教育工具。</td>
+<td>二战后意大利的社会废墟、贫困、失业和道德危机。</td>
+<td>战后法国存在主义思潮、青年文化兴起和电影制作技术革新。</td>
+</tr>
+<tr>
+<td><strong>艺术特点&#x2F;关键词</strong></td>
+<td>• 扭曲怪诞的布景  <br>• 强烈的光影对比  <br>• 夸张的舞台式表演  <br>• 黑暗、疯狂的主题</td>
+<td>• 快速、有节奏的剪辑  <br>• “库里肖夫效应”  <br>• 理性&#x2F;杂耍蒙太奇  <br>• 强调集体，而非个人</td>
+<td>• 实景拍摄  <br>• 启用非职业演员  <br>• 关注社会底层问题  <br>• 纪实风格，长镜头  <br>• 开放式结局</td>
+<td>• <strong>跳接 (Jump Cut)</strong>  <br>• 手持摄影  <br>• 即兴表演  <br>• 打破“第四堵墙”  <br>• 电影自觉与致敬</td>
+</tr>
+<tr>
+<td><strong>代表人物</strong></td>
+<td>• 罗伯特·维内  <br>• F.W. 茂瑙  <br>• 弗里茨·朗</td>
+<td>• 谢尔盖·爱森斯坦  <br>• 弗谢沃洛德·普多夫金  <br>• 吉加·维尔托夫</td>
+<td>• 罗伯托·罗西里尼  <br>• 维托里奥·德·西卡  <br>• 卢基诺·维斯康蒂</td>
+<td>• 让-吕克·戈达尔  <br>• 弗朗索瓦·特吕弗  <br>• 阿伦·雷乃  <br>• 阿涅斯·瓦尔达</td>
+</tr>
+<tr>
+<td><strong>代表作品</strong></td>
+<td>《卡里加里博士的小屋》  <br>《诺斯费拉图》  <br>《大都会》</td>
+<td>《战舰波将金号》  <br>《母亲》  <br>《持摄影机的人》</td>
+<td>《偷自行车的人》  <br>《罗马，不设防的城市》  <br>《大地在波动》</td>
+<td>《四百击》  <br>《精疲力尽》  <br>《广岛之恋》</td>
+</tr>
+<tr>
+<td><strong>深远影响</strong></td>
+<td><strong>视觉风格的奠基</strong>：深刻影响了美国的黑色电影、恐怖片和哥特美学。</td>
+<td><strong>剪辑理论的基石</strong>：奠定了现代电影剪辑的理论与实践基础，影响至今。</td>
+<td><strong>写实主义的典范</strong>：启发了世界各国的新浪潮和独立电影，确立了电影的社会批判功能。</td>
+<td><strong>现代电影的开端</strong>：确立了“作者论”，解放了电影制作方式，彻底改变了电影美学。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>最后推荐一位随缘更新的B站UP主<a href="https://space.bilibili.com/474320987">摄影师逍遥散仙</a><br>页脚-Book还有贾科长的《贾想》两册可以阅读哦 🎉🎉🎉</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>Movie</tag>
       </tags>
   </entry>
 </search>
