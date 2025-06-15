@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MP订阅规则</title>
+    <url>/2025/06/02/MP%E8%AE%A2%E9%98%85%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<p>更新记录：</p>
+<ul>
+<li>2025-5-24：新增杜比P8，去掉单独分组，使用白名单以及优先组（主要是防止下到枪版）</li>
+<li>2025-5-24：重新修改部分优先级</li>
+</ul>
+<blockquote>
+<p>直接把原来的规则删除，重新导入保存即可</p>
+</blockquote>
+<h1 id="自定义代码"><a href="#自定义代码" class="headerlink" title="自定义代码"></a>自定义代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d+(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|YTS.MX|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-1000000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DVP8&quot;,&quot;name&quot;:&quot;杜比P8&quot;,&quot;exclude&quot;:&quot;^(?!.*HDR).*(DV|dovi|DoVi)&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP|DD+&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;WhiteList&quot;,&quot;name&quot;:&quot;白名单&quot;,&quot;include&quot;:&quot;\\b(Oldboys|GTR|RO|Telesto|CatEDU|PbK|Rainbaby|Ao|BMDru|c0kE|cfandora|jsum|RNML|FraMeSToR|ADE|CHD|CMCT|Sunny|WiKi|PTer|MTeam|FRDS|UBits|FROGE|beAst|Dream|BeiTai|RLeaves|R²|PTH|HDChina|LHD|ZONE|btshd|ADWeb|HHWEB|CHDWEB|CMCTV|TJUPT|OurTV|PTerWEB|MWeb|UBWEB|FROGWeb|QHstudIo|DBTV|RLWeb|LeagueWEB|HDCTV|ZWEX|ZmWeb|Kitsune|NTb|playWEB|BYNDR|FLUX|ETHEL|EDITH|VARYG|HONE|YingWEB|OPS|AilMWeb|ARiC|喵萌奶茶屋|豌豆字幕组|爱恋字幕社|漫猫字幕社|北宇治字幕组|云光字幕组|织梦字幕组|千夏字幕组|极影字幕社|风之圣殿字幕组|风车字幕组|银色子弹字幕组|熔岩动画|MingYSub|枫叶字幕组|诸神字幕组|AKito|秋人|霜庭云花Sub|轻之国度字幕组|星空字幕组|离谱Sub|雪飘工作室|拨雪寻春|新Sub|MCE汉化组|極彩字幕组|氢气烤肉架|悠哈璃羽字幕社|桜都字幕组|SweetSub|LoliHouse|&amp;VCB-Studio|VCB-Studio&amp;|7³ACG|幻之字幕组|魔穗字幕组|澄空学园|LittleBakas!|白恋字幕组|动漫国字幕组|FSD字幕组|FSD粉羽社|一只出格君|猫恋汉化组|OPFans枫雪动漫|GM-Team|康复重症监护室字幕组|SilverBullet|APTX4869|幻樱字幕组|永恒译制|咪梦字幕组|NEO·QSW)\\b&quot;&#125;,&#123;&quot;id&quot;:&quot;PreferenceGroup&quot;,&quot;name&quot;:&quot;优先组&quot;,&quot;include&quot;:&quot;ADWeb|HHWEb|FROGWeb|ADE|FROGE&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="优先级代码"><a href="#优先级代码" class="headerlink" title="优先级代码"></a>优先级代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !3D &amp;WhiteList&amp;DVP8&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; CNSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp;PreferenceGroup&amp; 1080P &gt; BLURAY &amp; H265 &amp; CNSUB &amp; 1080P &gt; BLURAY &amp; CNSUB &amp; 1080P &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;Crunchyroll&gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;AMZN&gt;PreferenceGroup&amp;Netflix&amp; 1080P &amp; WEBDL &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &gt; 1080P &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp; CNSUB &gt; BLURAY &amp; CNSUB &gt; WEBDL &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;DDP&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;Complete&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; UHD &gt; 1080P &amp; BLURAY &gt; 4K &amp; WEBDL &amp;HQ&amp;PreferenceGroup&amp;filterSeries&gt; 4K &amp; WEBDL &amp; HDR &amp;PreferenceGroup&gt; 4K &amp; WEBDL &amp;PreferenceGroup&gt; 4K &amp; WEBDL &gt; 1080P &amp; WEBDL &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 4K &amp; BLURAY &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 4K &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&amp; BLURAY &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>同样转载自NEST大佬的最新分享<br>原帖地址：<br><a href="https://blog.2nest.top/article/mpv2">https://blog.2nest.top/article/mpv2</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo基础使用介绍</title>
     <url>/2025/03/19/Hexo%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<blockquote>
@@ -90,32 +116,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MP订阅规则</title>
-    <url>/2025/06/02/MP%E8%AE%A2%E9%98%85%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<p>更新记录：</p>
-<ul>
-<li>2025-5-24：新增杜比P8，去掉单独分组，使用白名单以及优先组（主要是防止下到枪版）</li>
-<li>2025-5-24：重新修改部分优先级</li>
-</ul>
-<blockquote>
-<p>直接把原来的规则删除，重新导入保存即可</p>
-</blockquote>
-<h1 id="自定义代码"><a href="#自定义代码" class="headerlink" title="自定义代码"></a>自定义代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;完结&quot;,&quot;include&quot;:&quot;(全|共)\\d+(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;全局过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|CAMRip|DVD|vcd|480p|OPUS&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;组过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|HDSWEB|DBD|HDH|COLLECTiVE|SRVFI|YTS.MX|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;电影体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-1000000&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;剧集体积过滤&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-10240&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;CR源&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;NF源&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN源&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;高码&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DVP8&quot;,&quot;name&quot;:&quot;杜比P8&quot;,&quot;exclude&quot;:&quot;^(?!.*HDR).*(DV|dovi|DoVi)&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;杜比音轨&quot;,&quot;include&quot;:&quot;DDP|DD+&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;WhiteList&quot;,&quot;name&quot;:&quot;白名单&quot;,&quot;include&quot;:&quot;\\b(Oldboys|GTR|RO|Telesto|CatEDU|PbK|Rainbaby|Ao|BMDru|c0kE|cfandora|jsum|RNML|FraMeSToR|ADE|CHD|CMCT|Sunny|WiKi|PTer|MTeam|FRDS|UBits|FROGE|beAst|Dream|BeiTai|RLeaves|R²|PTH|HDChina|LHD|ZONE|btshd|ADWeb|HHWEB|CHDWEB|CMCTV|TJUPT|OurTV|PTerWEB|MWeb|UBWEB|FROGWeb|QHstudIo|DBTV|RLWeb|LeagueWEB|HDCTV|ZWEX|ZmWeb|Kitsune|NTb|playWEB|BYNDR|FLUX|ETHEL|EDITH|VARYG|HONE|YingWEB|OPS|AilMWeb|ARiC|喵萌奶茶屋|豌豆字幕组|爱恋字幕社|漫猫字幕社|北宇治字幕组|云光字幕组|织梦字幕组|千夏字幕组|极影字幕社|风之圣殿字幕组|风车字幕组|银色子弹字幕组|熔岩动画|MingYSub|枫叶字幕组|诸神字幕组|AKito|秋人|霜庭云花Sub|轻之国度字幕组|星空字幕组|离谱Sub|雪飘工作室|拨雪寻春|新Sub|MCE汉化组|極彩字幕组|氢气烤肉架|悠哈璃羽字幕社|桜都字幕组|SweetSub|LoliHouse|&amp;VCB-Studio|VCB-Studio&amp;|7³ACG|幻之字幕组|魔穗字幕组|澄空学园|LittleBakas!|白恋字幕组|动漫国字幕组|FSD字幕组|FSD粉羽社|一只出格君|猫恋汉化组|OPFans枫雪动漫|GM-Team|康复重症监护室字幕组|SilverBullet|APTX4869|幻樱字幕组|永恒译制|咪梦字幕组|NEO·QSW)\\b&quot;&#125;,&#123;&quot;id&quot;:&quot;PreferenceGroup&quot;,&quot;name&quot;:&quot;优先组&quot;,&quot;include&quot;:&quot;ADWeb|HHWEb|FROGWeb|ADE|FROGE&quot;&#125;]</span><br></pre></td></tr></table></figure>
-
-<h1 id="优先级代码"><a href="#优先级代码" class="headerlink" title="优先级代码"></a>优先级代码</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !3D &amp;WhiteList&amp;DVP8&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &amp;HQ&amp;DDP&gt; 4K &amp;HQ&gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; UHD &amp; H265 &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; SPECSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; CNSUB &amp; 4K &amp; WEBDL &amp; DOLBY &amp;filterMovie&gt; SPECSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; WEBDL &amp;filterMovie&gt; CNSUB &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp;PreferenceGroup&amp; 1080P &gt; BLURAY &amp; H265 &amp; CNSUB &amp; 1080P &gt; BLURAY &amp; CNSUB &amp; 1080P &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;Crunchyroll&gt; WEBDL &amp;PreferenceGroup&amp; 1080P &amp;AMZN&gt;PreferenceGroup&amp;Netflix&amp; 1080P &amp; WEBDL &gt; WEBDL &amp;PreferenceGroup&amp; 1080P &gt; 1080P &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美漫&quot;,&quot;rule_string&quot;:&quot; BLURAY &amp; H265 &amp; CNSUB &gt; BLURAY &amp; CNSUB &gt; WEBDL &amp; CNSUB &gt; CNSUB &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美漫&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;DDP&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp;PreferenceGroup&amp;Complete&gt; 4K &amp;PreferenceGroup&gt; 1080P &amp;PreferenceGroup&gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; UHD &gt; 1080P &amp; BLURAY &gt; 4K &amp; WEBDL &amp;HQ&amp;PreferenceGroup&amp;filterSeries&gt; 4K &amp; WEBDL &amp; HDR &amp;PreferenceGroup&gt; 4K &amp; WEBDL &amp;PreferenceGroup&gt; 4K &amp; WEBDL &gt; 1080P &amp; WEBDL &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 4K &amp; BLURAY &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp; SPECSUB &amp;filterSeries&gt; 1080P &amp; BLURAY &amp;filterSeries&amp; CNSUB &gt; 4K &amp; CNSUB &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&amp; BLURAY &gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>同样转载自NEST大佬的最新分享<br>原帖地址：<br><a href="https://blog.2nest.top/article/mpv2">https://blog.2nest.top/article/mpv2</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Nas</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -453,6 +453,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2025/03/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>ComfyUI-文生图对比工作流</title>
     <url>/2025/05/27/comfyui%E6%96%87%E7%94%9F%E5%9B%BE%E8%8A%82%E7%82%B9%E5%AF%B9%E6%AF%94/</url>
     <content><![CDATA[<h1 id="开始准备"><a href="#开始准备" class="headerlink" title="开始准备"></a>开始准备</h1><p>首先需要用到的节点有：</p>
@@ -485,24 +503,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2025/03/18/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Obsidian同步方案及插件</title>
     <url>/2025/05/31/obsidian%E5%90%8C%E6%AD%A5%E6%96%B9%E6%A1%88%E5%8F%8A%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<blockquote>
@@ -529,55 +529,6 @@
       </categories>
       <tags>
         <tag>Obsidian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用极空间部署MP</title>
-    <url>/2025/03/19/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2MP/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>相信绝大部分朋友玩NAS的主要用途之一就是搭建一个属于自己的影视库🎬，<br>鉴于我之前的下载方式太过原始🥶，<br>了解到 <code>MP</code> 以后才体会到影视收藏下载原来可以<font color="#b960d9">如此优雅</font>🎻，<br>看到MP登陆界面流动的海报墙也是那么的<font color="#3a8cf0">激动人心</font>🥳。<br>这篇笔记就简单介绍下Nas玩家必备的Docker应用之一 <code>MP</code> 。</p>
-</blockquote>
-<h1 id="下载、部署镜像"><a href="#下载、部署镜像" class="headerlink" title="下载、部署镜像"></a>下载、部署镜像</h1><p>首先在docker商店搜索moviepilot,列表第一个收藏人数最多的这个就是了，然后点击下载，<br>（如果搜索不到镜像，可能是因为没有打开代理，以后有时间会再写一篇关于使用代理的方法）<br>稍等片刻下载完毕以后回到本地镜像，双击下载好的镜像文件<font color="#9bbb59">开始部署</font>，具体步骤如下图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79bca27978.webp" alt="1.下载部署-mp.webp"><br>然后是环境配置，重点修改一下 <code>API服务端口</code> 和 <code>WEB服务端口</code> ，以免冲突，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79bd15df94.webp" alt="1.下载部署2-mp.webp"></p>
-<blockquote>
-<p>整个<font color="#fbad61">部署过程很简单</font>还是很简单的。</p>
-<ol>
-<li>在基本设置里关闭性能限制,容器名称改不改都可以。</li>
-<li>在文件夹路径里添加 <code>3行路径映射</code> ，前两个路径对应新建的两个文件夹，第三条路径是自己的硬盘根目录，这条跟重要。<br> . &#x2F;config<br> . &#x2F;moviepilot<br> . &#x2F;影音书（第三条是自己的硬盘根目录哦，我这里的影音书是自己修改的名字）</li>
-<li>网络里点更换把 <code>网络模式切换为host</code>  </li>
-<li>环境里面主要修改一下两个端口，（我有一次没改端口，在有代理的情况下网络测试不通，大概是因为端口冲突了。）</li>
-<li>点击应用，<font color="#548dd4">部署完成</font>。</li>
-</ol>
-</blockquote>
-<p>MP是会自动更新版本的哦<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c33f2a49.webp" alt="1.自动更新-mp.webp"></p>
-<h1 id="相关设置"><a href="#相关设置" class="headerlink" title="相关设置"></a>相关设置</h1><h3 id="1-初始化登陆"><a href="#1-初始化登陆" class="headerlink" title="1.初始化登陆"></a>1.初始化登陆</h3><p>镜像应用以后，有些迫不及待的朋友输入ip+端口 <font color="#92d050">（默认端口：13000）</font>会发现根本打不开，<br>其实这是因为MP还在进行一系列的初始化设置，可以在容器概况里打开日志看一下运行状态，<br>我大概<font color="#f74db5">等待了1-2分钟</font>才完成整个初始化过程.<br>查看日志需要注意一个重要信息：<font color="#b960d9">超级管理员初始密码</font>。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c4114135.webp" alt="2.管理员密码-mp.webp"><br>第一次登陆，默认的用户名是：<font color="#f74db5">admin</font>，密码就是这个：<font color="#3a8cf0">超级管理员初始密码</font>，<br>建议直接复制保存一下。<br>不过即使日志刷新太快错过了保存，也可以在配置文件夹的文件内<br>（<code>日志文件路径为/config对应映射目录下&quot;logs/moviepilot.log&quot;文件</code>）找到这个密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c47cda83.webp" alt="3.查看日志-mp.webp"><br>看到运行日志显示开始发现豆瓣电影、电视剧，所有插件<font color="#6eb957">初始化完成</font>以后，<br>输入ip+端口就可以打开MP了。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c4dc1bf4.webp" alt="4.初始登陆-mp.webp"></p>
-<h3 id="2-修改登陆密码"><a href="#2-修改登陆密码" class="headerlink" title="2.修改登陆密码"></a>2.修改登陆密码</h3><p>登陆以后首先来修改一下<font color="#31859b">登录密码</font>，设置成自己的常用密码即可,修改完以后退出重新登录一下。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c5431298.webp" alt="5.修改密码-mp.webp"></p>
-<h3 id="3-站点认证"><a href="#3-站点认证" class="headerlink" title="3.站点认证"></a>3.站点认证</h3><p>重新登录-然后点击头像-<font color="#c09351">用户认证</font>，用户认证是<font color="#b960d9">必须操作</font><br>官方给出了一个可以认证的站点列表，只有注册过这些站点的才可以继续下面的操作哦.<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c5c5bd79.webp" alt="6.用户认证-mp.webp"><br>选择站点以后，根据提示输入相关信息-点击认证<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c6361383.webp" alt="6.用户认证2-mp.webp"><br>认证成功以后会自动退出并返回登陆界面。</p>
-<h3 id="4-添加下载器"><a href="#4-添加下载器" class="headerlink" title="4.添加下载器"></a>4.添加下载器</h3><p>点击小齿轮设定-添加下载器，下载器常用的就是<code>qB</code>和<code>tr</code>,关于下载器的部署就不再做说明了，根据官方教程都可以部署成功，根据说明添加相关信息即可。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c695f460.webp" alt="7.添加下载器-mp.webp"></p>
-<h3 id="5-配置储存-目录"><a href="#5-配置储存-目录" class="headerlink" title="5.配置储存&amp;目录"></a>5.配置储存&amp;目录</h3><p>目录设置<font color="#b960d9">至关重要</font>，搞不清楚设置逻辑的话也没关系，可以直接参考下图设置：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c6f1d904.webp" alt="8.目录设置-mp.webp"><br>关键是两个目录要对齐，设置完以后记得点击下面的保存哦</p>
-<h3 id="6-同步站点"><a href="#6-同步站点" class="headerlink" title="6.同步站点"></a>6.同步站点</h3><p>把自己的注册过的Pt站跟MP关联起来，添加订阅的时候就会在你添加的这些pt站内搜索资源了，<br>添加方式有两种：<br><code>使用内置插件同步</code>，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c7af3617.webp" alt="9.同步站点-mp.webp"><br><code>使用浏览器插件同步</code>，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c8227a38.webp" alt="9.同步站点2-mp.webp">两个方法都可以试试，如果一直没添加进来还可以去<font color="#f74db5">服务</font>里面，找到<font color="#6eb957">站点同步</font>服务，手动点执行按钮，多试几次总会成功的。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c8b7aa44.webp" alt="9.同步站点3-mp.webp"></p>
-<h3 id="7-配置规则"><a href="#7-配置规则" class="headerlink" title="7.配置规则"></a>7.配置规则</h3><p>规则是搜索资源的前置条件，有<code>自定义规则</code>和<code>优先级规则</code>两种，<br>我也不太懂内在含义，直接套用先成的即可<br><code>自定义规则</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;Complete&quot;,&quot;include&quot;:&quot;(全|共)\\d(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;filterGlobal&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|DV|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|DVD|vcd|480p|OPUS&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;filerGroup&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|DBD|HDH|COLLECTiVE|SRVFI|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;filterMovie&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-22000&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;filterSeries&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-102400&quot;&#125;,&#123;&quot;id&quot;:&quot;AnimeGroup&quot;,&quot;name&quot;:&quot;AnimeGroup&quot;,&quot;include&quot;:&quot;7³ACG|VCB-Studio&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Audiences&quot;,&quot;name&quot;:&quot;Audiences&quot;,&quot;include&quot;:&quot;ADE|ADWeb&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HHWEB&quot;,&quot;name&quot;:&quot;HHWEB&quot;,&quot;include&quot;:&quot;HHWEB&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;Crunchyroll&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;Netflix&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;B-Global&quot;,&quot;name&quot;:&quot;B-Global&quot;,&quot;include&quot;:&quot;B-Global|BG&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;HQ&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;DDP&quot;,&quot;include&quot;:&quot;DDP&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;排除杜比无中字&quot;,&quot;name&quot;:&quot;排除杜比无中字&quot;,&quot;exclude&quot;:&quot;无中字|无中文|已切|120fps|120FPS|杜比&quot;&#125;,&#123;&quot;id&quot;:&quot;原盘&quot;,&quot;name&quot;:&quot;原盘&quot;,&quot;include&quot;:&quot;原盘&quot;&#125;]</span><br></pre></td></tr></table></figure>
-<p><code>优先级规则</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !REMUX &amp; !3D &amp; !DOLBY &amp;filerGroup&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &gt; CNSUB &amp; 1080P &amp; BLURAY &gt; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;Audiences&amp;HHWEB&amp;DDP&gt; 4K &amp;Audiences&amp;HHWEB&gt; 1080P &amp;Audiences&amp;HHWEB&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot;AnimeGroup&amp; CNSUB &amp; BLURAY &amp; 1080P &gt;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;B-Global&amp; 4K &amp; CNSUB &gt;Audiences&amp;B-Global&amp; 1080P &amp; CNSUB &gt;Audiences&amp;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;Complete&gt; 4K &amp; WEBDL &amp;HHWEB&gt; WEBDL &amp; 1080P &amp;HHWEB&gt; 4K &amp; WEBDL &amp;Audiences&gt; 1080P &amp;Audiences&amp; WEBDL &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;HQ&gt; 4K &amp; WEBDL &gt; 4K &amp; WEBDL &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; 1080P &amp; WEBDL &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;,&#123;&quot;name&quot;:&quot;排除杜比&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;rule_string&quot;:&quot; !DOLBY &amp; !HDR &amp; !720P &amp;排除杜比无中字&quot;&#125;]</span><br></pre></td></tr></table></figure>
-<p>复制以后直接导入,自定义规则与优先级规则使用方法一样。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c93c9349.webp" alt="10.自定义规则-mp.webp"></p>
-<h3 id="8-订阅设置"><a href="#8-订阅设置" class="headerlink" title="8.订阅设置"></a>8.订阅设置</h3><p>除了设定里面的规则以外还有一种个性化的<code>默认规则</code>设置，可根据<font color="#fbad61">个人爱好</font>修改添加，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c99b3e21.webp" alt="11.订阅规则-mp.webp"></p>
-<h3 id="9-插件"><a href="#9-插件" class="headerlink" title="9.插件"></a>9.插件</h3><p><code>内置丰富的插件</code>也是MP的玩法之一，但很多插件我也看不太懂，也用的很少，<br>比如：站点自动签到、自动辅种、豆瓣想看、二级分类策略等，根据个人的需要安装即可，插件的使用也很简单。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>参考上述方法完成设置，那么恭喜你已经基本掌握了关于MP的使用方法了🎉🎉🎉，<br>这时候可以去推荐、趋势里面订阅自己喜爱的影视剧了，添加订阅以后（点亮小心心💗💗💗）<br>会自动在添加的站点里搜索资源🔎，搜索时间与你添加的站点多少和资源的热门程度都有关系，<br>只需稍等片刻我们想看的影视资源就入库啦🥳🥳🥳</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>最最后，不知道是我家的网络原因还是极空间的docker不稳定还是mp的服务不稳定，<br>总之在你部署好以后可能会遇见打不开的情况，或者qb下载器打不开，<br>如果没有进行多余操作一般重启一下应用即可恢复。</p>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p>写这篇笔记的目的在于：<br>想让更多我这样的小白用户体验到<font color="#b960d9">优雅的、自动化</font>的影视资源订阅下载💗。<br>网上各种教程虽然也很多，但普遍都需要一些门槛，<br>个别朋友即使幸运的部署成功，<br>但面对后续一系列的操作设置也是<font color="#4bacc6">一脸问号</font>，并不能愉快的使用🙉。<br>我也是在多位朋友的帮助下才完整的执行了整个操作，<br>本篇教程可能是<font color="#6eb957">全网最简单、最贴心</font>的部署教程了，<br>最后希望你也可以享受到观影带来的<font color="#f74db5">纯粹快乐</font>💫💫💫。</p>
-<p>特别感谢<font color="#b960d9">@现充的正义</font>提供全程的技术支持</p>
-<blockquote>
-<p>如果你想了解更多mp的相关知识，请参阅<a href="https://wiki.movie-pilot.org/zh/basic">官方基础指南</a><br>  再放两个我最开始部署的时候参考的两篇博客作为辅助参考<br>  <a href="https://blog.zwbcc.cn/archives/1711674204030">博客一</a>  <a href="https://blog.goalonez.site/blog/MoviePilot%E9%85%8D%E7%BD%AE-Nas%E5%AA%92%E4%BD%93%E5%BA%93%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7.html">博客二</a><br>  也可以加入电报群<a href="https://t.me/MoviePilot_Wiki">wiki</a>获取更多个性化设置</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Nas</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -788,6 +739,55 @@
       </tags>
   </entry>
   <entry>
+    <title>使用极空间部署MP</title>
+    <url>/2025/03/19/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2MP/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>相信绝大部分朋友玩NAS的主要用途之一就是搭建一个属于自己的影视库🎬，<br>鉴于我之前的下载方式太过原始🥶，<br>了解到 <code>MP</code> 以后才体会到影视收藏下载原来可以<font color="#b960d9">如此优雅</font>🎻，<br>看到MP登陆界面流动的海报墙也是那么的<font color="#3a8cf0">激动人心</font>🥳。<br>这篇笔记就简单介绍下Nas玩家必备的Docker应用之一 <code>MP</code> 。</p>
+</blockquote>
+<h1 id="下载、部署镜像"><a href="#下载、部署镜像" class="headerlink" title="下载、部署镜像"></a>下载、部署镜像</h1><p>首先在docker商店搜索moviepilot,列表第一个收藏人数最多的这个就是了，然后点击下载，<br>（如果搜索不到镜像，可能是因为没有打开代理，以后有时间会再写一篇关于使用代理的方法）<br>稍等片刻下载完毕以后回到本地镜像，双击下载好的镜像文件<font color="#9bbb59">开始部署</font>，具体步骤如下图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79bca27978.webp" alt="1.下载部署-mp.webp"><br>然后是环境配置，重点修改一下 <code>API服务端口</code> 和 <code>WEB服务端口</code> ，以免冲突，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79bd15df94.webp" alt="1.下载部署2-mp.webp"></p>
+<blockquote>
+<p>整个<font color="#fbad61">部署过程很简单</font>还是很简单的。</p>
+<ol>
+<li>在基本设置里关闭性能限制,容器名称改不改都可以。</li>
+<li>在文件夹路径里添加 <code>3行路径映射</code> ，前两个路径对应新建的两个文件夹，第三条路径是自己的硬盘根目录，这条跟重要。<br> . &#x2F;config<br> . &#x2F;moviepilot<br> . &#x2F;影音书（第三条是自己的硬盘根目录哦，我这里的影音书是自己修改的名字）</li>
+<li>网络里点更换把 <code>网络模式切换为host</code>  </li>
+<li>环境里面主要修改一下两个端口，（我有一次没改端口，在有代理的情况下网络测试不通，大概是因为端口冲突了。）</li>
+<li>点击应用，<font color="#548dd4">部署完成</font>。</li>
+</ol>
+</blockquote>
+<p>MP是会自动更新版本的哦<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c33f2a49.webp" alt="1.自动更新-mp.webp"></p>
+<h1 id="相关设置"><a href="#相关设置" class="headerlink" title="相关设置"></a>相关设置</h1><h3 id="1-初始化登陆"><a href="#1-初始化登陆" class="headerlink" title="1.初始化登陆"></a>1.初始化登陆</h3><p>镜像应用以后，有些迫不及待的朋友输入ip+端口 <font color="#92d050">（默认端口：13000）</font>会发现根本打不开，<br>其实这是因为MP还在进行一系列的初始化设置，可以在容器概况里打开日志看一下运行状态，<br>我大概<font color="#f74db5">等待了1-2分钟</font>才完成整个初始化过程.<br>查看日志需要注意一个重要信息：<font color="#b960d9">超级管理员初始密码</font>。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c4114135.webp" alt="2.管理员密码-mp.webp"><br>第一次登陆，默认的用户名是：<font color="#f74db5">admin</font>，密码就是这个：<font color="#3a8cf0">超级管理员初始密码</font>，<br>建议直接复制保存一下。<br>不过即使日志刷新太快错过了保存，也可以在配置文件夹的文件内<br>（<code>日志文件路径为/config对应映射目录下&quot;logs/moviepilot.log&quot;文件</code>）找到这个密码。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c47cda83.webp" alt="3.查看日志-mp.webp"><br>看到运行日志显示开始发现豆瓣电影、电视剧，所有插件<font color="#6eb957">初始化完成</font>以后，<br>输入ip+端口就可以打开MP了。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c4dc1bf4.webp" alt="4.初始登陆-mp.webp"></p>
+<h3 id="2-修改登陆密码"><a href="#2-修改登陆密码" class="headerlink" title="2.修改登陆密码"></a>2.修改登陆密码</h3><p>登陆以后首先来修改一下<font color="#31859b">登录密码</font>，设置成自己的常用密码即可,修改完以后退出重新登录一下。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c5431298.webp" alt="5.修改密码-mp.webp"></p>
+<h3 id="3-站点认证"><a href="#3-站点认证" class="headerlink" title="3.站点认证"></a>3.站点认证</h3><p>重新登录-然后点击头像-<font color="#c09351">用户认证</font>，用户认证是<font color="#b960d9">必须操作</font><br>官方给出了一个可以认证的站点列表，只有注册过这些站点的才可以继续下面的操作哦.<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c5c5bd79.webp" alt="6.用户认证-mp.webp"><br>选择站点以后，根据提示输入相关信息-点击认证<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c6361383.webp" alt="6.用户认证2-mp.webp"><br>认证成功以后会自动退出并返回登陆界面。</p>
+<h3 id="4-添加下载器"><a href="#4-添加下载器" class="headerlink" title="4.添加下载器"></a>4.添加下载器</h3><p>点击小齿轮设定-添加下载器，下载器常用的就是<code>qB</code>和<code>tr</code>,关于下载器的部署就不再做说明了，根据官方教程都可以部署成功，根据说明添加相关信息即可。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c695f460.webp" alt="7.添加下载器-mp.webp"></p>
+<h3 id="5-配置储存-目录"><a href="#5-配置储存-目录" class="headerlink" title="5.配置储存&amp;目录"></a>5.配置储存&amp;目录</h3><p>目录设置<font color="#b960d9">至关重要</font>，搞不清楚设置逻辑的话也没关系，可以直接参考下图设置：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c6f1d904.webp" alt="8.目录设置-mp.webp"><br>关键是两个目录要对齐，设置完以后记得点击下面的保存哦</p>
+<h3 id="6-同步站点"><a href="#6-同步站点" class="headerlink" title="6.同步站点"></a>6.同步站点</h3><p>把自己的注册过的Pt站跟MP关联起来，添加订阅的时候就会在你添加的这些pt站内搜索资源了，<br>添加方式有两种：<br><code>使用内置插件同步</code>，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c7af3617.webp" alt="9.同步站点-mp.webp"><br><code>使用浏览器插件同步</code>，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c8227a38.webp" alt="9.同步站点2-mp.webp">两个方法都可以试试，如果一直没添加进来还可以去<font color="#f74db5">服务</font>里面，找到<font color="#6eb957">站点同步</font>服务，手动点执行按钮，多试几次总会成功的。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c8b7aa44.webp" alt="9.同步站点3-mp.webp"></p>
+<h3 id="7-配置规则"><a href="#7-配置规则" class="headerlink" title="7.配置规则"></a>7.配置规则</h3><p>规则是搜索资源的前置条件，有<code>自定义规则</code>和<code>优先级规则</code>两种，<br>我也不太懂内在含义，直接套用先成的即可<br><code>自定义规则</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;id&quot;:&quot;Complete&quot;,&quot;name&quot;:&quot;Complete&quot;,&quot;include&quot;:&quot;(全|共)\\d(集|期)|完结|合集|Complete&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterGlobal&quot;,&quot;name&quot;:&quot;filterGlobal&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)日语无字|先行|DV|MiniBD|DIY原盘|iPad|UPSCALE|AV1|BDMV|RMVB|DVD|vcd|480p|OPUS&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filerGroup&quot;,&quot;name&quot;:&quot;filerGroup&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;(?i)SubsPlease|Up to 21°C|VARYG|TELESYNC|NTb|sGnb|BHYS|DBD|HDH|COLLECTiVE|SRVFI|HDSPad&quot;&#125;,&#123;&quot;id&quot;:&quot;filterMovie&quot;,&quot;name&quot;:&quot;filterMovie&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-22000&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;filterSeries&quot;,&quot;name&quot;:&quot;filterSeries&quot;,&quot;include&quot;:&quot;&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;0-102400&quot;&#125;,&#123;&quot;id&quot;:&quot;AnimeGroup&quot;,&quot;name&quot;:&quot;AnimeGroup&quot;,&quot;include&quot;:&quot;7³ACG|VCB-Studio&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Audiences&quot;,&quot;name&quot;:&quot;Audiences&quot;,&quot;include&quot;:&quot;ADE|ADWeb&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;seeders&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HHWEB&quot;,&quot;name&quot;:&quot;HHWEB&quot;,&quot;include&quot;:&quot;HHWEB&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Crunchyroll&quot;,&quot;name&quot;:&quot;Crunchyroll&quot;,&quot;include&quot;:&quot;CR|Crunchyroll&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;Netflix&quot;,&quot;name&quot;:&quot;Netflix&quot;,&quot;include&quot;:&quot;Netflix|NF&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;B-Global&quot;,&quot;name&quot;:&quot;B-Global&quot;,&quot;include&quot;:&quot;B-Global|BG&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;AMZN&quot;,&quot;name&quot;:&quot;AMZN&quot;,&quot;include&quot;:&quot;AMZN|Amazon&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;HQ&quot;,&quot;name&quot;:&quot;HQ&quot;,&quot;include&quot;:&quot;HQ|高码|EDR&quot;,&quot;exclude&quot;:&quot;&quot;,&quot;size_range&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;DDP&quot;,&quot;name&quot;:&quot;DDP&quot;,&quot;include&quot;:&quot;DDP&quot;,&quot;exclude&quot;:&quot;&quot;&#125;,&#123;&quot;id&quot;:&quot;排除杜比无中字&quot;,&quot;name&quot;:&quot;排除杜比无中字&quot;,&quot;exclude&quot;:&quot;无中字|无中文|已切|120fps|120FPS|杜比&quot;&#125;,&#123;&quot;id&quot;:&quot;原盘&quot;,&quot;name&quot;:&quot;原盘&quot;,&quot;include&quot;:&quot;原盘&quot;&#125;]</span><br></pre></td></tr></table></figure>
+<p><code>优先级规则</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;name&quot;:&quot;前置过滤&quot;,&quot;rule_string&quot;:&quot;filterGlobal&amp; !BLU &amp; !REMUX &amp; !3D &amp; !DOLBY &amp;filerGroup&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;&#125;,&#123;&quot;name&quot;:&quot;动画电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &gt; CNSUB &amp; 4K &amp; BLURAY &gt; CNSUB &amp; 1080P &amp; BLURAY &gt; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;动画电影&quot;&#125;,&#123;&quot;name&quot;:&quot;华语电影&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &amp; H265 &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;华语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;外语电影&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 4K &amp; BLURAY &amp; H265 &amp;filterMovie&gt; CNSUB &amp; 1080P &amp; BLURAY &amp;filterMovie&gt; CNSUB &amp; 4K &amp;filterMovie&gt; CNSUB &amp; 1080P &amp;filterMovie&quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;外语电影&quot;&#125;,&#123;&quot;name&quot;:&quot;国漫&quot;,&quot;rule_string&quot;:&quot; 4K &amp;Audiences&amp;HHWEB&amp;DDP&gt; 4K &amp;Audiences&amp;HHWEB&gt; 1080P &amp;Audiences&amp;HHWEB&gt; 4K &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国漫&quot;&#125;,&#123;&quot;name&quot;:&quot;日番&quot;,&quot;rule_string&quot;:&quot;AnimeGroup&amp; CNSUB &amp; BLURAY &amp; 1080P &gt;Audiences&amp; H265 &amp; BLURAY &amp; 1080P &gt;Audiences&amp;AMZN&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Crunchyroll&amp; CNSUB &amp; 1080P &gt;Audiences&amp;Netflix&amp;HHWEB&amp; CNSUB &amp; 1080P &gt;Audiences&amp;B-Global&amp; 4K &amp; CNSUB &gt;Audiences&amp;B-Global&amp; 1080P &amp; CNSUB &gt;Audiences&amp;HHWEB&amp; CNSUB &amp; 1080P &gt; CNSUB &amp; BLURAY &amp; 1080P &gt; 1080P &amp; CNSUB &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日番&quot;&#125;,&#123;&quot;name&quot;:&quot;纪录片&quot;,&quot;rule_string&quot;:&quot; 4K &amp; BLURAY &gt; 1080P &amp; BLURAY &gt; 4K &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;纪录片&quot;&#125;,&#123;&quot;name&quot;:&quot;综艺&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;Complete&gt; 4K &amp; WEBDL &amp;HHWEB&gt; WEBDL &amp; 1080P &amp;HHWEB&gt; 4K &amp; WEBDL &amp;Audiences&gt; 1080P &amp;Audiences&amp; WEBDL &gt; 1080P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;综艺&quot;&#125;,&#123;&quot;name&quot;:&quot;国产剧&quot;,&quot;rule_string&quot;:&quot; 4K &amp; WEBDL &amp;HQ&gt; 4K &amp; WEBDL &gt; 4K &amp; WEBDL &gt; 1080P &gt; 720P &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;国产剧&quot;&#125;,&#123;&quot;name&quot;:&quot;欧美剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; 1080P &amp; WEBDL &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries&quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;欧美剧&quot;&#125;,&#123;&quot;name&quot;:&quot;日韩剧&quot;,&quot;rule_string&quot;:&quot; SPECSUB &amp; 1080P &amp; BLURAY &amp;filterSeries&gt; CNSUB &amp; 1080P &amp;filterSeries&gt; 1080P &amp; CNSUB &amp;filterSeries&gt; CNSUB &amp;filterSeries &quot;,&quot;media_type&quot;:&quot;电视剧&quot;,&quot;category&quot;:&quot;日韩剧&quot;&#125;,&#123;&quot;name&quot;:&quot;现场&quot;,&quot;rule_string&quot;:&quot; CNSUB &amp; 4K &gt; CNSUB &amp; 1080P &gt; 4K &gt; 1080P &gt; !720P &quot;,&quot;media_type&quot;:&quot;电影&quot;,&quot;category&quot;:&quot;现场&quot;&#125;,&#123;&quot;name&quot;:&quot;排除杜比&quot;,&quot;media_type&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;rule_string&quot;:&quot; !DOLBY &amp; !HDR &amp; !720P &amp;排除杜比无中字&quot;&#125;]</span><br></pre></td></tr></table></figure>
+<p>复制以后直接导入,自定义规则与优先级规则使用方法一样。<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c93c9349.webp" alt="10.自定义规则-mp.webp"></p>
+<h3 id="8-订阅设置"><a href="#8-订阅设置" class="headerlink" title="8.订阅设置"></a>8.订阅设置</h3><p>除了设定里面的规则以外还有一种个性化的<code>默认规则</code>设置，可根据<font color="#fbad61">个人爱好</font>修改添加，如图所示：<br><img src="https://ls.imsoso.cn:6688/i/2025/03/29/67e79c99b3e21.webp" alt="11.订阅规则-mp.webp"></p>
+<h3 id="9-插件"><a href="#9-插件" class="headerlink" title="9.插件"></a>9.插件</h3><p><code>内置丰富的插件</code>也是MP的玩法之一，但很多插件我也看不太懂，也用的很少，<br>比如：站点自动签到、自动辅种、豆瓣想看、二级分类策略等，根据个人的需要安装即可，插件的使用也很简单。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>参考上述方法完成设置，那么恭喜你已经基本掌握了关于MP的使用方法了🎉🎉🎉，<br>这时候可以去推荐、趋势里面订阅自己喜爱的影视剧了，添加订阅以后（点亮小心心💗💗💗）<br>会自动在添加的站点里搜索资源🔎，搜索时间与你添加的站点多少和资源的热门程度都有关系，<br>只需稍等片刻我们想看的影视资源就入库啦🥳🥳🥳</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>最最后，不知道是我家的网络原因还是极空间的docker不稳定还是mp的服务不稳定，<br>总之在你部署好以后可能会遇见打不开的情况，或者qb下载器打不开，<br>如果没有进行多余操作一般重启一下应用即可恢复。</p>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p>写这篇笔记的目的在于：<br>想让更多我这样的小白用户体验到<font color="#b960d9">优雅的、自动化</font>的影视资源订阅下载💗。<br>网上各种教程虽然也很多，但普遍都需要一些门槛，<br>个别朋友即使幸运的部署成功，<br>但面对后续一系列的操作设置也是<font color="#4bacc6">一脸问号</font>，并不能愉快的使用🙉。<br>我也是在多位朋友的帮助下才完整的执行了整个操作，<br>本篇教程可能是<font color="#6eb957">全网最简单、最贴心</font>的部署教程了，<br>最后希望你也可以享受到观影带来的<font color="#f74db5">纯粹快乐</font>💫💫💫。</p>
+<p>特别感谢<font color="#b960d9">@现充的正义</font>提供全程的技术支持</p>
+<blockquote>
+<p>如果你想了解更多mp的相关知识，请参阅<a href="https://wiki.movie-pilot.org/zh/basic">官方基础指南</a><br>  再放两个我最开始部署的时候参考的两篇博客作为辅助参考<br>  <a href="https://blog.zwbcc.cn/archives/1711674204030">博客一</a>  <a href="https://blog.goalonez.site/blog/MoviePilot%E9%85%8D%E7%BD%AE-Nas%E5%AA%92%E4%BD%93%E5%BA%93%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7.html">博客二</a><br>  也可以加入电报群<a href="https://t.me/MoviePilot_Wiki">wiki</a>获取更多个性化设置</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Nas</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用极空间部署兰空图床</title>
     <url>/2025/03/29/%E4%BD%BF%E7%94%A8%E6%9E%81%E7%A9%BA%E9%97%B4%E9%83%A8%E7%BD%B2%E5%85%B0%E7%A9%BA%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p><img src="https://ls.imsoso.cn:6688/i/2025/03/28/67e6615d42c23.webp" alt="0.兰空.webp"></p>
@@ -874,24 +874,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识ComfyUI</title>
-    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
-    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
-<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
-<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
-<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
-<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
-<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
-<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>ComfyUI</tag>
       </tags>
   </entry>
   <entry>
@@ -1053,6 +1035,24 @@
 <li>VAE Decode：解码图像。</li>
 <li>Save Image：保存结果。</li>
 </ol>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初识ComfyUI</title>
+    <url>/2025/04/23/%E5%88%9D%E8%AF%86ComfyUI/</url>
+    <content><![CDATA[<p>ComfyUI 是一个基于节点的开源图形用户界面（GUI），主要用于<font color="#b960d9"> Stable Diffusion </font>工作流，<br>允许用户通过连接不同的节点来设计和执行高级图像生成管道。<br>每个节点代表一个功能，例如加载模型、输入提示词、指定采样器等，<br>用户可以通过拖拽和连接节点来创建自定义的工作流，<br>非常适合需要<font color="#f74db5">高度自定义</font>和<font color="#6eb957">控制</font>的图像生成任务。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cece07d59.webp" alt="0.AI解锁.webp"></p>
+<h2 id="关键特点："><a href="#关键特点：" class="headerlink" title="关键特点："></a>关键特点：</h2><p><font color="#3a8cf0">节点式界面：</font><br>通过节点和流程图的方式构建工作流，无需编程即可实现复杂的图像生成任务。<br><font color="#fbad61">灵活性：</font><br>支持多种<font color="#fbad61"> Stable Diffusion</font> 模型（如 SD1.x、SD2.x、SDXL、Flux 等），并兼容 ControlNet、LoRA 等高级功能。<br><font color="#f74db5">跨平台：</font><br>支持<u> Windows、macOS 和 Linux </u>系统，可在本地运行，也可以通过云端服务运行。<br><font color="#b960d9">社区支持：</font><br>ComfyUI 是开源项目（GitHub 上有 58.6k 星，截至 2024 年 11 月），社区活跃，提供了许多自定义节点和教程。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cee9cd6cc.webp" alt="1.节点.webp"></p>
+<h2 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h2><p>ComfyUI 适合需要深度定制的用户，例如：<br>文本生成图像（text-to-image）⛷️<br>图像编辑（如 inpainting、outpainting）✍️<br>视频生成（通过 AnimateDiff 等扩展）🎇<br>模型融合、超分辨率放大等高级操作🧐</p>
+<h3 id="与其他工具的对比："><a href="#与其他工具的对比：" class="headerlink" title="与其他工具的对比："></a>与其他工具的对比：</h3><p>相比 Automatic1111（A1111），ComfyUI 更灵活但学习曲线较陡。A1111 界面更直观，适合新手快速上手，而 ComfyUI 适合高级用户需要精细控制工作流的情况。<br><img src="https://ls.imsoso.cn:6688/i/2025/04/23/6807cf04c8ef8.webp" alt="3.精细工作流.webp"></p>
+<h2 id="安装和使用："><a href="#安装和使用：" class="headerlink" title="安装和使用："></a>安装和使用：</h2><p>可以从<a href="https://github.com/comfyanonymous/ComfyUI">GitHub</a>下载，也可以从<a href="https://www.comfy.org/zh-cn/">官网</a>下载。<br>Windows 用户可以下载便携版，解压后将 Stable Diffusion 模型放入指定文件夹即可运行。<br>启动后通过浏览器访问界面，默认工作流可以帮助新手快速上手。用户可以通过拖拽节点、调整参数来构建自己的工作流。</p>
+<h3 id="适合人群："><a href="#适合人群：" class="headerlink" title="适合人群："></a>适合人群：</h3><p>如果你是初学者，可能需要一些教程来上手（网上有许多资源，例如 ComfyUI 社区手册）。<br>如果你是高级用户，ComfyUI 的模块化设计能让你更高效地实验和优化工作流。</p>
+<p>接下来会记录一系列的ComfyUi的学习过程，顺应AI时代🤨</p>
 ]]></content>
       <categories>
         <category>AI</category>
@@ -1555,24 +1555,6 @@
       </tags>
   </entry>
   <entry>
-    <title>测试文章</title>
-    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
-<ul>
-<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
-<li>已修复</li>
-</ul>
-<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
-<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>文生图工作流相关术语概念</title>
     <url>/2025/04/23/%E6%96%87%E7%94%9F%E5%9B%BE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E6%A6%82%E5%BF%B5/</url>
     <content><![CDATA[<p>总结一下 ComfyUI 中常见的名词，特别是与<font color="#f74db5">文生图（Text-to-Image）</font>工作流相关的术语和概念。<br>这些名词是理解和操作 ComfyUI 的基础，涵盖节点、模型、参数等方面。</p>
@@ -1594,6 +1576,24 @@
       </categories>
       <tags>
         <tag>ComfyUI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2025/03/18/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>博客使用 <code>Hexo</code> 框架搭配 <code>Github</code> 和 <code>Vercel</code> 部署而成</p>
+<ul>
+<li>已发现bug，在文章页刷新会404 😭，返回首页刷新正常💖，重新进入文章即可；后续学会更多操作再修复此Bug🐒。</li>
+<li>已修复</li>
+</ul>
+<p><img src="https://ls.imsoso.cn:6688/i/2025/05/07/681b35d55e3ae.webp" alt="分割线-1.webp"></p>
+<p><img src="https://raw.githubusercontent.com/Tmerowr/pic/main/img/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E9%85%8D%E5%9B%BE.webp"></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
